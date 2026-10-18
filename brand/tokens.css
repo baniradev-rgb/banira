@@ -1,21 +1,24 @@
-/* GENERATED from tokens.json — Banira design tokens */
+/* GENERATED from tokens.json — Banira design tokens v2 */
 :root {
-  --bn-ivory: #F6F2E9;
-  --bn-paper: #ECE5D6;
-  --bn-ink: #1B1A18;
-  --bn-graphite: #4A4741;
-  --bn-stone: #6B655A;
-  --bn-line: #D9D1C0;
-  --bn-pine: #2D5A4B;
-  --bn-pine-light: #8CC4AE;
-  --bn-dark-bg: #131311;
-  --bn-dark-surface: #1D1C19;
-  --bn-dark-line: #34322D;
-  --bn-dark-muted: #A8A194;
-  --bn-hot: #A63D2A;
-  --bn-warm: #85591A;
-  --bn-cold: #4F6C80;
-  --bn-ok: #2D5A4B;
+  --bn-sumi: #0B0D17;
+  --bn-sumi-2: #141726;
+  --bn-sumi-line: #272B42;
+  --bn-washi: #FAF7F0;
+  --bn-washi-2: #F1ECE0;
+  --bn-washi-line: #E2DACA;
+  --bn-ink: #171A2E;
+  --bn-mist: #A9A7BC;
+  --bn-slate: #5D5B70;
+  --bn-vanilla: #F0D79A;
+  --bn-bean: #8C6418;
+  --bn-orchid: #B3A6F0;
+  --bn-ai: #4B4FB8;
+  --bn-hot: #E58C78;
+  --bn-warm: #E7C277;
+  --bn-cold: #94B4D6;
+  --bn-hot-light: #A63D2A;
+  --bn-warm-light: #85591A;
+  --bn-cold-light: #3F5F80;
   --bn-font-display: Geist, 'Helvetica Neue', Arial, sans-serif;
   --bn-font-body: Geist, 'Helvetica Neue', Arial, sans-serif;
   --bn-font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
@@ -27,8 +30,8 @@
   --bn-size-4: 1.438rem;
   --bn-size-5: 2rem;
   --bn-size-6: 2.75rem;
-  --bn-size-7: 3.75rem;
+  --bn-size-7: 4rem;
   --bn-radius-small: 6px;
-  --bn-radius-medium: 10px;
-  --bn-radius-large: 14px;
+  --bn-radius-medium: 12px;
+  --bn-radius-large: 18px;
 }

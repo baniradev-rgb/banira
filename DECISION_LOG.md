@@ -52,3 +52,11 @@ The website form posts to Banira's own Lead Desk once a Banira Google account ex
 
 ### D-015 · Out-of-office auto-replies must not stop follow-ups — Accepted
 Found while writing the review brief. Added `isAutoReply` and covered it with engine and Apps Script tests.
+
+### D-016 · 18 Oct 2026 · Brand v2 "vanilla blossom" replaces v1 — Accepted (owner request)
+Owner asked for new colours, a logo closer to vanilla, flowers or Japanese culture while staying minimal, and much more animation. Changes:
+- **Mark:** geometric vanilla orchid (3 sepals + 3 petals, open centre), with a kamon-style crest variant.
+- **Palette:** night garden. Sumi dark ground, vanilla gold accent, orchid partner; washi/indigo light theme. All text pairs pass AA.
+- **Website:** dark-first, with an ambient aurora, falling blossoms, cursor glow, card spotlight and tilt, magnetic buttons, rotating console border, typed replies and scroll reveals. Reduced motion is respected.
+
+The v1 "b" mark is retired. It remains in Git history (commit 2f23864).

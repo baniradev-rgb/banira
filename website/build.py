@@ -1,49 +1,63 @@
 #!/usr/bin/env python3
 """Build the Banira website from src/ + brand + the Lead Desk engine.
 
+Sources
+  src/head.html   <title>, meta, fonts, all CSS (tokens + animation)
+  src/body.html   page markup + demo/intake script
+  src/fx.js       decorative effects (blossom canvas, glows, tilt, count-up)
+
 Outputs
   dist/index.html      full standalone page (deploy to Netlify / any static host)
   dist/artifact.html   same content without <!doctype>/<html> wrapper (Claude Artifact preview)
   dist/favicon.svg
 
-Edit site_config.json to set the contact email and the form endpoint:
-  form_endpoint = ""        → preview mode (form shows the generated draft, sends nothing)
-  form_endpoint = "/"       → Netlify Forms (form is registered via data-netlify)
-  form_endpoint = "https://script.google.com/macros/s/…/exec" → Banira's own Lead Desk
+site_config.json: form_endpoint "" = preview (no send) · "/" = Netlify Forms · Apps Script /exec URL = Banira's Lead Desk.
 """
 import json, re, urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parent
-SRC = (ROOT / "src/index.html").read_text()
+LOGOS = REPO / "brand/logos"
 SITE = json.loads((ROOT / "site_config.json").read_text())
 ENGINE = (REPO / "automations/lead-desk/src/engine.js").read_text()
 DEMO = json.loads((REPO / "automations/lead-desk/examples/config.example.json").read_text())
-INK, PINE = "#1B1A18", "#2D5A4B"
 
 
-def themable(svg_text, height):
-    s = svg_text.replace(f'stroke="{INK}"', 'stroke="currentColor"').replace(f'fill="{INK}"', 'fill="currentColor"')
-    s = s.replace(f'fill="{PINE}"', 'style="fill:var(--accent)"')
-    s = re.sub(r'<title>.*?</title>', '', s)
-    s = re.sub(r'width="[\d.]+" height="[\d.]+"', f'height="{height}" aria-hidden="true" focusable="false"', s, count=1)
-    return s.replace('role="img" aria-label="Banira"', '').strip()
+def inner(svg_text):
+    """Contents of an <svg> element, minus <title>."""
+    body = re.search(r"<svg[^>]*>(.*)</svg>", svg_text, re.S).group(1)
+    return re.sub(r"<title>.*?</title>", "", body)
+
+
+def viewbox(svg_text):
+    return re.search(r'viewBox="([^"]+)"', svg_text).group(1)
 
 
 def main():
-    logo = (REPO / "brand/logos/banira-logo-light.svg").read_text()
-    fav = (REPO / "brand/logos/favicon.svg").read_text().strip()
-    html = SRC
-    html = html.replace("__LOGO__", themable(logo, 28) + '<span class="hp">Banira</span>')
-    html = html.replace("__LOGO_SMALL__", themable(logo, 22))
+    mark_src = (LOGOS / "banira-mark-web.svg").read_text()
+    word_src = (LOGOS / "banira-wordmark-light.svg").read_text()
+    bud_src = (LOGOS / "banira-bud.svg").read_text()
+    fav = (LOGOS / "favicon.svg").read_text().strip()
+
+    mark = (f'<svg class="mark" viewBox="{viewbox(mark_src)}" aria-hidden="true" focusable="false">'
+            f'{inner(mark_src).replace("currentColor", "currentColor")}</svg>')
+    word = (f'<svg class="word" viewBox="{viewbox(word_src)}" aria-hidden="true" focusable="false">'
+            f'{inner(word_src).replace("#171A2E", "currentColor")}</svg><span class="hp">Banira</span>')
+    bud_paths = inner(bud_src)
+    bud_mask = urllib.parse.quote(bud_src.replace("currentColor", "#000").strip())
+
+    html = (ROOT / "src/head.html").read_text() + "\n" + (ROOT / "src/body.html").read_text()
+    html += "\n<script>\n" + (ROOT / "src/fx.js").read_text() + "</script>\n"
+    html = html.replace("__MARK__", mark).replace("__WORDMARK__", word)
+    html = html.replace("__BUD_PATHS__", bud_paths).replace("__BUD_MASK__", bud_mask)
     html = html.replace("__FAVICON__", urllib.parse.quote(fav))
     html = html.replace("__CONTACT_EMAIL__", SITE.get("contact_email") or "hello@banira (address pending)")
     html = html.replace("/*__ENGINE__*/", ENGINE.replace("</script", "<\\/script"))
     demo = dict(DEMO); demo.pop("_note", None)
     html = html.replace("/*__DEMO_CONFIG__*/null", json.dumps(demo))
     html = html.replace("/*__SITE_CONFIG__*/{}", json.dumps({k: SITE.get(k, "") for k in ("form_endpoint", "contact_email")}))
-    left = re.findall(r"__[A-Z_]+__", html)
+    left = re.findall(r"__[A-Z_]{3,}__", html)
     if left:
         raise SystemExit(f"Unreplaced placeholders: {left}")
     dist = ROOT / "dist"
