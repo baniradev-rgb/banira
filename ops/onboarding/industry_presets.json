@@ -1,0 +1,59 @@
+{
+  "_doc": "Starting points per industry. Onboarding merges the client's own services on top; the owner approves everything.",
+  "common_urgency": ["emergency", "urgent", "asap", "today", "right away", "flooding", "leaking", "no power", "smell gas", "gas smell", "carbon monoxide", "sparking", "burning smell"],
+  "industries": {
+    "hvac": { "match": ["hvac", "heating", "cooling", "air"], "services": [
+      { "key": "repair", "label": "Heating or AC repair", "value": "high", "keywords": ["not working", "broken", "repair", "no heat", "no cool", "stopped", "noise", "leak"] },
+      { "key": "install", "label": "New system installation", "value": "high", "keywords": ["install", "replace", "replacement", "new system", "heat pump", "quote", "estimate"] },
+      { "key": "maintenance", "label": "Seasonal tune-up", "value": "medium", "keywords": ["tune-up", "tune up", "maintenance", "inspection", "clean"] }],
+      "urgency": ["no heat", "no ac", "freezing"] },
+    "plumbing": { "match": ["plumb"], "services": [
+      { "key": "leak", "label": "Leak or burst pipe", "value": "high", "keywords": ["leak", "burst", "pipe", "water everywhere", "dripping"] },
+      { "key": "drain", "label": "Blocked drain", "value": "medium", "keywords": ["clog", "blocked", "drain", "backed up", "toilet"] },
+      { "key": "water_heater", "label": "Water heater", "value": "high", "keywords": ["water heater", "hot water", "tankless", "boiler"] },
+      { "key": "remodel", "label": "Bathroom or kitchen plumbing", "value": "high", "keywords": ["remodel", "renovation", "new bathroom", "kitchen", "quote", "estimate"] }],
+      "urgency": ["burst", "flood", "no water", "sewage", "overflowing"] },
+    "electrical": { "match": ["electric"], "services": [
+      { "key": "fault", "label": "Electrical fault", "value": "high", "keywords": ["outage", "tripping", "breaker", "sparking", "no power", "flicker"] },
+      { "key": "panel", "label": "Panel upgrade", "value": "high", "keywords": ["panel", "upgrade", "service upgrade", "200 amp"] },
+      { "key": "ev", "label": "EV charger install", "value": "high", "keywords": ["ev", "charger", "tesla", "level 2"] },
+      { "key": "lighting", "label": "Lighting and outlets", "value": "medium", "keywords": ["light", "outlet", "fixture", "fan", "switch"] }],
+      "urgency": ["sparking", "burning", "shock", "no power"] },
+    "roofing": { "match": ["roof"], "services": [
+      { "key": "repair", "label": "Roof repair", "value": "high", "keywords": ["leak", "repair", "missing shingles", "storm", "damage"] },
+      { "key": "replace", "label": "Roof replacement", "value": "high", "keywords": ["replace", "new roof", "reroof", "quote", "estimate"] },
+      { "key": "inspection", "label": "Inspection", "value": "medium", "keywords": ["inspection", "insurance", "check"] }],
+      "urgency": ["leaking", "storm damage", "tarp", "water coming in"] },
+    "remodeling": { "match": ["remodel", "contractor", "renovat", "builder"], "services": [
+      { "key": "kitchen", "label": "Kitchen remodel", "value": "high", "keywords": ["kitchen", "cabinets", "countertop"] },
+      { "key": "bath", "label": "Bathroom remodel", "value": "high", "keywords": ["bathroom", "shower", "tub", "tile"] },
+      { "key": "addition", "label": "Addition or major renovation", "value": "high", "keywords": ["addition", "basement", "renovation", "extension"] },
+      { "key": "small", "label": "Small repair job", "value": "low", "keywords": ["small job", "handyman", "fix", "door", "drywall"] }],
+      "urgency": [] },
+    "landscaping": { "match": ["landscap", "lawn", "garden", "tree"], "services": [
+      { "key": "design", "label": "Landscape design or install", "value": "high", "keywords": ["design", "patio", "hardscape", "install", "quote"] },
+      { "key": "maintenance", "label": "Lawn and garden maintenance", "value": "medium", "keywords": ["mowing", "maintenance", "weekly", "lawn care"] },
+      { "key": "tree", "label": "Tree work", "value": "medium", "keywords": ["tree", "stump", "trim", "removal"] }],
+      "urgency": ["fallen tree", "on the house"] },
+    "cleaning": { "match": ["clean", "maid", "janitor"], "services": [
+      { "key": "recurring", "label": "Recurring cleaning", "value": "high", "keywords": ["weekly", "biweekly", "monthly", "regular", "recurring"] },
+      { "key": "deep", "label": "Deep or move-out clean", "value": "medium", "keywords": ["deep", "move out", "move-out", "move in", "end of tenancy"] },
+      { "key": "commercial", "label": "Office cleaning", "value": "high", "keywords": ["office", "commercial", "business"] }],
+      "urgency": [] },
+    "generic": { "match": [], "services": [
+      { "key": "quote", "label": "Quote request", "value": "high", "keywords": ["quote", "estimate", "price", "cost", "how much"] },
+      { "key": "booking", "label": "Booking request", "value": "medium", "keywords": ["book", "appointment", "schedule", "available"] },
+      { "key": "question", "label": "General question", "value": "low", "keywords": ["question", "wondering", "info"] }],
+      "urgency": [] }
+  },
+  "templates": {
+    "subject": "We got your request — {{business_name}}",
+    "ack": "Hi {{first_name}},\n\nThanks for contacting {{business_name}} about {{service}}. Your request is with our team and we'll reply {{response_window}}.\n\nIf you'd like to pick a time now, you can book here: {{booking_url}}\n\n{{signature}}",
+    "ack_after_hours": "Hi {{first_name}},\n\nThanks for contacting {{business_name}} about {{service}}. We're closed right now, but your request is first in line when we open, and we'll reply {{response_window}} of opening.\n\n{{signature}}",
+    "ack_urgent": "Hi {{first_name}},\n\nWe've received your message and flagged it as urgent. For the fastest response, please call us now at {{phone}}. Otherwise we'll contact you as soon as possible.\n\nIf anyone is in danger, call 911 first.\n\n{{signature}}",
+    "followup_1": "Hi {{first_name}},\n\nJust checking you saw our reply about {{service}}. If it's still needed, simply reply to this email and we'll take it from there.\n\n{{signature}}",
+    "followup_2": "Hi {{first_name}},\n\nFollowing up once more in case the timing wasn't right. We're happy to answer any questions before you decide.\n\n{{signature}}",
+    "followup_3": "Hi {{first_name}},\n\nThis is our last note so we don't fill your inbox. If you still need help with {{service}}, reply any time.\n\n{{signature}}",
+    "footer": "Reply \"stop\" and we won't send further follow-ups."
+  }
+}

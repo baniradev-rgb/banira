@@ -1,57 +1,55 @@
 # AGENT_HANDOFF
 
-The three tools do **not** talk to each other. They share this Git repository. All coordination happens through files.
+Claude Cowork, Claude Code and Codex do **not** talk to each other. They share this Git repository; all coordination happens through files.
 
 ## Roles
 | Agent | Responsible for | Must not |
 |---|---|---|
-| Claude Cowork | Research, planning, operations docs, recurring analysis, drafting customer communications | Send/publish anything without owner approval |
-| Claude Code | Implementation: tools, automation, website, infrastructure | Merge untested code; touch credentials in repo |
-| Codex | Independent review, extra development, debugging, tests, optimisation | Change business decisions or docs outside its task |
-| Owner | Approvals 🔒, accounts, money, external communication | — |
+| Claude Cowork | Research, planning, ops docs, prospect research, drafting customer messages, recurring analysis | Send/publish anything without owner approval |
+| Claude Code | Implementation: engine modules, Apps Script, website, deployment, automation | Merge untested code; commit credentials or client data |
+| Codex | Independent review, debugging, extra tests, optimisation | Change business decisions or docs outside its task |
+| Owner | 🔒 approvals, accounts, money, client calls, sending messages | — |
 
 ## Protocol
-1. **Pick up:** read README → this file → TASK_QUEUE. Take a `todo` task assigned to you; set it `doing` with your agent name and date.
-2. **Work on a branch:** `agent/<agent>-T-xxx`.
-3. **Finish:** meet the acceptance criteria; run `python3 -m pytest -q`; update TASK_QUEUE status; append a handoff entry below.
-4. **Decisions:** anything that changes business direction goes in DECISION_LOG as *Proposed*.
-5. **Blocked:** set `blocked`, state the precise blocker and what would unblock it.
+1. Read README → this file → TASK_QUEUE. Take a `todo` task assigned to you; set `doing` with agent name + date.
+2. Branch `agent/<agent>-T-xxx`.
+3. Meet acceptance criteria; run all tests (`cd automations/lead-desk && npm test`; `node --test ops/onboarding/tests/*.test.js`).
+4. Update TASK_QUEUE status; add a handoff entry below (newest first).
+5. Direction changes → DECISION_LOG as *Proposed*. Blocked → state exact blocker + what unblocks it.
+6. **Never commit `clients/`** (client data; gitignored).
 
-## Handoff entries (newest first)
-### 2026-10-18 · Claude Cowork → Claude Code / Codex / Owner
-- **Done:** T-001 research & scoring; T-002 `domaincheck` v0.1 (13 offline tests pass).
-- **Known limitation:** the Cowork cloud sandbox cannot resolve DNS (all queries return NXDOMAIN; DoH blocked by proxy). The canary now detects this and the tool exits 2. **Live behaviour is untested** → T-004.
-- **Next for Claude Code:** T-004, then T-008.
-- **Next for Codex:** T-005 (prompt below).
-- **Owner:** T-003, T-009, T-010.
+## Handoff entries
+### 2026-10-18 · Claude Cowork → all (strategy reset)
+- **Done:** research + selection (Lead Desk, 82.0/100); brand v1 (19 SVGs, tokens); website (live demo + intake) published as a private preview; engine + Apps Script + build tool (22 tests); onboarding generator (5 tests); SOPs, packages, acquisition plan. Email-auth work archived in `archive/`.
+- **Not verified:** nothing has run in a real Google account (sandbox only; Google services simulated in tests). Google Fonts don't load in the build sandbox, so screenshots used fallback fonts.
+- **Next:** OWN T-102/T-105; CC T-101 then T-104; CX T-103.
 
 ---
-## Ready-to-paste Codex prompt (T-005)
+## Ready-to-paste Codex prompt (T-103)
 ```
-You are reviewing the Banira repository. Read AGENT_HANDOFF.md and TASK_QUEUE.md (task T-005) first.
-
-Target: tools/domaincheck/domaincheck.py and tools/domaincheck/tests/.
-This tool reads public DNS (MX, SPF, DMARC, DKIM selectors) and grades a domain A–F.
-Its findings will be quoted to real businesses, so a false negative or false positive is a serious defect.
-
-Do:
-1. Review SPF parsing against RFC 7208 (lookup counting incl. redirect=, multiple records,
-   macros, case, records split across TXT strings) and DMARC parsing against RFC 7489
-   (tag parsing, whitespace, p/sp/pct/rua, multiple records, records at org domain vs subdomain).
-2. Check the grading logic for cases that would mislabel a well-configured domain.
-3. Check error handling (timeouts, SERVFAIL, lying resolvers — see the canary).
-4. Add failing tests for each bug you find, then fix with minimal changes.
-5. Run: pip install dnspython pytest && python3 -m pytest tools/domaincheck/tests -q
-Deliver: docs/reviews/codex_domaincheck_<YYYY-MM-DD>.md listing findings (severity, evidence,
-fix, test name), plus the code/test changes on branch agent/codex-T-005.
-Do not change business documents or the grading scale without writing a Proposed entry in DECISION_LOG.md.
+Read README.md, AGENT_HANDOFF.md and TASK_QUEUE.md (T-103) in the Banira repo.
+Review automations/lead-desk/src/engine.js and automations/lead-desk/apps-script/Code.gs.
+Context: this runs in Google Apps Script (V8) inside a small business's Gmail account and emails
+real customers, so a wrong send, a double send, or a missed opt-out is a serious defect.
+Check specifically:
+1. Follow-up scheduling: double-send risk when runFollowUps overlaps or a sheet row is edited by hand;
+   behaviour across DST changes; leads whose Received cell is not a Date.
+2. Reply detection (latestReply_): replies from aliases, forwarded replies, threads not found;
+   verify the isAutoReply filter (out-of-office must not stop follow-ups) for false positives/negatives.
+3. Opt-out detection false negatives/positives (isOptOut).
+4. Spam filter false positives on genuine inquiries containing links.
+5. Apps Script quota/limit handling (MailApp 100/day consumer), LockService usage, 6-minute runtime.
+6. Template rendering: injection or broken output from user-supplied names/messages.
+Add a failing test for each real bug, fix minimally, run `npm test` in automations/lead-desk.
+Deliver docs/reviews/codex_lead-desk_<YYYY-MM-DD>.md (severity, evidence, fix, test name) on branch agent/codex-T-103.
 ```
 
-## Ready-to-paste Claude Code prompt (T-004)
+## Ready-to-paste Claude Code prompt (T-101)
 ```
-Read README.md, AGENT_HANDOFF.md and TASK_QUEUE.md task T-004 in the Banira repo.
-On this machine (which has real DNS), install dnspython and run tools/domaincheck/domaincheck.py
-against the listed domains with --json. For each, compare with dig output. Save results and any
-discrepancies to tools/domaincheck/live_test_<date>.md, file bugs as new TASK_QUEUE rows,
-update T-004 status and add a handoff entry.
+Read README.md, AGENT_HANDOFF.md, TASK_QUEUE.md (T-101) and OPERATIONS.md SOP-2 in the Banira repo.
+Run `cd automations/lead-desk && npm run build:example`. Guide the owner (screen-by-screen) to create a
+Google Sheet in the Banira Google account, paste dist/example/*.gs + appsscript.json into Extensions →
+Apps Script, set script property DRY_RUN=true, run setup(), then execute the tests in checklist steps 3–4
+with owner-controlled test addresses. Record timings and results in automations/lead-desk/LIVE_TEST.md.
+File defects as TASK_QUEUE rows with failing tests. Do not send to any address the owner doesn't control.
 ```

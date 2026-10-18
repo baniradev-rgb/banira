@@ -1,64 +1,72 @@
-# BUSINESS_MODEL — v0.1 (pre-validation)
+# BUSINESS_MODEL — v1.0 (AI automation agency, pre-validation)
 
-Owner: Claude Cowork · 18 Oct 2026 · Every price, rate and conversion below is an **[A] assumption** until Stage 3 produces evidence.
+Owner: Claude Cowork · 18 Oct 2026 · All prices, rates and hours are **[A] assumptions** until real sales.
 
 ## One sentence
-**Small accounting and real-estate firms pay Banira $349 once (plus an optional $29/month) to make their email provably authentic — so invoices and closing instructions reach the inbox and nobody can send email pretending to be them.**
+**Banira is an automation agency. Its first product, Lead Desk, gives owner-run service businesses an instant reply, a lead score and automatic follow-up for every web inquiry, installed in their own Google account for a one-off $490.**
 
 | Question | Answer |
 |---|---|
-| Who pays? | Owner/partner of a 3–50-person professional firm with its own domain and no in-house IT. Beachhead: accounting/tax/bookkeeping firms and real-estate brokerages/title & escrow offices (wire-fraud and invoice-fraud exposure). |
-| How much? | **$349** fixed setup ("Banira Seal"). **$29/month** monitoring ("Banira Watch"). Free **Domain Check** report as lead magnet. |
-| What outcome? | Within 45 days: SPF, DKIM and DMARC valid and aligned for every legitimate sender; DMARC at `p=quarantine` or `p=reject`; written verification report. Guarantee: full refund if enforcement isn't reached for causes within our control. |
+| Who pays? | The owner of a home-service business (HVAC, plumbing, electrical, roofing, remodeling, landscaping, cleaning) with 3–30 staff, a website form and Gmail/Google Workspace |
+| How much? | $490 setup (Core), $890 (Plus), $290 for 3 founding clients. Optional Care $49/$79 per month. Custom automation from $1,500 |
+| What outcome? | Every inquiry gets a reply in minutes, day or night. The owner sees the best leads first, and nobody is forgotten, because polite follow-ups stop the moment the customer replies |
 
-## Customer problem
-- Their mail fails authentication → bounces (550 5.7.26 / 5.7.515) or spam folder [V: provider rules, Zoho thread].
-- Anyone can spoof their domain to clients → invoice/wire fraud; BEC losses $3.05B in 2025 [V: IC3].
-- DIY tools assume IT knowledge; $20 gigs stop at publishing a record; consultants price for enterprises [V/E].
+## Agency architecture (how one offer grows into an agency)
+```
+Banira (agency)
+├── Standard systems — fixed scope, fixed price, config-driven, tested
+│   ├── Lead Desk Core        ← launch product
+│   ├── + Quote follow-up      (Plus module, next build)
+│   ├── + Review requests      (Plus module)
+│   ├── + Weekly report        (Plus module)
+│   └── later: missed-call text-back, AI reply drafts, Microsoft 365 version (budget/approval gated)
+├── Custom automation — scoped projects for existing clients (from $1,500)
+└── Shared machinery — engine, onboarding generator, presets, QC tests, delivery SOPs
+```
+Rule: a custom request becomes a standard module once three clients have asked for it.
 
 ## Offer
-| Tier | Includes | Price |
-|---|---|---|
-| Domain Check (free) | Passive public-DNS report, grade A–F, plain-English fixes | $0 |
-| **Seal** (one-off) | 30-min discovery call → inventory of every sending service → SPF/DKIM/DMARC configured with the client at their DNS host → staged policy (none → quarantine → reject) over 2–4 weeks with report review → verification report + 1-page "how to add a new email tool" guide | $349 (1 domain; +$99 per extra domain) |
-| **Watch** (monthly) | Monthly DMARC report review, alert on new/unknown senders or record drift, quarterly 1-page summary | $29/month |
+| Package | Setup | Care (optional) | Includes |
+|---|---|---|---|
+| Founding client (3 places) | $290 | $49/mo | Core, in exchange for a feedback call and permission to share anonymised results if the client is happy |
+| **Lead Desk Core** | **$490** | $49/mo | Replies for office hours, after hours and urgent requests; scoring and service-area check; owner alerts; daily digest; 3 follow-ups that stop on reply; Sheet tracker; about 7 days to go live; 30 days of fixes |
+| Lead Desk Plus | $890 | $79/mo | Core + quote follow-up + review requests + weekly report (modules to be built after the first Core sale) |
+| Custom | from $1,500 | quoted | Scoped after a call |
 
-## Differentiation
-1. Carries the domain **all the way to enforcement** (most DIY users stall at p=none [V: Valimail 75–80%]).
-2. Fixed price, written guarantee, plain English.
-3. Precise, verifiable result — Banira only claims what DNS and reports prove.
-4. No fear tactics, no scanning of systems; only public records are read before consent.
+**Care** covers log monitoring, up to 2 template changes a month, a monthly results email and fixes.
 
-## Delivery process (detail in OPERATIONS.md, Stage 6)
-Domain Check → call → client grants DNS edit (screen-share or delegated user; **never ask for passwords by email**) → publish p=none + rua → 7–14 days of reports parsed → fix unaligned senders → quarantine → reject → verify → hand-off report → Watch offer.
+## Value proposition and differentiation
+- **Speed:** a reply within minutes instead of hours. [V] 40% of firms in one study never replied at all.
+- **Ownership:** the system lives in the client's account, with no platform lock-in and no monthly software fee.
+- **Control:** every message is approved in advance, and the rules are predictable (no unsupervised AI talking to customers).
+- **Price:** a fixed, low setup fee against agency norms of $1,500+ and $500–4,000/month [V].
 
-## Revenue model & cost structure
-- Revenue: setup fees + monthly monitoring. No ads.
-- Fixed costs: **$0** target. Tools: dnspython, parsedmarc (open source), free mailbox for reports, free hosting for site. [A: free tiers remain adequate]
-- Variable: payment fees ≈ 2.9% + $0.30 per charge [A: typical US card pricing — confirm at account creation]; operator time ≈ 1.5 h per Seal, 0.25 h per Watch client-month [A].
+## Delivery process
+Intake form → `onboard.js` generates the client workspace → 15-minute call → client approves messages → 60–90 minute install by screen-share → tests → handover → day-7 check-in → day-30 Care offer. Full SOP: OPERATIONS.md.
 
-## Financial scenarios — first 6 months after first sale (computed; see FINANCIAL_TRACKER.md)
-Assumes no churn (simplification) and constant monthly sales.
+## Revenue model and costs
+- Revenue: setup fees, Care subscriptions, custom projects. Paid ads: none.
+- Fixed costs: **$0**. Lead Desk runs on the client's Google account; Banira's site runs on free static hosting (pending approval).
+- Variable: card fees ≈ 2.9% + $0.30 [A]. Operator time ≈ 6 h per install and 0.75 h per Care client-month [A, to be measured].
 
-| Scenario | Seals/month | Watch take-up | 6-mo revenue | Est. fees | Net before tax | Operator hours | Watch MRR at month 6 |
-|---|---|---|---|---|---|---|---|
-| Conservative | 1 | 30% | $2,277 | $70 | $2,207 | 11 | $52 |
-| Moderate | 3 | 50% | $7,196 | $224 | $6,972 | 35 | $261 |
-| Optimistic | 6 | 60% | $14,756 | $461 | $14,295 | 73 | $626 |
+## Financial scenarios: first 6 months after launch (no churn assumed; first 3 installs at $290)
+| Scenario | Installs/mo | Care take-up | Revenue | Est. fees | Net before tax | Hours | Net per hour | Care MRR at month 6 |
+|---|---|---|---|---|---|---|---|---|
+| Conservative | 1 | 30% | $2,649 | $81 | $2,568 | 41 | $63 | $88 |
+| Moderate | 2 | 40% | $6,103 | $186 | $5,918 | 85 | $70 | $235 |
+| Optimistic | 4 | 50% | $13,218 | $403 | $12,815 | 176 | $73 | $588 |
 
-These are **not forecasts**. Revenue to date: **$0**. No profitability claim can be made.
+These are not forecasts. **Actual revenue to date: $0.**
 
-## Acquisition (detail in Stage 7)
-1. Warm network: owner's contacts who run firms (fastest first conversation).
-2. Partners who already serve these firms without doing DNS work: bookkeepers, web designers, small MSPs, real-estate brokers' office managers — referral fee 20% [A].
-3. Targeted, personalised, low-volume email/LinkedIn to firms whose **public** DNS shows a real gap — every message cites the exact record, includes opt-out and postal address (CAN-SPAM), owner-approved.
-4. Helpful answers in communities where the pain is posted (e.g. provider forums) — no pitch where rules forbid.
+## Acquisition, retention, automation
+- Acquisition: sales/ACQUISITION.md (warm network → local trade partners → personalised outreach with a demo built for the prospect's trade).
+- Retention: Care; a monthly results email (response time, leads, replies) that shows the value; Plus modules; referrals (one free month of Care per referred install).
+- Automation: AUTOMATION_PLAN.md. Prospect research, config generation, approval documents, builds and QC are automated. Calls, installs and sending messages remain human tasks for now.
 
-## Retention
-Watch subscription; annual re-verification; alert when a client adds a new email tool; later add-ons (MTA-STS, BIMI readiness, staff phishing-awareness one-pager, accessibility check).
-
-## Automation strategy
-Automate: lead qualification (domaincheck batch), Domain Check report generation, DMARC report parsing, monthly Watch summaries, drift alerts. Human: discovery call, DNS change approval, any message sent externally.
-
-## Kill / pivot criteria (from VALIDATION)
-See `validation/VALIDATION_PLAN.md`.
+## Validation (what would make this fail)
+**Riskiest assumption:** owners will pay $290–490 for faster replies rather than "being better at checking email".
+**Test:** see sales/ACQUISITION.md §7: 30 qualified conversations within 30 days.
+- Pass: ≥3 paid installs.
+- 1–2 paid: keep going and refine the offer.
+- 0 paid with ≥10 demos: change the segment or price.
+- <5 demos: change the channel.

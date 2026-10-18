@@ -1,23 +1,26 @@
 # BANIRA_VISION
 
 ## Name
-**BANIRA** (バニラ) — the Japanese pronunciation of "vanilla". Fixed.
-Vanilla is the base everything else is built on: simple, recognisable, versatile, dependable. Banira does the foundational things businesses need, and does them precisely.
+**BANIRA** (バニラ) is the Japanese pronunciation of "vanilla": the plain, dependable base that everything else is built on. Banira builds that kind of system for businesses: simple, adaptable, precise and intelligently designed.
 
-## Personality
-Intelligent · minimalist · modern · precise · elegant · trustworthy · adaptable · quietly ambitious.
+## What Banira is
+An **AI automation agency** that takes repetitive work off small businesses with practical systems: customer inquiries, scheduling and follow-ups, admin workflows, reporting, CRM updates, and custom AI agents where they are worth it.
 
-## Draft mission (to refine in Stage 4)
-Make the essential infrastructure of small businesses work correctly — verified, explained plainly, and priced fairly.
+## How it grows
+1. **One standard system first:** Lead Desk (inquiry reply, scoring and follow-up), sold to home-service businesses.
+2. **Modules on the same engine:** quote follow-up, review requests and reporting (Lead Desk Plus).
+3. **Custom automation** for existing clients, turned into a standard module once three clients ask for it.
+4. **New verticals and platforms** (Microsoft 365, SMS, AI reply drafting), gated by evidence and budget.
+5. **Portfolio:** other businesses under the Banira parent brand, only after the agency earns steady revenue.
 
-## Draft vision
-A parent company of small, dependable digital businesses, each launched only after the previous one proves it can earn and operate reliably.
+## How AI runs the agency
+AI handles research, prospect qualification, configuration, message drafting, building, testing and reporting. The owner keeps the human moments: approving outreach, client calls, installs and money. Each manual step is automated only after it has been done the same way three times.
 
-## Why the first business fits the name
-Email authentication is "vanilla" infrastructure: invisible when right, costly when wrong, and needed by every business with a domain. Its results are provable, which suits a brand promising precision.
+## Principles
+Evidence before assumptions · customers before scale · working systems before presentations · simple before complicated · real revenue before expansion · automate what has been shown to work.
 
-## Expansion path (evidence-gated, not planned work)
-1. Email authentication (now) → 2. adjacent "trust layer" checks for the same clients (website accessibility, domain/SSL hygiene) → 3. productised software from the automation built for 1–2 → 4. other portfolio businesses (automation, audits, media) only after sustained revenue.
+## Mission
+Take repetitive work off small teams with automations that are simple to understand, cheap to run, and reliable enough to forget about.
 
-## Design direction constraints (for Stage 4)
-Warm ivory/cream, deep charcoal, restrained accent; clean typography; geometric simplicity; generous spacing; subtle references to foundation/growth/connected systems. Not food, not ice cream, no decorative Japanese imagery, no robots or heavy gradients.
+## Tagline
+Simple systems that run.

@@ -1,0 +1,14 @@
+id,opportunity,demand,route,zero_cost,differentiation,price_margin,automation,recurring,scalability,time_to_revenue,risk_safety,evidence_basis
+1,Lead intake: instant reply + scoring + follow-up (service businesses),5,4,5,3,3,5,3,4,4,4,V: 40% of 466 firms no reply in 5 days (Valve+Meter); 76.9% of 1823 sites no response promise (SeenOnMain vendor); 41.2% vs 1.9% qualification fast vs 24h (Visionary agency data); Apps Script free quotas
+2,Missed-call text-back,4,4,1,2,3,4,5,4,3,3,E: needs paid telephony/SMS + carrier (10DLC) registration; vendor stats only
+3,Appointment reminders / no-show reduction,4,3,2,2,3,4,4,4,3,3,V: reminder studies (vendor summaries); E: booking tools already include reminders; SMS costs
+4,AI website chatbot / support bot,3,3,2,1,3,2,4,3,3,2,V: ~9% of small businesses use AI for customer service (NFIB via vendor); LLM usage cost; answer-accuracy risk
+5,Review-request automation,4,3,5,2,2,5,3,4,4,3,V: BrightLocal 2026 consumer survey; E: low price point; Google policy forbids review gating
+6,Quote / estimate follow-up,4,3,5,3,3,4,3,4,4,4,V: beginner-agency report names estimate follow-up as a sellable workflow; E: natural add-on to #1
+7,Invoice and payment reminders,3,2,4,1,2,4,3,3,3,4,V: 87% of SMBs already automate billing (vcita 2026)
+8,Automated weekly business reporting,3,3,4,3,3,3,4,3,3,5,V: 52% of automating SMBs automate data analysis (Website Builder Expert survey n=322)
+9,CRM integrations / data sync,3,2,2,2,4,2,3,2,2,4,E: often needs paid connector tiers; custom per client
+10,AI email inbox triage and drafting,3,2,2,3,3,2,3,3,3,2,E: LLM cost; privacy of client inbox
+11,Custom AI agents,3,2,2,2,5,1,3,2,1,2,V: advanced AI workflows 30-60+ build hours (Taskip); E: high maintenance
+12,Business process optimisation consulting,3,3,5,2,4,1,2,1,3,4,E: hard to standardise; time-for-money
+13,Intake-to-document automation (forms to quotes/contracts),3,3,5,2,3,4,2,3,3,3,E

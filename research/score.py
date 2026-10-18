@@ -57,16 +57,15 @@ def scenarios(rows):
         "Base weights": WEIGHTS,
         "Revenue-first (price_margin 20, demand 22)": {**WEIGHTS, "price_margin": 20, "demand": 22},
         "Safety-first (risk_safety 15)": {**WEIGHTS, "risk_safety": 15},
-        "Route rated 1 point lower for email auth": None,  # handled below
+        "Leader's route rating cut by 1": None,  # handled below
     }
     out = []
     for name, w in alt.items():
         rs = [dict(r) for r in rows]
         if w is None:
             w = WEIGHTS
-            for r in rs:
-                if r["id"] == "2":
-                    r["route"] -= 1
+            leader = max(rs, key=lambda r: score(r, WEIGHTS))
+            leader["route"] = max(1, leader["route"] - 1)
         ranked = sorted(rs, key=lambda r: -score(r, w))[:3]
         out.append((name, [(r["opportunity"], round(score(r, w), 1)) for r in ranked]))
     return out
@@ -75,8 +74,8 @@ def scenarios(rows):
 def main():
     here = Path(__file__).parent
     ap = argparse.ArgumentParser()
-    ap.add_argument("--csv", default=here / "scoring_model.csv")
-    ap.add_argument("--out", default=here / "scoring_results.md")
+    ap.add_argument("--csv", default=here / "automation_services.csv")
+    ap.add_argument("--out", default=here / "automation_scoring_results.md")
     a = ap.parse_args()
     rows = load(a.csv)
     ranked = sorted(rows, key=lambda r: -score(r, WEIGHTS))

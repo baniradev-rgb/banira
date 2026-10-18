@@ -1,0 +1,823 @@
+<title>Banira Lead Desk</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Banira builds simple automations for small businesses. Lead Desk answers every web inquiry in minutes, scores it, alerts you and follows up — inside your own Google account.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064.00%2064.00%22%20width%3D%2264%22%20height%3D%2264%22%20role%3D%22img%22%20aria-label%3D%22Banira%22%3E%3Ctitle%3EBanira%3C/title%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231B1A18%22/%3E%3Cg%20transform%3D%22translate%286%205%29%20scale%280.82%29%22%3E%3Cline%20x1%3D%2217.5%22%20y1%3D%2210%22%20x2%3D%2217.5%22%20y2%3D%2250.5%22%20stroke%3D%22%23F6F2E9%22%20stroke-width%3D%229%22%20stroke-linecap%3D%22round%22/%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2237%22%20r%3D%2213.5%22%20fill%3D%22none%22%20stroke%3D%22%23F6F2E9%22%20stroke-width%3D%229%22/%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2237%22%20r%3D%225%22%20fill%3D%22%238CC4AE%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: asymmetric editorial column (text left, live system console right); hairline-ruled sections on an ivory ground. */
+:root {
+  --bg: #F6F2E9; --surface: #ECE5D6; --panel: #FBF9F4; --fg: #1B1A18; --fg-2: #4A4741; --muted: #6B655A;
+  --line: #D9D1C0; --accent: #2D5A4B; --accent-fg: #F6F2E9; --accent-soft: #DCE7E1;
+  --hot: #A63D2A; --warm: #85591A; --cold: #4F6C80; --spam: #6B655A;
+  --console: #1B1A18; --console-fg: #EEE8DC; --console-muted: #A8A194; --console-line: #34322D; --console-accent: #8CC4AE;
+  --f-display: "Geist", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Geist", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --s-1: .75rem; --s-2: .875rem; --s-3: 1rem; --s-4: 1.1875rem; --s-5: 1.4375rem; --s-6: 2rem; --s-7: 2.75rem; --s-8: 3.75rem;
+  --wrap: 72rem;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #131311; --surface: #1D1C19; --panel: #181715; --fg: #EEE8DC; --fg-2: #C9C2B4; --muted: #A8A194;
+  --line: #34322D; --accent: #8CC4AE; --accent-fg: #131311; --accent-soft: #23302B;
+  --hot: #E08A74; --warm: #D9AE64; --cold: #93B1C6; --spam: #A8A194;
+  --console: #0C0C0B; --console-fg: #EEE8DC; --console-muted: #A8A194; --console-line: #2A2925; --console-accent: #8CC4AE;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #131311; --surface: #1D1C19; --panel: #181715; --fg: #EEE8DC; --fg-2: #C9C2B4; --muted: #A8A194;
+  --line: #34322D; --accent: #8CC4AE; --accent-fg: #131311; --accent-soft: #23302B;
+  --hot: #E08A74; --warm: #D9AE64; --cold: #93B1C6; --spam: #A8A194;
+  --console: #0C0C0B; --console-fg: #EEE8DC; --console-muted: #A8A194; --console-line: #2A2925; --console-accent: #8CC4AE;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--fg); font-family: var(--f-body); font-size: var(--s-3); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.label { font-family: var(--f-mono); font-size: var(--s-1); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 500; letter-spacing: -.02em; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.25rem, 5vw, var(--s-8)); line-height: 1.04; }
+h2 { font-size: clamp(1.75rem, 3.4vw, var(--s-7)); line-height: 1.1; }
+h3 { font-size: var(--s-4); line-height: 1.3; }
+p { margin: 0; }
+.lede { font-size: var(--s-4); color: var(--fg-2); max-width: 34rem; }
+
+/* header */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .85rem; }
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--fg); }
+.brand svg { height: 28px; width: auto; display: block; }
+nav.main { display: flex; gap: 1.5rem; align-items: center; font-size: var(--s-2); }
+nav.main a { color: var(--fg-2); text-decoration: none; }
+nav.main a:hover { color: var(--fg); }
+nav.main a.btn, nav.main a.btn:hover { color: var(--accent-fg); }
+@media (max-width: 720px) { nav.main a:not(.btn) { display: none; } }
+
+.btn { display: inline-flex; align-items: center; gap: .5rem; font: 500 var(--s-2)/1 var(--f-body); padding: .8rem 1.1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-fg); text-decoration: none; cursor: pointer; }
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--fg); border-color: var(--line); }
+.btn.small { padding: .55rem .8rem; }
+
+/* hero */
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 4.5rem); padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2.5rem, 6vw, 4.5rem); align-items: start; }
+.hero-copy { display: grid; gap: 1.5rem; padding-top: .5rem; }
+.hero-copy .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.facts { display: grid; gap: .5rem; padding: 0; margin: .5rem 0 0; list-style: none; font-size: var(--s-2); color: var(--fg-2); }
+.facts li { display: flex; gap: .6rem; }
+.facts li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-top: .55em; flex: none; }
+@media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr; } }
+
+/* console */
+.console { background: var(--console); color: var(--console-fg); border-radius: 14px; overflow: hidden; font-size: var(--s-2); min-width: 0; }
+.console-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem 1rem; border-bottom: 1px solid var(--console-line); font-family: var(--f-mono); font-size: var(--s-1); color: var(--console-muted); }
+.console-bar .live { display: inline-flex; align-items: center; gap: .45rem; color: var(--console-accent); }
+.console-bar .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.console-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); }
+@media (max-width: 640px) { .console-body { grid-template-columns: 1fr; } }
+.c-form { padding: 1rem; display: grid; gap: .7rem; border-right: 1px solid var(--console-line); align-content: start; }
+@media (max-width: 640px) { .c-form { border-right: 0; border-bottom: 1px solid var(--console-line); } }
+.c-form label { display: grid; gap: .3rem; font-family: var(--f-mono); font-size: var(--s-1); color: var(--console-muted); }
+.c-form input, .c-form textarea, .c-form select { font: var(--s-2)/1.45 var(--f-body); color: var(--console-fg); background: transparent; border: 1px solid var(--console-line); border-radius: 6px; padding: .5rem .6rem; width: 100%; }
+.c-form textarea { resize: vertical; min-height: 5.5rem; }
+.c-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.presets { display: flex; flex-wrap: wrap; gap: .4rem; }
+.chip { font: var(--s-1)/1 var(--f-mono); color: var(--console-fg); background: transparent; border: 1px solid var(--console-line); border-radius: 999px; padding: .4rem .6rem; cursor: pointer; }
+.chip[aria-pressed="true"] { border-color: var(--console-accent); color: var(--console-accent); }
+.c-form .btn { justify-content: center; background: var(--console-accent); border-color: var(--console-accent); color: var(--console); }
+.c-out { padding: 1rem; display: grid; gap: .9rem; align-content: start; min-width: 0; }
+.step { display: grid; gap: .35rem; animation: rise .35s ease both; }
+.step:nth-child(2) { animation-delay: .08s; } .step:nth-child(3) { animation-delay: .16s; } .step:nth-child(4) { animation-delay: .24s; }
+@keyframes rise { from { opacity: .001; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .step { animation: none; } }
+.step-h { display: flex; justify-content: space-between; gap: .5rem; font-family: var(--f-mono); font-size: var(--s-1); color: var(--console-muted); }
+.step-h b { color: var(--console-fg); font-weight: 500; text-align: right; }
+.step-h span { white-space: nowrap; }
+.scoreline { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.meter { flex: 1 1 8rem; height: 6px; background: var(--console-line); border-radius: 3px; overflow: hidden; }
+.meter i { display: block; height: 100%; background: var(--console-accent); border-radius: 3px; transition: width .4s ease; }
+.pill { font: 500 var(--s-1)/1 var(--f-mono); padding: .3rem .5rem; border-radius: 4px; text-transform: uppercase; letter-spacing: .06em; border: 1px solid currentColor; }
+.pill.hot { color: #E08A74; } .pill.warm { color: #D9AE64; } .pill.cold { color: #93B1C6; } .pill.spam, .pill.invalid { color: var(--console-muted); }
+.mail { background: #ffffff0d; border: 1px solid var(--console-line); border-radius: 8px; padding: .7rem .8rem; white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--s-1); line-height: 1.55; font-family: var(--f-mono); color: var(--console-fg); max-height: 15rem; overflow: auto; }
+.mail .subj { display: block; color: var(--console-accent); margin-bottom: .4rem; }
+.reasons { font-family: var(--f-mono); font-size: var(--s-1); color: var(--console-muted); }
+.timeline { display: grid; gap: .25rem; margin: 0; padding: 0; list-style: none; font-family: var(--f-mono); font-size: var(--s-1); color: var(--console-muted); }
+.timeline li { display: grid; grid-template-columns: 5.5rem 1fr; gap: .5rem; }
+.timeline li b { color: var(--console-fg); font-weight: 400; }
+.console-foot { padding: .6rem 1rem; border-top: 1px solid var(--console-line); font-family: var(--f-mono); font-size: var(--s-1); color: var(--console-muted); }
+
+/* sections */
+section.band { border-top: 1px solid var(--line); }
+section.band > .wrap { padding-block: clamp(3rem, 7vw, 5.5rem); display: grid; gap: 2.5rem; }
+.sec-head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 5vw, 4.5rem); align-items: end; }
+.sec-head .label { grid-column: 1 / -1; margin-bottom: -1.25rem; }
+@media (max-width: 900px) { .sec-head { grid-template-columns: 1fr; } }
+
+.evidence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--fg); }
+.evidence > div { padding: 1.25rem 1.5rem 0 0; display: grid; gap: .6rem; align-content: start; }
+.evidence > div + div { padding-left: 1.5rem; border-left: 1px solid var(--line); }
+.evidence .num { font-family: var(--f-display); font-size: clamp(2.5rem, 5vw, var(--s-8)); font-weight: 500; letter-spacing: -.03em; line-height: 1; font-variant-numeric: tabular-nums; }
+.evidence p { color: var(--fg-2); font-size: var(--s-2); }
+.evidence cite { font-style: normal; font-family: var(--f-mono); font-size: var(--s-1); color: var(--muted); }
+@media (max-width: 760px) { .evidence { grid-template-columns: 1fr; } .evidence > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); padding-top: 1.25rem; margin-top: 1.25rem; } }
+
+.flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; counter-reset: s; margin: 0; padding: 0; list-style: none; }
+.flow li { counter-increment: s; padding: 1rem 1.25rem 0 0; border-top: 1px solid var(--line); display: grid; gap: .5rem; align-content: start; position: relative; }
+.flow li::before { content: counter(s, decimal-leading-zero); font-family: var(--f-mono); font-size: var(--s-1); color: var(--accent); }
+.flow li::after { content: ""; position: absolute; top: -4px; left: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.flow p { font-size: var(--s-2); color: var(--fg-2); }
+.flow .t { font-family: var(--f-mono); font-size: var(--s-1); color: var(--muted); }
+@media (max-width: 900px) { .flow { grid-template-columns: 1fr 1fr; row-gap: 1.5rem; } }
+@media (max-width: 520px) { .flow { grid-template-columns: 1fr; } }
+
+.split { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.split > div { display: grid; gap: .5rem; align-content: start; }
+.split p { color: var(--fg-2); font-size: var(--s-2); }
+@media (max-width: 760px) { .split { grid-template-columns: 1fr; } }
+
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+@media (max-width: 900px) { .plans { grid-template-columns: 1fr; } }
+.plan { border: 1px solid var(--line); border-radius: 12px; padding: 1.5rem; display: grid; gap: 1rem; grid-template-rows: auto auto auto 1fr auto; background: var(--panel); }
+.plan.featured { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.plan .price { font-family: var(--f-display); font-size: var(--s-6); font-weight: 500; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.plan .price small { font-size: var(--s-2); color: var(--muted); font-weight: 400; letter-spacing: 0; }
+.plan .care { font-family: var(--f-mono); font-size: var(--s-1); color: var(--muted); }
+.plan ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .45rem; font-size: var(--s-2); color: var(--fg-2); }
+.plan li { display: grid; grid-template-columns: 1rem 1fr; gap: .4rem; }
+.plan li::before { content: "—"; color: var(--accent); }
+.plan .tag { justify-self: start; font: 500 var(--s-1)/1 var(--f-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--accent); background: var(--accent-soft); padding: .35rem .5rem; border-radius: 4px; }
+.custom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; border-top: 1px solid var(--line); padding-top: 1.5rem; color: var(--fg-2); font-size: var(--s-2); }
+
+/* start / intake */
+.intake { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 5vw, 4.5rem); }
+@media (max-width: 900px) { .intake { grid-template-columns: 1fr; } }
+.intake form { display: grid; gap: 1rem; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1.5rem; }
+.intake .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 560px) { .intake .grid2, .c-form .row2 { grid-template-columns: 1fr; } }
+.field { display: grid; gap: .35rem; font-size: var(--s-2); }
+.field span { color: var(--fg-2); font-weight: 500; }
+.field input, .field select, .field textarea { font: var(--s-3)/1.4 var(--f-body); color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: .65rem .75rem; width: 100%; }
+.field small { color: var(--muted); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.next-steps { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.next-steps li { display: grid; grid-template-columns: 2rem 1fr; gap: .75rem; font-size: var(--s-2); color: var(--fg-2); }
+.next-steps li b { display: block; color: var(--fg); font-weight: 500; font-size: var(--s-3); }
+.next-steps .n { font-family: var(--f-mono); font-size: var(--s-1); color: var(--accent); padding-top: .2rem; }
+.result { border: 1px solid var(--accent); border-radius: 12px; padding: 1.25rem; display: grid; gap: .75rem; background: var(--panel); }
+.result pre { margin: 0; font: var(--s-1)/1.55 var(--f-mono); background: var(--surface); padding: .9rem; border-radius: 8px; overflow: auto; max-height: 18rem; color: var(--fg); }
+.err { color: var(--hot); font-size: var(--s-2); }
+
+details { border-top: 1px solid var(--line); padding-block: 1rem; }
+details:last-child { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 500; font-size: var(--s-3); list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+summary::after { content: "+"; font-family: var(--f-mono); color: var(--accent); }
+details[open] summary::after { content: "–"; }
+details p { margin-top: .75rem; color: var(--fg-2); font-size: var(--s-2); max-width: 44rem; }
+.faq { max-width: 52rem; }
+
+footer.site { border-top: 1px solid var(--line); }
+footer.site .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; padding-block: 2rem 2.5rem; font-size: var(--s-2); color: var(--muted); }
+footer.site .jp { font-family: "Noto Sans JP", "Hiragino Sans", sans-serif; letter-spacing: .1em; }
+.copyable { font-family: var(--f-mono); user-select: all; color: var(--fg); }
+</style>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Banira home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236.14 64.00" height="28" aria-hidden="true" focusable="false" ><g transform="translate(0 0) scale(1.0)"><line x1="17.5" y1="10" x2="17.5" y2="50.5" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><circle cx="32" cy="37" r="13.5" fill="none" stroke="currentColor" stroke-width="7"/><circle cx="32" cy="37" r="4.25" style="fill:var(--accent)"/></g><path transform="translate(68.87 50.50) scale(0.05502)" d="M177 -80 174 0H75V-710H181V-457Q203 -494 245.0 -519.0Q287 -544 340 -544Q409 -544 460.0 -510.0Q511 -476 538.5 -413.0Q566 -350 566 -266Q566 -182 538.5 -119.0Q511 -56 460.0 -22.0Q409 12 340 12Q285 12 242.5 -12.0Q200 -36 177 -80ZM456 -266Q456 -353 420.5 -402.5Q385 -452 324 -452Q257 -452 219.0 -403.0Q181 -354 181 -266Q181 -179 218.5 -129.5Q256 -80 323 -80Q384 -80 420.0 -130.0Q456 -180 456 -266ZM665.0 -133Q665.0 -201 706.0 -240.0Q747.0 -279 835.0 -296L1018.0 -331Q1018.0 -454 904.0 -454Q805.0 -454 784.0 -365L674.0 -372Q689.0 -452 749.5 -498.0Q810.0 -544 904.0 -544Q1011.0 -544 1067.5 -486.5Q1124.0 -429 1124.0 -325V-118Q1124.0 -99 1131.0 -91.5Q1138.0 -84 1153.0 -84H1172.0V0Q1162.0 3 1133.0 3Q1086.0 3 1060.0 -17.0Q1034.0 -37 1027.0 -82Q1007.0 -40 958.0 -14.0Q909.0 12 847.0 12Q763.0 12 714.0 -26.5Q665.0 -65 665.0 -133ZM1018.0 -217V-251L863.0 -221Q816.0 -212 795.5 -193.0Q775.0 -174 775.0 -143Q775.0 -109 798.5 -90.5Q822.0 -72 865.0 -72Q935.0 -72 976.5 -112.0Q1018.0 -152 1018.0 -217ZM1290.0 -532H1387.0L1390.0 -440Q1410.0 -492 1452.5 -518.0Q1495.0 -544 1551.0 -544Q1638.0 -544 1684.5 -488.0Q1731.0 -432 1731.0 -342V0H1625.0V-310Q1625.0 -382 1600.5 -418.5Q1576.0 -455 1522.0 -455Q1465.0 -455 1430.5 -417.0Q1396.0 -379 1396.0 -310V0H1290.0ZM1891.0 -532H1997.0V0H1891.0ZM1889.0 -715H2000.0V-609H1889.0ZM2157.0 -532H2254.0L2257.0 -431Q2272.0 -483 2303.0 -507.5Q2334.0 -532 2384.0 -532H2435.0V-437H2384.0Q2323.0 -437 2293.0 -407.0Q2263.0 -377 2263.0 -314V0H2157.0ZM2533.0 -133Q2533.0 -201 2574.0 -240.0Q2615.0 -279 2703.0 -296L2886.0 -331Q2886.0 -454 2772.0 -454Q2673.0 -454 2652.0 -365L2542.0 -372Q2557.0 -452 2617.5 -498.0Q2678.0 -544 2772.0 -544Q2879.0 -544 2935.5 -486.5Q2992.0 -429 2992.0 -325V-118Q2992.0 -99 2999.0 -91.5Q3006.0 -84 3021.0 -84H3040.0V0Q3030.0 3 3001.0 3Q2954.0 3 2928.0 -17.0Q2902.0 -37 2895.0 -82Q2875.0 -40 2826.0 -14.0Q2777.0 12 2715.0 12Q2631.0 12 2582.0 -26.5Q2533.0 -65 2533.0 -133ZM2886.0 -217V-251L2731.0 -221Q2684.0 -212 2663.5 -193.0Q2643.0 -174 2643.0 -143Q2643.0 -109 2666.5 -90.5Q2690.0 -72 2733.0 -72Q2803.0 -72 2844.5 -112.0Q2886.0 -152 2886.0 -217Z" fill="currentColor"/></svg><span class="hp">Banira</span></a>
+    <nav class="main" aria-label="Main">
+      <a href="#demo">Demo</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+      <a class="btn small" href="#start">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="demo">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="label">Banira Lead Desk · automation for service businesses</span>
+      <h1>Every inquiry answered in minutes, even at 11&nbsp;pm.</h1>
+      <p class="lede">Lead Desk replies to each new web inquiry, scores it, alerts you to the ones that matter and follows up until the customer answers. It runs inside your own Google account, so there's no new software to pay for.</p>
+      <div class="actions"><a class="btn" href="#start">Start a project</a><a class="btn ghost" href="#pricing">See pricing</a></div>
+      <ul class="facts">
+        <li>Set up in about a week, from a short intake form</li>
+        <li>Nothing to install, and no monthly software fees</li>
+        <li>You approve every message before it goes live</li>
+      </ul>
+    </div>
+
+    <div class="console" aria-label="Live Lead Desk demo">
+      <div class="console-bar"><span class="live">Live demo · runs the real engine</span><span id="clock">Northfield Heating &amp; Air (fictional)</span></div>
+      <div class="console-body">
+        <form class="c-form" id="demoForm" autocomplete="off">
+          <div class="presets" role="group" aria-label="Sample inquiries">
+            <button type="button" class="chip" data-preset="urgent" aria-pressed="true">Urgent repair</button>
+            <button type="button" class="chip" data-preset="quote" aria-pressed="false">Quote, after hours</button>
+            <button type="button" class="chip" data-preset="far" aria-pressed="false">Out of area</button>
+            <button type="button" class="chip" data-preset="spam" aria-pressed="false">Spam</button>
+          </div>
+          <div class="row2">
+            <label for="d-name">Name<input id="d-name" name="name"></label>
+            <label for="d-zip">ZIP<input id="d-zip" name="zip" inputmode="numeric"></label>
+          </div>
+          <label for="d-email">Email<input id="d-email" name="email" type="email"></label>
+          <label for="d-msg">Message<textarea id="d-msg" name="message"></textarea></label>
+          <label for="d-when">Received at<select id="d-when" name="when">
+            <option value="open">Tuesday 2:00 pm (open)</option>
+            <option value="closed">Tuesday 11:30 pm (closed)</option>
+          </select></label>
+          <button class="btn" type="submit">Send test inquiry</button>
+        </form>
+        <div class="c-out" id="demoOut" aria-live="polite"></div>
+      </div>
+      <div class="console-foot">Nothing is emailed in this demo. On a client's system, the same steps run in their Gmail and Google Sheets.</div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">The problem</span>
+      <h2>Slow replies lose jobs before anyone notices.</h2>
+      <p class="lede">Customers who fill in a form usually contact two or three companies. The first one to reply often wins the job, and many small firms only see inquiries hours later.</p>
+    </div>
+    <div class="evidence">
+      <div><span class="num">40%</span><p>of 466 home-service companies hadn't replied to a service request after five days.</p><cite>Valve+Meter secret-shopper study, via Pro Remodeler</cite></div>
+      <div><span class="num">77%</span><p>of 1,823 home-service websites make no promise about how fast they'll reply.</p><cite>SeenOnMain audit, Sept 2026 (vendor study)</cite></div>
+      <div><span class="num">41% vs 2%</span><p>of leads qualified when contacted within 1–5 minutes, against those contacted after 24 hours (28,400 leads).</p><cite>Visionary Marketing, Q1 2026 (agency data)</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">How it works</span>
+      <h2>Five steps, every time, without you.</h2>
+      <p class="lede">Lead Desk only sends messages you've approved. Anything unusual is left to you.</p>
+    </div>
+    <ol class="flow">
+      <li><span class="t">0 min</span><h3>Inquiry arrives</h3><p>From your website form or a Google Form. Spam and bots are filtered out.</p></li>
+      <li><span class="t">within minutes</span><h3>Customer gets a reply</h3><p>A personal note for office hours, after hours or emergencies, with your booking link.</p></li>
+      <li><span class="t">same time</span><h3>You get an alert</h3><p>Name, service, score and the reasons for it, so you call the best leads first.</p></li>
+      <li><span class="t">day 1 · 3 · 7</span><h3>Polite follow-ups</h3><p>They stop as soon as the customer replies or asks you to stop.</p></li>
+      <li><span class="t">7:00 every day</span><h3>Daily summary</h3><p>New leads, who replied and who is still waiting, all in one Google Sheet.</p></li>
+    </ol>
+    <div class="split">
+      <div><h3>Yours to keep</h3><p>It runs in your Google account and records everything in a sheet you own. If you stop working with us, it keeps running.</p></div>
+      <div><h3>Built to be reliable</h3><p>Fixed rules decide what gets sent, so no AI writes to your customers unchecked. Errors are logged and emailed to you, and test mode sends nothing.</p></div>
+      <div><h3>Tested before launch</h3><p>Every install is checked against your real hours, services and service area before it goes live. The engine is covered by automated tests.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Pricing</span>
+      <h2>Fixed prices. No retainer required.</h2>
+      <p class="lede">You pay once for setup. Care is optional: we watch the logs, adjust templates and send you a monthly report.</p>
+    </div>
+    <div class="plans">
+      <article class="plan">
+        <span class="tag">3 places</span>
+        <h3>Founding client</h3>
+        <div><div class="price">$290 <small>setup</small></div><div class="care">Care optional · $49/mo</div></div>
+        <ul><li>Everything in Lead Desk Core</li><li>In return: a 20-minute feedback call, and permission to share your results anonymously if you're happy</li></ul>
+        <a class="btn ghost" href="#start" data-plan="founding">Apply</a>
+      </article>
+      <article class="plan featured">
+        <span class="tag">Most businesses</span>
+        <h3>Lead Desk Core</h3>
+        <div><div class="price">$490 <small>setup</small></div><div class="care">Care optional · $49/mo</div></div>
+        <ul><li>Replies for office hours, after hours and emergencies</li><li>Lead scoring and service-area check</li><li>Owner alerts and a daily summary</li><li>Three follow-ups that stop when the customer replies</li><li>Google Sheet lead tracker</li><li>Live in about 7 days, with 30 days of fixes included</li></ul>
+        <a class="btn" href="#start" data-plan="core">Start with Core</a>
+      </article>
+      <article class="plan">
+        <span class="tag">In development</span>
+        <h3>Lead Desk Plus</h3>
+        <div><div class="price">$890 <small>setup</small></div><div class="care">Care optional · $79/mo</div></div>
+        <ul><li>Everything in Core</li><li>Available once Core is running for our first clients. Join the list to be first.</li><li>Follow-up on quotes you've sent</li><li>Review requests after a finished job</li><li>Weekly report on response times and lead sources</li></ul>
+        <a class="btn ghost" href="#start" data-plan="plus">Join the list</a>
+      </article>
+    </div>
+    <div class="custom"><span>Need something else automated, such as scheduling, reporting or CRM updates? Custom projects start at $1,500 and are scoped after a call.</span><a href="#start" data-plan="custom">Tell us about it</a></div>
+  </div>
+</section>
+
+<section class="band" id="start">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Start a project</span>
+      <h2>Ten questions, then we build it.</h2>
+      <p class="lede">Your answers become the setup for your system. You'll receive a draft of every message for approval before anything goes live.</p>
+    </div>
+    <div class="intake">
+      <ol class="next-steps">
+        <li><span class="n">01</span><div><b>You send this form</b>We reply within one business day, through our own Lead Desk.</div></li>
+        <li><span class="n">02</span><div><b>15-minute call</b>We confirm your services, hours and how inquiries reach you today.</div></li>
+        <li><span class="n">03</span><div><b>Approve your messages</b>You get drafts of every reply and follow-up and can change any of them.</div></li>
+        <li><span class="n">04</span><div><b>Go live</b>We install it in your Google account, test it with you, and switch it on.</div></li>
+      </ol>
+      <div>
+        <form id="intake" name="intake" method="POST" data-netlify="true" netlify-honeypot="company_website_hp" novalidate>
+          <input type="hidden" name="form-name" value="intake">
+          <p class="hp"><label>Leave empty <input name="company_website_hp" tabindex="-1" autocomplete="off"></label></p>
+          <div class="grid2">
+            <label class="field" for="i-name"><span>Your name</span><input id="i-name" name="name" required autocomplete="name"></label>
+            <label class="field" for="i-email"><span>Email</span><input id="i-email" name="email" type="email" required autocomplete="email"></label>
+          </div>
+          <div class="grid2">
+            <label class="field" for="i-biz"><span>Business name</span><input id="i-biz" name="business_name" required autocomplete="organization"></label>
+            <label class="field" for="i-site"><span>Website</span><input id="i-site" name="website" placeholder="example.com"></label>
+          </div>
+          <div class="grid2">
+            <label class="field" for="i-ind"><span>Type of business</span><select id="i-ind" name="industry">
+              <option>HVAC / heating &amp; cooling</option><option>Plumbing</option><option>Electrical</option><option>Roofing</option><option>Remodeling / contractor</option><option>Landscaping</option><option>Cleaning</option><option>Other service business</option></select></label>
+            <label class="field" for="i-plan"><span>Package</span><select id="i-plan" name="plan">
+              <option value="founding">Founding client ($290)</option><option value="core" selected>Lead Desk Core ($490)</option><option value="plus">Lead Desk Plus ($890, waitlist)</option><option value="custom">Custom automation</option></select></label>
+          </div>
+          <div class="grid2">
+            <label class="field" for="i-mail"><span>Email system</span><select id="i-mail" name="mail_system">
+              <option value="google">Gmail / Google Workspace</option><option value="microsoft">Outlook / Microsoft 365</option><option value="other">Other / not sure</option></select>
+              <small id="mailNote">Lead Desk currently runs on Google.</small></label>
+            <label class="field" for="i-vol"><span>Inquiries per week</span><select id="i-vol" name="weekly_inquiries">
+              <option>Fewer than 5</option><option selected>5–20</option><option>20–50</option><option>More than 50</option></select></label>
+          </div>
+          <label class="field" for="i-src"><span>Where do inquiries come from today?</span><input id="i-src" name="lead_sources" placeholder="Website form, Google Business Profile, phone…"></label>
+          <label class="field" for="i-svc"><span>Main services (comma separated)</span><input id="i-svc" name="services" placeholder="AC repair, furnace install, tune-ups"></label>
+          <div class="grid2">
+            <label class="field" for="i-hours"><span>Opening hours</span><input id="i-hours" name="hours" placeholder="Mon–Fri 8–6, Sat 9–1"></label>
+            <label class="field" for="i-tz"><span>Time zone</span><select id="i-tz" name="timezone">
+              <option value="America/New_York">Eastern</option><option value="America/Chicago">Central</option><option value="America/Denver">Mountain</option><option value="America/Phoenix">Arizona</option><option value="America/Los_Angeles">Pacific</option><option value="Europe/London">UK</option></select></label>
+          </div>
+          <label class="field" for="i-note"><span>Anything else?</span><textarea id="i-note" name="message" rows="3"></textarea></label>
+          <p class="err" id="intakeErr" hidden></p>
+          <button class="btn" type="submit">Send project details</button>
+        </form>
+        <div class="result" id="intakeResult" hidden></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq">
+  <div class="wrap">
+    <div class="sec-head"><span class="label">Questions</span><h2>Straight answers.</h2></div>
+    <div class="faq">
+      <details><summary>Does Lead Desk use AI?</summary><p>We use AI to build and test your system faster: drafting message options, checking your setup and reviewing logs. The system itself follows fixed rules you've approved, because messages to your customers need to be predictable. AI-written replies may become an option later, but only with your approval and your own API key.</p></details>
+      <details><summary>What do I need?</summary><p>A Google account (Gmail or Google Workspace) that you send customer email from, and a website form or Google Form. If you use Outlook or Microsoft 365, tell us. A Microsoft version is planned but not available yet.</p></details>
+      <details><summary>Are there monthly costs?</summary><p>Not from us unless you choose Care. Lead Desk runs on Google's free automation service (Apps Script). Google limits how many emails it sends per day: 100 for free Gmail accounts and 1,500 for Workspace. That's plenty for most small businesses, and we check your volume before setup.</p></details>
+      <details><summary>Who can see my customers' details?</summary><p>Your customers' details stay in your Google account. During setup we work in your account with your permission, and we don't keep copies after handover.</p></details>
+      <details><summary>What if something breaks?</summary><p>Errors are logged and emailed to you, at most once an hour. The first 30 days of fixes are included. After that, Care covers fixes, or we quote per job.</p></details>
+      <details><summary>Can Banira automate other things?</summary><p>Yes. Lead Desk is our first standard system. We also take on custom work such as scheduling, reporting, CRM updates and email workflows, quoted after a call.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236.14 64.00" height="22" aria-hidden="true" focusable="false" ><g transform="translate(0 0) scale(1.0)"><line x1="17.5" y1="10" x2="17.5" y2="50.5" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><circle cx="32" cy="37" r="13.5" fill="none" stroke="currentColor" stroke-width="7"/><circle cx="32" cy="37" r="4.25" style="fill:var(--accent)"/></g><path transform="translate(68.87 50.50) scale(0.05502)" d="M177 -80 174 0H75V-710H181V-457Q203 -494 245.0 -519.0Q287 -544 340 -544Q409 -544 460.0 -510.0Q511 -476 538.5 -413.0Q566 -350 566 -266Q566 -182 538.5 -119.0Q511 -56 460.0 -22.0Q409 12 340 12Q285 12 242.5 -12.0Q200 -36 177 -80ZM456 -266Q456 -353 420.5 -402.5Q385 -452 324 -452Q257 -452 219.0 -403.0Q181 -354 181 -266Q181 -179 218.5 -129.5Q256 -80 323 -80Q384 -80 420.0 -130.0Q456 -180 456 -266ZM665.0 -133Q665.0 -201 706.0 -240.0Q747.0 -279 835.0 -296L1018.0 -331Q1018.0 -454 904.0 -454Q805.0 -454 784.0 -365L674.0 -372Q689.0 -452 749.5 -498.0Q810.0 -544 904.0 -544Q1011.0 -544 1067.5 -486.5Q1124.0 -429 1124.0 -325V-118Q1124.0 -99 1131.0 -91.5Q1138.0 -84 1153.0 -84H1172.0V0Q1162.0 3 1133.0 3Q1086.0 3 1060.0 -17.0Q1034.0 -37 1027.0 -82Q1007.0 -40 958.0 -14.0Q909.0 12 847.0 12Q763.0 12 714.0 -26.5Q665.0 -65 665.0 -133ZM1018.0 -217V-251L863.0 -221Q816.0 -212 795.5 -193.0Q775.0 -174 775.0 -143Q775.0 -109 798.5 -90.5Q822.0 -72 865.0 -72Q935.0 -72 976.5 -112.0Q1018.0 -152 1018.0 -217ZM1290.0 -532H1387.0L1390.0 -440Q1410.0 -492 1452.5 -518.0Q1495.0 -544 1551.0 -544Q1638.0 -544 1684.5 -488.0Q1731.0 -432 1731.0 -342V0H1625.0V-310Q1625.0 -382 1600.5 -418.5Q1576.0 -455 1522.0 -455Q1465.0 -455 1430.5 -417.0Q1396.0 -379 1396.0 -310V0H1290.0ZM1891.0 -532H1997.0V0H1891.0ZM1889.0 -715H2000.0V-609H1889.0ZM2157.0 -532H2254.0L2257.0 -431Q2272.0 -483 2303.0 -507.5Q2334.0 -532 2384.0 -532H2435.0V-437H2384.0Q2323.0 -437 2293.0 -407.0Q2263.0 -377 2263.0 -314V0H2157.0ZM2533.0 -133Q2533.0 -201 2574.0 -240.0Q2615.0 -279 2703.0 -296L2886.0 -331Q2886.0 -454 2772.0 -454Q2673.0 -454 2652.0 -365L2542.0 -372Q2557.0 -452 2617.5 -498.0Q2678.0 -544 2772.0 -544Q2879.0 -544 2935.5 -486.5Q2992.0 -429 2992.0 -325V-118Q2992.0 -99 2999.0 -91.5Q3006.0 -84 3021.0 -84H3040.0V0Q3030.0 3 3001.0 3Q2954.0 3 2928.0 -17.0Q2902.0 -37 2895.0 -82Q2875.0 -40 2826.0 -14.0Q2777.0 12 2715.0 12Q2631.0 12 2582.0 -26.5Q2533.0 -65 2533.0 -133ZM2886.0 -217V-251L2731.0 -221Q2684.0 -212 2663.5 -193.0Q2643.0 -174 2643.0 -143Q2643.0 -109 2666.5 -90.5Q2690.0 -72 2733.0 -72Q2803.0 -72 2844.5 -112.0Q2886.0 -152 2886.0 -217Z" fill="currentColor"/></svg><p style="margin-top:.5rem">Simple systems that run. <span class="jp">バニラ</span></p></div>
+    <div>Contact: <span class="copyable">hello@banira (address pending)</span></div>
+    <div>Northfield Heating &amp; Air is a fictional business used for the demo.</div>
+  </div>
+</footer>
+
+<script>
+/**
+ * Banira Lead Desk — core engine (v1.0.0)
+ *
+ * Pure functions, no I/O. The SAME file runs in:
+ *   - Google Apps Script (copied in as Engine.gs)   → production
+ *   - the browser (website live demo)               → sales demo
+ *   - Node (unit tests, simulator)                  → QA
+ *
+ * Inputs:  a raw inquiry + a client config (see examples/config.example.json)
+ * Outputs: a processed lead (score, tier, service, urgency), the instant reply,
+ *          the owner alert, and the follow-up plan.
+ */
+var LeadEngine = (function () {
+  'use strict';
+
+  var VERSION = '1.0.0';
+  var DAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+  var EMAIL_RE = /^[^\s@<>()[\],;:"]+@[^\s@<>()[\],;:"]+\.[a-z]{2,}$/i;
+
+  var DEFAULT_SPAM = ['seo services', 'backlinks', 'crypto', 'bitcoin', 'casino', 'loan offer',
+    'guest post', 'rank your website', 'web design services', 'increase your traffic', 'viagra'];
+
+  function str(v) { return v === undefined || v === null ? '' : String(v).trim(); }
+
+  function lower(v) { return str(v).toLowerCase(); }
+
+  /** Map arbitrary form field names onto the standard lead shape. */
+  function normalizeLead(raw, receivedAt) {
+    raw = raw || {};
+    var pick = function (keys) {
+      for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        for (var rk in raw) {
+          if (Object.prototype.hasOwnProperty.call(raw, rk) && lower(rk) === k) {
+            var v = raw[rk];
+            if (Array.isArray(v)) v = v.join(', ');
+            if (str(v)) return str(v);
+          }
+        }
+      }
+      return '';
+    };
+    var name = pick(['name', 'full name', 'your name', 'first name']);
+    var lead = {
+      name: name,
+      firstName: name.split(/\s+/)[0] || '',
+      email: lower(pick(['email', 'email address', 'your email', 'e-mail'])),
+      phone: pick(['phone', 'phone number', 'mobile', 'telephone']),
+      message: pick(['message', 'how can we help?', 'details', 'comments', 'project details', 'description']),
+      service: pick(['service', 'service needed', 'what do you need?', 'topic']),
+      zip: pick(['zip', 'zip code', 'postcode', 'postal code']),
+      source: pick(['source', 'how did you hear about us?']) || 'website form',
+      honeypot: pick(['website_url', 'company_website_hp']),
+      receivedAt: receivedAt ? new Date(receivedAt) : new Date()
+    };
+    lead.phoneDigits = lead.phone.replace(/\D/g, '');
+    return lead;
+  }
+
+  /** Returns {ok, spam, errors[], reasons[]} */
+  function validateLead(lead, config) {
+    var errors = [];
+    var reasons = [];
+    if (!lead.email && !lead.phoneDigits) errors.push('No email or phone provided');
+    if (lead.email && !EMAIL_RE.test(lead.email)) errors.push('Email address looks invalid');
+    if (lead.phoneDigits && (lead.phoneDigits.length < 7 || lead.phoneDigits.length > 15)) errors.push('Phone number looks invalid');
+
+    var spamScore = 0;
+    if (lead.honeypot) { spamScore += 10; reasons.push('Hidden honeypot field was filled (bot)'); }
+    var text = lower(lead.message + ' ' + lead.service);
+    var spamWords = (config && config.spam_keywords) || DEFAULT_SPAM;
+    spamWords.forEach(function (w) { if (text.indexOf(lower(w)) !== -1) { spamScore += 3; reasons.push('Spam phrase: "' + w + '"'); } });
+    var links = (lead.message.match(/https?:\/\//gi) || []).length;
+    if (links >= 2) { spamScore += 3; reasons.push(links + ' links in message'); }
+    if (/[Ѐ-ӿ]{10,}/.test(lead.message) && !(config && config.allow_cyrillic)) { spamScore += 2; reasons.push('Unexpected script in message'); }
+    return { ok: errors.length === 0, spam: spamScore >= 3, spamScore: spamScore, errors: errors, reasons: reasons };
+  }
+
+  function classifyService(lead, services) {
+    services = services || [];
+    var text = lower(lead.service + ' ' + lead.message);
+    var best = null;
+    var bestHits = 0;
+    services.forEach(function (s) {
+      var hits = 0;
+      if (lead.service && lower(lead.service) === lower(s.label)) hits += 5;
+      (s.keywords || []).forEach(function (k) { if (text.indexOf(lower(k)) !== -1) hits += 1; });
+      if (hits > bestHits) { best = s; bestHits = hits; }
+    });
+    return best ? { key: best.key, label: best.label, value: best.value || 'medium', matched: bestHits } :
+      { key: 'other', label: 'General inquiry', value: 'low', matched: 0 };
+  }
+
+  function detectUrgency(lead, config) {
+    var words = (config && config.urgency_keywords) || [];
+    var text = lower(lead.message + ' ' + lead.service);
+    var found = words.filter(function (w) { return text.indexOf(lower(w)) !== -1; });
+    return { urgent: found.length > 0, matched: found };
+  }
+
+  /** Local wall-clock parts for a timezone without external libraries. */
+  function localParts(date, timeZone) {
+    try {
+      var fmt = new Intl.DateTimeFormat('en-US', { timeZone: timeZone || 'UTC', hour12: false,
+        weekday: 'short', hour: '2-digit', minute: '2-digit' });
+      var parts = {};
+      fmt.formatToParts(date).forEach(function (p) { parts[p.type] = p.value; });
+      var hour = parseInt(parts.hour, 10) % 24;
+      return { day: lower(parts.weekday).slice(0, 3), hour: hour, minute: parseInt(parts.minute, 10) };
+    } catch (e) {
+      return { day: DAY_KEYS[date.getUTCDay()], hour: date.getUTCHours(), minute: date.getUTCMinutes() };
+    }
+  }
+
+  function isOpen(date, business) {
+    var p = localParts(date, business.timezone);
+    var h = (business.hours || {})[p.day];
+    if (!h || h.length !== 2) return false;
+    var t = p.hour + p.minute / 60;
+    return t >= h[0] && t < h[1];
+  }
+
+  function inServiceArea(lead, business) {
+    var zips = business.service_area_zips || [];
+    if (!zips.length) return null;          // not configured
+    if (!lead.zip) return null;             // unknown
+    var z = lead.zip.replace(/\s/g, '').slice(0, 5);
+    return zips.some(function (p) { return z.indexOf(String(p)) === 0; });
+  }
+
+  /** 0–100 score with human-readable reasons. */
+  function scoreLead(lead, config, svc, urg) {
+    var w = Object.assign({ service_high: 30, service_medium: 18, service_low: 6, urgent: 25,
+      has_phone: 10, detailed_message: 10, in_area: 15, out_of_area: -30, returning_hint: 5 }, config.scoring || {});
+    var score = 0;
+    var reasons = [];
+    var add = function (pts, why) { if (pts) { score += pts; reasons.push((pts > 0 ? '+' : '') + pts + ' ' + why); } };
+    add(w['service_' + svc.value] || 0, svc.label + ' (' + svc.value + ' value)');
+    if (urg.urgent) add(w.urgent, 'urgent: ' + urg.matched.join(', '));
+    if (lead.phoneDigits) add(w.has_phone, 'phone provided');
+    if (lead.message.split(/\s+/).length >= 15) add(w.detailed_message, 'detailed message');
+    var area = inServiceArea(lead, config.business);
+    if (area === true) add(w.in_area, 'inside service area');
+    if (area === false) add(w.out_of_area, 'outside service area');
+    if (/\b(existing customer|last time you|you (?:installed|serviced|fixed|came out))\b/i.test(lead.message)) add(w.returning_hint, 'may be a returning customer');
+    score = Math.max(0, Math.min(100, score));
+    var t = Object.assign({ hot: 60, warm: 30 }, config.tiers || {});
+    var tier = score >= t.hot ? 'hot' : score >= t.warm ? 'warm' : 'cold';
+    return { score: score, tier: tier, reasons: reasons, inArea: area };
+  }
+
+  /** {{var}} substitution. Unknown vars become ''. No HTML is produced. */
+  function render(tpl, vars) {
+    return str(tpl).replace(/\{\{\s*([a-z_]+)\s*\}\}/gi, function (_, k) {
+      var v = vars[k];
+      return v === undefined || v === null ? '' : String(v);
+    }).replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+  }
+
+  function templateVars(lead, config, svc) {
+    var b = config.business;
+    return {
+      first_name: lead.firstName || 'there',
+      name: lead.name,
+      business_name: b.name,
+      owner_name: b.owner_name,
+      phone: b.phone,
+      booking_url: b.booking_url || '',
+      service: svc.label.toLowerCase(),
+      response_window: b.response_window || 'within one business day',
+      signature: b.signature || (b.owner_name + '\n' + b.name + (b.phone ? '\n' + b.phone : ''))
+    };
+  }
+
+  function buildReply(lead, config, svc, urg, open) {
+    var T = config.templates;
+    var key = urg.urgent && T.ack_urgent ? 'ack_urgent' : (open ? 'ack' : (T.ack_after_hours ? 'ack_after_hours' : 'ack'));
+    var vars = templateVars(lead, config, svc);
+    return {
+      template: key,
+      to: lead.email,
+      subject: render(T.subject || 'We received your request — {{business_name}}', vars),
+      body: render(T[key], vars) + (T.footer ? '\n\n' + render(T.footer, vars) : '')
+    };
+  }
+
+  function buildOwnerAlert(lead, config, result) {
+    var icon = { hot: '[HOT]', warm: '[WARM]', cold: '[COLD]' }[result.tier];
+    var lines = [
+      'New lead: ' + (lead.name || '(no name)') + ' — ' + result.service.label,
+      'Score ' + result.score + '/100 (' + result.tier + ')' + (result.urgent ? ' — URGENT' : ''),
+      '',
+      'Email: ' + (lead.email || '—'),
+      'Phone: ' + (lead.phone || '—'),
+      'ZIP: ' + (lead.zip || '—') + (result.inArea === false ? ' (OUTSIDE service area)' : ''),
+      '',
+      'Message:',
+      lead.message || '—',
+      '',
+      'Why this score: ' + result.reasons.join('; '),
+      'Auto-reply sent: ' + (result.reply ? 'yes (' + result.reply.template + ')' : 'no — ' + (result.replySkipped || 'n/a'))
+    ];
+    return { subject: icon + ' ' + (lead.name || 'New lead') + ' — ' + result.service.label, body: lines.join('\n') };
+  }
+
+  /** Follow-up plan: one step per configured day offset, capped per tier. */
+  function planFollowUps(lead, config, tier) {
+    var days = (config.follow_up && config.follow_up.days) || [1, 3, 7];
+    var maxFor = (config.follow_up && config.follow_up.max_by_tier) || { hot: 3, warm: 3, cold: 1 };
+    var n = Math.min(days.length, maxFor[tier] === undefined ? days.length : maxFor[tier]);
+    var plan = [];
+    for (var i = 0; i < n; i++) {
+      plan.push({ step: i + 1, template: 'followup_' + (i + 1), dueAt: new Date(lead.receivedAt.getTime() + days[i] * 86400000) });
+    }
+    return plan;
+  }
+
+  /**
+   * Decide what to do with an existing lead during the scheduled run.
+   * state: {status, followupsSent, receivedAt, lastReplyAt, unsubscribed}
+   */
+  function nextFollowUp(state, config, now) {
+    var stopStatuses = ['replied', 'booked', 'won', 'lost', 'spam', 'unsubscribed', 'invalid', 'closed'];
+    if (stopStatuses.indexOf(lower(state.status)) !== -1) return { action: 'none', reason: 'status ' + state.status };
+    if (state.unsubscribed) return { action: 'stop', reason: 'lead asked not to be contacted' };
+    if (state.lastReplyAt) return { action: 'stop', reason: 'lead replied' };
+    var plan = planFollowUps({ receivedAt: new Date(state.receivedAt) }, config, state.tier || 'warm');
+    var sent = state.followupsSent || 0;
+    if (sent >= plan.length) return { action: 'complete', reason: 'all follow-ups sent' };
+    var step = plan[sent];
+    if (now >= step.dueAt) return { action: 'send', step: step.step, template: step.template };
+    return { action: 'wait', dueAt: step.dueAt };
+  }
+
+  function buildFollowUp(lead, config, template) {
+    var svc = { label: lead.serviceLabel || 'your request', value: 'medium' };
+    var vars = templateVars(lead, config, svc);
+    var T = config.templates;
+    return {
+      to: lead.email,
+      subject: 'Re: ' + render(T.subject || 'We received your request — {{business_name}}', vars),
+      body: render(T[template] || '', vars) + (T.footer ? '\n\n' + render(T.footer, vars) : '')
+    };
+  }
+
+  /** Detects opt-out language in a reply. */
+  function isOptOut(text) {
+    return /\b(unsubscribe|stop emailing|remove me|not interested|do not contact|no thanks)\b/i.test(str(text));
+  }
+
+  /** Out-of-office / automatic replies must not count as the lead replying. */
+  function isAutoReply(subject, text) {
+    return /\b(out of (the )?office|automatic reply|auto-?reply|autoreply|away from (my|the) (desk|office)|on vacation|delivery status notification|undeliverable|mail delivery (failed|subsystem))\b/i.test(str(subject) + ' ' + str(text).slice(0, 500));
+  }
+
+  /** Validate a client config before deployment. Returns list of problems ([] = OK). */
+  function checkConfig(config) {
+    var p = [];
+    var b = config && config.business;
+    if (!b) return ['Missing "business" section'];
+    ['name', 'owner_name', 'owner_email', 'timezone'].forEach(function (k) { if (!str(b[k])) p.push('business.' + k + ' is required'); });
+    if (b.owner_email && !EMAIL_RE.test(b.owner_email)) p.push('business.owner_email is invalid');
+    try { new Intl.DateTimeFormat('en-US', { timeZone: b.timezone }); } catch (e) { p.push('business.timezone is not a valid IANA zone'); }
+    if (!b.hours || !Object.keys(b.hours).length) p.push('business.hours must list at least one open day');
+    Object.keys(b.hours || {}).forEach(function (d) {
+      var h = b.hours[d];
+      if (DAY_KEYS.indexOf(d) === -1) p.push('business.hours has unknown day "' + d + '"');
+      else if (!Array.isArray(h) || h.length !== 2 || !(h[0] < h[1])) p.push('business.hours.' + d + ' must be [open, close] in 24h numbers');
+    });
+    if (!config.services || !config.services.length) p.push('At least one service is required');
+    var T = config.templates || {};
+    ['ack', 'followup_1'].forEach(function (k) { if (!str(T[k])) p.push('templates.' + k + ' is required'); });
+    var days = (config.follow_up && config.follow_up.days) || [1, 3, 7];
+    days.forEach(function (d, i) { if (!str(T['followup_' + (i + 1)])) p.push('templates.followup_' + (i + 1) + ' is required for follow_up.days[' + i + ']'); });
+    Object.keys(T).forEach(function (k) {
+      var bad = (str(T[k]).match(/\{\{\s*([a-z_]+)\s*\}\}/gi) || []).map(function (m) { return m.replace(/[{}\s]/g, ''); })
+        .filter(function (v) { return ['first_name', 'name', 'business_name', 'owner_name', 'phone', 'booking_url', 'service', 'response_window', 'signature'].indexOf(v) === -1; });
+      if (bad.length) p.push('templates.' + k + ' uses unknown variable(s): ' + bad.join(', '));
+    });
+    if (!str(T.footer) || !/(reply|unsubscribe|stop)/i.test(T.footer)) p.push('templates.footer must tell people how to opt out of follow-ups');
+    return p;
+  }
+
+  /** Main entry: process one new inquiry. */
+  function processInquiry(raw, config, receivedAt) {
+    var lead = normalizeLead(raw, receivedAt);
+    var v = validateLead(lead, config);
+    var result = { version: VERSION, lead: lead, valid: v.ok, spam: v.spam, errors: v.errors, spamReasons: v.reasons };
+    if (v.spam) { result.status = 'spam'; result.tier = 'cold'; result.score = 0; result.reasons = v.reasons; result.service = { key: 'spam', label: 'Spam', value: 'low' }; result.replySkipped = 'spam'; result.followUps = []; return result; }
+    var svc = classifyService(lead, config.services);
+    var urg = detectUrgency(lead, config);
+    var s = scoreLead(lead, config, svc, urg);
+    var open = isOpen(lead.receivedAt, config.business);
+    result.service = svc;
+    result.urgent = urg.urgent;
+    result.score = s.score;
+    result.tier = s.tier;
+    result.reasons = s.reasons;
+    result.inArea = s.inArea;
+    result.openNow = open;
+    result.status = v.ok ? 'new' : 'invalid';
+    if (lead.email && v.ok) result.reply = buildReply(lead, config, svc, urg, open);
+    else result.replySkipped = lead.email ? 'invalid contact details' : 'no email address (call/text manually)';
+    result.followUps = result.reply ? planFollowUps(lead, config, s.tier) : [];
+    result.ownerAlert = buildOwnerAlert(lead, config, result);
+    return result;
+  }
+
+  return {
+    VERSION: VERSION, normalizeLead: normalizeLead, validateLead: validateLead, classifyService: classifyService,
+    detectUrgency: detectUrgency, isOpen: isOpen, inServiceArea: inServiceArea, scoreLead: scoreLead, render: render,
+    planFollowUps: planFollowUps, nextFollowUp: nextFollowUp, buildFollowUp: buildFollowUp, isOptOut: isOptOut, isAutoReply: isAutoReply,
+    checkConfig: checkConfig, processInquiry: processInquiry, localParts: localParts
+  };
+})();
+
+if (typeof module !== 'undefined' && module.exports) { module.exports = LeadEngine; }
+
+</script>
+<script>
+(function () {
+  var CONFIG = {"business": {"name": "Northfield Heating & Air", "owner_name": "Dana Reyes", "owner_email": "owner@northfield-demo.example", "phone": "(555) 010-4477", "timezone": "America/New_York", "hours": {"mon": [8, 18], "tue": [8, 18], "wed": [8, 18], "thu": [8, 18], "fri": [8, 17], "sat": [9, 13]}, "booking_url": "https://cal.com/northfield-demo/estimate", "response_window": "within 2 business hours", "service_area_zips": ["021", "024"]}, "services": [{"key": "repair", "label": "Heating or AC repair", "value": "high", "keywords": ["not working", "broken", "repair", "no heat", "no cool", "stopped", "noise", "leak"]}, {"key": "install", "label": "New system installation", "value": "high", "keywords": ["install", "replace", "replacement", "new system", "heat pump", "quote", "estimate"]}, {"key": "maintenance", "label": "Seasonal tune-up", "value": "medium", "keywords": ["tune-up", "tune up", "maintenance", "service plan", "inspection", "clean"]}, {"key": "question", "label": "General question", "value": "low", "keywords": ["question", "wondering", "do you", "price list"]}], "urgency_keywords": ["no heat", "emergency", "gas smell", "smell gas", "carbon monoxide", "water leaking", "freezing", "asap", "urgent", "today"], "scoring": {}, "tiers": {"hot": 60, "warm": 30}, "follow_up": {"days": [1, 3, 7], "max_by_tier": {"hot": 3, "warm": 3, "cold": 1}}, "templates": {"subject": "We got your request \u2014 {{business_name}}", "ack": "Hi {{first_name}},\n\nThanks for contacting {{business_name}} about {{service}}. Your request is with our team and we'll reply {{response_window}}.\n\nIf you'd like to pick a time now, you can book here: {{booking_url}}\n\n{{signature}}", "ack_after_hours": "Hi {{first_name}},\n\nThanks for contacting {{business_name}} about {{service}}. We're closed right now, but your request is first in line when we open \u2014 we'll reply {{response_window}} of opening.\n\nYou can also pick a time yourself: {{booking_url}}\n\n{{signature}}", "ack_urgent": "Hi {{first_name}},\n\nWe've received your message and flagged it as urgent. If you smell gas or suspect carbon monoxide, leave the building and call 911 or your gas utility first.\n\nFor the fastest response, call us now at {{phone}}. Otherwise we'll contact you as soon as possible.\n\n{{signature}}", "followup_1": "Hi {{first_name}},\n\nJust checking you saw our reply about {{service}}. If it's still needed, you can book a time here: {{booking_url}} \u2014 or simply reply to this email.\n\n{{signature}}", "followup_2": "Hi {{first_name}},\n\nFollowing up once more in case the timing wasn't right. We're happy to answer any questions before you decide.\n\n{{signature}}", "followup_3": "Hi {{first_name}},\n\nThis is our last note so we don't fill your inbox. If you still need help with {{service}}, reply any time and we'll pick it up.\n\n{{signature}}", "footer": "Reply \"stop\" and we won't send further follow-ups."}};
+  var SITE = {"form_endpoint": "", "contact_email": ""};
+  var E = window.LeadEngine;
+  var PRESETS = {
+    urgent: { name: 'Sam Ortiz', email: 'sam@example.com', zip: '02139', when: 'open', message: 'Our furnace stopped last night and we have no heat. Two kids at home. Can someone come today? It was making a loud banging noise before it died.' },
+    quote: { name: 'Lee Park', email: 'lee.park@example.com', zip: '02446', when: 'closed', message: 'Hi, we want a quote to replace our 20-year-old AC with a heat pump before next summer. House is about 1,800 sq ft.' },
+    far: { name: 'Kim Alvarez', email: 'kim@example.com', zip: '90210', when: 'open', message: 'Do you do tune-ups? Looking for a seasonal maintenance visit.' },
+    spam: { name: 'Mark', email: 'growth@seo-agency.example', zip: '', when: 'open', message: 'We offer SEO services and backlinks to rank your website #1. See https://a.example and https://b.example' }
+  };
+  var WHEN = { open: '2026-10-20T18:00:00Z', closed: '2026-10-21T03:30:00Z' };
+  var form = document.getElementById('demoForm');
+  var out = document.getElementById('demoOut');
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function fmt(d) { return d.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: CONFIG.business.timezone }); }
+
+  function load(key) {
+    var p = PRESETS[key];
+    $('d-name').value = p.name; $('d-email').value = p.email; $('d-zip').value = p.zip; $('d-msg').value = p.message; $('d-when').value = p.when;
+    document.querySelectorAll('.chip').forEach(function (c) { c.setAttribute('aria-pressed', String(c.dataset.preset === key)); });
+    run();
+  }
+
+  function run() {
+    var raw = { name: $('d-name').value, email: $('d-email').value, zip: $('d-zip').value, message: $('d-msg').value };
+    var at = new Date(WHEN[$('d-when').value]);
+    var r = E.processInquiry(raw, CONFIG, at);
+    var tier = r.status === 'spam' ? 'spam' : (r.status === 'invalid' ? 'invalid' : r.tier);
+    var html = '';
+    html += '<div class="step"><div class="step-h"><span>1 · Classified</span><b>' + esc(r.service.label) + (r.urgent ? ' · urgent' : '') + '</b></div>' +
+      '<div class="scoreline"><span class="pill ' + tier + '">' + tier + '</span><div class="meter" aria-label="Score ' + r.score + ' of 100"><i style="width:' + r.score + '%"></i></div><b style="font-family:var(--f-mono)">' + r.score + '/100</b></div>' +
+      '<div class="reasons">' + esc((r.reasons || []).join(' · ') || '—') + '</div></div>';
+    if (r.reply) {
+      html += '<div class="step"><div class="step-h"><span>2 · Reply to customer</span><b>' + esc(r.reply.template.replace(/_/g, ' ')) + '</b></div>' +
+        '<div class="mail"><span class="subj">To: ' + esc(r.reply.to) + '\nSubject: ' + esc(r.reply.subject) + '</span>' + esc(r.reply.body) + '</div></div>';
+    } else {
+      html += '<div class="step"><div class="step-h"><span>2 · Reply to customer</span><b>not sent</b></div><div class="reasons">' + esc(r.replySkipped || (r.errors || []).join('; ')) + '</div></div>';
+    }
+    if (r.ownerAlert) {
+      html += '<div class="step"><div class="step-h"><span>3 · Alert to owner</span><b>' + esc(r.ownerAlert.subject) + '</b></div></div>';
+    } else {
+      html += '<div class="step"><div class="step-h"><span>3 · Alert to owner</span><b>none (spam is logged only)</b></div></div>';
+    }
+    html += '<div class="step"><div class="step-h"><span>4 · Follow-ups</span><b>' + (r.followUps.length ? r.followUps.length + ' scheduled, stop on reply' : 'none') + '</b></div>';
+    if (r.followUps.length) {
+      html += '<ul class="timeline">' + r.followUps.map(function (f) { return '<li><span>Follow-up ' + f.step + '</span><b>' + esc(fmt(f.dueAt)) + '</b></li>'; }).join('') + '</ul>';
+    }
+    html += '</div>';
+    out.innerHTML = html;
+  }
+
+  document.querySelectorAll('.chip').forEach(function (c) { c.addEventListener('click', function () { load(c.dataset.preset); }); });
+  form.addEventListener('submit', function (e) { e.preventDefault(); document.querySelectorAll('.chip').forEach(function (c) { c.setAttribute('aria-pressed', 'false'); }); run(); });
+  load('urgent');
+
+  // plan buttons preselect the package
+  document.querySelectorAll('[data-plan]').forEach(function (a) { a.addEventListener('click', function () { $('i-plan').value = a.dataset.plan; }); });
+  $('i-mail').addEventListener('change', function () {
+    $('mailNote').textContent = this.value === 'google' ? 'Lead Desk currently runs on Google.' :
+      'Lead Desk runs on Google today. Send the form anyway and we’ll tell you your options.';
+  });
+
+  // intake → draft configuration (same shape the onboarding script uses)
+  function parseHours(text) {
+    var days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+    var hours = {};
+    String(text || '').toLowerCase().split(/[,;]/).forEach(function (part) {
+      var m = part.match(/(mon|tue|wed|thu|fri|sat|sun)[a-z]*\s*(?:[-–to]+\s*(mon|tue|wed|thu|fri|sat|sun)[a-z]*)?\s*(\d{1,2})(?::\d\d)?\s*(am|pm)?\s*[-–to]+\s*(\d{1,2})(?::\d\d)?\s*(am|pm)?/);
+      if (!m) return;
+      var a = days.indexOf(m[1]), b = m[2] ? days.indexOf(m[2]) : a;
+      var o = +m[3], c = +m[5];
+      if (m[4] === 'pm' && o < 12) o += 12;
+      if (m[6] === 'pm' && c < 12) c += 12; else if (!m[6] && c <= o) c += 12;
+      for (var i = a; i <= b; i++) hours[days[i]] = [o, c];
+    });
+    return hours;
+  }
+  var intake = $('intake');
+  intake.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var fd = new FormData(intake);
+    var d = {}; fd.forEach(function (v, k) { d[k] = String(v).trim(); });
+    var err = $('intakeErr');
+    var missing = ['name', 'email', 'business_name'].filter(function (k) { return !d[k]; });
+    if (missing.length || !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(d.email || '')) {
+      err.textContent = missing.length ? 'Please add your name, email and business name.' : 'That email address doesn’t look right. Check it and try again.';
+      err.hidden = false; return;
+    }
+    err.hidden = true;
+    var draft = {
+      business: { name: d.business_name, owner_name: d.name, owner_email: d.email, timezone: d.timezone, hours: parseHours(d.hours), website: d.website },
+      services: (d.services || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean).map(function (s) { return { label: s, value: 'medium', keywords: [s.toLowerCase()] }; }),
+      plan: d.plan, mail_system: d.mail_system, weekly_inquiries: d.weekly_inquiries
+    };
+    var res = $('intakeResult');
+    var endpoint = SITE.form_endpoint;
+    var show = function (sentOk, note) {
+      res.innerHTML = '<h3>' + (sentOk ? 'Thanks, ' + esc(d.name.split(' ')[0]) + '. Your details are with us.' : 'Your project draft is ready') + '</h3>' +
+        '<p>' + note + '</p><p class="label">Draft setup generated from your answers</p><pre>' + esc(JSON.stringify(draft, null, 2)) + '</pre>';
+      res.hidden = false; intake.hidden = true; res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+    if (endpoint) {
+      fetch(endpoint, { method: 'POST', body: new URLSearchParams(fd) })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); show(true, 'You’ll get a reply within one business day. We’ll use the draft below on our call.'); })
+        .catch(function () { err.textContent = 'We couldn’t send the form just now. Please email us at ' + (SITE.contact_email || 'the address in the footer') + '.'; err.hidden = false; });
+    } else {
+      show(false, 'This is a preview of the site, so the form wasn’t sent anywhere. Once the site is live, it goes straight to Banira’s own Lead Desk.');
+    }
+  });
+})();
+</script>

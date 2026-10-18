@@ -1,41 +1,34 @@
 # TASK_QUEUE
 
-Status: `todo` · `doing` · `blocked` · `done`. 🔒 = needs owner approval. Owners: **OWN** owner · **CW** Claude Cowork · **CC** Claude Code · **CX** Codex.
+Status: `todo` · `doing` · `blocked` · `done`. 🔒 = owner approval or action. Owners: **OWN** owner · **CW** Claude Cowork · **CC** Claude Code · **CX** Codex.
 
 | ID | Title | Owner | Status | Depends |
 |---|---|---|---|---|
-| T-001 | Stage 1 research + scoring (25 options) | CW | done | — |
-| T-002 | domaincheck v0.1 + offline tests | CW | done | — |
-| T-003 | 🔒 Approve D-003/D-004/D-005 (business, beachhead, price) | OWN | todo | T-001 |
-| T-004 | Live-DNS test of domaincheck on 10 known domains | CC | todo | T-002 |
-| T-005 | Independent review of domaincheck | CX | todo | T-002 |
-| T-006 | Build 100-domain prospect list (Step A) | CW + OWN | todo | T-003 |
-| T-007 | Run prevalence batch, report pass/fail | CC | todo | T-004, T-006 |
-| T-008 | Domain Check one-page report generator (HTML→PDF) | CC | todo | T-004 |
-| T-009 | 🔒 Approve outreach drafts; provide name, postal address, sending email | OWN | todo | T-003 |
-| T-010 | 🔒 Payment link ($349) | OWN | todo | T-003 |
-| T-011 | Stage 4 brand identity (minimal set first) | CW | todo | T-007 pass |
-| T-012 | DMARC report parsing pipeline (parsedmarc + free mailbox) | CC | todo | T-007 pass |
+| T-100 | Strategy reset: research, select Lead Desk, build brand, site, engine, onboarding | CW | done | — |
+| T-101 | Live test of Lead Desk in a real Google account | CC + OWN | todo | T-102 |
+| T-102 | 🔒 Create Banira Google account (free Gmail or Workspace) for sending + dogfooding | OWN | todo | — |
+| T-103 | Codex independent review of engine + Apps Script | CX | todo | — |
+| T-104 | 🔒 Approve hosting; deploy website to Netlify free tier; set site_config | OWN + CC | todo | T-102 |
+| T-105 | 🔒 Approve packages/prices and outreach drafts O1–O4; provide name + postal address | OWN | todo | — |
+| T-106 | Research 100 qualified prospects (2 trades × 2 metros) into lead_tracker.csv | CW | todo | T-105 |
+| T-107 | 🔒 Payment links ($290 / $490 / $49 mo) | OWN | todo | T-105 |
+| T-108 | Trade presets in website demo (plumbing, roofing, electrical) | CC | todo | — |
+| T-109 | 🔒 Trademark/domain check (USPTO classes 35/42) | OWN | todo | — |
+| T-110 | Quote follow-up module | CC | todo | first Plus request |
 
 ---
-### T-004 · Live-DNS test of domaincheck
-- **Objective:** confirm results match reality on a machine with working DNS.
-- **Inputs:** `tools/domaincheck/`, domains: google.com, microsoft.com, paypal.com, github.com, example.com, + 5 small-business domains the owner supplies.
-- **Acceptance:** canary passes; each grade matches a manual `dig TXT _dmarc.<d>` / `dig TXT <d>` check; discrepancies filed as bugs; results saved to `tools/domaincheck/live_test_<date>.md`.
+### T-101 · Live Google test
+- **Objective:** prove the Apps Script build works in production conditions.
+- **Inputs:** `automations/lead-desk/` (`npm run build:example` → `dist/example`), checklist steps 3–4 in `ops/onboarding/checklist_template.md`.
+- **Acceptance:** `setup()` completes; Google Form and web-app POST both create rows; reply arrives at a test address; measured reply time recorded; reply detection marks "replied"; opt-out reply marks "unsubscribed"; DRY_RUN sends nothing; any defects filed with failing tests. Results in `automations/lead-desk/LIVE_TEST.md`.
 
-### T-005 · Codex independent review
-- **Objective:** find correctness bugs before any finding reaches a prospect.
-- **Inputs:** `tools/domaincheck/domaincheck.py`, tests, AGENT_HANDOFF §Codex prompt.
-- **Acceptance:** written review in `docs/reviews/codex_domaincheck_<date>.md`; any fix comes with a test; all tests pass.
+### T-103 · Codex review
+- **Objective:** find bugs before a client's customers see them.
+- **Inputs:** `src/engine.js`, `apps-script/Code.gs`, tests; prompt in AGENT_HANDOFF.md.
+- **Acceptance:** `docs/reviews/codex_lead-desk_<date>.md`; every fix has a test; `npm test` passes.
 
-### T-006 · Prospect list
-- **Objective:** 50 accounting/tax + 50 real-estate/title firm domains from public directories, 2–3 metros.
-- **Inputs:** `validation/leads_template.csv`.
-- **Acceptance:** every row has `source_url`; no personal emails scraped in bulk; contact names added only for firms later contacted.
+### T-106 · Prospect research
+- **Acceptance:** 100 rows, each with `source_url`, evidence fields filled from public pages only, `qual_score` per rubric, `approved_by_owner` blank. No personal data beyond business contact details.
 
-### T-007 · Prevalence batch
-- **Acceptance:** `validation/results.csv` + `validation/prevalence_report.md` with % by grade and segment; pass/fail against VALIDATION_PLAN Step A.
-
-### T-008 · Report generator
-- **Objective:** turn a `Report` into a branded one-page PDF a non-technical owner understands.
-- **Acceptance:** works offline from JSON; no claims beyond findings; includes date, method, limitation note (custom DKIM selectors); tested on fixtures for grades A, C, F.
+### T-108 · Trade presets in demo
+- **Acceptance:** demo chips switch trade (config from `ops/onboarding/industry_presets.json`); all existing tests pass; no horizontal scroll at 390 px.

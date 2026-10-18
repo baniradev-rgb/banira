@@ -1,0 +1,34 @@
+/* GENERATED from tokens.json — Banira design tokens */
+:root {
+  --bn-ivory: #F6F2E9;
+  --bn-paper: #ECE5D6;
+  --bn-ink: #1B1A18;
+  --bn-graphite: #4A4741;
+  --bn-stone: #6B655A;
+  --bn-line: #D9D1C0;
+  --bn-pine: #2D5A4B;
+  --bn-pine-light: #8CC4AE;
+  --bn-dark-bg: #131311;
+  --bn-dark-surface: #1D1C19;
+  --bn-dark-line: #34322D;
+  --bn-dark-muted: #A8A194;
+  --bn-hot: #A63D2A;
+  --bn-warm: #85591A;
+  --bn-cold: #4F6C80;
+  --bn-ok: #2D5A4B;
+  --bn-font-display: Geist, 'Helvetica Neue', Arial, sans-serif;
+  --bn-font-body: Geist, 'Helvetica Neue', Arial, sans-serif;
+  --bn-font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --bn-font-jp: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+  --bn-size-0: 0.75rem;
+  --bn-size-1: 0.875rem;
+  --bn-size-2: 1rem;
+  --bn-size-3: 1.188rem;
+  --bn-size-4: 1.438rem;
+  --bn-size-5: 2rem;
+  --bn-size-6: 2.75rem;
+  --bn-size-7: 3.75rem;
+  --bn-radius-small: 6px;
+  --bn-radius-medium: 10px;
+  --bn-radius-large: 14px;
+}

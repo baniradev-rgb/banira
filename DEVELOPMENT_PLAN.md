@@ -1,18 +1,29 @@
 # DEVELOPMENT_PLAN
 
-Principle: build only what the current validation step needs.
+Principle: build only what the next sale needs; every module is config-driven and covered by tests.
 
-| Phase | Gate | Build | Owner |
-|---|---|---|---|
-| V0 (now) | — | `domaincheck` passive checker + tests ✅ | CW |
-| V1 | T-004 live test passes | Batch prevalence run; one-page Domain Check PDF report | CC |
-| V2 | Step A passes (≥40% C/D/F) | Minimal brand (logo, colours, report template); one-page website with inquiry form on free hosting 🔒 | CW + CC |
-| V3 | First paid Seal | Setup runbook scripts: record generator (SPF builder with lookup counter, DMARC staged policies), verification script, hand-off report | CC |
-| V4 | 3 clients | DMARC aggregate-report pipeline (parsedmarc → monthly Watch summary + drift alerts) on free infrastructure | CC |
-| V5 | 10 clients | Scheduled monitoring (verified schedule + logs), dashboard | CC + CX |
+| Phase | Gate | Build | Owner | Status |
+|---|---|---|---|---|
+| D0 | — | Lead Desk engine, Apps Script adapter, build tool, 22 tests | CW | ✅ done |
+| D0 | — | Onboarding generator + 8 industry presets + 5 tests | CW | ✅ done |
+| D0 | — | Brand system, website with live demo + intake | CW | ✅ done (preview) |
+| D1 | Owner creates Banira Google account 🔒 | **Live test in a real Google account** (T-101); deploy Banira's own Lead Desk; point site form at it | CC + OWN | todo |
+| D1 | Hosting approved 🔒 | Deploy website to Netlify (free) | CC | todo |
+| D1 | — | Independent review of engine + Apps Script (Codex) | CX | todo |
+| D2 | First paid install | Trade presets in demo (plumbing, roofing, electrical) | CC | todo |
+| D3 | First Plus request | Quote follow-up module (engine + Apps Script + tests) | CC | todo |
+| D3 | First Plus request | Review-request module (policy-compliant: ask everyone, no gating) | CC | todo |
+| D4 | 3 Care clients | Monthly Care report generator; business dashboard | CC | todo |
+| D5 | 3 requests or budget approved | Microsoft 365 version (Power Automate or Graph) / SMS module | CC + CX | later |
 
 ## Tech choices
-Python 3.11+, dnspython, pytest; static HTML site; no paid services. Secrets never committed (`.env` ignored).
+JavaScript (ES5-compatible engine so it runs in Apps Script V8, browsers and Node), Node 22 built-in test runner (no dependencies), Python for brand/website build. No paid services. Secrets never committed.
 
-## Quality bar
-Every tool: defined inputs/outputs, exit codes, logs, tests, and a refusal mode when inputs are untrustworthy (see D-006).
+## Commands
+```bash
+cd automations/lead-desk && npm test            # 22 engine + Apps Script tests
+node --test ops/onboarding/tests/*.test.js     # 5 onboarding tests
+python3 website/build.py                       # build site
+python3 brand/build_logos.py <Geist-Medium.ttf>  # rebuild logos
+python3 research/score.py                      # re-rank services
+```

@@ -1,0 +1,11 @@
+{
+  "name": "banira-lead-desk",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Banira Lead Desk: instant reply, scoring and follow-up for inbound inquiries (Google Apps Script)",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "build:example": "node tools/build_apps_script.js examples/config.example.json dist/example"
+  },
+  "license": "UNLICENSED"
+}
