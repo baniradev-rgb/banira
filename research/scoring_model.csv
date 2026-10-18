@@ -1,0 +1,26 @@
+id,opportunity,demand,route,zero_cost,differentiation,price_margin,automation,recurring,scalability,time_to_revenue,risk_safety,evidence_basis
+1,Website accessibility audit + fix for small e-commerce,5,2,4,3,5,2,4,3,3,2,V: lawsuit counts (Seyfarth/UsableNet via Clym); audit prices $1250-5000; $20 Fiverr gigs; $49/mo white-label AI tools
+2,Email authentication (SPF/DKIM/DMARC) setup + monitoring for small professional firms,4,4,5,3,3,5,3,5,4,3,V: MS enforcement 5 May 2025; ~23% of top 1.8M domains at enforcement; Inc5000 43%; IC3 BEC $3.05B 2025; $20 Fiverr gigs; SaaS $18-20/mo
+3,VPAT/ACR accessibility reports for small B2B SaaS,4,2,4,4,5,2,2,2,2,2,V: $1850-4450 price (ADA Compliance Pros); procurement requirement
+4,Review-response management for local businesses,4,3,5,2,3,4,5,4,4,4,V: BrightLocal 2026 consumer survey; low switching cost (E)
+5,Google Business Profile management,4,3,5,1,4,3,5,3,4,5,V: $125-500/location/mo pricing; saturated (E)
+6,Website speed / Core Web Vitals optimisation,3,3,5,3,4,3,2,3,3,4,E
+7,Bookkeeping cleanup,4,3,4,3,4,2,4,2,3,2,E: established pricing; needs credential
+8,Accessible-PDF remediation for public entities (Title II),4,2,5,3,4,3,3,3,2,3,V: deadlines moved to Apr 2027/2028 (DOJ IFR Apr 2026)
+9,Local SEO content writing,3,2,5,1,3,4,4,4,3,4,E: AI-commoditised
+10,Resume / LinkedIn rewriting,3,3,5,1,2,4,1,3,4,5,E
+11,AI translation with human review,3,2,5,2,3,4,3,4,3,2,E
+12,Paid niche newsletter,2,2,5,2,4,4,5,5,1,5,E
+13,Etsy/Gumroad printables & templates,2,2,5,1,2,5,1,5,3,5,E
+14,Grant writing for small nonprofits,3,2,5,3,4,2,2,2,1,3,E
+15,Missed-call text-back / AI receptionist,4,3,1,2,3,4,5,4,3,3,E: needs paid telephony + LLM usage
+16,No-code automation consulting,3,3,3,2,4,2,3,2,3,4,E
+17,Local-business website redesign,3,2,5,1,4,2,2,2,2,4,E
+18,Shopify micro-SaaS app,3,2,2,3,4,5,5,5,1,3,E
+19,Online course,2,1,5,1,4,5,2,5,1,5,E
+20,AI search visibility (GEO) audit,3,3,5,2,3,4,4,4,3,2,V: 65.9% of 1000 businesses invisible in AI answers (Outrigger index; affiliated source); outcomes hard to prove (E)
+21,Google Merchant Center feed / disapproval fixes,4,3,5,2,3,3,2,3,4,4,V: Shopify community pain threads; many Fiverr gigs; apps exist
+22,AI website chatbot setup for SMBs,3,3,2,1,3,3,4,3,3,3,V: only ~9% of small businesses use AI for customer service (NFIB via vendor); LLM usage costs
+23,WordPress care / maintenance plans,4,3,3,1,3,4,5,3,3,3,V: $30-500/mo market ranges (FatLab); saturated
+24,Security-questionnaire answering for small SaaS,3,2,5,3,4,3,3,3,2,2,E: AI SaaS tools already target this
+25,Video captioning with human review,3,2,4,1,2,4,3,4,3,4,V: Rev and AI tools dominate

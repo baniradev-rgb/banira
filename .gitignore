@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+.env
+*.pyc
+validation/leads.csv
+validation/results.csv
