@@ -8,8 +8,8 @@
 .cine-stage { position: absolute; inset: 0; perspective: 1600px; perspective-origin: 60% 0%; overflow: hidden; }
 .cine-plane { position: absolute; left: 50%; top: -6%; width: 1700px; display: grid; grid-template-columns: 520px 1fr; gap: 28px; transform-origin: 50% 0;
   transform: translateX(-46%) rotateX(48deg) rotateZ(-16deg) translateZ(0); filter: blur(.6px); opacity: .75; }
-.js .cine-plane { animation: cineDrift 46s ease-in-out infinite alternate, cineIn 1600ms var(--ease) both; }
-@keyframes cineDrift { from { translate: 0 0; } to { translate: -90px 50px; } }
+.js .cine-plane { animation: cineDrift 18s ease-in-out infinite alternate, cineIn 1600ms var(--ease) both; }
+@keyframes cineDrift { from { translate: 0 0; } to { translate: -170px 95px; } }
 @keyframes cineIn { from { opacity: 0; filter: blur(6px); } }
 .cine-composer { align-self: start; margin-top: 60px; border-radius: 18px; border: 1px solid var(--line-2); background: var(--surface-hi); padding: 1.4rem 1.5rem; display: grid; gap: 1rem; box-shadow: 0 40px 80px rgb(var(--shadow-rgb) / calc(.6 * var(--shadow-k))); }
 .cc-head { display: flex; align-items: center; gap: .6rem; font-size: 1rem; color: var(--fg); }
