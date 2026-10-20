@@ -23,3 +23,17 @@
   .cine { min-height: 0; padding-top: clamp(150px, 42vw, 240px); padding-bottom: var(--s-10); }
   .cine-plane { opacity: .55; }
 }
+
+/* process rail (How it works): a line fills as the steps scroll past; the step at the reading line is active.
+   The fill is one scaleY transform driven by site.js; no-JS and reduced motion show the plain list. */
+.steps--rail { position: relative; }
+.steps--rail::after, .steps--rail .rail-fill { content: ""; position: absolute; left: 13px; top: 1.6rem; bottom: 1.6rem; width: 1px; background: var(--line-2); }
+.steps--rail .rail-fill { background: var(--fg); transform-origin: 50% 0; transform: scaleY(var(--p, 0)); z-index: 1; }
+.steps--rail > li { position: relative; border-top: 0; grid-template-columns: 44px 1fr; }
+.steps--rail > li::before { position: relative; z-index: 2; width: 28px; height: 28px; display: grid; place-items: center; padding: 0; border-radius: 50%; background: var(--bg); border: 1px solid var(--line-3); font-size: .6875rem;
+  transition: color var(--dur-surface) var(--ease-standard), border-color var(--dur-surface) var(--ease-standard), background-color var(--dur-surface) var(--ease-standard); }
+.steps--rail > li.is-past::before { border-color: var(--fg-2); color: var(--fg); }
+.steps--rail > li.is-current::before { background: var(--fg); border-color: var(--fg); color: var(--on-fg); }
+.steps--rail > li > div { transition: opacity var(--dur-move) var(--ease-standard); }
+.js .steps--rail.is-tracking > li:not(.is-current):not(.is-past) > div { opacity: .55; }
+.steps--rail .steps-optional::before { border-style: dashed; }

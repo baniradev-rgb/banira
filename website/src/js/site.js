@@ -349,6 +349,26 @@
     Object.keys(map).forEach(function (id) { sio.observe(doc.getElementById(id)); });
   });
 
+  // ── process rail: fill a line as ordered steps scroll past (one transform per frame, only while in view) ──
+  $$('[data-progress]').forEach(function (list) {
+    if (reduce || !('IntersectionObserver' in window)) return;
+    var fill = doc.createElement('span'); fill.className = 'rail-fill'; fill.setAttribute('aria-hidden', 'true'); list.appendChild(fill);
+    var items = $$(':scope > li', list), ticking = false, active = false;
+    list.classList.add('is-tracking');
+    function update() {
+      ticking = false;
+      var line = window.innerHeight * 0.5, r = list.getBoundingClientRect();
+      var p = Math.max(0, Math.min(1, (line - r.top) / r.height));
+      list.style.setProperty('--p', p.toFixed(4));
+      var cur = -1;
+      items.forEach(function (li, i) { if (li.getBoundingClientRect().top < line) cur = i; });
+      items.forEach(function (li, i) { li.classList.toggle('is-current', i === cur); li.classList.toggle('is-past', i < cur); });
+    }
+    function onScroll() { if (active && !ticking) { ticking = true; requestAnimationFrame(update); } }
+    new IntersectionObserver(function (en) { active = en[0].isIntersecting; if (active) update(); }, { rootMargin: '20% 0px' }).observe(list);
+    window.addEventListener('scroll', onScroll, { passive: true });
+  });
+
   // ── copy buttons, plan memory ──
   doc.addEventListener('click', function (e) {
     var b = e.target.closest('[data-copy]');
