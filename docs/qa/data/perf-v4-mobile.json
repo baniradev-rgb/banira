@@ -1,6 +1,6 @@
 {
   "preset": "mobile",
-  "measuredAt": "2026-10-20T13:49:11.690Z",
+  "measuredAt": "2026-10-20T14:13:30.490Z",
   "rows": [
     {
       "page": "404",
@@ -8,59 +8,59 @@
       "a11y": 100,
       "bp": 100,
       "seo": 63,
-      "lcp_ms": 1812,
+      "lcp_ms": 1661,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 1512,
-      "bytes_kb": 145
+      "fcp_ms": 1511,
+      "bytes_kb": 150
     },
     {
       "page": "about",
-      "perf": 99,
+      "perf": 100,
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 1958,
+      "lcp_ms": 1810,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 1508,
-      "bytes_kb": 146
+      "fcp_ms": 968,
+      "bytes_kb": 151
     },
     {
       "page": "contact",
-      "perf": 99,
+      "perf": 100,
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 1807,
+      "lcp_ms": 1508,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 1507,
-      "bytes_kb": 151
+      "fcp_ms": 949,
+      "bytes_kb": 156
     },
     {
       "page": "demo",
       "perf": 99,
       "a11y": 100,
       "bp": 100,
-      "seo": 92,
-      "lcp_ms": 1960,
+      "seo": 100,
+      "lcp_ms": 1962,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 1510,
-      "bytes_kb": 179
+      "fcp_ms": 1512,
+      "bytes_kb": 187
     },
     {
       "page": "design-system",
-      "perf": 100,
+      "perf": 99,
       "a11y": 100,
       "bp": 100,
       "seo": 66,
-      "lcp_ms": 1654,
+      "lcp_ms": 1955,
       "cls": 0,
-      "tbt_ms": 6,
-      "fcp_ms": 961,
-      "bytes_kb": 159
+      "tbt_ms": 0,
+      "fcp_ms": 1355,
+      "bytes_kb": 167
     },
     {
       "page": "faq",
@@ -68,11 +68,11 @@
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 1505,
+      "lcp_ms": 1357,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 957,
-      "bytes_kb": 90
+      "fcp_ms": 948,
+      "bytes_kb": 95
     },
     {
       "page": "how-it-works",
@@ -80,23 +80,23 @@
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 1655,
+      "lcp_ms": 1660,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 1505,
-      "bytes_kb": 147
+      "fcp_ms": 1660,
+      "bytes_kb": 152
     },
     {
       "page": "index",
       "perf": 99,
       "a11y": 100,
       "bp": 100,
-      "seo": 92,
-      "lcp_ms": 2110,
+      "seo": 100,
+      "lcp_ms": 2105,
       "cls": 0,
-      "tbt_ms": 13,
-      "fcp_ms": 1510,
-      "bytes_kb": 186
+      "tbt_ms": 45,
+      "fcp_ms": 1505,
+      "bytes_kb": 195
     },
     {
       "page": "lead-desk",
@@ -104,11 +104,11 @@
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 1811,
+      "lcp_ms": 1956,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 1511,
-      "bytes_kb": 157
+      "fcp_ms": 1656,
+      "bytes_kb": 162
     },
     {
       "page": "pricing",
@@ -116,50 +116,14 @@
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 1504,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 904,
-      "bytes_kb": 90
-    },
-    {
-      "page": "privacy",
-      "perf": 99,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 100,
       "lcp_ms": 1654,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 1504,
-      "bytes_kb": 147
+      "fcp_ms": 947,
+      "bytes_kb": 95
     },
     {
-      "page": "resources-automation-readiness",
-      "perf": 99,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 100,
-      "lcp_ms": 1803,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 1503,
-      "bytes_kb": 148
-    },
-    {
-      "page": "resources-email-deliverability",
-      "perf": 99,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 100,
-      "lcp_ms": 1805,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 1505,
-      "bytes_kb": 148
-    },
-    {
-      "page": "resources-lead-response-time",
+      "page": "privacy",
       "perf": 99,
       "a11y": 100,
       "bp": 100,
@@ -168,7 +132,43 @@
       "cls": 0,
       "tbt_ms": 0,
       "fcp_ms": 1506,
-      "bytes_kb": 148
+      "bytes_kb": 152
+    },
+    {
+      "page": "resources-automation-readiness",
+      "perf": 99,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 1808,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 1508,
+      "bytes_kb": 153
+    },
+    {
+      "page": "resources-email-deliverability",
+      "perf": 99,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 1654,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 1504,
+      "bytes_kb": 153
+    },
+    {
+      "page": "resources-lead-response-time",
+      "perf": 99,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 1804,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 1654,
+      "bytes_kb": 153
     },
     {
       "page": "resources",
@@ -176,23 +176,23 @@
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 1816,
+      "lcp_ms": 1654,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 1516,
-      "bytes_kb": 146
+      "fcp_ms": 1654,
+      "bytes_kb": 151
     },
     {
       "page": "security",
-      "perf": 99,
+      "perf": 100,
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 1656,
+      "lcp_ms": 1503,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 1506,
-      "bytes_kb": 148
+      "fcp_ms": 954,
+      "bytes_kb": 153
     },
     {
       "page": "solutions",
@@ -200,11 +200,11 @@
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 1505,
+      "lcp_ms": 1658,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 905,
-      "bytes_kb": 91
+      "fcp_ms": 968,
+      "bytes_kb": 95
     },
     {
       "page": "terms",
@@ -212,11 +212,11 @@
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 1508,
+      "lcp_ms": 1504,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 957,
-      "bytes_kb": 90
+      "fcp_ms": 1118,
+      "bytes_kb": 94
     },
     {
       "page": "workspace",
@@ -224,11 +224,11 @@
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 1957,
+      "lcp_ms": 1963,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 1507,
-      "bytes_kb": 165
+      "fcp_ms": 1663,
+      "bytes_kb": 173
     }
   ]
 }

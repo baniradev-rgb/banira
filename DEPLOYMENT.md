@@ -7,7 +7,7 @@
 npm ci                     # dev tools only (axe-core, lighthouse); the site itself has no dependencies
 npm test                   # 57 tests: Lead Desk 39, onboarding 5, site 13 → writes docs/qa/data/test-summary.json
 npm run build              # website/dist (fails on broken links, missing anchors, duplicate ids, unknown values)
-npm run qa:e2e             # 21 browser checks under the production _headers (CSP included)
+npm run qa:e2e             # 22 browser checks under the production _headers (CSP included)
 npm run qa:a11y            # axe, all pages, both themes
 npm run qa:perf            # Lighthouse mobile
 npm run dev                # http://localhost:8080 local preview

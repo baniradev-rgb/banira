@@ -33,7 +33,8 @@ const preset = opt('preset', 'mobile');
       bp: Math.round(c['best-practices'].score * 100), seo: Math.round(c.seo.score * 100),
       lcp_ms: Math.round(a['largest-contentful-paint'].numericValue), cls: +a['cumulative-layout-shift'].numericValue.toFixed(3),
       tbt_ms: Math.round(a['total-blocking-time'].numericValue), fcp_ms: Math.round(a['first-contentful-paint'].numericValue),
-      bytes_kb: Math.round(a['total-byte-weight'].numericValue / 1024)
+      bytes_kb: Math.round(a['total-byte-weight'].numericValue / 1024),
+      seo_fails: c.seo.auditRefs.filter((x) => x.weight > 0 && a[x.id] && a[x.id].score !== null && a[x.id].score < 1).map((x) => x.id)
     });
     console.log(JSON.stringify(rows[rows.length - 1]));
   }

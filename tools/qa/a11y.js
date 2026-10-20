@@ -22,7 +22,7 @@ const axeSrc = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
   const browser = await chromium.launch();
   const results = [];
   for (const theme of themes) for (const w of widths) {
-    const ctx = await browser.newContext({ viewport: { width: w, height: 900 }, colorScheme: theme, reducedMotion: 'reduce' });
+    const ctx = await browser.newContext({ viewport: { width: w, height: 900 }, colorScheme: theme, reducedMotion: 'reduce', bypassCSP: true }); // axe is injected as an inline script
     for (const p of pages) {
       const page = await ctx.newPage();
       await page.goto(base + p, { waitUntil: 'networkidle' });

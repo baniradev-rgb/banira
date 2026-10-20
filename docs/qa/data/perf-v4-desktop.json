@@ -1,6 +1,6 @@
 {
   "preset": "desktop",
-  "measuredAt": "2026-10-20T13:51:45.111Z",
+  "measuredAt": "2026-10-20T14:22:28.842Z",
   "rows": [
     {
       "page": "404",
@@ -12,94 +12,13 @@
       "cls": 0,
       "tbt_ms": 0,
       "fcp_ms": 383,
-      "bytes_kb": 145
+      "bytes_kb": 150,
+      "seo_fails": [
+        "is-crawlable"
+      ]
     },
     {
       "page": "about",
-      "perf": 100,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 100,
-      "lcp_ms": 448,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 368,
-      "bytes_kb": 146
-    },
-    {
-      "page": "contact",
-      "perf": 100,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 100,
-      "lcp_ms": 444,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 364,
-      "bytes_kb": 151
-    },
-    {
-      "page": "demo",
-      "perf": 100,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 92,
-      "lcp_ms": 449,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 369,
-      "bytes_kb": 179
-    },
-    {
-      "page": "design-system",
-      "perf": 100,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 66,
-      "lcp_ms": 449,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 329,
-      "bytes_kb": 159
-    },
-    {
-      "page": "faq",
-      "perf": 100,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 100,
-      "lcp_ms": 364,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 260,
-      "bytes_kb": 90
-    },
-    {
-      "page": "how-it-works",
-      "perf": 100,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 100,
-      "lcp_ms": 405,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 365,
-      "bytes_kb": 147
-    },
-    {
-      "page": "index",
-      "perf": 100,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 92,
-      "lcp_ms": 495,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 415,
-      "bytes_kb": 186
-    },
-    {
-      "page": "lead-desk",
       "perf": 100,
       "a11y": 100,
       "bp": 100,
@@ -108,7 +27,101 @@
       "cls": 0,
       "tbt_ms": 0,
       "fcp_ms": 371,
-      "bytes_kb": 157
+      "bytes_kb": 151,
+      "seo_fails": []
+    },
+    {
+      "page": "contact",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 448,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 368,
+      "bytes_kb": 156,
+      "seo_fails": []
+    },
+    {
+      "page": "demo",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 447,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 367,
+      "bytes_kb": 187,
+      "seo_fails": []
+    },
+    {
+      "page": "design-system",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 66,
+      "lcp_ms": 451,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 331,
+      "bytes_kb": 167,
+      "seo_fails": [
+        "is-crawlable"
+      ]
+    },
+    {
+      "page": "faq",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 363,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 243,
+      "bytes_kb": 95,
+      "seo_fails": []
+    },
+    {
+      "page": "how-it-works",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 447,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 407,
+      "bytes_kb": 152,
+      "seo_fails": []
+    },
+    {
+      "page": "index",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 500,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 380,
+      "bytes_kb": 195,
+      "seo_fails": []
+    },
+    {
+      "page": "lead-desk",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 489,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 369,
+      "bytes_kb": 162,
+      "seo_fails": []
     },
     {
       "page": "pricing",
@@ -116,11 +129,12 @@
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 364,
+      "lcp_ms": 366,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 254,
-      "bytes_kb": 90
+      "fcp_ms": 261,
+      "bytes_kb": 95,
+      "seo_fails": []
     },
     {
       "page": "privacy",
@@ -132,7 +146,8 @@
       "cls": 0,
       "tbt_ms": 0,
       "fcp_ms": 368,
-      "bytes_kb": 147
+      "bytes_kb": 152,
+      "seo_fails": []
     },
     {
       "page": "resources-automation-readiness",
@@ -140,74 +155,15 @@
       "a11y": 100,
       "bp": 100,
       "seo": 100,
-      "lcp_ms": 447,
+      "lcp_ms": 455,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 367,
-      "bytes_kb": 148
+      "fcp_ms": 375,
+      "bytes_kb": 153,
+      "seo_fails": []
     },
     {
       "page": "resources-email-deliverability",
-      "perf": 100,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 100,
-      "lcp_ms": 406,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 366,
-      "bytes_kb": 148
-    },
-    {
-      "page": "resources-lead-response-time",
-      "perf": 100,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 100,
-      "lcp_ms": 445,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 365,
-      "bytes_kb": 148
-    },
-    {
-      "page": "resources",
-      "perf": 100,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 100,
-      "lcp_ms": 411,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 371,
-      "bytes_kb": 146
-    },
-    {
-      "page": "security",
-      "perf": 100,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 100,
-      "lcp_ms": 420,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 380,
-      "bytes_kb": 148
-    },
-    {
-      "page": "solutions",
-      "perf": 100,
-      "a11y": 100,
-      "bp": 100,
-      "seo": 100,
-      "lcp_ms": 363,
-      "cls": 0,
-      "tbt_ms": 0,
-      "fcp_ms": 256,
-      "bytes_kb": 91
-    },
-    {
-      "page": "terms",
       "perf": 100,
       "a11y": 100,
       "bp": 100,
@@ -216,10 +172,63 @@
       "cls": 0,
       "tbt_ms": 0,
       "fcp_ms": 366,
-      "bytes_kb": 147
+      "bytes_kb": 153,
+      "seo_fails": []
     },
     {
-      "page": "workspace",
+      "page": "resources-lead-response-time",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 446,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 406,
+      "bytes_kb": 153,
+      "seo_fails": []
+    },
+    {
+      "page": "resources",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 445,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 405,
+      "bytes_kb": 151,
+      "seo_fails": []
+    },
+    {
+      "page": "security",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 447,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 367,
+      "bytes_kb": 153,
+      "seo_fails": []
+    },
+    {
+      "page": "solutions",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 364,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 260,
+      "bytes_kb": 95,
+      "seo_fails": []
+    },
+    {
+      "page": "terms",
       "perf": 100,
       "a11y": 100,
       "bp": 100,
@@ -227,8 +236,22 @@
       "lcp_ms": 450,
       "cls": 0,
       "tbt_ms": 0,
-      "fcp_ms": 370,
-      "bytes_kb": 165
+      "fcp_ms": 410,
+      "bytes_kb": 152,
+      "seo_fails": []
+    },
+    {
+      "page": "workspace",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 447,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 407,
+      "bytes_kb": 173,
+      "seo_fails": []
     }
   ]
 }

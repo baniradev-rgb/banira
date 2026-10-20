@@ -22,7 +22,7 @@ npm ci              # dev tools for QA only; the site has no runtime dependencie
 npm test            # Lead Desk 39 · onboarding 5 · site 13
 npm run build       # website/dist
 npm run dev         # build + http://localhost:8080
-npm run qa:e2e      # 21 browser interaction checks under the production CSP
+npm run qa:e2e      # 22 browser interaction checks under the production CSP
 npm run qa:a11y     # axe-core, all pages, both themes
 npm run qa:perf     # Lighthouse (mobile)
 npm run qa:audit    # screenshots + overflow + links at 360–1440 px, both themes

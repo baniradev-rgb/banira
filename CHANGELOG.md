@@ -37,7 +37,7 @@ Banira V4: refines V3. The V3 baseline is tagged `v3-baseline`; build parity is 
 
 ### Measurement and QA
 - Privacy-first `banira.track` (off; build-guarded by the privacy notice). ANALYTICS.md.
-- Site tests (13), e2e browser checks (21), axe scans, a Lighthouse runner, a responsive sweep and a research toolkit.
+- Site tests (13), e2e browser checks (22), axe scans, a Lighthouse runner, a responsive sweep and a research toolkit.
 
 ### Fixed from V3
 TD-01 unverifiable security claims · TD-02 missing generator · TD-03 two engines · TD-04 invalid index.html head · TD-05 no light theme · TD-06 unfocusable scroll tables · TD-07/08 R2 polyline and missing kit · TD-09 missing OG image and descriptions (except the placeholder domain, LB-04) · TD-10 any HTTP 200 counted as success · TD-11 no analytics plan · TD-12 mobile Lead Desk hero · TD-13 demo step buttons lost their accessible names on mobile · TD-15 no site tests · TD-16 stale docs. Open: TD-14 (home ships all demo JS; LCP now within target, so deferred), TD-17 (some dead V3 rules remain).

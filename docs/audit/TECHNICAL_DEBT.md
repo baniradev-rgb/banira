@@ -40,6 +40,6 @@ Status column is updated as V4 work lands (see CHANGELOG.md).
 | TD-12 | Fixed | `20-subnav.css` (mobile `.cine`) |
 | TD-13 | Fixed: hidden step names stay accessible | `11-lead.css` |
 | TD-14 | Open (low): LCP and TBT are within target, so deferred | backlog B-08 |
-| TD-15 | Fixed: 13 site tests, 21 e2e checks, axe, Lighthouse | `website/tests`, `tools/qa` |
+| TD-15 | Fixed: 13 site tests, 22 e2e checks, axe, Lighthouse | `website/tests`, `tools/qa` |
 | TD-16 | Fixed | README, BRAND_GUIDELINES, DECISION_LOG |
 | TD-17 | Partly: obsolete transitions removed; some unused V3 selectors remain | backlog B-09 |
