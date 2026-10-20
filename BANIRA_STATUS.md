@@ -7,6 +7,8 @@
 - **Lead Desk:** engine 1.1.2 + Apps Script adapter 1.1. Every safeguard on the Security page is implemented and has a test.
 - **Quality evidence:** 57 node tests · 22 e2e browser checks under the production CSP · axe 0 violations in 76 views · Lighthouse lab mobile perf 99–100 (LCP ≤ 2.1 s, CLS 0, TBT ≤ 45 ms), desktop 100 · responsive sweep at 360/390/768/1024/1440/1920 px in both themes. Reports: docs/qa/.
 
+Private preview (owner-only link): https://claude.ai/artifact/1rgjcmJtHjLypH4n2ar5UT, the rc1 build under `site/`. That host doesn't apply `_headers`.
+
 ## What is not verified
 Lead Desk in a real Google account · real-device Safari/iOS/Firefox · field Core Web Vitals · email deliverability · legal text.
 
