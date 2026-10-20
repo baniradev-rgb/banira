@@ -1,0 +1,34 @@
+<div class="cmp" data-composer>
+  <form class="cmp-form" novalidate aria-labelledby="cmp-h">
+    <div class="cmp-presets" role="group" aria-label="Example inquiries">
+      <span class="fig">Start from an example</span>
+      <div class="cluster">
+        <button type="button" class="chip" data-preset="urgent" aria-pressed="false">No heat, gas smell</button>
+        <button type="button" class="chip" data-preset="install" aria-pressed="false">Heat pump quote</button>
+        <button type="button" class="chip" data-preset="tuneup" aria-pressed="false">Tune-up booking</button>
+        <button type="button" class="chip" data-preset="area" aria-pressed="false">Outside service area</button>
+        <button type="button" class="chip" data-preset="spam" aria-pressed="false">Link spam</button>
+        <button type="button" class="chip" data-preset="noemail" aria-pressed="false">No email given</button>
+      </div>
+    </div>
+    <div class="cmp-fields">
+      <div class="field"><label for="cmp-name">Name</label><input id="cmp-name" name="name" autocomplete="off" maxlength="120" value="Sam Ortiz"></div>
+      <div class="field"><label for="cmp-email">Email <span class="muted">(fictional)</span></label><input id="cmp-email" name="email" type="email" autocomplete="off" maxlength="254" value="sam.ortiz@example.com"></div>
+      <div class="field"><label for="cmp-phone">Phone <span class="muted">(optional)</span></label><input id="cmp-phone" name="phone" autocomplete="off" maxlength="40" value=""></div>
+      <div class="field"><label for="cmp-zip">ZIP</label><input id="cmp-zip" name="zip" autocomplete="off" maxlength="12" inputmode="numeric" value="02139"><p class="hint">Service area: ZIPs starting 021 or 024</p></div>
+      <div class="field field--wide"><label for="cmp-msg">Message</label><textarea id="cmp-msg" name="message" rows="4" maxlength="5000">Our furnace stopped last night and we have no heat. Can someone come today?</textarea></div>
+      <fieldset class="field field--wide cmp-when"><legend>Arrives</legend>
+        <label><input type="radio" name="when" value="2026-10-20T18:14:00Z" checked> Tue 2:14 PM <span class="muted">open</span></label>
+        <label><input type="radio" name="when" value="2026-10-21T01:40:00Z"> Tue 9:40 PM <span class="muted">closed</span></label>
+        <label><input type="radio" name="when" value="2026-10-24T19:00:00Z"> Sat 3:00 PM <span class="muted">closed</span></label>
+      </fieldset>
+    </div>
+    <div class="cmp-actions"><button class="btn btn--primary" type="submit">Run Lead Desk <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><p class="small muted">Runs in this tab only. Nothing is sent or saved.</p></div>
+  </form>
+  <div class="cmp-result" aria-labelledby="cmp-res-h">
+    <h3 class="visually-hidden" id="cmp-res-h">Result</h3>
+    <p class="cmp-empty" data-cmp-empty>Choose an example or write an inquiry, then run it. Each step appears here as the rules engine works through it.</p>
+    <ol class="cmp-steps" data-cmp-steps hidden></ol>
+    <p class="visually-hidden" aria-live="polite" data-cmp-live></p>
+  </div>
+</div>

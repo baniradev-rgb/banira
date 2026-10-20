@@ -185,7 +185,7 @@ function runFollowUps() {
       var next = LeadEngine.nextFollowUp(state, cfg_(), now);
       if (next.action === 'complete') { sh.getRange(rowNum, COL['Status']).setValue('no-response'); continue; }
       if (next.action !== 'send') continue;
-      var lead = { email: email, firstName: String(row[COL['Name'] - 1]).split(/\s+/)[0], name: row[COL['Name'] - 1], serviceLabel: String(row[COL['Service'] - 1]).toLowerCase() };
+      var lead = { email: email, firstName: String(row[COL['Name'] - 1]).split(/\s+/)[0], name: row[COL['Name'] - 1], serviceLabel: LeadEngine.inSentence(String(row[COL['Service'] - 1])) };
       var msg = LeadEngine.buildFollowUp(lead, cfg_(), next.template);
       if (!dryRun_()) {
         var thread = row[COL['Thread ID'] - 1] && GmailApp.getThreadById(row[COL['Thread ID'] - 1]);

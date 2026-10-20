@@ -102,7 +102,7 @@
 
   return {
     now: NOW, records: records, byId: byId, selectable: SAMPLES.selectable, workflows: SAMPLES.workflows,
-    allEvents: allEvents, fmt: fmt, time: time, day: day, stamp: stamp, nextHour: nextHour, engineVersion: E.VERSION,
+    allEvents: allEvents, nextAction: nextAction, fmt: fmt, time: time, day: day, stamp: stamp, nextHour: nextHour, engineVersion: E.VERSION,
     business: CONFIG.business, config: CONFIG
   };
 });

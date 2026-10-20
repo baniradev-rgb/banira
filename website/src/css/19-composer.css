@@ -1,0 +1,50 @@
+/* ── scenario composer (demo) ───────────────────────────────────────────── */
+.chip { min-height: 36px; padding: 0 .8rem; border-radius: var(--r-pill); border: 1px solid var(--control-line); color: var(--fg-2); font-size: .8125rem; background: transparent;
+  transition: color var(--dur-micro) var(--ease-standard), background-color var(--dur-surface) var(--ease-standard), border-color var(--dur-surface) var(--ease-standard); }
+.chip:hover { color: var(--fg); background: var(--hover); }
+.chip[aria-pressed="true"] { color: var(--on-fg); background: var(--fg); border-color: var(--fg); }
+.hint { font-size: var(--t-xs); color: var(--muted); }
+.cmp { display: grid; gap: var(--s-8); grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 1000px) { .cmp { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); } }
+.cmp-form { display: grid; gap: var(--s-6); padding: var(--s-6); border: 1px solid var(--line-2); border-radius: var(--r-xl); background: var(--panel); box-shadow: var(--elev-2); }
+.cmp-presets { display: grid; gap: var(--s-3); }
+.cmp-presets .cluster { gap: .5rem; }
+.cmp-fields { display: grid; gap: var(--s-4); grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.cmp-fields .field--wide { grid-column: 1 / -1; }
+@media (max-width: 520px) { .cmp-fields { grid-template-columns: 1fr; } }
+.cmp-when { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+.cmp-when legend { margin-bottom: .4rem; width: 100%; }
+.cmp-when label { display: inline-flex; align-items: center; gap: .45rem; font-size: var(--t-sm); color: var(--fg-2); font-weight: 400; min-height: 32px; }
+.cmp-when input { accent-color: var(--fg); width: 16px; height: 16px; }
+.cmp-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1rem; }
+.cmp-result { min-height: 100%; }
+.cmp-empty { padding: var(--s-8); border: 1px dashed var(--line-3); border-radius: var(--r-xl); color: var(--muted); }
+.cmp-steps { list-style: none; display: grid; gap: 0; position: relative; }
+.cmp-steps::before { content: ""; position: absolute; left: 15px; top: 18px; bottom: 18px; width: 1px; background: var(--line-2); }
+.cmp-step { position: relative; display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: var(--s-4); padding: 0 0 var(--s-6); }
+.cmp-n { position: relative; z-index: 1; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--bg); border: 1px solid var(--line-3); font: 500 .6875rem var(--mono); color: var(--fg-2); }
+.cmp-step--ok .cmp-n { border-color: var(--fg-2); color: var(--fg); }
+.cmp-step--skip { opacity: .62; }
+.cmp-step--warn .cmp-n { border-color: var(--amber); color: var(--amber); }
+.cmp-step > div { display: grid; gap: .6rem; padding-top: .3rem; min-width: 0; }
+.cmp-t { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; color: var(--fg); }
+.cmp-step p .pill { margin-right: .3rem; }
+.cmp-kv { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem 1rem; font-size: var(--t-sm); }
+.cmp-kv dt { font: 500 var(--t-2xs) var(--mono); text-transform: uppercase; letter-spacing: var(--ls-label); color: var(--muted); }
+.cmp-kv dd { margin: 0; color: var(--fg); overflow-wrap: anywhere; }
+.cmp-score { display: flex; align-items: baseline; gap: .4rem; flex-wrap: wrap; }
+.cmp-score-n { font-size: 2rem; font-weight: 540; letter-spacing: -0.04em; color: var(--fg); line-height: 1; font-variant-numeric: tabular-nums; }
+.cmp-bar { flex: 1 1 120px; height: 4px; border-radius: 2px; background: var(--line-2); overflow: hidden; align-self: center; }
+.cmp-bar i { display: block; height: 100%; width: var(--w); background: var(--fg); border-radius: inherit; transform-origin: 0 50%; }
+.cmp-reasons { list-style: none; display: grid; gap: .2rem; font-size: .8125rem; color: var(--fg-2); }
+.cmp-note { font-size: var(--t-sm); color: var(--amber); }
+.cmp-mail { border: 1px solid var(--line-2); border-radius: var(--r-md); padding: .9rem 1rem; background: var(--surface-app); display: grid; gap: .6rem; }
+.cmp-mail pre { font-family: var(--sans); font-size: var(--t-sm); color: var(--fg); line-height: 1.6; max-height: 260px; overflow: auto; }
+.cmp-fu { list-style: none; display: grid; gap: .25rem; font-size: var(--t-sm); color: var(--fg); }
+.cmp-fu .mono { color: var(--muted); margin-right: .4rem; }
+/* sequence: each step rises in turn; the score bar fills after its step lands */
+.cmp-steps.is-playing .cmp-step { opacity: 0; animation: rise var(--dur-reveal) var(--ease-out) forwards; animation-delay: calc(var(--i) * 260ms - 200ms); }
+.cmp-steps.is-playing .cmp-step--skip { animation-name: riseQuiet; }
+@keyframes riseQuiet { from { opacity: 0; transform: translateY(14px); } to { opacity: .62; transform: none; } }
+.cmp-steps.is-playing .cmp-bar i { animation: fill var(--dur-story) var(--ease-out) both; animation-delay: 400ms; }
+@keyframes fill { from { transform: scaleX(0); } }

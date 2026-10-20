@@ -1,5 +1,5 @@
 /**
- * Banira Lead Desk — core engine (v1.1.0)
+ * Banira Lead Desk — core engine (v1.1.1)
  *
  * Pure functions, no I/O. The SAME file runs in:
  *   - Google Apps Script (copied in as Engine.gs)   → production
@@ -13,7 +13,7 @@
 var LeadEngine = (function () {
   'use strict';
 
-  var VERSION = '1.1.0';
+  var VERSION = '1.1.1';
   var LIMITS = { name: 120, email: 254, phone: 40, message: 5000, zip: 12, service: 120 };
   var DAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
   var EMAIL_RE = /^[^\s@<>()[\],;:"]+@[^\s@<>()[\],;:"]+\.[a-z]{2,}$/i;
@@ -240,6 +240,11 @@ var LeadEngine = (function () {
     }).replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
   }
 
+  /** Service label for use mid-sentence: "Heating or AC repair" → "heating or AC repair" (acronyms keep their case). */
+  function inSentence(label) {
+    return str(label).split(' ').map(function (w) { return /^[A-Z0-9]{2,}s?$/.test(w) ? w : w.toLowerCase(); }).join(' ');
+  }
+
   function templateVars(lead, config, svc) {
     var b = config.business;
     return {
@@ -249,7 +254,7 @@ var LeadEngine = (function () {
       owner_name: b.owner_name,
       phone: b.phone,
       booking_url: b.booking_url || '',
-      service: svc.label.toLowerCase(),
+      service: inSentence(svc.label),
       response_window: b.response_window || 'within one business day',
       signature: b.signature || (b.owner_name + '\n' + b.name + (b.phone ? '\n' + b.phone : ''))
     };
@@ -437,7 +442,7 @@ var LeadEngine = (function () {
     planFollowUps: planFollowUps, nextFollowUp: nextFollowUp, buildFollowUp: buildFollowUp, isOptOut: isOptOut, isAutoReply: isAutoReply,
     checkConfig: checkConfig, processInquiry: processInquiry, localParts: localParts,
     sanitizeName: sanitizeName, safeCell: safeCell, dedupeKey: dedupeKey, addressOf: addressOf, sameAddress: sameAddress,
-    stripQuoted: stripQuoted, autoReplyDecision: autoReplyDecision, hash: hash, LIMITS: LIMITS
+    stripQuoted: stripQuoted, autoReplyDecision: autoReplyDecision, hash: hash, LIMITS: LIMITS, inSentence: inSentence
   };
 })();
 

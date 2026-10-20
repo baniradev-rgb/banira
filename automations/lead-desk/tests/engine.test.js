@@ -125,3 +125,11 @@ test('auto-replies are not treated as real replies', () => {
   assert.ok(E.isAutoReply('Undeliverable: We got your request', ''));
   assert.ok(!E.isAutoReply('Re: We got your request', 'Thursday morning works for us'));
 });
+
+test('service labels keep acronyms mid-sentence (HVAC, AC) in customer emails', () => {
+  assert.equal(E.inSentence('Heating or AC repair'), 'heating or AC repair');
+  assert.equal(E.inSentence('HVAC tune-up'), 'HVAC tune-up');
+  assert.equal(E.inSentence('New system installation'), 'new system installation');
+  const r = E.processInquiry({ name: 'Sam', email: 'sam@example.com', zip: '02139', message: 'Our AC is broken, can you repair it?' }, config, new Date('2026-10-20T18:14:00Z'));
+  assert.match(r.reply.body, /about heating or AC repair\./);
+});
