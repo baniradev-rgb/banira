@@ -37,9 +37,9 @@ const go = (page, p) => page.goto(base + p, { waitUntil: 'networkidle' });
 
 // a site config with the endpoint switched on, served only to the contact tests
 async function endpointMode(page, reply) {
-  await page.route('**/assets/js/site-config.js*', (r) => r.fulfill({ contentType: 'text/javascript', body: 'window.BANIRA_SITE={"form_mode":"endpoint","form_endpoint":"https://script.example/exec","contact_email":"","analytics":{"mode":"off"}};' }));
+  await page.route('**/assets/js/site-config.js*', (r) => r.fulfill({ contentType: 'text/javascript', body: 'window.BANIRA_SITE={"form_mode":"endpoint","form_endpoint":"https://script.google.com/macros/s/TEST/exec","contact_email":"","analytics":{"mode":"off"}};' }));
   const calls = [];
-  await page.route('https://script.example/**', async (r) => { calls.push(r.request().postData()); await reply(r, calls.length); });
+  await page.route('https://script.google.com/macros/s/TEST/**', async (r) => { calls.push(r.request().postData()); await reply(r, calls.length); });
   return calls;
 }
 async function fillContact(page) {
@@ -57,6 +57,19 @@ async function fillContact(page) {
   await check('every page loads without console errors (desktop + mobile)', async (page) => {
     const files = fs.readdirSync(siteDir).filter((f) => f.endsWith('.html'));
     for (const f of files) for (const w of [1440, 390]) { await page.setViewportSize({ width: w, height: 900 }); await go(page, f); }
+  });
+
+  await check('no horizontal scroll on any page at 360 px (light) and 1920 px (dark)', async (page) => {
+    const files = fs.readdirSync(siteDir).filter((f) => f.endsWith('.html'));
+    for (const [w, scheme] of [[360, 'light'], [1920, 'dark']]) {
+      await page.setViewportSize({ width: w, height: 800 });
+      await page.emulateMedia({ colorScheme: scheme });
+      for (const f of files) {
+        await go(page, f);
+        const over = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+        expect(over <= 0, f + ' overflows by ' + over + ' px at ' + w);
+      }
+    }
   });
 
   await check('mega-menu: hover opens, Escape closes and returns focus; ArrowDown moves into links', async (page) => {

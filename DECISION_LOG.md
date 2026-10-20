@@ -60,3 +60,39 @@ Owner asked for new colours, a logo closer to vanilla, flowers or Japanese cultu
 - **Website:** dark-first, with an ambient aurora, falling blossoms, cursor glow, card spotlight and tilt, magnetic buttons, rotating console border, typed replies and scroll reveals. Reduced motion is respected.
 
 The v1 "b" mark is retired. It remains in Git history (commit 2f23864).
+
+---
+## V4 — 20 Oct 2026 (Claude Code, under the owner's V4 directive)
+
+### D-017 · Brand R2 (curved vanilla pod + separate seed) is the logo — Accepted (owner, per V4 directive)
+The directive records R2 as an established owner decision. V3 already used it; the session that approved it isn't in this repository. Blossom (D-016) is superseded and archived. V4 refit the supplied polyline to Bézier curves without changing the shape: max deviation 0.046 of 64 units (`brand/r2/FIT_REPORT.md`). Preliminary similarity review: `brand/r2/SIMILARITY_REVIEW.md`. **This is not a trademark clearance** (T-109).
+
+### D-018 · Keep a static site; replace the missing V3 generator with a dependency-free Node build — Accepted
+Evidence and alternatives: docs/audit/ARCHITECTURE_AUDIT.md §5. Every V3 URL is preserved, and the build reproduced V3's `<main>` content byte-for-byte (tag `v4-build-parity`) before any V4 change.
+
+### D-019 · One engine — Accepted
+`automations/lead-desk/src/engine.js` is canonical (v1.1.x, taken from the V3 site, backward compatible with all v1.0 tests). The website copies it at build, and a test asserts the copies are identical.
+
+### D-020 · Dark default that follows the system, plus a designed light theme and a toggle — Accepted
+Of the references, only Vercel followed the system theme (measured). V3 had no light theme despite earlier notes saying it did. The light palette uses pure neutrals, with no beige.
+
+### D-021 · Published prices stay as the V3 site states them — Proposed (owner to confirm)
+Founding $290 (3 places, no deadline) · Lead Desk $490 · Care $49/month · Plus "in development, not for sale, not priced" · custom "quoted after a written plan, no starting price". This differs from D-012 and BUSINESS_MODEL.md (Plus $890 / Care $79 / custom from $1,500). V4 follows the newer website position. The owner should confirm one set and update the other.
+
+### D-022 · Lead Desk adapter v1.1 rebuilt to match the published safeguards — Accepted
+The V3 Security page described v1.1 controls and "53 tests" that weren't in any supplied file. V4 implements every listed safeguard in `Code.gs`, with one test each. The site now prints the real count from `tools/test-summary.js` (39 at the time of writing) instead of a hand-typed number.
+
+### D-023 · Contact destination = Banira's own Lead Desk web app (dogfooding, D-014) — Accepted, not yet deployed
+Success is shown only after `{ok:true,id}`, which the adapter sends after writing the row. Netlify Forms mode is kept as an alternative. No secrets in the site; the Turnstile secret, if used, lives in Script Properties.
+
+### D-024 · Analytics: privacy-first layer built but OFF — Proposed (owner decides whether and which collector)
+No cookies, IDs or third-party script, and DNT/GPC are honoured. The build blocks enabling it until the privacy notice describes it. ANALYTICS.md.
+
+### D-025 · No motion library — Accepted
+CSS transitions plus IntersectionObserver covered every observed pattern. Lab TBT ≤ 20 ms on mobile.
+
+### D-026 · Urgent but low-score inquiries — Proposed (owner rule decision)
+Found in QA. An urgent gas-smell inquiry from outside the service area scores 25 (cold). Its next action becomes "automatic follow-up only" and it gets a single follow-up. The customer still receives the urgent safety reply and the owner alert says URGENT. Option: urgent inquiries never drop below warm. This changes approved scoring, so it is left to the owner.
+
+### D-027 · Reading times computed from article text — Accepted
+V3 labels said 8 and 6 minutes for articles of about 700 words. V4 computes the time at 220 words per minute (3 min). This is more accurate and keeps us from overstating depth.

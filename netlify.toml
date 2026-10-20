@@ -1,0 +1,13 @@
+# Netlify configuration (not yet connected: owner approval required, see DEPLOYMENT.md §2).
+[build]
+  command = "npm test && npm run build"
+  publish = "website/dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = "1"
+  # tests and build need no packages; QA tools (lighthouse, axe-core) stay off the build machine
+  NPM_FLAGS = "--omit=dev"
+
+# Security and cache headers live in website/src/static/_headers (copied into the publish folder),
+# so the local QA server applies exactly the same rules.

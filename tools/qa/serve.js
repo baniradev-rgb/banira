@@ -14,10 +14,26 @@ const TYPES = {
   '.webmanifest': 'application/manifest+json'
 };
 
+// Netlify-style _headers: "path-pattern" lines followed by indented "Name: value" lines.
+function loadHeaders(root) {
+  const f = path.join(root, '_headers');
+  if (!fs.existsSync(f)) return [];
+  const rules = []; let cur = null;
+  fs.readFileSync(f, 'utf8').split('\n').forEach((line) => {
+    if (!line.trim() || line.trim().startsWith('#')) return;
+    if (!/^\s/.test(line)) { cur = { re: new RegExp('^' + line.trim().replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*') + '$'), h: {} }; rules.push(cur); return; }
+    const i = line.indexOf(':'); if (cur && i > 0) cur.h[line.slice(0, i).trim()] = line.slice(i + 1).trim();
+  });
+  return rules;
+}
+
 function createServer(root) {
   root = path.resolve(root);
+  const rules = loadHeaders(root);
   return http.createServer((req, res) => {
     let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    const reqPath = p.endsWith('/') ? p + 'index.html' : p;
+    rules.forEach((r) => { if (r.re.test(reqPath)) Object.entries(r.h).forEach(([k, v]) => { if (k !== 'Content-Security-Policy' || !/upgrade-insecure/.test(v)) res.setHeader(k, v); else res.setHeader(k, v.replace(/; upgrade-insecure-requests/, '')); }); });
     if (p.endsWith('/')) p += 'index.html';
     let file = path.join(root, p);
     if (!file.startsWith(root)) { res.writeHead(403); return res.end(); }

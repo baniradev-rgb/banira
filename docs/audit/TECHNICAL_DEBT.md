@@ -22,3 +22,24 @@ Status column is updated as V4 work lands (see CHANGELOG.md).
 | TD-15 | L | Process | No site tests, no link checker, no a11y/perf scripts | repo | `tools/qa/*`, `website/tests/*` |
 | TD-16 | L | Docs | README/BRAND_GUIDELINES describe the blossom brand, v2 site and $890 Plus price no longer on the site | README "Offer" row | Update docs |
 | TD-17 | L | Code | `.section + .section { border-top: 1px solid transparent }` and other dead rules; some one-off inline styles (`style="--delay"`) | site.css | Clean during CSS split |
+
+## Status after V4 (20 Oct 2026)
+| # | Status | Where |
+|---|---|---|
+| TD-01 | Fixed: adapter v1.1 implements and tests every listed safeguard; counts come from a real run | `automations/lead-desk/apps-script/Code.gs`, `tools/test-summary.js` |
+| TD-02 | Fixed: Node build with partials | `website/build.js` |
+| TD-03 | Fixed: one engine, copy test-asserted | `website/tests/site.test.js` |
+| TD-04 | Fixed: every page is generated from one head template | build |
+| TD-05 | Fixed: designed light theme + toggle | `00-theme.light.css` |
+| TD-06 | Fixed: focusable labelled regions | `.table-wrap` |
+| TD-07 | Fixed: Bézier refit, one component | `brand/r2/` |
+| TD-08 | Fixed: R2 kit; blossom archived | `brand/r2/svg`, `archive/brand-v2-blossom/` |
+| TD-09 | Mostly fixed: OG image, descriptions, noindex 404, Article JSON-LD. **Open:** real domain (LB-04) | `site.config.json` |
+| TD-10 | Fixed: success only on `{ok:true}`; tested | `forms.js`, e2e |
+| TD-11 | Fixed (off by default) | `ANALYTICS.md` |
+| TD-12 | Fixed | `20-subnav.css` (mobile `.cine`) |
+| TD-13 | Fixed: hidden step names stay accessible | `11-lead.css` |
+| TD-14 | Open (low): LCP and TBT are within target, so deferred | backlog B-08 |
+| TD-15 | Fixed: 13 site tests, 21 e2e checks, axe, Lighthouse | `website/tests`, `tools/qa` |
+| TD-16 | Fixed | README, BRAND_GUIDELINES, DECISION_LOG |
+| TD-17 | Partly: obsolete transitions removed; some unused V3 selectors remain | backlog B-09 |

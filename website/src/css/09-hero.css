@@ -43,6 +43,6 @@
   background: linear-gradient(to bottom, transparent, var(--bg)); border-radius: 0 0 var(--r-xl) var(--r-xl);
 }
 /* the seed light: one faint breathing glow behind the hero, where the R2 seed would sit (dark theme only) */
-.hero { isolation: isolate; }
+.hero { isolation: isolate; overflow-x: clip; } /* the seed light extends past the edge; body clip alone does not stop the root scrolling */
 .seed-light--hero { z-index: -1; width: min(900px, 120vw); aspect-ratio: 1; right: -18%; top: -32%; }
 @media (max-width: 720px) { .seed-light--hero { right: -60%; top: -20%; } }

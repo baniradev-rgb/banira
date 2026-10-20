@@ -28,13 +28,13 @@
   --brand-black: #000000;
   --brand-white: #FFFFFF;
 
-  /* ── text ── fg 17.0:1 · fg-2 8.1:1 · muted 5.6:1 (4.8:1 on --panel-2) */
+  /* ── text ── fg 17.2:1 · fg-2 8.0:1 · muted 5.9:1 (5.3:1 on --panel-2) */
   --fg: #EDEEF0;
   --fg-rgb: 237 238 240;
   --fg-2: #A2A4AB;
   --muted: #8A8C95;
   --quiet: #8F919A;              /* second clause of two-tone statements */
-  --placeholder: #6E7079;
+  --placeholder: #82848D;            /* 4.9:1 on --panel */
   --fg-strong: #FFFFFF;          /* primary button hover */
   --on-fg: #0B0C0E;              /* text on a --fg filled button */
 

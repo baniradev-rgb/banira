@@ -19,6 +19,12 @@ Claude Cowork, Claude Code and Codex do **not** talk to each other. They share t
 6. **Never commit `clients/`** (client data; gitignored).
 
 ## Handoff entries
+### 2026-10-20 · Claude Code → all (V4)
+- **Done:** V4 website (build system, R2 kit, design system with light theme, motion system, pipeline, scenario composer, Lead Desk sub-nav/pricing, process rail, availability matrix, analytics layer off), Lead Desk adapter v1.1 with a test per safeguard, Banira intake config, Netlify config and headers, full QA (docs/qa/). Commits on `main` from `v3-baseline` up to `v4.0.0-rc1`.
+- **Verified here:** 57 node tests, 21 e2e checks under the production CSP, axe 0 violations in 76 views, Lighthouse lab (mobile perf 99–100, desktop 100), responsive sweep at 6 widths in both themes. See docs/qa/QA_REPORT.md.
+- **Not verified:** anything in a real Google account (T-101/T-115), real-device Safari/iOS, field Core Web Vitals, deliverability.
+- **Next:** OWN T-102, T-112, T-113, T-114; CC T-115 after T-102; CX T-103 (the review prompt below still applies, now to adapter v1.1).
+
 ### 2026-10-18 · Claude Cowork → all (strategy reset)
 - **Done:** research + selection (Lead Desk, 82.0/100); brand v1 (19 SVGs, tokens); website (live demo + intake) published as a private preview; engine + Apps Script + build tool (22 tests); onboarding generator (5 tests); SOPs, packages, acquisition plan. Email-auth work archived in `archive/`.
 - **Not verified:** nothing has run in a real Google account (sandbox only; Google services simulated in tests). Google Fonts don't load in the build sandbox, so screenshots used fallback fonts.

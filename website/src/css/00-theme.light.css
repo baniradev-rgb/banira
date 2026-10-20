@@ -2,7 +2,7 @@
    @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { … } } and :root[data-theme="light"] { … }.
    Designed, not inverted: white raised surfaces on a cool #FAFAFA ground, softer shadows doing the work hairlines do
    in dark, meaning colours darkened to keep ≥ 4.5:1 as text, ambient glow off. Pure neutrals only (no beige).
-   Contrast (on --bg): fg 19.0:1 · fg-2 8.2:1 · muted 5.8:1 · on white panels slightly higher. */
+   Contrast (on --bg): fg 19.0:1 · fg-2 8.1:1 · muted 5.9:1 · placeholder 5.2:1 on white. */
 color-scheme: light;
 --bg: #FAFAFA;
 --bg-rgb: 250 250 250;
@@ -24,7 +24,7 @@ color-scheme: light;
 --fg-2: #4B4D54;
 --muted: #5F6168;
 --quiet: #74767D;
---placeholder: #74767D;
+--placeholder: #6A6C73;
 --fg-strong: #000000;
 --on-fg: #FFFFFF;
 

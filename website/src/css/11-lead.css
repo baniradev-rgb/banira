@@ -186,8 +186,9 @@
   .ld-back { display: inline-flex; }
   .ld-convo-head { padding: .6rem .7rem; gap: .5rem; }
   .ld-convo-title .nm { font-size: .875rem; }
-  .ld-step .t { display: none; }
-  .ld-step.is-current .t { display: block; }
+  /* other step names stay in the accessibility tree (visually hidden), so each button keeps its name */
+  .ld-step .t { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .ld-step.is-current .t { position: static; width: auto; height: auto; clip: auto; overflow: hidden; }
   .ld-steps li:has(.is-current) { flex: 3; }
   .ld-thread { padding: .9rem .8rem 2rem; }
   .ld-biz-name { max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

@@ -15,6 +15,14 @@ Status: `todo` · `doing` · `blocked` · `done`. 🔒 = owner approval or actio
 | T-108 | Trade presets in website demo (plumbing, roofing, electrical) | CC | todo | — |
 | T-109 | 🔒 Trademark/domain check (USPTO classes 35/42) | OWN | todo | — |
 | T-110 | Quote follow-up module | CC | todo | first Plus request |
+| T-111 | V4 website, design system, adapter v1.1, QA (this initiative) | CC | done | — |
+| T-112 | 🔒 Confirm the published price set (D-021) and update BUSINESS_MODEL.md or the site to match | OWN | todo | — |
+| T-113 | 🔒 Decide the urgent-scoring rule (D-026); CC implements with tests | OWN → CC | todo | — |
+| T-114 | 🔒 Choose the domain; set `site.config.json url` (LB-04) | OWN | todo | T-109 |
+| T-115 | Deploy Banira's own Lead Desk (DEPLOYMENT §3) and switch form to endpoint after a DRY_RUN test | CC + OWN | todo | T-102 |
+| T-116 | 🔒 Legal review of privacy and terms drafts; legal name + address | OWN | todo | T-105 |
+| T-117 | Field performance check after launch (CrUX or cookieless RUM, if approved) | CC | todo | T-104 |
+| T-118 | Backlog B-01…B-12 (docs/qa/QA_REPORT.md §7) | CC | todo | — |
 
 ---
 ### T-101 · Live Google test

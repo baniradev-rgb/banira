@@ -1,0 +1,2305 @@
+{
+  "base": "http://localhost:33513/",
+  "pages": {
+    "404@360/dark": {
+      "title": "Page not found · Banira",
+      "h1": [
+        "This page isn’t here."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "about@360/dark": {
+      "title": "About · Banira",
+      "h1": [
+        "Vanilla, on purpose."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "contact@360/dark": {
+      "title": "Contact · Banira",
+      "h1": [
+        "Discuss your workflow."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "demo@360/dark": {
+      "title": "Interactive demo · Banira",
+      "h1": [
+        "Walk through a sample inquiry."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "design-system@360/dark": {
+      "title": "Design system (internal) · Banira",
+      "h1": [
+        "Banira design system."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "faq@360/dark": {
+      "title": "FAQ · Banira",
+      "h1": [
+        "Questions, answered plainly."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "how-it-works@360/dark": {
+      "title": "How it works · Banira",
+      "h1": [
+        "From first conversation to a setup you own."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "index@360/dark": {
+      "title": "Banira — Keep new inquiries moving",
+      "h1": [
+        "Keep new inquiries moving. Even when you’re busy."
+      ],
+      "errors": [],
+      "horizontalScroll": true,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "lead-desk@360/dark": {
+      "title": "Lead Desk · Banira",
+      "h1": [
+        "Every new inquiry answered, sorted and followed up."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "pricing@360/dark": {
+      "title": "Pricing · Banira",
+      "h1": [
+        "A one-off setup. No platform fee."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "privacy@360/dark": {
+      "title": "Privacy notice (draft) · Banira",
+      "h1": [
+        "Privacy notice"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-automation-readiness@360/dark": {
+      "title": "Before you automate: a 10-question check · Banira",
+      "h1": [
+        "Before you automate: a 10-question check."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-email-deliverability@360/dark": {
+      "title": "Make sure automated emails reach the inbox · Banira",
+      "h1": [
+        "Make sure automated emails reach the inbox."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-lead-response-time@360/dark": {
+      "title": "How fast should you reply to a web inquiry? · Banira",
+      "h1": [
+        "How fast should you reply to a web inquiry?"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources@360/dark": {
+      "title": "Resources · Banira",
+      "h1": [
+        "Guides for handling inquiries well."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "security@360/dark": {
+      "title": "Security · Banira",
+      "h1": [
+        "Data flow, access and boundaries."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "solutions@360/dark": {
+      "title": "Solutions · Banira",
+      "h1": [
+        "Built for owners who are on the job when inquiries arrive."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "terms@360/dark": {
+      "title": "Terms of service (draft) · Banira",
+      "h1": [
+        "Terms of service"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "workspace@360/dark": {
+      "title": "Banira Workspace (concept)",
+      "h1": [
+        "A clearer view of the systems behind your business."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "404@390/dark": {
+      "title": "Page not found · Banira",
+      "h1": [
+        "This page isn’t here."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "about@390/dark": {
+      "title": "About · Banira",
+      "h1": [
+        "Vanilla, on purpose."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "contact@390/dark": {
+      "title": "Contact · Banira",
+      "h1": [
+        "Discuss your workflow."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "demo@390/dark": {
+      "title": "Interactive demo · Banira",
+      "h1": [
+        "Walk through a sample inquiry."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "design-system@390/dark": {
+      "title": "Design system (internal) · Banira",
+      "h1": [
+        "Banira design system."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "faq@390/dark": {
+      "title": "FAQ · Banira",
+      "h1": [
+        "Questions, answered plainly."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "how-it-works@390/dark": {
+      "title": "How it works · Banira",
+      "h1": [
+        "From first conversation to a setup you own."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "index@390/dark": {
+      "title": "Banira — Keep new inquiries moving",
+      "h1": [
+        "Keep new inquiries moving. Even when you’re busy."
+      ],
+      "errors": [],
+      "horizontalScroll": true,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "lead-desk@390/dark": {
+      "title": "Lead Desk · Banira",
+      "h1": [
+        "Every new inquiry answered, sorted and followed up."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "pricing@390/dark": {
+      "title": "Pricing · Banira",
+      "h1": [
+        "A one-off setup. No platform fee."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "privacy@390/dark": {
+      "title": "Privacy notice (draft) · Banira",
+      "h1": [
+        "Privacy notice"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-automation-readiness@390/dark": {
+      "title": "Before you automate: a 10-question check · Banira",
+      "h1": [
+        "Before you automate: a 10-question check."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-email-deliverability@390/dark": {
+      "title": "Make sure automated emails reach the inbox · Banira",
+      "h1": [
+        "Make sure automated emails reach the inbox."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-lead-response-time@390/dark": {
+      "title": "How fast should you reply to a web inquiry? · Banira",
+      "h1": [
+        "How fast should you reply to a web inquiry?"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources@390/dark": {
+      "title": "Resources · Banira",
+      "h1": [
+        "Guides for handling inquiries well."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "security@390/dark": {
+      "title": "Security · Banira",
+      "h1": [
+        "Data flow, access and boundaries."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "solutions@390/dark": {
+      "title": "Solutions · Banira",
+      "h1": [
+        "Built for owners who are on the job when inquiries arrive."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "terms@390/dark": {
+      "title": "Terms of service (draft) · Banira",
+      "h1": [
+        "Terms of service"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "workspace@390/dark": {
+      "title": "Banira Workspace (concept)",
+      "h1": [
+        "A clearer view of the systems behind your business."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "404@768/dark": {
+      "title": "Page not found · Banira",
+      "h1": [
+        "This page isn’t here."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "about@768/dark": {
+      "title": "About · Banira",
+      "h1": [
+        "Vanilla, on purpose."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "contact@768/dark": {
+      "title": "Contact · Banira",
+      "h1": [
+        "Discuss your workflow."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "demo@768/dark": {
+      "title": "Interactive demo · Banira",
+      "h1": [
+        "Walk through a sample inquiry."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "design-system@768/dark": {
+      "title": "Design system (internal) · Banira",
+      "h1": [
+        "Banira design system."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "faq@768/dark": {
+      "title": "FAQ · Banira",
+      "h1": [
+        "Questions, answered plainly."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "how-it-works@768/dark": {
+      "title": "How it works · Banira",
+      "h1": [
+        "From first conversation to a setup you own."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "index@768/dark": {
+      "title": "Banira — Keep new inquiries moving",
+      "h1": [
+        "Keep new inquiries moving. Even when you’re busy."
+      ],
+      "errors": [],
+      "horizontalScroll": true,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "lead-desk@768/dark": {
+      "title": "Lead Desk · Banira",
+      "h1": [
+        "Every new inquiry answered, sorted and followed up."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "pricing@768/dark": {
+      "title": "Pricing · Banira",
+      "h1": [
+        "A one-off setup. No platform fee."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "privacy@768/dark": {
+      "title": "Privacy notice (draft) · Banira",
+      "h1": [
+        "Privacy notice"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-automation-readiness@768/dark": {
+      "title": "Before you automate: a 10-question check · Banira",
+      "h1": [
+        "Before you automate: a 10-question check."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-email-deliverability@768/dark": {
+      "title": "Make sure automated emails reach the inbox · Banira",
+      "h1": [
+        "Make sure automated emails reach the inbox."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-lead-response-time@768/dark": {
+      "title": "How fast should you reply to a web inquiry? · Banira",
+      "h1": [
+        "How fast should you reply to a web inquiry?"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources@768/dark": {
+      "title": "Resources · Banira",
+      "h1": [
+        "Guides for handling inquiries well."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "security@768/dark": {
+      "title": "Security · Banira",
+      "h1": [
+        "Data flow, access and boundaries."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "solutions@768/dark": {
+      "title": "Solutions · Banira",
+      "h1": [
+        "Built for owners who are on the job when inquiries arrive."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "terms@768/dark": {
+      "title": "Terms of service (draft) · Banira",
+      "h1": [
+        "Terms of service"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "workspace@768/dark": {
+      "title": "Banira Workspace (concept)",
+      "h1": [
+        "A clearer view of the systems behind your business."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "404@1024/dark": {
+      "title": "Page not found · Banira",
+      "h1": [
+        "This page isn’t here."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "about@1024/dark": {
+      "title": "About · Banira",
+      "h1": [
+        "Vanilla, on purpose."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "contact@1024/dark": {
+      "title": "Contact · Banira",
+      "h1": [
+        "Discuss your workflow."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "demo@1024/dark": {
+      "title": "Interactive demo · Banira",
+      "h1": [
+        "Walk through a sample inquiry."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "design-system@1024/dark": {
+      "title": "Design system (internal) · Banira",
+      "h1": [
+        "Banira design system."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "faq@1024/dark": {
+      "title": "FAQ · Banira",
+      "h1": [
+        "Questions, answered plainly."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "how-it-works@1024/dark": {
+      "title": "How it works · Banira",
+      "h1": [
+        "From first conversation to a setup you own."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "index@1024/dark": {
+      "title": "Banira — Keep new inquiries moving",
+      "h1": [
+        "Keep new inquiries moving. Even when you’re busy."
+      ],
+      "errors": [],
+      "horizontalScroll": true,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "lead-desk@1024/dark": {
+      "title": "Lead Desk · Banira",
+      "h1": [
+        "Every new inquiry answered, sorted and followed up."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "pricing@1024/dark": {
+      "title": "Pricing · Banira",
+      "h1": [
+        "A one-off setup. No platform fee."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "privacy@1024/dark": {
+      "title": "Privacy notice (draft) · Banira",
+      "h1": [
+        "Privacy notice"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-automation-readiness@1024/dark": {
+      "title": "Before you automate: a 10-question check · Banira",
+      "h1": [
+        "Before you automate: a 10-question check."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-email-deliverability@1024/dark": {
+      "title": "Make sure automated emails reach the inbox · Banira",
+      "h1": [
+        "Make sure automated emails reach the inbox."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-lead-response-time@1024/dark": {
+      "title": "How fast should you reply to a web inquiry? · Banira",
+      "h1": [
+        "How fast should you reply to a web inquiry?"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources@1024/dark": {
+      "title": "Resources · Banira",
+      "h1": [
+        "Guides for handling inquiries well."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "security@1024/dark": {
+      "title": "Security · Banira",
+      "h1": [
+        "Data flow, access and boundaries."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "solutions@1024/dark": {
+      "title": "Solutions · Banira",
+      "h1": [
+        "Built for owners who are on the job when inquiries arrive."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "terms@1024/dark": {
+      "title": "Terms of service (draft) · Banira",
+      "h1": [
+        "Terms of service"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "workspace@1024/dark": {
+      "title": "Banira Workspace (concept)",
+      "h1": [
+        "A clearer view of the systems behind your business."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "404@1440/dark": {
+      "title": "Page not found · Banira",
+      "h1": [
+        "This page isn’t here."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "about@1440/dark": {
+      "title": "About · Banira",
+      "h1": [
+        "Vanilla, on purpose."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "contact@1440/dark": {
+      "title": "Contact · Banira",
+      "h1": [
+        "Discuss your workflow."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "demo@1440/dark": {
+      "title": "Interactive demo · Banira",
+      "h1": [
+        "Walk through a sample inquiry."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "design-system@1440/dark": {
+      "title": "Design system (internal) · Banira",
+      "h1": [
+        "Banira design system."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "faq@1440/dark": {
+      "title": "FAQ · Banira",
+      "h1": [
+        "Questions, answered plainly."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "how-it-works@1440/dark": {
+      "title": "How it works · Banira",
+      "h1": [
+        "From first conversation to a setup you own."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "index@1440/dark": {
+      "title": "Banira — Keep new inquiries moving",
+      "h1": [
+        "Keep new inquiries moving. Even when you’re busy."
+      ],
+      "errors": [],
+      "horizontalScroll": true,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "lead-desk@1440/dark": {
+      "title": "Lead Desk · Banira",
+      "h1": [
+        "Every new inquiry answered, sorted and followed up."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "pricing@1440/dark": {
+      "title": "Pricing · Banira",
+      "h1": [
+        "A one-off setup. No platform fee."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "privacy@1440/dark": {
+      "title": "Privacy notice (draft) · Banira",
+      "h1": [
+        "Privacy notice"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-automation-readiness@1440/dark": {
+      "title": "Before you automate: a 10-question check · Banira",
+      "h1": [
+        "Before you automate: a 10-question check."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-email-deliverability@1440/dark": {
+      "title": "Make sure automated emails reach the inbox · Banira",
+      "h1": [
+        "Make sure automated emails reach the inbox."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-lead-response-time@1440/dark": {
+      "title": "How fast should you reply to a web inquiry? · Banira",
+      "h1": [
+        "How fast should you reply to a web inquiry?"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources@1440/dark": {
+      "title": "Resources · Banira",
+      "h1": [
+        "Guides for handling inquiries well."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "security@1440/dark": {
+      "title": "Security · Banira",
+      "h1": [
+        "Data flow, access and boundaries."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "solutions@1440/dark": {
+      "title": "Solutions · Banira",
+      "h1": [
+        "Built for owners who are on the job when inquiries arrive."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "terms@1440/dark": {
+      "title": "Terms of service (draft) · Banira",
+      "h1": [
+        "Terms of service"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "workspace@1440/dark": {
+      "title": "Banira Workspace (concept)",
+      "h1": [
+        "A clearer view of the systems behind your business."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "404@1920/dark": {
+      "title": "Page not found · Banira",
+      "h1": [
+        "This page isn’t here."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "about@1920/dark": {
+      "title": "About · Banira",
+      "h1": [
+        "Vanilla, on purpose."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "contact@1920/dark": {
+      "title": "Contact · Banira",
+      "h1": [
+        "Discuss your workflow."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "demo@1920/dark": {
+      "title": "Interactive demo · Banira",
+      "h1": [
+        "Walk through a sample inquiry."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "design-system@1920/dark": {
+      "title": "Design system (internal) · Banira",
+      "h1": [
+        "Banira design system."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "faq@1920/dark": {
+      "title": "FAQ · Banira",
+      "h1": [
+        "Questions, answered plainly."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "how-it-works@1920/dark": {
+      "title": "How it works · Banira",
+      "h1": [
+        "From first conversation to a setup you own."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "index@1920/dark": {
+      "title": "Banira — Keep new inquiries moving",
+      "h1": [
+        "Keep new inquiries moving. Even when you’re busy."
+      ],
+      "errors": [],
+      "horizontalScroll": true,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "lead-desk@1920/dark": {
+      "title": "Lead Desk · Banira",
+      "h1": [
+        "Every new inquiry answered, sorted and followed up."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "pricing@1920/dark": {
+      "title": "Pricing · Banira",
+      "h1": [
+        "A one-off setup. No platform fee."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "privacy@1920/dark": {
+      "title": "Privacy notice (draft) · Banira",
+      "h1": [
+        "Privacy notice"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-automation-readiness@1920/dark": {
+      "title": "Before you automate: a 10-question check · Banira",
+      "h1": [
+        "Before you automate: a 10-question check."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-email-deliverability@1920/dark": {
+      "title": "Make sure automated emails reach the inbox · Banira",
+      "h1": [
+        "Make sure automated emails reach the inbox."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-lead-response-time@1920/dark": {
+      "title": "How fast should you reply to a web inquiry? · Banira",
+      "h1": [
+        "How fast should you reply to a web inquiry?"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources@1920/dark": {
+      "title": "Resources · Banira",
+      "h1": [
+        "Guides for handling inquiries well."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "security@1920/dark": {
+      "title": "Security · Banira",
+      "h1": [
+        "Data flow, access and boundaries."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "solutions@1920/dark": {
+      "title": "Solutions · Banira",
+      "h1": [
+        "Built for owners who are on the job when inquiries arrive."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "terms@1920/dark": {
+      "title": "Terms of service (draft) · Banira",
+      "h1": [
+        "Terms of service"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "workspace@1920/dark": {
+      "title": "Banira Workspace (concept)",
+      "h1": [
+        "A clearer view of the systems behind your business."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "404@360/light": {
+      "title": "Page not found · Banira",
+      "h1": [
+        "This page isn’t here."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "about@360/light": {
+      "title": "About · Banira",
+      "h1": [
+        "Vanilla, on purpose."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "contact@360/light": {
+      "title": "Contact · Banira",
+      "h1": [
+        "Discuss your workflow."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "demo@360/light": {
+      "title": "Interactive demo · Banira",
+      "h1": [
+        "Walk through a sample inquiry."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "design-system@360/light": {
+      "title": "Design system (internal) · Banira",
+      "h1": [
+        "Banira design system."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "faq@360/light": {
+      "title": "FAQ · Banira",
+      "h1": [
+        "Questions, answered plainly."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "how-it-works@360/light": {
+      "title": "How it works · Banira",
+      "h1": [
+        "From first conversation to a setup you own."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "index@360/light": {
+      "title": "Banira — Keep new inquiries moving",
+      "h1": [
+        "Keep new inquiries moving. Even when you’re busy."
+      ],
+      "errors": [],
+      "horizontalScroll": true,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "lead-desk@360/light": {
+      "title": "Lead Desk · Banira",
+      "h1": [
+        "Every new inquiry answered, sorted and followed up."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "pricing@360/light": {
+      "title": "Pricing · Banira",
+      "h1": [
+        "A one-off setup. No platform fee."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "privacy@360/light": {
+      "title": "Privacy notice (draft) · Banira",
+      "h1": [
+        "Privacy notice"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-automation-readiness@360/light": {
+      "title": "Before you automate: a 10-question check · Banira",
+      "h1": [
+        "Before you automate: a 10-question check."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-email-deliverability@360/light": {
+      "title": "Make sure automated emails reach the inbox · Banira",
+      "h1": [
+        "Make sure automated emails reach the inbox."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-lead-response-time@360/light": {
+      "title": "How fast should you reply to a web inquiry? · Banira",
+      "h1": [
+        "How fast should you reply to a web inquiry?"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources@360/light": {
+      "title": "Resources · Banira",
+      "h1": [
+        "Guides for handling inquiries well."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "security@360/light": {
+      "title": "Security · Banira",
+      "h1": [
+        "Data flow, access and boundaries."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "solutions@360/light": {
+      "title": "Solutions · Banira",
+      "h1": [
+        "Built for owners who are on the job when inquiries arrive."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "terms@360/light": {
+      "title": "Terms of service (draft) · Banira",
+      "h1": [
+        "Terms of service"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "workspace@360/light": {
+      "title": "Banira Workspace (concept)",
+      "h1": [
+        "A clearer view of the systems behind your business."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "404@390/light": {
+      "title": "Page not found · Banira",
+      "h1": [
+        "This page isn’t here."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "about@390/light": {
+      "title": "About · Banira",
+      "h1": [
+        "Vanilla, on purpose."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "contact@390/light": {
+      "title": "Contact · Banira",
+      "h1": [
+        "Discuss your workflow."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "demo@390/light": {
+      "title": "Interactive demo · Banira",
+      "h1": [
+        "Walk through a sample inquiry."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "design-system@390/light": {
+      "title": "Design system (internal) · Banira",
+      "h1": [
+        "Banira design system."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "faq@390/light": {
+      "title": "FAQ · Banira",
+      "h1": [
+        "Questions, answered plainly."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "how-it-works@390/light": {
+      "title": "How it works · Banira",
+      "h1": [
+        "From first conversation to a setup you own."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "index@390/light": {
+      "title": "Banira — Keep new inquiries moving",
+      "h1": [
+        "Keep new inquiries moving. Even when you’re busy."
+      ],
+      "errors": [],
+      "horizontalScroll": true,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "lead-desk@390/light": {
+      "title": "Lead Desk · Banira",
+      "h1": [
+        "Every new inquiry answered, sorted and followed up."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "pricing@390/light": {
+      "title": "Pricing · Banira",
+      "h1": [
+        "A one-off setup. No platform fee."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "privacy@390/light": {
+      "title": "Privacy notice (draft) · Banira",
+      "h1": [
+        "Privacy notice"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-automation-readiness@390/light": {
+      "title": "Before you automate: a 10-question check · Banira",
+      "h1": [
+        "Before you automate: a 10-question check."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-email-deliverability@390/light": {
+      "title": "Make sure automated emails reach the inbox · Banira",
+      "h1": [
+        "Make sure automated emails reach the inbox."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-lead-response-time@390/light": {
+      "title": "How fast should you reply to a web inquiry? · Banira",
+      "h1": [
+        "How fast should you reply to a web inquiry?"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources@390/light": {
+      "title": "Resources · Banira",
+      "h1": [
+        "Guides for handling inquiries well."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "security@390/light": {
+      "title": "Security · Banira",
+      "h1": [
+        "Data flow, access and boundaries."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "solutions@390/light": {
+      "title": "Solutions · Banira",
+      "h1": [
+        "Built for owners who are on the job when inquiries arrive."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "terms@390/light": {
+      "title": "Terms of service (draft) · Banira",
+      "h1": [
+        "Terms of service"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "workspace@390/light": {
+      "title": "Banira Workspace (concept)",
+      "h1": [
+        "A clearer view of the systems behind your business."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "404@768/light": {
+      "title": "Page not found · Banira",
+      "h1": [
+        "This page isn’t here."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "about@768/light": {
+      "title": "About · Banira",
+      "h1": [
+        "Vanilla, on purpose."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "contact@768/light": {
+      "title": "Contact · Banira",
+      "h1": [
+        "Discuss your workflow."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "demo@768/light": {
+      "title": "Interactive demo · Banira",
+      "h1": [
+        "Walk through a sample inquiry."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "design-system@768/light": {
+      "title": "Design system (internal) · Banira",
+      "h1": [
+        "Banira design system."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "faq@768/light": {
+      "title": "FAQ · Banira",
+      "h1": [
+        "Questions, answered plainly."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "how-it-works@768/light": {
+      "title": "How it works · Banira",
+      "h1": [
+        "From first conversation to a setup you own."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "index@768/light": {
+      "title": "Banira — Keep new inquiries moving",
+      "h1": [
+        "Keep new inquiries moving. Even when you’re busy."
+      ],
+      "errors": [],
+      "horizontalScroll": true,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "lead-desk@768/light": {
+      "title": "Lead Desk · Banira",
+      "h1": [
+        "Every new inquiry answered, sorted and followed up."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "pricing@768/light": {
+      "title": "Pricing · Banira",
+      "h1": [
+        "A one-off setup. No platform fee."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "privacy@768/light": {
+      "title": "Privacy notice (draft) · Banira",
+      "h1": [
+        "Privacy notice"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-automation-readiness@768/light": {
+      "title": "Before you automate: a 10-question check · Banira",
+      "h1": [
+        "Before you automate: a 10-question check."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-email-deliverability@768/light": {
+      "title": "Make sure automated emails reach the inbox · Banira",
+      "h1": [
+        "Make sure automated emails reach the inbox."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-lead-response-time@768/light": {
+      "title": "How fast should you reply to a web inquiry? · Banira",
+      "h1": [
+        "How fast should you reply to a web inquiry?"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources@768/light": {
+      "title": "Resources · Banira",
+      "h1": [
+        "Guides for handling inquiries well."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "security@768/light": {
+      "title": "Security · Banira",
+      "h1": [
+        "Data flow, access and boundaries."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "solutions@768/light": {
+      "title": "Solutions · Banira",
+      "h1": [
+        "Built for owners who are on the job when inquiries arrive."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "terms@768/light": {
+      "title": "Terms of service (draft) · Banira",
+      "h1": [
+        "Terms of service"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "workspace@768/light": {
+      "title": "Banira Workspace (concept)",
+      "h1": [
+        "A clearer view of the systems behind your business."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "404@1024/light": {
+      "title": "Page not found · Banira",
+      "h1": [
+        "This page isn’t here."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "about@1024/light": {
+      "title": "About · Banira",
+      "h1": [
+        "Vanilla, on purpose."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "contact@1024/light": {
+      "title": "Contact · Banira",
+      "h1": [
+        "Discuss your workflow."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "demo@1024/light": {
+      "title": "Interactive demo · Banira",
+      "h1": [
+        "Walk through a sample inquiry."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "design-system@1024/light": {
+      "title": "Design system (internal) · Banira",
+      "h1": [
+        "Banira design system."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "faq@1024/light": {
+      "title": "FAQ · Banira",
+      "h1": [
+        "Questions, answered plainly."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "how-it-works@1024/light": {
+      "title": "How it works · Banira",
+      "h1": [
+        "From first conversation to a setup you own."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "index@1024/light": {
+      "title": "Banira — Keep new inquiries moving",
+      "h1": [
+        "Keep new inquiries moving. Even when you’re busy."
+      ],
+      "errors": [],
+      "horizontalScroll": true,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "lead-desk@1024/light": {
+      "title": "Lead Desk · Banira",
+      "h1": [
+        "Every new inquiry answered, sorted and followed up."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "pricing@1024/light": {
+      "title": "Pricing · Banira",
+      "h1": [
+        "A one-off setup. No platform fee."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "privacy@1024/light": {
+      "title": "Privacy notice (draft) · Banira",
+      "h1": [
+        "Privacy notice"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-automation-readiness@1024/light": {
+      "title": "Before you automate: a 10-question check · Banira",
+      "h1": [
+        "Before you automate: a 10-question check."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-email-deliverability@1024/light": {
+      "title": "Make sure automated emails reach the inbox · Banira",
+      "h1": [
+        "Make sure automated emails reach the inbox."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-lead-response-time@1024/light": {
+      "title": "How fast should you reply to a web inquiry? · Banira",
+      "h1": [
+        "How fast should you reply to a web inquiry?"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources@1024/light": {
+      "title": "Resources · Banira",
+      "h1": [
+        "Guides for handling inquiries well."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "security@1024/light": {
+      "title": "Security · Banira",
+      "h1": [
+        "Data flow, access and boundaries."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "solutions@1024/light": {
+      "title": "Solutions · Banira",
+      "h1": [
+        "Built for owners who are on the job when inquiries arrive."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "terms@1024/light": {
+      "title": "Terms of service (draft) · Banira",
+      "h1": [
+        "Terms of service"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "workspace@1024/light": {
+      "title": "Banira Workspace (concept)",
+      "h1": [
+        "A clearer view of the systems behind your business."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "404@1440/light": {
+      "title": "Page not found · Banira",
+      "h1": [
+        "This page isn’t here."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "about@1440/light": {
+      "title": "About · Banira",
+      "h1": [
+        "Vanilla, on purpose."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "contact@1440/light": {
+      "title": "Contact · Banira",
+      "h1": [
+        "Discuss your workflow."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "demo@1440/light": {
+      "title": "Interactive demo · Banira",
+      "h1": [
+        "Walk through a sample inquiry."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "design-system@1440/light": {
+      "title": "Design system (internal) · Banira",
+      "h1": [
+        "Banira design system."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "faq@1440/light": {
+      "title": "FAQ · Banira",
+      "h1": [
+        "Questions, answered plainly."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "how-it-works@1440/light": {
+      "title": "How it works · Banira",
+      "h1": [
+        "From first conversation to a setup you own."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "index@1440/light": {
+      "title": "Banira — Keep new inquiries moving",
+      "h1": [
+        "Keep new inquiries moving. Even when you’re busy."
+      ],
+      "errors": [],
+      "horizontalScroll": true,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "lead-desk@1440/light": {
+      "title": "Lead Desk · Banira",
+      "h1": [
+        "Every new inquiry answered, sorted and followed up."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "pricing@1440/light": {
+      "title": "Pricing · Banira",
+      "h1": [
+        "A one-off setup. No platform fee."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "privacy@1440/light": {
+      "title": "Privacy notice (draft) · Banira",
+      "h1": [
+        "Privacy notice"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-automation-readiness@1440/light": {
+      "title": "Before you automate: a 10-question check · Banira",
+      "h1": [
+        "Before you automate: a 10-question check."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-email-deliverability@1440/light": {
+      "title": "Make sure automated emails reach the inbox · Banira",
+      "h1": [
+        "Make sure automated emails reach the inbox."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-lead-response-time@1440/light": {
+      "title": "How fast should you reply to a web inquiry? · Banira",
+      "h1": [
+        "How fast should you reply to a web inquiry?"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources@1440/light": {
+      "title": "Resources · Banira",
+      "h1": [
+        "Guides for handling inquiries well."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "security@1440/light": {
+      "title": "Security · Banira",
+      "h1": [
+        "Data flow, access and boundaries."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "solutions@1440/light": {
+      "title": "Solutions · Banira",
+      "h1": [
+        "Built for owners who are on the job when inquiries arrive."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "terms@1440/light": {
+      "title": "Terms of service (draft) · Banira",
+      "h1": [
+        "Terms of service"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "workspace@1440/light": {
+      "title": "Banira Workspace (concept)",
+      "h1": [
+        "A clearer view of the systems behind your business."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "404@1920/light": {
+      "title": "Page not found · Banira",
+      "h1": [
+        "This page isn’t here."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "about@1920/light": {
+      "title": "About · Banira",
+      "h1": [
+        "Vanilla, on purpose."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "contact@1920/light": {
+      "title": "Contact · Banira",
+      "h1": [
+        "Discuss your workflow."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "demo@1920/light": {
+      "title": "Interactive demo · Banira",
+      "h1": [
+        "Walk through a sample inquiry."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "design-system@1920/light": {
+      "title": "Design system (internal) · Banira",
+      "h1": [
+        "Banira design system."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "faq@1920/light": {
+      "title": "FAQ · Banira",
+      "h1": [
+        "Questions, answered plainly."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "how-it-works@1920/light": {
+      "title": "How it works · Banira",
+      "h1": [
+        "From first conversation to a setup you own."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "index@1920/light": {
+      "title": "Banira — Keep new inquiries moving",
+      "h1": [
+        "Keep new inquiries moving. Even when you’re busy."
+      ],
+      "errors": [],
+      "horizontalScroll": true,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "lead-desk@1920/light": {
+      "title": "Lead Desk · Banira",
+      "h1": [
+        "Every new inquiry answered, sorted and followed up."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "pricing@1920/light": {
+      "title": "Pricing · Banira",
+      "h1": [
+        "A one-off setup. No platform fee."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "privacy@1920/light": {
+      "title": "Privacy notice (draft) · Banira",
+      "h1": [
+        "Privacy notice"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-automation-readiness@1920/light": {
+      "title": "Before you automate: a 10-question check · Banira",
+      "h1": [
+        "Before you automate: a 10-question check."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-email-deliverability@1920/light": {
+      "title": "Make sure automated emails reach the inbox · Banira",
+      "h1": [
+        "Make sure automated emails reach the inbox."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources-lead-response-time@1920/light": {
+      "title": "How fast should you reply to a web inquiry? · Banira",
+      "h1": [
+        "How fast should you reply to a web inquiry?"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "resources@1920/light": {
+      "title": "Resources · Banira",
+      "h1": [
+        "Guides for handling inquiries well."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "security@1920/light": {
+      "title": "Security · Banira",
+      "h1": [
+        "Data flow, access and boundaries."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "solutions@1920/light": {
+      "title": "Solutions · Banira",
+      "h1": [
+        "Built for owners who are on the job when inquiries arrive."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "terms@1920/light": {
+      "title": "Terms of service (draft) · Banira",
+      "h1": [
+        "Terms of service"
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    },
+    "workspace@1920/light": {
+      "title": "Banira Workspace (concept)",
+      "h1": [
+        "A clearer view of the systems behind your business."
+      ],
+      "errors": [],
+      "horizontalScroll": false,
+      "overflow": [],
+      "imgsBroken": []
+    }
+  },
+  "brokenLinks": [],
+  "summary": {
+    "views": 228,
+    "withErrors": [],
+    "withHorizontalScroll": [
+      "index@360/dark",
+      "index@390/dark",
+      "index@768/dark",
+      "index@1024/dark",
+      "index@1440/dark",
+      "index@1920/dark",
+      "index@360/light",
+      "index@390/light",
+      "index@768/light",
+      "index@1024/light",
+      "index@1440/light",
+      "index@1920/light"
+    ],
+    "brokenLinks": 0
+  }
+}
