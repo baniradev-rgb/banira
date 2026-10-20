@@ -1,0 +1,70 @@
+<!--page
+{
+  "title": "Banira Workspace (concept)",
+  "description": "An interactive concept for a future Banira Workspace: one place to see inquiries, follow-ups and connected workflows. Not an available product. Lead Desk is our first service.",
+  "path": "workspace.html",
+  "nav": null,
+  "scripts": [
+    "engine",
+    "demo-config",
+    "samples",
+    "model",
+    "workspace"
+  ]
+}
+-->
+<section class="page-hero" style="padding-bottom: 2rem">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Banira Workspace</span></nav>
+    <p class="mt-m hero-in"><span class="badge badge--concept">Preview · Concept</span></p>
+    <h1 class="hero-in" style="--delay:60ms">A clearer view of the systems behind your business.</h1>
+    <p class="lede hero-in" style="--delay:130ms">We’re exploring one place to see inquiries, follow-ups and connected workflows. This interactive concept shows the direction; Lead Desk is the first service we’re developing.</p>
+    <div class="cluster hero-in" style="--delay:200ms"><a class="btn btn--primary btn--lg" href="contact.html#plan-core" data-plan="core">Discuss Lead Desk <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--secondary btn--lg" href="#concept">Explore the concept</a></div>
+  </div>
+</section>
+
+<section class="section section--tight" id="concept" style="padding-top:0" aria-label="Workspace concept">
+  <div class="wrap">
+    <p class="note note--concept ws-page-note reveal"><b>This is an exploratory interface, not a subscription.</b> There are no accounts, no connected services and nothing to sign up for. It uses the same fictional sample data as the Lead Desk demo. Mark an item handled or pause a workflow and every view updates.</p>
+    <div class="hero-frame" style="--delay:240ms"><div class="ws" data-ws data-variant="full">
+  <div class="ws-chrome"><span class="ws-title"><!-- @include components/mark --><b>Banira Workspace</b><span class="badge badge--concept">Concept</span><span class="badge badge--sample">Sample data</span></span></div>
+  <div class="ws-body"><div class="ws-tabs" role="tablist" aria-label="Workspace concept views"><button type="button" role="tab" id="ws-full-tab-overview" aria-controls="ws-full-overview" aria-selected="true" tabindex="0" data-ws-tab="overview">Overview</button><button type="button" role="tab" id="ws-full-tab-workflows" aria-controls="ws-full-workflows" aria-selected="false" tabindex="-1" data-ws-tab="workflows">Workflows</button><button type="button" role="tab" id="ws-full-tab-activity" aria-controls="ws-full-activity" aria-selected="false" tabindex="-1" data-ws-tab="activity">Activity</button><button type="button" role="tab" id="ws-full-tab-brief" aria-controls="ws-full-brief" aria-selected="false" tabindex="-1" data-ws-tab="brief">Daily brief</button></div><div role="tabpanel" id="ws-full-overview" aria-labelledby="ws-full-tab-overview" data-ws-panel="overview" tabindex="0"></div><div role="tabpanel" id="ws-full-workflows" aria-labelledby="ws-full-tab-workflows" data-ws-panel="workflows" tabindex="0" hidden></div><div role="tabpanel" id="ws-full-activity" aria-labelledby="ws-full-tab-activity" data-ws-panel="activity" tabindex="0" hidden></div><div role="tabpanel" id="ws-full-brief" aria-labelledby="ws-full-tab-brief" data-ws-panel="brief" tabindex="0" hidden></div></div>
+  <div class="ws-static"><p>An exploratory interface: one place to see inquiries, follow-ups and connected workflows. It is not an available product. Lead Desk today is delivered in your own Google Sheet and Gmail.</p></div>
+</div></div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="ws-why">
+  <div class="wrap split">
+    <div class="head reveal">
+      <p class="eyebrow"><span class="dot"></span>Why we’re exploring it</p>
+      <h2 id="ws-why">One view instead of several inboxes.</h2>
+    </div>
+    <div class="stack reveal">
+      <p class="lede">A small business that automates a few things ends up with scripts, sheets and emails in different places. Lead Desk already sends a daily summary. The question we’re exploring is whether owners would value one calm screen showing what needs them, what’s waiting, and what each workflow is doing.</p>
+      <p>Before any of this is built, we’d need to validate the problem with real clients, the permissions it would need, who would use it, how data would be stored, and what it would cost to run. Until then it stays a concept.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="ws-rel">
+  <div class="wrap">
+    <div class="head reveal"><p class="eyebrow"><span class="dot"></span>How it relates to Lead Desk</p><h2 id="ws-rel">Today, and possibly later.</h2></div>
+    <div class="scope mt-l" data-stagger>
+      <div class="card reveal"><p class="fig"><span class="dot dot--ok"></span>Lead Desk today</p><h3>What a client receives</h3>
+        <ul class="ticks"><li>A Google Sheet tracker you own</li><li>Approved replies and follow-ups from your Gmail</li><li>Owner alerts and a 7:00 daily summary email</li><li>Test mode to pause everything</li></ul>
+        <a class="link-arrow" href="lead-desk.html">Lead Desk in full <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="card reveal"><p class="fig"><span class="badge badge--concept">Concept</span></p><h3>What the concept adds</h3>
+        <ul class="ticks"><li>Overview of what needs you across workflows</li><li>Readable trigger → condition → action → approval for each workflow</li><li>Activity history with explanations</li><li>A daily brief built from the same data</li></ul>
+        <p class="small muted">Not available. No release date.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section closing" aria-labelledby="ws-close">
+  <div class="wrap">
+    <h2 id="ws-close" class="reveal">Start with the part that exists.</h2>
+    <p class="lede reveal">Lead Desk handles new inquiries and follow-up in the tools you already use.</p>
+    <div class="cluster reveal"><a class="btn btn--primary btn--lg" href="contact.html#plan-core" data-plan="core">Discuss Lead Desk <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--secondary btn--lg" href="demo.html">Try the Lead Desk demo</a></div>
+  </div>
+</section>

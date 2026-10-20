@@ -1,0 +1,64 @@
+<!--page
+{
+  "title": "Before you automate: a 10-question check · Banira",
+  "description": "A practical checklist for deciding whether a business process is ready to automate, with an interactive score and honest guidance.",
+  "path": "resources-automation-readiness.html",
+  "nav": null,
+  "scripts": [
+    "readiness"
+  ]
+}
+-->
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="resources.html">Resources</a><span aria-hidden="true">/</span><span>Readiness check</span></nav>
+    <p class="eyebrow mt-m">Checklist · interactive</p>
+    <h1>Before you automate: a 10-question check.</h1>
+    <p class="lede">Automating a messy process just makes the mess faster. Pick one process you'd like to automate, answer honestly, and you'll see whether it's ready, needs tidying first, or isn't worth automating yet.</p>
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top:0">
+  <div class="wrap split" style="align-items:start">
+    <form class="card form reveal" id="readiness" aria-describedby="readiness-help">
+      <p class="small muted" id="readiness-help">Tick each statement that's true for the process you have in mind. Nothing is sent anywhere.</p>
+      <label class="check"><input type="checkbox" name="q" value="2"><span><strong>It happens often.</strong> At least weekly, or many times a day.</span></label>
+      <label class="check"><input type="checkbox" name="q" value="2"><span><strong>The steps are the same each time.</strong> You could write them on one page.</span></label>
+      <label class="check"><input type="checkbox" name="q" value="1"><span><strong>It starts with a clear trigger:</strong> a form, an email, a date, a new row.</span></label>
+      <label class="check"><input type="checkbox" name="q" value="1"><span><strong>The information arrives in a consistent format</strong> (the same fields each time).</span></label>
+      <label class="check"><input type="checkbox" name="q" value="1"><span><strong>The tools involved are digital</strong> and you have admin access to them.</span></label>
+      <label class="check"><input type="checkbox" name="q" value="1"><span><strong>Mistakes or delays cost something</strong>: lost customers, late payments, wasted hours.</span></label>
+      <label class="check"><input type="checkbox" name="q" value="1"><span><strong>The judgement calls are rare</strong> and can be left to a person.</span></label>
+      <label class="check"><input type="checkbox" name="q" value="1"><span><strong>You know what "done" looks like</strong>: a reply sent, a row updated, a report delivered.</span></label>
+      <label class="check"><input type="checkbox" name="q" value="-1" data-neg><span><strong>It involves sensitive data</strong> (health, payments, ID numbers).</span></label>
+      <label class="check"><input type="checkbox" name="q" value="-2" data-neg><span><strong>The process changes every few weeks.</strong></span></label>
+    </form>
+    <div class="stack-l" style="position:sticky; top:calc(var(--header-h) + 32px)">
+      <div class="card" aria-live="polite" id="readiness-result">
+        <span class="fig">Your result</span>
+        <div class="score" style="gap:1rem"><span class="h2 num" id="r-score">0</span><span class="muted">/ 10</span></div>
+        <div class="meter" style="height:8px; background: var(--line)"><i id="r-bar" style="width:0%"></i></div>
+        <h2 class="h3" id="r-title">Tick the statements that apply.</h2>
+        <p id="r-text">Your score updates as you go.</p>
+      </div>
+      <p class="small muted">How it's scored: frequency and repeatable steps count double, because they matter most for return on effort. Sensitive data and frequent change subtract points, because they raise risk and maintenance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <article class="prose">
+      <h2>What the score means</h2>
+      <p><strong>8–10: ready.</strong> The process is frequent, repeatable and clearly triggered, which is the ideal case. Start with the smallest version that removes the most manual work.</p>
+      <p><strong>5–7: tidy first.</strong> Usually one thing is missing, such as inconsistent inputs or no clear "done". Fix that by hand for a couple of weeks (a standard form, a checklist), then automate.</p>
+      <p><strong>Below 5: not yet.</strong> The effort to build and maintain an automation probably outweighs the time saved. A template or a checklist may be the better tool.</p>
+      <h2>Two good first candidates for most small businesses</h2>
+      <ul>
+        <li><strong>Acknowledging new inquiries.</strong> It's frequent, has a clear trigger (the form), repeats the same steps, and slow replies have a real cost.</li>
+        <li><strong>A weekly numbers email.</strong> If you copy the same figures into a summary every Monday, that's a well-defined report waiting to be automated.</li>
+      </ul>
+      <p>If you'd like a second opinion on your process, <a href="contact.html">describe it to us</a>. The first call is free, and we'll tell you if it isn't worth automating.</p>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,325 @@
+<!--page
+{
+  "title": "Banira — Keep new inquiries moving",
+  "description": "Banira sets up inquiry replies, priority rules and follow-up in the Google tools your business already uses. Lead Desk is our first service. See a sample workflow.",
+  "path": "index.html",
+  "nav": null,
+  "scripts": [
+    "engine",
+    "demo-config",
+    "samples",
+    "model",
+    "demo",
+    "workspace"
+  ],
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Banira",
+    "alternateName": "バニラ",
+    "url": "https://banira.example",
+    "logo": "https://banira.example/assets/img/favicon.svg",
+    "description": "Banira sets up simple systems that handle new inquiries and routine follow-up for owner-run small businesses."
+  }
+}
+-->
+<section class="hero">
+  <div class="wrap">
+    <a class="announce hero-in" href="workspace.html" style="--delay:0ms"><span class="badge badge--concept">Preview</span><span>Banira Workspace</span><span class="go">Explore the concept <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <h1 data-split-lines><span class="line">Keep new inquiries moving.</span> <span class="line line--quiet">Even when you’re busy.</span></h1>
+    <p class="lede" data-split-lines>Banira sets up inquiry replies, priority rules and follow-up in the Google tools your business already uses, so new customers hear back and you know who to call first.</p>
+    <div class="cluster hero-in" data-after-split style="--delay:620ms">
+      <a class="btn btn--primary btn--lg" href="contact.html">Discuss your workflow <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn btn--secondary btn--lg" href="lead-desk.html">Explore Lead Desk</a>
+    </div>
+    <p class="hero-meta hero-in" data-after-split style="--delay:700ms"><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M4 9h16M4 14.5h16M10 3.5v17"/></svg>Runs in your Gmail and Google Sheets</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Every message approved by you</span><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>One-off setup, $490 (provisional)</span></p>
+
+    <div class="showcase hero-frame" data-after-split style="--delay:780ms">
+      <div class="switcher">
+        <div class="switcher-tabs" role="tablist" aria-label="Choose what to view" data-switcher data-caption="sw-cap">
+          <button type="button" role="tab" id="tab-ld" aria-controls="panel-ld" aria-selected="true" data-cap="&lt;b&gt;You’re viewing a sample workflow&lt;/b&gt; for Lead Desk, our first service. Northfield Heating &amp;amp; Air is fictional; scores, replies and dates come from the real rules engine.">Lead Desk <span class="badge badge--sample">Sample workflow</span></button>
+          <button type="button" role="tab" id="tab-ws" aria-controls="panel-ws" aria-selected="false" tabindex="-1" data-cap="&lt;b&gt;You’re viewing a future concept.&lt;/b&gt; Banira Workspace is exploratory and not available. Lead Desk clients receive the documented setup in their own Google tools.">Workspace <span class="badge badge--concept">Concept</span></button>
+        </div>
+        <p class="switcher-cap" id="sw-cap" aria-live="polite"><b>You’re viewing a sample workflow</b> for Lead Desk, our first service. Northfield Heating &amp; Air is fictional; scores, replies and dates come from the real rules engine.</p>
+      </div>
+      <div class="frame-wrap">
+        <div role="tabpanel" id="panel-ld" aria-labelledby="tab-ld"><div class="ld" data-ld data-variant="hero" data-autoplay="true">
+  <div class="ld-chrome">
+    <div class="ld-biz-wrap">
+      <button class="ld-biz" type="button" aria-expanded="false" aria-controls="ld-biz-hero"><span class="ld-avatar" aria-hidden="true">N</span><span class="ld-biz-name">Northfield Heating &amp; Air</span><span class="badge badge--sample">Sample</span><svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M2 3.75 5 6.75l3-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="ld-biz-pop" id="ld-biz-hero" hidden><p><b>Northfield Heating &amp; Air</b> is a fictional business used to demonstrate Lead Desk.</p><p class="muted">After setup, your own business, rules and approved messages would appear here, in your Google Sheet.</p></div>
+    </div>
+    <p class="ld-title"><span>Lead Desk</span><span class="muted">Sample workflow</span></p>
+    <p class="ld-clock mono"><span class="visually-hidden">Sample time: </span><span data-clock>Today 2:16 PM</span></p>
+  </div>
+  <div class="ld-body" data-ld-body>
+    <nav class="ld-side" aria-label="Sample views">
+      <div class="ld-views" role="group" aria-label="Views">
+        <button type="button" class="ld-view" data-view="inquiries" aria-pressed="true"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 13h5l1.5 2.5h5L16 13h5"/><path d="M5 5h14l2 8v6H3v-6z"/></svg><span>Inquiries</span><span class="count" data-count="inquiries"></span></button>
+        <button type="button" class="ld-view" data-view="followups" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15"/><path d="M4 20v-5h5"/></svg><span>Follow-ups</span><span class="count" data-count="followups"></span></button>
+        <button type="button" class="ld-view" data-view="tracker" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M4 9h16M4 14.5h16M10 3.5v17"/></svg><span>Tracker</span></button>
+      </div>
+      <p class="ld-side-h">Rules</p>
+      <div class="ld-rules">
+        <button type="button" class="ld-rule" data-sheet="replies"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg><span>Approved replies</span></button>
+        <button type="button" class="ld-rule" data-sheet="rules"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>Priority rules</span></button>
+        <button type="button" class="ld-rule" data-sheet="schedule"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Follow-up schedule</span></button>
+        <button type="button" class="ld-rule" data-sheet="alerts"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><span>Owner alerts</span></button>
+      </div>
+      <p class="ld-side-foot"><span><span data-actions>0</span> actions in this demo session</span><span class="muted">Resets on refresh · engine v1.1.0</span></p>
+    </nav>
+    <div class="ld-main">
+      <section class="ld-panel ld-panel--inquiries" data-panel="inquiries" aria-label="Inquiries">
+        <div class="ld-list" data-list></div>
+        <div class="ld-convo" data-convo>
+          <div class="ld-convo-head">
+            <button type="button" class="ld-back" data-back><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span>Inquiries</span></button>
+            <div class="ld-convo-title" data-convo-title></div>
+            <button type="button" class="ld-props-toggle btn btn--secondary btn--xs" data-props-open aria-expanded="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M14.5 4.5v15"/></svg><span>Details</span></button>
+          </div>
+          <div class="ld-tour">
+            <ol class="ld-steps" aria-label="Walkthrough steps"><li><button type="button" class="ld-step" data-step="0" aria-pressed="false"><span class="n">1</span><span class="t">Received</span></button></li><li><button type="button" class="ld-step" data-step="1" aria-pressed="false"><span class="n">2</span><span class="t">Rules</span></button></li><li><button type="button" class="ld-step" data-step="2" aria-pressed="false"><span class="n">3</span><span class="t">Reply</span></button></li><li><button type="button" class="ld-step" data-step="3" aria-pressed="false"><span class="n">4</span><span class="t">Alert</span></button></li><li><button type="button" class="ld-step" data-step="4" aria-pressed="false"><span class="n">5</span><span class="t">Follow-up</span></button></li></ol>
+            <div class="ld-tour-ctrl">
+              <button type="button" class="ld-ctl" data-play aria-label="Pause walkthrough"><svg class="ic ic-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6.5" y="5" width="3.5" height="14" rx="1"/><rect x="14" y="5" width="3.5" height="14" rx="1"/></svg><svg class="ic ic-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 5.5v13l11-6.5z"/></svg></button>
+              <button type="button" class="ld-ctl" data-restart aria-label="Restart walkthrough"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3"/><path d="M4 4.5V9h4.5"/></svg></button>
+            </div>
+          </div>
+          <div class="ld-thread" data-thread tabindex="0" aria-label="Walkthrough detail"></div>
+        </div>
+        <div class="ld-props" data-props role="region" aria-label="Inquiry details" tabindex="0"></div>
+      </section>
+      <section class="ld-panel" data-panel="followups" aria-label="Follow-ups" hidden></section>
+      <section class="ld-panel" data-panel="tracker" aria-label="Tracker" hidden></section>
+    </div>
+  </div>
+  <div class="ld-static">
+    <p class="ld-static-h"><b>Sample walkthrough</b> (fictional business, results from the Lead Desk rules engine v1.1.0)</p>
+    <ol><li><b>Inquiry received</b><span>Sam Ortiz, Today 2:14 PM: “Our furnace stopped last night and we have no heat. Two kids at home. Can someone come today? It was making a loud banging noise before it died.”</span></li><li><b>Rules applied</b><span>Heating or AC repair, urgent, score 90/100 (hot). +30 Heating or AC repair (high value); +25 urgent: no heat, today; +10 phone provided; +10 detailed message; +15 inside service area.</span></li><li><b>Approved reply</b><span>Template “urgent acknowledgement”, approved by the owner before go-live.</span><pre class="mail-body">Hi Sam,
+
+We&#x27;ve received your message and flagged it as urgent. If you smell gas or suspect carbon monoxide, leave the building and call 911 or your gas utility first.
+
+For the fastest response, call us now at (555) 010-4477. Otherwise we&#x27;ll contact you as soon as possible.
+
+Dana Reyes
+Northfield Heating &amp; Air
+(555) 010-4477
+
+Reply &quot;stop&quot; and we won&#x27;t send further follow-ups.</pre></li><li><b>Owner notified</b><span>[HOT] Sam Ortiz — Heating or AC repair</span></li><li><b>Follow-up scheduled</b><span>Follow-up 1: Wed, Oct 21, 2:14 PM; Follow-up 2: Fri, Oct 23, 2:14 PM; Follow-up 3: Tue, Oct 27, 2:14 PM. The reply check runs hourly.</span></li></ol>
+  </div>
+  <p class="visually-hidden" aria-live="polite" data-ld-live></p>
+</div></div>
+        <div role="tabpanel" id="panel-ws" aria-labelledby="tab-ws" hidden><div class="ws" data-ws data-variant="compact">
+  <div class="ws-chrome"><span class="ws-title"><!-- @include components/mark --><b>Banira Workspace</b><span class="badge badge--concept">Concept</span><span class="badge badge--sample">Sample data</span></span><a class="link-arrow" href="workspace.html">Explore the concept<svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  <div class="ws-body"><div class="ws-tabs" role="tablist" aria-label="Workspace concept views"><button type="button" role="tab" id="ws-compact-tab-overview" aria-controls="ws-compact-overview" aria-selected="true" tabindex="0" data-ws-tab="overview">Overview</button></div><div role="tabpanel" id="ws-compact-overview" aria-labelledby="ws-compact-tab-overview" data-ws-panel="overview" tabindex="0"></div></div>
+  <div class="ws-static"><p>An exploratory interface: one place to see inquiries, follow-ups and connected workflows. It is not an available product. Lead Desk today is delivered in your own Google Sheet and Gmail.</p></div>
+</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section statement-sec" aria-label="What Banira does">
+  <div class="wrap">
+    <p class="statement" data-split-lines="scroll"><span class="line">Plain, dependable systems.</span> <span class="line line--quiet">Banira sets up the routine work behind every new inquiry, the reply, the priority and the follow-up, inside the tools you already use, so nothing waits for you to get back to the office.</span></p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="what-h">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow"><span class="dot"></span>What Banira is</p>
+      <h2 data-split-lines="scroll" id="what-h">A small automation agency, starting with one service done properly.</h2>
+      <p class="lede">Most owner-run businesses don’t need another platform. They need the inquiries they already get to be answered, sorted and followed up, without adding work. That’s where we start.</p>
+    </div>
+    <div class="layers mt-l" data-stagger>
+      <div class="layer reveal"><p class="fig">The company</p><h3>Banira</h3><p>Sets up and supports the systems. You deal with a person, approve every message your customers can receive, and own what we build.</p><a class="link-arrow" href="about.html">About Banira <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="layer reveal"><p class="fig"><span class="dot dot--ok"></span>Our first service</p><h3>Lead Desk</h3><p>Replies to new web inquiries with your approved messages, scores them, alerts you and follows up. It runs in your own Google account, not ours.</p><a class="link-arrow" href="lead-desk.html">Explore Lead Desk <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="layer reveal"><p class="fig"><span class="badge badge--concept">Concept</span></p><h3>Banira Workspace</h3><p>A possible future view of inquiries, follow-ups and connected workflows in one place. It isn’t available; we show it to explain where we’re heading.</p><a class="link-arrow" href="workspace.html">Explore the concept <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="handle-h">
+  <div class="wrap feature">
+    <div class="feature-copy reveal">
+      <p class="eyebrow"><span class="dot"></span>Inquiry handling</p>
+      <h2 id="handle-h">Every inquiry gets a considered first reply.</h2>
+      <p class="lede">When someone fills in your website form, Lead Desk saves it to your sheet and sends the reply you approved for that situation: office hours, after hours, or urgent. Then it scores the inquiry so you can see who matters most.</p>
+      <div class="controls">
+        <button type="button" class="control" data-sheet="replies"><span class="ic-wrap"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span><span><b>Approved replies</b><span class="d">Three acknowledgements, written with you</span></span><span class="open">Details <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        <button type="button" class="control" data-sheet="rules"><span class="ic-wrap"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></span><span><b>Priority rules</b><span class="d">A score from 0 to 100, with reasons</span></span><span class="open">Details <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      </div>
+    </div>
+    <div class="stage stage--fade reveal">
+      <div class="stage-row stage-row--2"><figure class="pcard pcard--mail">
+  <div class="pcard-h"><span class="badge badge--ok"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Approved template</span><span class="mono muted">Urgent acknowledgement</span></div>
+  <dl class="mail-meta"><div><dt>To</dt><dd>Sam Ortiz &lt;sam.ortiz@example.com&gt;</dd></div><div><dt>Subject</dt><dd>We got your request — Northfield Heating &amp; Air</dd></div></dl>
+  <pre class="mail-body">Hi Sam,
+
+We&#x27;ve received your message and flagged it as urgent. If you smell gas or suspect carbon monoxide, leave the building and call 911 or your gas utility first.
+
+For the fastest response, call us now at (555) 010-4477. Otherwise we&#x27;ll contact you as soon as possible.
+
+Dana Reyes
+Northfield Heating &amp; Air
+(555) 010-4477
+
+Reply &quot;stop&quot; and we won&#x27;t send further follow-ups.</pre>
+  <figcaption>Sample reply generated by the rules engine from the fictional Northfield configuration.</figcaption>
+</figure><figure class="pcard pcard--score">
+  <div class="pcard-h"><span class="badge badge--neutral"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>Priority rules</span><span class="mono muted">Sam Ortiz</span></div>
+  <div class="score-row"><span class="score-n">90</span><span class="muted">/ 100</span><span class="tier tier--hot">hot</span></div>
+  <div class="meter" role="img" aria-label="Score 90 of 100"><i style="--w:90%"></i></div>
+  <ul class="reasons"><li><span class="mono pts">+30</span><span>Heating or AC repair (high value)</span></li><li><span class="mono pts">+25</span><span>urgent: no heat, today</span></li><li><span class="mono pts">+10</span><span>phone provided</span></li><li><span class="mono pts">+10</span><span>detailed message</span></li><li><span class="mono pts">+15</span><span>inside service area</span></li></ul>
+  <figcaption>Each point has a reason you can read. Weights are set during setup.</figcaption>
+</figure></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="follow-h">
+  <div class="wrap feature feature--rev">
+    <div class="feature-copy reveal">
+      <p class="eyebrow"><span class="dot"></span>Follow-up and visibility</p>
+      <h2 id="follow-h">Polite follow-up, and a clear view of what needs you.</h2>
+      <p class="lede">If a customer doesn’t answer, Lead Desk follows up in the same email thread on days 1, 3 and 7, then stops. You get an alert for each new inquiry and a summary every morning at 7:00.</p>
+      <p>A reply check runs every hour. When the customer answers, the next check stops the remaining follow-ups and the summary tells you to reply personally.</p>
+      <div class="controls">
+        <button type="button" class="control" data-sheet="schedule"><span class="ic-wrap"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><span><b>Follow-up schedule</b><span class="d">When it sends, and when it stops</span></span><span class="open">Details <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        <button type="button" class="control" data-sheet="alerts"><span class="ic-wrap"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></span><span><b>Owner alerts</b><span class="d">Per-inquiry alerts and the daily summary</span></span><span class="open">Details <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      </div>
+    </div>
+    <div class="stage reveal">
+      <figure class="pcard pcard--schedule">
+  <div class="pcard-h"><span class="badge badge--neutral"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Follow-up schedule</span><span class="mono muted">Lee Park · warm</span></div>
+  <ol class="sched"><li data-state="scheduled"><span class="sc-dot" aria-hidden="true"></span><span class="sc-step">Follow-up 1</span><span class="mono">Tue, Oct 20, 9:40 PM</span><span class="st st--scheduled">scheduled</span></li><li data-state="scheduled"><span class="sc-dot" aria-hidden="true"></span><span class="sc-step">Follow-up 2</span><span class="mono">Thu, Oct 22, 9:40 PM</span><span class="st st--scheduled">scheduled</span></li><li data-state="scheduled"><span class="sc-dot" aria-hidden="true"></span><span class="sc-step">Follow-up 3</span><span class="mono">Mon, Oct 26, 9:40 PM</span><span class="st st--scheduled">scheduled</span></li></ol>
+  <p class="pcard-note"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>A reply check runs every hour. When Lee answers, the next check stops the remaining follow-ups.</p>
+  <figcaption>Dates from the engine's plan for a sample inquiry received Mon 9:40 PM.</figcaption>
+</figure>
+      <figure class="pcard pcard--exception">
+        <div class="pcard-h"><span class="badge badge--bad"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4 2.8 19.5h18.4z"/><path d="M12 10v4.5M12 17.2v.1"/></svg>Needs attention</span><span class="mono muted">Sample exception</span></div>
+        <p class="alert-subj">Chris Dunn · reply could not be sent</p>
+        <p class="small">When an email can’t be delivered, the inquiry is still saved, marked <b>needs attention</b>, and included in the owner’s alert and daily summary. Follow-ups wait until a person has looked at it.</p>
+        <figcaption>Fictional example. The failure is simulated; the handling is how Lead Desk v1.1 behaves in tests.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="auto-h">
+  <div class="wrap">
+    <div class="feature-head">
+      <h2 id="auto-h" data-split-lines="scroll"><span class="line">Automations</span> <span class="line">at work</span></h2>
+      <div class="reveal"><p class="lede">Three routines run in your account every day: replying to each inquiry, checking for answers every hour, and summarising the morning. Each one only does what you approved.</p><a class="link-arrow mt-m" href="lead-desk.html">How Lead Desk works <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    </div>
+  </div>
+  <div class="aw-row-wrap"><div class="aw-track" tabindex="0" role="region" aria-label="Automation examples (sample data)"><article class="aw" data-aw><header class="aw-h"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg><b>Inquiry replies</b><span class="badge badge--ok">Lead Desk</span><span class="aw-ctl" aria-hidden="true"><i></i><i></i><i></i></span></header><div class="aw-b">
+  <p class="aw-msg" data-seq><span class="aw-from">Sam Ortiz · website form</span><span data-type>Our furnace stopped last night and we have no heat. Two kids at home. Can someone come today? It was making a loud banging noise before it died.</span></p>
+  <p class="aw-ctx" data-seq><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M4 9h16M4 14.5h16M10 3.5v17"/></svg><span>Row added to <b>your tracker</b></span></p>
+  <p class="aw-work" data-seq data-think="Applying rules…">Rules applied <span class="mono">engine v1.1.0</span> ▸</p>
+  <p class="aw-out" data-seq>Heating or AC repair, urgent. Score <b>90</b>, hot. Sent the <b>urgent acknowledgement</b> and alerted Dana.</p>
+  <div class="aw-group" data-seq><p class="aw-gh">Next action</p><p class="aw-row"><span class="pill pill--urgent">Call now</span><span>Sam Ortiz · (555) 010-2231</span></p></div></div></article><article class="aw" data-aw><header class="aw-h"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15"/><path d="M4 20v-5h5"/></svg><b>Follow-ups</b><span class="badge badge--ok">Lead Desk</span><span class="aw-ctl" aria-hidden="true"><i></i><i></i><i></i></span></header><div class="aw-b">
+  <p class="aw-msg aw-msg--sys" data-seq><span class="aw-from">Hourly check</span><span data-type>Check open leads for replies and due follow-ups.</span></p>
+  <p class="aw-ctx" data-seq><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span>3 open leads · sample time Today 2:16 PM</span></p>
+  <p class="aw-work" data-seq data-think="Checking threads…">Checked reply threads ▸</p>
+  <p class="aw-out" data-seq>Nothing is due right now. One customer replied earlier, so their follow-ups stopped.</p>
+  <div class="aw-group" data-seq><p class="aw-gh">Upcoming · 1</p><p class="aw-row"><span class="st st--scheduled">Scheduled</span><span>Lee Park · follow-up 1 · Tue, Oct 20, 9:40 PM</span></p>
+    <p class="aw-gh">Stopped · 2</p><p class="aw-row"><span class="st st--stopped">Replied</span><span>Marcus Bell</span></p><p class="aw-row"><span class="st st--paused">Booked</span><span>Jo Whitfield</span></p></div></div></article><article class="aw" data-aw><header class="aw-h"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><b>Daily summary</b><span class="badge badge--ok">Lead Desk</span><span class="aw-ctl" aria-hidden="true"><i></i><i></i><i></i></span></header><div class="aw-b">
+  <p class="aw-msg aw-msg--sys" data-seq><span class="aw-from">Every morning · 7:00</span><span data-type>Summarise the last 24 hours for Dana.</span></p>
+  <p class="aw-work" data-seq data-think="Reading the tracker…">Read the tracker ▸</p>
+  <p class="aw-out" data-seq>New inquiries, customers who replied, and anything that needs a person.</p>
+  <div class="aw-group" data-seq><p class="aw-gh">Needs attention · 1</p><p class="aw-row"><span class="pill pill--attention">Reply not sent</span><span>Chris Dunn · call instead</span></p>
+    <p class="aw-gh">Replied · 1</p><p class="aw-row"><span class="pill pill--replied">Replied</span><span>Marcus Bell · answer personally</span></p></div></div></article><article class="aw aw--planned" data-aw><header class="aw-h"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><b>Quote follow-up</b><span class="badge badge--concept">Planned</span><span class="aw-ctl" aria-hidden="true"><i></i><i></i><i></i></span></header><div class="aw-b">
+  <p class="aw-msg aw-msg--sys" data-seq><span class="aw-from">When a quote is marked sent</span><span data-type>Check in once if there’s no answer after 3 days.</span></p>
+  <p class="aw-work" data-seq data-think="Not available yet…">Planned module ▸</p>
+  <p class="aw-out" data-seq>Illustrative only. Not for sale and not priced.</p></div></article></div></div>
+  <p class="wrap small muted mt-m">Sample data from the fictional Northfield business. Results from the Lead Desk rules engine; the window layout is illustrative.</p>
+</section>
+
+<section class="section" aria-labelledby="own-h">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow"><span class="dot"></span>Setup and ownership</p>
+      <h2 data-split-lines="scroll" id="own-h">Set up in your account. Yours to keep.</h2>
+      <p class="lede">Lead Desk is a small script attached to a Google Sheet you own. It uses your Gmail to send. There’s no Banira software to log in to and no monthly platform fee.</p>
+    </div>
+    <div class="mt-l"><figure class="diagram reveal" aria-labelledby="dg-cap">
+  <ol class="dg"><li class="dg-node"><span class="dg-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 13h5l1.5 2.5h5L16 13h5"/><path d="M5 5h14l2 8v6H3v-6z"/></svg></span><span class="dg-t">Your website form</span><span class="dg-d">A customer sends an inquiry</span><i class="pulse" style="--i:0" aria-hidden="true"></i></li><li class="dg-node"><span class="dg-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M4 9h16M4 14.5h16M10 3.5v17"/></svg></span><span class="dg-t">Your Google Sheet</span><span class="dg-d">Each inquiry becomes a row you own</span><i class="pulse" style="--i:1" aria-hidden="true"></i></li><li class="dg-node"><span class="dg-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg></span><span class="dg-t">Apps Script, in your account</span><span class="dg-d">Applies your rules and schedule</span><i class="pulse" style="--i:2" aria-hidden="true"></i></li><li class="dg-node"><span class="dg-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span><span class="dg-t">Your Gmail</span><span class="dg-d">Sends the approved reply and follow-ups</span><i class="pulse" style="--i:3" aria-hidden="true"></i></li><li class="dg-node"><span class="dg-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.2-4 4.3-6 8-6s6.8 2 8 6"/></svg></span><span class="dg-t">You</span><span class="dg-d">Alert, daily summary, and the next action</span><i class="pulse" style="--i:4" aria-hidden="true"></i></li></ol>
+  <figcaption id="dg-cap">Where Lead Desk runs. Everything inside the outline lives in your Google account. Banira does not keep a copy of your inquiries.</figcaption>
+</figure></div>
+    <div class="grid grid-2 mt-l" data-stagger>
+      <div class="card reveal">
+        <h3>What you approve</h3>
+        <ul class="ticks mt-s">
+          <li>The three replies and three follow-ups, word for word</li>
+          <li>Which services count as high value, and your service area</li>
+          <li>The urgent words that should put an inquiry at the top</li>
+          <li>Going live, after a test run that sends nothing</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>How setup runs</h3>
+        <ol class="steps mt-s">
+          <li><div><b class="fg">Discovery call</b><p class="small">How inquiries reach you today.</p></div></li>
+          <li><div><b class="fg">Map and write</b><p class="small">Rules and messages, shown with sample customers.</p></div></li>
+          <li><div><b class="fg">Configure and test</b><p class="small">In your account, in test mode first.</p></div></li>
+          <li><div><b class="fg">Handover</b><p class="small">How to read the sheet and pause everything.</p></div></li>
+        </ol>
+        <a class="link-arrow mt-s" href="how-it-works.html">The full setup checklist <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="ws-h">
+  <div class="wrap split">
+    <div class="stack-l reveal">
+      <a class="announce" href="workspace.html"><span class="badge badge--concept">Preview</span><span>Banira Workspace</span><span class="go">Concept <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <h2 data-split-lines="scroll" id="ws-h">A clearer view of the systems behind your business.</h2>
+      <p class="lede">We’re exploring one place to see inquiries, follow-ups and connected workflows. This interactive concept shows the direction; Lead Desk is the first service we’re developing.</p>
+      <div class="cluster"><a class="btn btn--secondary" href="workspace.html">Explore the concept</a><a class="btn btn--ghost" href="contact.html">Discuss Lead Desk</a></div>
+    </div>
+    <div class="stage reveal">
+      <div class="ws-wf"><div class="ws-wf-h"><b>Inquiry replies</b><span class="badge badge--ok">Lead Desk today</span></div>
+        <ol class="ws-seq"><li><span>Trigger</span>A website form is submitted</li><li><span>Condition</span>Not spam, valid email, within limits</li><li><span>Action</span>Send the approved reply</li><li><span>Owner approval</span>Templates approved before go-live</li></ol></div>
+      <div class="ws-wf is-paused"><div class="ws-wf-h"><b>Quote follow-up</b><span class="badge badge--concept">Planned</span></div>
+        <ol class="ws-seq"><li><span>Trigger</span>A quote is marked sent</li><li><span>Condition</span>No answer after 3 days</li><li><span>Action</span>A short check-in</li><li><span>Owner approval</span>Each message type</li></ol></div>
+      <p class="small muted">Concept illustration. Planned modules are not for sale.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="price-h">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow"><span class="dot"></span>Pricing</p>
+      <h2 data-split-lines="scroll" id="price-h">A one-off setup. Care if you want it.</h2>
+      <p class="lede">Prices are provisional and confirmed in writing before any work starts. All prices in US dollars.</p>
+    </div>
+    <div class="plans mt-l" data-stagger>
+      <article class="card plan reveal"><span class="badge badge--warn">First 3 clients</span><h3>Founding client</h3><div class="price">$290<small>one-off</small></div><p class="small">Lead Desk in full, in return for a feedback call after launch.</p><a class="btn btn--secondary" href="pricing.html" data-plan="founding">See what’s included</a></article>
+      <article class="card plan plan--focus reveal"><span class="badge badge--neutral">Standard</span><h3>Lead Desk</h3><div class="price">$490<small>one-off</small></div><p class="small">Setup, messages written with you, testing, handover and 30 days of fixes.</p><a class="btn btn--primary" href="contact.html#plan-core" data-plan="core">Discuss Lead Desk</a></article>
+      <article class="card plan reveal"><span class="badge badge--neutral">Optional</span><h3>Care</h3><div class="price">$49<small>/ month</small></div><p class="small">Monthly log check, small changes and a results email. Cancel any time.</p><a class="btn btn--secondary" href="pricing.html#care" data-plan="care">About Care</a></article>
+    </div>
+    <div class="faq mt-xl reveal">
+      <details><summary>Do I get the dashboard shown above?</summary><div class="answer"><p>No. The sample interface explains how Lead Desk works. What you receive is the documented setup in your own Google account: a Google Sheet tracker, the script, your approved Gmail messages, alerts and a daily summary email. The Workspace view is a concept.</p></div></details>
+      <details><summary>What do I need to have already?</summary><div class="answer"><p>A Google account you send customer email from (free Gmail works, with Google’s limit of about 100 automated recipients a day; Workspace allows more) and a website form, or a Google Form we set up.</p></div></details>
+      <details><summary>Who owns it?</summary><div class="answer"><p>You do. It runs in your account, the data stays there, and it keeps working if we stop working together. We remove our access at handover unless you choose Care.</p></div></details>
+      <details><summary>Is Lead Desk available now?</summary><div class="answer"><p>We’re taking first conversations. Lead Desk has passed its automated tests against simulated Google services; each installation is verified live in your account, with test addresses you control, before it goes live.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section closing" aria-labelledby="close-h">
+  <div class="wrap">
+    <h2 id="close-h" data-split-lines="scroll">Tell us how inquiries reach you today.</h2>
+    <p class="lede reveal">A short conversation is enough to tell whether Lead Desk fits. If it doesn’t, we’ll say so.</p>
+    <div class="cluster reveal"><a class="btn btn--primary btn--lg" href="contact.html">Discuss your workflow <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--secondary btn--lg" href="demo.html">Try the demo</a></div>
+    <ol class="next-steps" data-stagger>
+      <li class="reveal"><b>You send a short note</b><span>Name, contact, the tools you use and what goes wrong today.</span></li>
+      <li class="reveal"><b>A fit check</b><span>A short call about your inquiries. No account to create.</span></li>
+      <li class="reveal"><b>A written plan</b><span>Messages, rules and a fixed price. Nothing starts until you approve.</span></li>
+    </ol>
+  </div>
+</section>
+<!-- @include components/sheets -->

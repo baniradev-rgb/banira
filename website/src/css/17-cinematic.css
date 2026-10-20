@@ -1,0 +1,41 @@
+/* ── cinematic tilted stage behind a heading (Lead Desk hero) ── */
+.cine { position: relative; min-height: clamp(560px, 78vh, 820px); display: flex; align-items: flex-end; overflow: hidden; padding-bottom: clamp(48px, 3rem + 3vw, 104px); border-bottom: 1px solid var(--line); isolation: isolate; }
+.cine-copy { position: relative; z-index: 2; }
+.cine-copy h1 { font-size: clamp(2.375rem, 1.4rem + 4vw, 4.75rem); line-height: 1.02; max-width: 22ch; margin-top: 1rem; }
+.cine-copy h1 .line { display: block; }
+.cine::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(8, 9, 10, .55) 0%, rgba(8, 9, 10, .25) 30%, rgba(8, 9, 10, .7) 62%, var(--bg) 92%), radial-gradient(80% 60% at 70% 30%, transparent, rgba(8, 9, 10, .55)); }
+.cine-stage { position: absolute; inset: 0; perspective: 1600px; perspective-origin: 60% 0%; overflow: hidden; }
+.cine-plane { position: absolute; left: 50%; top: -6%; width: 1700px; display: grid; grid-template-columns: 520px 1fr; gap: 28px; transform-origin: 50% 0;
+  transform: translateX(-46%) rotateX(48deg) rotateZ(-16deg) translateZ(0); filter: blur(.6px); opacity: .75; }
+.js .cine-plane { animation: cineDrift 46s ease-in-out infinite alternate, cineIn 1600ms var(--ease) both; }
+@keyframes cineDrift { from { translate: 0 0; } to { translate: -90px 50px; } }
+@keyframes cineIn { from { opacity: 0; filter: blur(6px); } }
+.cine-composer { align-self: start; margin-top: 60px; border-radius: 18px; border: 1px solid var(--line-2); background: #15161A; padding: 1.4rem 1.5rem; display: grid; gap: 1rem; box-shadow: 0 40px 80px rgba(0, 0, 0, .6); }
+.cc-head { display: flex; align-items: center; gap: .6rem; font-size: 1rem; color: var(--fg); }
+.cc-head .mono { font-size: .8rem; color: var(--muted); }
+.cc-av { width: 32px; height: 32px; border-radius: 8px; display: grid; place-items: center; background: #26303B; color: var(--blue); font-size: .8rem; font-weight: 640; }
+.cc-type { font-size: 1.375rem; line-height: 1.45; color: var(--fg); min-height: 6em; }
+.cc-bar { display: flex; gap: .8rem; align-items: center; padding-top: .8rem; border-top: 1px solid var(--line); }
+.cc-ic { width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--muted); opacity: .6; }
+.cc-send { margin-left: auto; padding: .45rem .9rem; border-radius: 8px; background: rgba(170, 163, 237, .35); color: var(--fg); font-size: .9rem; }
+.cine-board { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.cine-col { display: grid; gap: 14px; align-content: start; }
+.cine-colh { display: flex; align-items: center; gap: .5rem; font-size: 1rem; color: var(--fg-2); padding: .3rem .2rem; }
+.cine-colh span { color: var(--muted); margin-left: .2rem; }
+.cine-card { border-radius: 14px; background: #131417; border: 1px solid var(--line-2); padding: 1rem 1.1rem; display: grid; gap: .35rem; box-shadow: 0 20px 50px rgba(0, 0, 0, .55); }
+.js .cine-card { animation: cardRise 900ms var(--ease) both; animation-delay: calc(400ms + var(--i) * 140ms); }
+@keyframes cardRise { from { opacity: 0; transform: translateY(40px); } }
+.cine-card b { color: var(--fg); font-size: 1.125rem; font-weight: 540; }
+.cc-id { font-size: .8rem; color: var(--muted); }
+.cc-sub { font-size: .9rem; color: var(--fg-2); }
+.cc-tags { display: flex; gap: .4rem; margin-top: .3rem; }
+.cc-tags .pill { height: 24px; font-size: .78rem; }
+.page-hero--after { padding-top: clamp(32px, 2rem + 2vw, 64px); }
+.page-hero--after .lede { margin-top: 0; }
+@media (max-width: 760px) {
+  .cine-plane { width: 1100px; grid-template-columns: 380px 1fr; transform: translateX(-40%) rotateX(50deg) rotateZ(-18deg); }
+  .cine-board { grid-template-columns: repeat(2, 1fr); }
+  .cine-col:nth-child(n+3) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .js .cine-plane, .js .cine-card { animation: none; } .seq-wait { opacity: 1; transform: none; } }

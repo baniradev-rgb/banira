@@ -6,21 +6,123 @@
     "owner_email": "owner@northfield-demo.example",
     "phone": "(555) 010-4477",
     "timezone": "America/New_York",
-    "hours": { "mon": [8, 18], "tue": [8, 18], "wed": [8, 18], "thu": [8, 18], "fri": [8, 17], "sat": [9, 13] },
+    "hours": {
+      "mon": [
+        8,
+        18
+      ],
+      "tue": [
+        8,
+        18
+      ],
+      "wed": [
+        8,
+        18
+      ],
+      "thu": [
+        8,
+        18
+      ],
+      "fri": [
+        8,
+        17
+      ],
+      "sat": [
+        9,
+        13
+      ]
+    },
     "booking_url": "https://cal.com/northfield-demo/estimate",
     "response_window": "within 2 business hours",
-    "service_area_zips": ["021", "024"]
+    "service_area_zips": [
+      "021",
+      "024"
+    ]
   },
   "services": [
-    { "key": "repair", "label": "Heating or AC repair", "value": "high", "keywords": ["not working", "broken", "repair", "no heat", "no cool", "stopped", "noise", "leak"] },
-    { "key": "install", "label": "New system installation", "value": "high", "keywords": ["install", "replace", "replacement", "new system", "heat pump", "quote", "estimate"] },
-    { "key": "maintenance", "label": "Seasonal tune-up", "value": "medium", "keywords": ["tune-up", "tune up", "maintenance", "service plan", "inspection", "clean"] },
-    { "key": "question", "label": "General question", "value": "low", "keywords": ["question", "wondering", "do you", "price list"] }
+    {
+      "key": "repair",
+      "label": "Heating or AC repair",
+      "value": "high",
+      "keywords": [
+        "not working",
+        "broken",
+        "repair",
+        "no heat",
+        "no cool",
+        "stopped",
+        "noise",
+        "leak"
+      ]
+    },
+    {
+      "key": "install",
+      "label": "New system installation",
+      "value": "high",
+      "keywords": [
+        "install",
+        "replace",
+        "replacement",
+        "new system",
+        "heat pump",
+        "quote",
+        "estimate"
+      ]
+    },
+    {
+      "key": "maintenance",
+      "label": "Seasonal tune-up",
+      "value": "medium",
+      "keywords": [
+        "tune-up",
+        "tune up",
+        "maintenance",
+        "service plan",
+        "inspection",
+        "clean"
+      ]
+    },
+    {
+      "key": "question",
+      "label": "General question",
+      "value": "low",
+      "keywords": [
+        "question",
+        "wondering",
+        "do you",
+        "price list"
+      ]
+    }
   ],
-  "urgency_keywords": ["no heat", "emergency", "gas smell", "smell gas", "carbon monoxide", "water leaking", "freezing", "asap", "urgent", "today"],
+  "urgency_keywords": [
+    "no heat",
+    "emergency",
+    "gas smell",
+    "smell gas",
+    "carbon monoxide",
+    "water leaking",
+    "freezing",
+    "asap",
+    "urgent",
+    "today"
+  ],
   "scoring": {},
-  "tiers": { "hot": 60, "warm": 30 },
-  "follow_up": { "days": [1, 3, 7], "max_by_tier": { "hot": 3, "warm": 3, "cold": 1 } },
+  "tiers": {
+    "hot": 60,
+    "warm": 30
+  },
+  "follow_up": {
+    "days": [
+      1,
+      3,
+      7
+    ],
+    "max_by_tier": {
+      "hot": 3,
+      "warm": 3,
+      "cold": 1
+    }
+  },
   "templates": {
     "subject": "We got your request — {{business_name}}",
     "ack": "Hi {{first_name}},\n\nThanks for contacting {{business_name}} about {{service}}. Your request is with our team and we'll reply {{response_window}}.\n\nIf you'd like to pick a time now, you can book here: {{booking_url}}\n\n{{signature}}",
@@ -30,5 +132,17 @@
     "followup_2": "Hi {{first_name}},\n\nFollowing up once more in case the timing wasn't right. We're happy to answer any questions before you decide.\n\n{{signature}}",
     "followup_3": "Hi {{first_name}},\n\nThis is our last note so we don't fill your inbox. If you still need help with {{service}}, reply any time and we'll pick it up.\n\n{{signature}}",
     "footer": "Reply \"stop\" and we won't send further follow-ups."
-  }
+  },
+  "limits": {
+    "per_hour": 20,
+    "per_day": 60,
+    "quota_reserve": 10,
+    "alerts_per_hour": 30
+  },
+  "intake": {
+    "google_form": false,
+    "website_form": true
+  },
+  "bot_check": "none",
+  "min_form_seconds": 3
 }

@@ -1,0 +1,15 @@
+/* ── footer ─────────────────────────────────────────────────────────────── */
+.site-footer { border-top: 1px solid var(--line); padding-block: 4rem 2rem; background: var(--bg); }
+.footer-grid { display: grid; gap: 2.5rem 2rem; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.footer-brand { grid-column: span 2; max-width: 320px; display: grid; gap: .9rem; align-content: start; }
+.footer-brand p { font-size: var(--t-sm); }
+@media (max-width: 620px) { .footer-brand { grid-column: 1 / -1; } }
+.footer-h { font-size: var(--t-sm); color: var(--fg); font-weight: 520; letter-spacing: -0.005em; margin-bottom: .9rem; }
+.site-footer ul { list-style: none; display: grid; gap: .55rem; }
+.site-footer li a { color: var(--fg-2); font-size: var(--t-sm); text-decoration: none; }
+.site-footer li a:hover { color: var(--fg); }
+.footer-base { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: .75rem 2rem; justify-content: space-between; font-size: var(--t-xs); color: var(--muted); }
+.status-line { display: inline-flex; align-items: center; gap: .5rem; }
+.status-line i { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); background: var(--panel-3); color: var(--fg); border: 1px solid var(--line-2); border-radius: 10px; padding: .6rem 1rem; font-size: var(--t-sm); opacity: 0; pointer-events: none; transition: opacity var(--d-med) var(--ease), transform var(--d-med) var(--ease); z-index: 300; }
+.toast.is-on { opacity: 1; transform: translate(-50%, 0); }

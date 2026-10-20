@@ -1,2 +1,6 @@
 dnspython>=2.6
 pytest>=8
+fonttools==4.60.1
+numpy
+brotli==1.1.0
+Pillow

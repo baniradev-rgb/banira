@@ -1,5 +1,5 @@
 /**
- * Banira Lead Desk — core engine (v1.0.0)
+ * Banira Lead Desk — core engine (v1.1.0)
  *
  * Pure functions, no I/O. The SAME file runs in:
  *   - Google Apps Script (copied in as Engine.gs)   → production
@@ -13,7 +13,8 @@
 var LeadEngine = (function () {
   'use strict';
 
-  var VERSION = '1.0.0';
+  var VERSION = '1.1.0';
+  var LIMITS = { name: 120, email: 254, phone: 40, message: 5000, zip: 12, service: 120 };
   var DAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
   var EMAIL_RE = /^[^\s@<>()[\],;:"]+@[^\s@<>()[\],;:"]+\.[a-z]{2,}$/i;
 
@@ -23,6 +24,85 @@ var LeadEngine = (function () {
   function str(v) { return v === undefined || v === null ? '' : String(v).trim(); }
 
   function lower(v) { return str(v).toLowerCase(); }
+
+  /** Remove control characters (except newlines/tabs) and cap length. */
+  function clean(v, max) {
+    return str(v).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').slice(0, max || 1000);
+  }
+
+  /**
+   * First name that is safe to echo into an outgoing email. Anything that could carry a link,
+   * an address or a payload is dropped (the template then says "Hi there").
+   */
+  function sanitizeName(name) {
+    var first = str(name).split(/\s+/)[0] || '';
+    if (!first) return '';
+    if (/(:\/\/|www\.|@|\.[a-z]{2,}(\/|$)|[<>{}\[\]=\\|;])/i.test(first)) return '';
+    if ((first.match(/\d/g) || []).length > 0) return '';
+    var letters = first.replace(/['’.\-]/g, '');
+    if (!letters || !/^[^\s\d!-\/:-@\[-`{-~]+$/.test(letters)) return '';
+    return first.slice(0, 30);
+  }
+
+  /** Spreadsheet formula-injection guard: text starting with = + - @ (or tab/CR) is stored as plain text. */
+  function safeCell(v) {
+    if (typeof v !== 'string') return v;
+    return /^[=+\-@\t\r]/.test(v) ? "'" + v : v;
+  }
+
+  /** Small stable hash (FNV-1a, 32-bit) for duplicate detection keys. Not for security. */
+  function hash(text) {
+    var h = 0x811c9dc5;
+    for (var i = 0; i < text.length; i++) { h ^= text.charCodeAt(i); h = (h + ((h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24))) >>> 0; }
+    return ('00000000' + h.toString(16)).slice(-8);
+  }
+
+  /** Same person + same message → same key (used to drop accidental double submissions). */
+  function dedupeKey(lead) {
+    var who = lead.email || lead.phoneDigits || 'anon';
+    var what = lower(lead.message).replace(/\s+/g, ' ').slice(0, 500);
+    return 'inq_' + hash(who + '|' + what);
+  }
+
+  /** Extract the bare address from a From header such as 'Sam Ortiz <sam@example.com>'. */
+  function addressOf(from) {
+    var s = lower(from);
+    var m = s.match(/<([^<>\s]+@[^<>\s]+)>/);
+    if (m) return m[1];
+    m = s.match(/[^\s<>"]+@[^\s<>"]+/);
+    return m ? m[0].replace(/[.,;]+$/, '') : '';
+  }
+
+  /** True only when the sender address is exactly the lead's address (bob@x.com ≠ jimbob@x.com). */
+  function sameAddress(from, email) {
+    return !!email && addressOf(from) === lower(email);
+  }
+
+  /** Drop quoted history from an email reply so our own footer can't trigger opt-out detection. */
+  function stripQuoted(text) {
+    var out = [];
+    var lines = str(text).split(/\r?\n/);
+    for (var i = 0; i < lines.length; i++) {
+      var l = lines[i];
+      if (/^\s*>/.test(l)) continue;
+      if (/^\s*on\b.+\bwrote:\s*$/i.test(l) || /^-{2,}\s*original message\s*-{2,}/i.test(l) || /^\s*from:\s.+/i.test(l) || /^_{5,}\s*$/.test(l)) break;
+      out.push(l);
+    }
+    return out.join('\n').trim();
+  }
+
+  /**
+   * Decide whether an automatic acknowledgement may be sent (abuse and quota protection).
+   * ctx: {recentToRecipient, hourCount, dayCount, quotaRemaining, limits:{per_hour, per_day, quota_reserve}}
+   */
+  function autoReplyDecision(ctx) {
+    var L = Object.assign({ per_hour: 20, per_day: 60, quota_reserve: 10 }, ctx.limits || {});
+    if (ctx.recentToRecipient) return { allow: false, reason: 'already replied to this address in the last 24 hours' };
+    if (ctx.quotaRemaining !== undefined && ctx.quotaRemaining !== null && ctx.quotaRemaining <= L.quota_reserve) return { allow: false, reason: 'email quota low (' + ctx.quotaRemaining + ' left, ' + L.quota_reserve + ' kept for owner alerts)' };
+    if ((ctx.hourCount || 0) >= L.per_hour) return { allow: false, reason: 'hourly auto-reply limit reached (' + L.per_hour + ')' };
+    if ((ctx.dayCount || 0) >= L.per_day) return { allow: false, reason: 'daily auto-reply limit reached (' + L.per_day + ')' };
+    return { allow: true, reason: '' };
+  }
 
   /** Map arbitrary form field names onto the standard lead shape. */
   function normalizeLead(raw, receivedAt) {
@@ -40,16 +120,16 @@ var LeadEngine = (function () {
       }
       return '';
     };
-    var name = pick(['name', 'full name', 'your name', 'first name']);
+    var name = clean(pick(['name', 'full name', 'your name', 'first name']), LIMITS.name);
     var lead = {
       name: name,
-      firstName: name.split(/\s+/)[0] || '',
-      email: lower(pick(['email', 'email address', 'your email', 'e-mail'])),
-      phone: pick(['phone', 'phone number', 'mobile', 'telephone']),
-      message: pick(['message', 'how can we help?', 'details', 'comments', 'project details', 'description']),
-      service: pick(['service', 'service needed', 'what do you need?', 'topic']),
-      zip: pick(['zip', 'zip code', 'postcode', 'postal code']),
-      source: pick(['source', 'how did you hear about us?']) || 'website form',
+      firstName: sanitizeName(name),
+      email: lower(clean(pick(['email', 'email address', 'your email', 'e-mail']), LIMITS.email)),
+      phone: clean(pick(['phone', 'phone number', 'mobile', 'telephone']), LIMITS.phone),
+      message: clean(pick(['message', 'how can we help?', 'details', 'comments', 'project details', 'description']), LIMITS.message),
+      service: clean(pick(['service', 'service needed', 'what do you need?', 'topic']), LIMITS.service),
+      zip: clean(pick(['zip', 'zip code', 'postcode', 'postal code']), LIMITS.zip),
+      source: clean(pick(['source', 'how did you hear about us?']), 80) || 'website form',
       honeypot: pick(['website_url', 'company_website_hp']),
       receivedAt: receivedAt ? new Date(receivedAt) : new Date()
     };
@@ -70,8 +150,11 @@ var LeadEngine = (function () {
     var text = lower(lead.message + ' ' + lead.service);
     var spamWords = (config && config.spam_keywords) || DEFAULT_SPAM;
     spamWords.forEach(function (w) { if (text.indexOf(lower(w)) !== -1) { spamScore += 3; reasons.push('Spam phrase: "' + w + '"'); } });
-    var links = (lead.message.match(/https?:\/\//gi) || []).length;
-    if (links >= 2) { spamScore += 3; reasons.push(links + ' links in message'); }
+    var links = (lead.message.match(/https?:\/\/|www\./gi) || []).length;
+    if (links >= 3) { spamScore += 3; reasons.push(links + ' links in message'); }
+    else if (links === 2) { spamScore += 1; reasons.push('2 links in message'); }
+    var words = lead.message.replace(/https?:\/\/\S+|www\.\S+/gi, ' ').trim().split(/\s+/).filter(Boolean).length;
+    if (links >= 1 && words < 3) { spamScore += 3; reasons.push('message is only links'); }
     if (/[Ѐ-ӿ]{10,}/.test(lead.message) && !(config && config.allow_cyrillic)) { spamScore += 2; reasons.push('Unexpected script in message'); }
     return { ok: errors.length === 0, spam: spamScore >= 3, spamScore: spamScore, errors: errors, reasons: reasons };
   }
@@ -243,9 +326,15 @@ var LeadEngine = (function () {
     };
   }
 
-  /** Detects opt-out language in a reply. */
+  /**
+   * Detects an opt-out in a reply. Quoted history is ignored. A reply whose first line is just
+   * "stop" / "unsubscribe" counts (our footer asks for exactly that); "can you stop by Tuesday" does not.
+   */
   function isOptOut(text) {
-    return /\b(unsubscribe|stop emailing|remove me|not interested|do not contact|no thanks)\b/i.test(str(text));
+    var body = stripQuoted(text);
+    var first = lower(body.split(/\r?\n/).filter(function (l) { return str(l); })[0] || '');
+    if (/^(stop|unsubscribe|remove|cancel|stop please|please stop|stop\s+(emails?|messages?|following up|contacting me))[\s.!]*$/.test(first)) return true;
+    return /\b(unsubscribe|stop (emailing|sending|contacting|messaging)|remove me|take me off|not interested|do not (contact|email)|don'?t (contact|email) me|no thanks|no longer (need|interested))\b/i.test(body);
   }
 
   /** Out-of-office / automatic replies must not count as the lead replying. */
@@ -278,6 +367,42 @@ var LeadEngine = (function () {
       if (bad.length) p.push('templates.' + k + ' uses unknown variable(s): ' + bad.join(', '));
     });
     if (!str(T.footer) || !/(reply|unsubscribe|stop)/i.test(T.footer)) p.push('templates.footer must tell people how to opt out of follow-ups');
+    var fu = config.follow_up || {};
+    if (fu.days !== undefined) {
+      if (!Array.isArray(fu.days) || !fu.days.length) p.push('follow_up.days must be a non-empty list');
+      else fu.days.forEach(function (d, i) {
+        if (typeof d !== 'number' || !(d > 0) || d > 60) p.push('follow_up.days[' + i + '] must be a number of days between 0 and 60');
+        if (i && !(d > fu.days[i - 1])) p.push('follow_up.days must be in increasing order');
+      });
+    }
+    Object.keys(fu.max_by_tier || {}).forEach(function (k) {
+      if (['hot', 'warm', 'cold'].indexOf(k) === -1) p.push('follow_up.max_by_tier has unknown tier "' + k + '"');
+      else if (!(fu.max_by_tier[k] >= 0 && fu.max_by_tier[k] <= 10)) p.push('follow_up.max_by_tier.' + k + ' must be 0–10');
+    });
+    var t = config.tiers || {};
+    if (t.hot !== undefined || t.warm !== undefined) {
+      if (!(t.hot > t.warm && t.warm >= 0 && t.hot <= 100)) p.push('tiers must satisfy 0 ≤ warm < hot ≤ 100');
+    }
+    var seen = {};
+    (config.services || []).forEach(function (s, i) {
+      if (!str(s.key) || !str(s.label)) p.push('services[' + i + '] needs a key and a label');
+      if (seen[s.key]) p.push('services key "' + s.key + '" is used twice');
+      seen[s.key] = true;
+      if (s.value && ['high', 'medium', 'low'].indexOf(s.value) === -1) p.push('services[' + i + '].value must be high, medium or low');
+      if (s.keywords && !Array.isArray(s.keywords)) p.push('services[' + i + '].keywords must be a list');
+    });
+    if (b.booking_url && !/^https:\/\/[^\s]+$/.test(b.booking_url)) p.push('business.booking_url must be an https:// link');
+    if (/\{\{\s*phone\s*\}\}/.test(str(T.ack_urgent)) && !str(b.phone)) p.push('templates.ack_urgent uses {{phone}} but business.phone is empty');
+    if (config.bot_check !== undefined && ['none', 'turnstile'].indexOf(config.bot_check) === -1) p.push('bot_check must be "none" or "turnstile"');
+    if (config.min_form_seconds !== undefined && !(config.min_form_seconds >= 0 && config.min_form_seconds <= 60)) p.push('min_form_seconds must be between 0 and 60');
+    if (config.intake !== undefined) {
+      var I = config.intake;
+      if (typeof I !== 'object' || (!I.google_form && !I.website_form)) p.push('intake must enable google_form and/or website_form');
+    }
+    var L = config.limits || {};
+    [['per_hour', 1, 200], ['per_day', 1, 1500], ['quota_reserve', 0, 100]].forEach(function (r) {
+      if (L[r[0]] !== undefined && !(L[r[0]] >= r[1] && L[r[0]] <= r[2])) p.push('limits.' + r[0] + ' must be between ' + r[1] + ' and ' + r[2]);
+    });
     return p;
   }
 
@@ -285,7 +410,7 @@ var LeadEngine = (function () {
   function processInquiry(raw, config, receivedAt) {
     var lead = normalizeLead(raw, receivedAt);
     var v = validateLead(lead, config);
-    var result = { version: VERSION, lead: lead, valid: v.ok, spam: v.spam, errors: v.errors, spamReasons: v.reasons };
+    var result = { version: VERSION, lead: lead, valid: v.ok, spam: v.spam, errors: v.errors, spamReasons: v.reasons, dedupeKey: dedupeKey(lead) };
     if (v.spam) { result.status = 'spam'; result.tier = 'cold'; result.score = 0; result.reasons = v.reasons; result.service = { key: 'spam', label: 'Spam', value: 'low' }; result.replySkipped = 'spam'; result.followUps = []; return result; }
     var svc = classifyService(lead, config.services);
     var urg = detectUrgency(lead, config);
@@ -310,7 +435,9 @@ var LeadEngine = (function () {
     VERSION: VERSION, normalizeLead: normalizeLead, validateLead: validateLead, classifyService: classifyService,
     detectUrgency: detectUrgency, isOpen: isOpen, inServiceArea: inServiceArea, scoreLead: scoreLead, render: render,
     planFollowUps: planFollowUps, nextFollowUp: nextFollowUp, buildFollowUp: buildFollowUp, isOptOut: isOptOut, isAutoReply: isAutoReply,
-    checkConfig: checkConfig, processInquiry: processInquiry, localParts: localParts
+    checkConfig: checkConfig, processInquiry: processInquiry, localParts: localParts,
+    sanitizeName: sanitizeName, safeCell: safeCell, dedupeKey: dedupeKey, addressOf: addressOf, sameAddress: sameAddress,
+    stripQuoted: stripQuoted, autoReplyDecision: autoReplyDecision, hash: hash, LIMITS: LIMITS
   };
 })();
 

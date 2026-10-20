@@ -1,0 +1,16 @@
+/* ── reveal motion (JS adds .js; content is visible without JS) ─────────── */
+.js .reveal { opacity: 0; transform: translateY(12px); transition: opacity var(--d-slow) var(--ease), transform var(--d-slow) var(--ease); transition-delay: var(--delay, 0ms); }
+.js .reveal.is-in { opacity: 1; transform: none; }
+.js .hero-in { opacity: 0; transform: translateY(14px); animation: heroIn var(--d-enter) var(--ease) forwards; animation-delay: var(--delay, 0ms); }
+.js .hero-frame { opacity: 0; transform: translateY(18px); animation: heroIn 760ms var(--ease) forwards; animation-delay: var(--delay, 360ms); }
+@keyframes heroIn { to { opacity: 1; transform: none; } }
+/* Line-by-line entrance: each visual line rises from behind a mask and fades in (site.js splits the text). */
+.js [data-split-lines]:not(.is-split) { opacity: 0; }
+.split-line { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
+.split-line > span { display: block; opacity: 0; transform: translateY(100%); animation: lineUp 900ms var(--ease) forwards; animation-delay: var(--d, 0ms); }
+@keyframes lineUp { 60% { opacity: 1; } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; scroll-behavior: auto !important; }
+  .js .reveal, .js .hero-in, .js .hero-frame, .split-line > span { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .js [data-split-lines] { opacity: 1 !important; }
+}

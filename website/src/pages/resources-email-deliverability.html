@@ -1,0 +1,77 @@
+<!--page
+{
+  "title": "Make sure automated emails reach the inbox · Banira",
+  "description": "SPF, DKIM and DMARC in plain English: what Gmail and Yahoo require, and what a small business should set up before automating email replies.",
+  "path": "resources-email-deliverability.html",
+  "nav": null,
+  "scripts": []
+}
+-->
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="resources.html">Resources</a><span aria-hidden="true">/</span><span>Email deliverability</span></nav>
+    <p class="eyebrow mt-m">Guide · updated 20 October 2026</p>
+    <h1>Make sure automated emails reach the inbox.</h1>
+    <p class="lede">An instant reply only helps if it arrives. Three DNS settings (SPF, DKIM and DMARC) tell Gmail, Outlook and Yahoo that email from your domain is really from you.</p>
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top:0">
+  <div class="wrap article">
+    <nav class="toc" aria-label="On this page"><p class="fig">On this page</p><a href="#why">Why it matters</a><a href="#three">The three records</a><a href="#rules">What Gmail and Yahoo require</a><a href="#check">Check your domain</a><a href="#setup">A safe setup order</a><a href="#gmail">Free Gmail addresses</a><a href="#leaddesk">How this applies to Lead Desk</a><a href="#sources">Sources</a></nav>
+    <article class="prose">
+      <h2 id="why">Why it matters</h2>
+      <p>Mailbox providers decide whether a message goes to the inbox, the spam folder or nowhere. One of the first things they check is <strong>authentication</strong>: is this server allowed to send for this domain, and has the message been tampered with? Without it, your replies are more likely to be filtered, and anyone can send email that appears to come from you.</p>
+
+      <h2 id="three">The three records, in plain English</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col">Record</th><th scope="col">What it says</th><th scope="col">Where it lives</th></tr></thead>
+        <tbody>
+          <tr><td><strong>SPF</strong></td><td>"These services may send email for my domain."</td><td>A TXT record on your domain, e.g. <code>v=spf1 include:_spf.google.com ~all</code></td></tr>
+          <tr><td><strong>DKIM</strong></td><td>"Messages from me carry this signature, and here's the key to check it."</td><td>A TXT record your email provider gives you (e.g. <code>google._domainkey</code>)</td></tr>
+          <tr><td><strong>DMARC</strong></td><td>"If a message fails those checks, here's what to do with it, and send me reports."</td><td>A TXT record at <code>_dmarc.yourdomain.com</code></td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="rules">What Gmail and Yahoo require</h2>
+      <p>Since February 2024, Google and Yahoo have required <strong>bulk senders</strong> (5,000+ messages a day to their users) to have SPF, DKIM and DMARC (at least <code>p=none</code>), aligned with the From address. They must also keep spam complaints below 0.3% and offer one-click unsubscribe on marketing email. Microsoft began enforcing similar rules for high-volume senders in May 2025.</p>
+      <p>A small business sending a few dozen replies a day isn't a bulk sender, but the same records still help your mail get delivered and stop others impersonating you. Authentication is now simply expected.</p>
+      <div class="note"><strong>Lead Desk replies are not marketing.</strong> They respond to someone who contacted you. We still include a clear way to stop follow-ups, and we stop after three.</div>
+
+      <h2 id="check">Check your own domain</h2>
+      <p>You can look up these records yourself with any free DNS lookup tool. Search for your domain's TXT records and for <code>_dmarc.yourdomain.com</code>. Look for:</p>
+      <ul>
+        <li>Exactly <strong>one</strong> record starting <code>v=spf1</code>. Two SPF records break SPF entirely.</li>
+        <li>A DKIM record for each service that sends as you (your mailbox, newsletter tool, invoicing software).</li>
+        <li>A DMARC record. <code>p=none</code> only monitors. <code>p=quarantine</code> or <code>p=reject</code> actually protects you.</li>
+      </ul>
+
+      <h2 id="setup">A safe setup order</h2>
+      <ol>
+        <li><strong>List every service that sends email as your domain.</strong> This is the step people skip, and it's what breaks things later.</li>
+        <li><strong>Turn on DKIM</strong> in your email provider (Google Workspace: Admin console → Gmail → Authenticate email) and in each sending service.</li>
+        <li><strong>Publish one SPF record</strong> that includes every legitimate sender.</li>
+        <li><strong>Publish DMARC at <code>p=none</code></strong> with a reporting address, and read the reports for a week or two.</li>
+        <li>When only legitimate senders appear, <strong>move to <code>p=quarantine</code>, then <code>p=reject</code></strong>.</li>
+      </ol>
+      <p>Change one thing at a time and send yourself a test after each change. If something goes wrong, going back a step at the DMARC policy is safe.</p>
+
+      <h2 id="gmail">If you use a free @gmail.com address</h2>
+      <p>Google handles authentication for gmail.com, so there are no records for you to set. Messages sent from a personal Gmail account are limited to 100 automated recipients a day through Apps Script. A business domain on Google Workspace raises that to 1,500 and looks more professional.</p>
+
+      <h2 id="leaddesk">How this applies to Lead Desk</h2>
+<ul>
+<li><strong>Replies go out from your own mailbox</strong> through Gmail, so they inherit your domain’s authentication. If your domain has no SPF, DKIM or DMARC records, set them up before go-live; we check this in the first conversation.</li>
+<li><strong>Volume stays low by design.</strong> One automatic reply per address per day, hourly and daily caps, and at most three follow-ups per inquiry, all in the same thread.</li>
+<li><strong>Every message offers a way out.</strong> The footer asks customers to reply “stop”, and Lead Desk honours it at the next hourly check.</li>
+<li><strong>Daily limits apply.</strong> Apps Script can email about 100 recipients a day from a free Gmail account and more on Google Workspace. Lead Desk keeps part of the quota for your own alerts.</li>
+</ul>
+<h2 id="sources">Sources</h2>
+      <ul class="small">
+        <li><a href="https://help.close.com/docs/requirements-for-bulk-email-senders" rel="noopener">Close: Requirements for bulk email senders by Google and Yahoo</a></li>
+        <li><a href="https://ifeeltech.com/blog/dmarc-small-business-guide" rel="noopener">iFeelTech: DMARC for small business (Microsoft enforcement, 5 May 2025)</a></li>
+        <li><a href="https://developers.google.com/apps-script/guides/services/quotas?hl=en" rel="noopener">Google: Apps Script quotas</a></li>
+      </ul>
+    </article>
+  </div>
+</section>

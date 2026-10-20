@@ -1,0 +1,128 @@
+<!--page
+{
+  "title": "Interactive demo · Banira",
+  "description": "Walk through Lead Desk with a fictional heating company: pick a sample inquiry and see the real rules engine score it, choose the approved reply, alert the owner and plan follow-ups.",
+  "path": "demo.html",
+  "nav": null,
+  "scripts": [
+    "engine",
+    "demo-config",
+    "samples",
+    "model",
+    "demo"
+  ]
+}
+-->
+<section class="page-hero" style="padding-bottom: 2rem">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="lead-desk.html">Lead Desk</a><span aria-hidden="true">/</span><span>Demo</span></nav>
+    <h1 class="hero-in">Walk through a sample inquiry.</h1>
+    <p class="lede hero-in" style="--delay:90ms">Northfield Heating &amp; Air is a fictional business. Pick an inquiry on the left and step through what Lead Desk does with it. Scores, replies, alerts and follow-up dates come from the real rules engine; sending is simulated.</p>
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top:0" aria-label="Lead Desk sample workspace">
+  <div class="wrap">
+    <div class="demo-intro">
+      <ul class="legend" aria-label="How to use the demo">
+        <li><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 13h5l1.5 2.5h5L16 13h5"/><path d="M5 5h14l2 8v6H3v-6z"/></svg></span>Choose an inquiry</li>
+        <li><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 5.5v13l11-6.5z"/></svg></span>Play, pause or pick a step</li>
+        <li><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M4 9h16M4 14.5h16M10 3.5v17"/></svg></span>Switch to Follow-ups or Tracker</li>
+        <li><span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></span>Open a rule for details</li>
+      </ul>
+      <a class="btn btn--secondary btn--sm" href="demo.html"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3"/><path d="M4 4.5V9h4.5"/></svg>Reset demo</a>
+    </div>
+    <div class="hero-frame" style="--delay:160ms"><div class="ld" data-ld data-variant="full" data-autoplay="false">
+  <div class="ld-chrome">
+    <div class="ld-biz-wrap">
+      <button class="ld-biz" type="button" aria-expanded="false" aria-controls="ld-biz-full"><span class="ld-avatar" aria-hidden="true">N</span><span class="ld-biz-name">Northfield Heating &amp; Air</span><span class="badge badge--sample">Sample</span><svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M2 3.75 5 6.75l3-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="ld-biz-pop" id="ld-biz-full" hidden><p><b>Northfield Heating &amp; Air</b> is a fictional business used to demonstrate Lead Desk.</p><p class="muted">After setup, your own business, rules and approved messages would appear here, in your Google Sheet.</p></div>
+    </div>
+    <p class="ld-title"><span>Lead Desk</span><span class="muted">Sample workflow</span></p>
+    <p class="ld-clock mono"><span class="visually-hidden">Sample time: </span><span data-clock>Today 2:16 PM</span></p>
+  </div>
+  <div class="ld-body" data-ld-body>
+    <nav class="ld-side" aria-label="Sample views">
+      <div class="ld-views" role="group" aria-label="Views">
+        <button type="button" class="ld-view" data-view="inquiries" aria-pressed="true"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 13h5l1.5 2.5h5L16 13h5"/><path d="M5 5h14l2 8v6H3v-6z"/></svg><span>Inquiries</span><span class="count" data-count="inquiries"></span></button>
+        <button type="button" class="ld-view" data-view="followups" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15"/><path d="M4 20v-5h5"/></svg><span>Follow-ups</span><span class="count" data-count="followups"></span></button>
+        <button type="button" class="ld-view" data-view="tracker" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M4 9h16M4 14.5h16M10 3.5v17"/></svg><span>Tracker</span></button>
+      </div>
+      <p class="ld-side-h">Rules</p>
+      <div class="ld-rules">
+        <button type="button" class="ld-rule" data-sheet="replies"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg><span>Approved replies</span></button>
+        <button type="button" class="ld-rule" data-sheet="rules"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>Priority rules</span></button>
+        <button type="button" class="ld-rule" data-sheet="schedule"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Follow-up schedule</span></button>
+        <button type="button" class="ld-rule" data-sheet="alerts"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><span>Owner alerts</span></button>
+      </div>
+      <p class="ld-side-foot"><span><span data-actions>0</span> actions in this demo session</span><span class="muted">Resets on refresh · engine v1.1.0</span></p>
+    </nav>
+    <div class="ld-main">
+      <section class="ld-panel ld-panel--inquiries" data-panel="inquiries" aria-label="Inquiries">
+        <div class="ld-list" data-list></div>
+        <div class="ld-convo" data-convo>
+          <div class="ld-convo-head">
+            <button type="button" class="ld-back" data-back><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span>Inquiries</span></button>
+            <div class="ld-convo-title" data-convo-title></div>
+            <button type="button" class="ld-props-toggle btn btn--secondary btn--xs" data-props-open aria-expanded="false"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M14.5 4.5v15"/></svg><span>Details</span></button>
+          </div>
+          <div class="ld-tour">
+            <ol class="ld-steps" aria-label="Walkthrough steps"><li><button type="button" class="ld-step" data-step="0" aria-pressed="false"><span class="n">1</span><span class="t">Received</span></button></li><li><button type="button" class="ld-step" data-step="1" aria-pressed="false"><span class="n">2</span><span class="t">Rules</span></button></li><li><button type="button" class="ld-step" data-step="2" aria-pressed="false"><span class="n">3</span><span class="t">Reply</span></button></li><li><button type="button" class="ld-step" data-step="3" aria-pressed="false"><span class="n">4</span><span class="t">Alert</span></button></li><li><button type="button" class="ld-step" data-step="4" aria-pressed="false"><span class="n">5</span><span class="t">Follow-up</span></button></li></ol>
+            <div class="ld-tour-ctrl">
+              <button type="button" class="ld-ctl" data-play aria-label="Pause walkthrough"><svg class="ic ic-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6.5" y="5" width="3.5" height="14" rx="1"/><rect x="14" y="5" width="3.5" height="14" rx="1"/></svg><svg class="ic ic-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 5.5v13l11-6.5z"/></svg></button>
+              <button type="button" class="ld-ctl" data-restart aria-label="Restart walkthrough"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3"/><path d="M4 4.5V9h4.5"/></svg></button>
+            </div>
+          </div>
+          <div class="ld-thread" data-thread tabindex="0" aria-label="Walkthrough detail"></div>
+        </div>
+        <div class="ld-props" data-props role="region" aria-label="Inquiry details" tabindex="0"></div>
+      </section>
+      <section class="ld-panel" data-panel="followups" aria-label="Follow-ups" hidden></section>
+      <section class="ld-panel" data-panel="tracker" aria-label="Tracker" hidden></section>
+    </div>
+  </div>
+  <div class="ld-static">
+    <p class="ld-static-h"><b>Sample walkthrough</b> (fictional business, results from the Lead Desk rules engine v1.1.0)</p>
+    <ol><li><b>Inquiry received</b><span>Sam Ortiz, Today 2:14 PM: “Our furnace stopped last night and we have no heat. Two kids at home. Can someone come today? It was making a loud banging noise before it died.”</span></li><li><b>Rules applied</b><span>Heating or AC repair, urgent, score 90/100 (hot). +30 Heating or AC repair (high value); +25 urgent: no heat, today; +10 phone provided; +10 detailed message; +15 inside service area.</span></li><li><b>Approved reply</b><span>Template “urgent acknowledgement”, approved by the owner before go-live.</span><pre class="mail-body">Hi Sam,
+
+We&#x27;ve received your message and flagged it as urgent. If you smell gas or suspect carbon monoxide, leave the building and call 911 or your gas utility first.
+
+For the fastest response, call us now at (555) 010-4477. Otherwise we&#x27;ll contact you as soon as possible.
+
+Dana Reyes
+Northfield Heating &amp; Air
+(555) 010-4477
+
+Reply &quot;stop&quot; and we won&#x27;t send further follow-ups.</pre></li><li><b>Owner notified</b><span>[HOT] Sam Ortiz — Heating or AC repair</span></li><li><b>Follow-up scheduled</b><span>Follow-up 1: Wed, Oct 21, 2:14 PM; Follow-up 2: Fri, Oct 23, 2:14 PM; Follow-up 3: Tue, Oct 27, 2:14 PM. The reply check runs hourly.</span></li></ol>
+  </div>
+  <p class="visually-hidden" aria-live="polite" data-ld-live></p>
+</div></div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="real-h">
+  <div class="wrap">
+    <div class="head reveal"><p class="eyebrow"><span class="dot"></span>What’s real here</p><h2 id="real-h">Real rules, simulated sending.</h2></div>
+    <div class="table-wrap mt-l reveal">
+      <table>
+        <caption>What the demo shows, and where it comes from</caption>
+        <thead><tr><th scope="col">Shown</th><th scope="col">Source</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Spam check, service, urgency, score and reasons</th><td>Lead Desk rules engine v1.1, the same file that runs in Apps Script</td><td><span class="badge badge--ok">Engine output</span></td></tr>
+          <tr><th scope="row">Which reply is chosen, and its text</th><td>Engine + the fictional business’s approved templates</td><td><span class="badge badge--ok">Engine output</span></td></tr>
+          <tr><th scope="row">Owner alert content</th><td>Engine</td><td><span class="badge badge--ok">Engine output</span> layout illustrative</td></tr>
+          <tr><th scope="row">Follow-up dates</th><td>Engine’s follow-up plan (days 1, 3, 7)</td><td><span class="badge badge--ok">Engine output</span></td></tr>
+          <tr><th scope="row">Replies, bookings and a failed send in earlier records</th><td>A fictional story written for the demo</td><td><span class="badge badge--warn">Simulated</span></td></tr>
+          <tr><th scope="row">The interface itself</th><td>Designed to explain the workflow. Clients use a Google Sheet and Gmail.</td><td><span class="badge badge--neutral">Illustrative</span></td></tr>
+          <tr><th scope="row">Email sending</th><td>Nothing is sent from this page</td><td><span class="badge badge--warn">Simulated</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid grid-3 mt-l" data-stagger>
+      <a class="card card--link reveal" href="lead-desk.html"><span class="ic-wrap"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span><h3>Full scope</h3><p class="small">What a Lead Desk client receives, and its limits.</p></a>
+      <a class="card card--link reveal" href="security.html"><span class="ic-wrap"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.2 7.5 9.5 4.3-1.3 7.5-4.9 7.5-9.5V6z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Data and access</h3><p class="small">Where inquiries are stored and what the script can do.</p></a>
+      <a class="card card--link reveal" href="contact.html"><span class="ic-wrap"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.2-4 4.3-6 8-6s6.8 2 8 6"/></svg></span><h3>Discuss your workflow</h3><p class="small">How your inquiries arrive today, and whether this fits.</p></a>
+    </div>
+  </div>
+</section>
+<!-- @include components/sheets -->

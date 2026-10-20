@@ -1,0 +1,66 @@
+<!--page
+{
+  "title": "Contact · Banira",
+  "description": "Tell Banira how inquiries reach your business today. The next step is a short conversation and fit check. No account to create.",
+  "path": "contact.html",
+  "nav": null,
+  "scripts": [
+    "forms"
+  ]
+}
+-->
+<section class="page-hero" style="padding-bottom:2rem">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Contact</span></nav>
+    <h1 class="hero-in">Discuss your workflow.</h1>
+    <p class="lede hero-in" style="--delay:90ms">Tell us how inquiries reach you today and what goes wrong. The next step is a short conversation to check whether Lead Desk fits. There’s no account to create.</p>
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top:0" aria-label="Contact form">
+  <div class="wrap split" style="align-items:start">
+    <div class="stack-l">
+      <p class="note note--pending" id="form-mode-note" hidden><b>Preview site.</b> This form isn’t connected to a mailbox yet. When you press send, you’ll see exactly what would be submitted. Nothing is sent or stored.</p>
+      <ol class="next-steps" style="margin-top:0; grid-template-columns:1fr">
+        <li><b>You send this short note</b><span>About two minutes. Only name, email and the problem are required.</span></li>
+        <li><b>A fit check</b><span>A short call about your inquiries, tools and hours. If Lead Desk isn’t right, we’ll say so.</span></li>
+        <li><b>A written plan</b><span>Messages, rules and a fixed price. Nothing starts until you approve.</span></li>
+      </ol>
+      <div class="card card--quiet">
+        <h2 class="h4">Other ways to reach us</h2>
+        <p class="small">Email: not set up yet (use the form, which is in preview).</p>
+        <p class="small muted">We never ask for passwords or payment by email.</p>
+      </div>
+    </div>
+
+    <div>
+      <form class="card form" id="contact-form" name="contact" method="POST" action="contact.html" data-netlify="true" netlify-honeypot="company_website" novalidate>
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="started_at" value="">
+        <p class="hp-field" aria-hidden="true"><label>Leave this empty <input name="company_website" tabindex="-1" autocomplete="off"></label></p>
+        <p class="form-error-summary note note--legal" id="error-summary" tabindex="-1" hidden></p>
+        <div class="form-row">
+          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required maxlength="120" aria-describedby="e-name"><span class="field-error" id="e-name">Please tell us your name.</span></div>
+          <div class="field"><label for="f-email">Business email</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="254" aria-describedby="e-email"><span class="field-error" id="e-email">Please enter an email address like name@business.com.</span></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="f-business">Business name<span class="opt">optional</span></label><input id="f-business" name="business" autocomplete="organization" maxlength="160"></div>
+          <div class="field"><label for="f-phone">Phone<span class="opt">optional</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="f-mail">Email you use</label>
+            <select id="f-mail" name="mail_system" aria-describedby="h-mail"><option value="google">Gmail / Google Workspace</option><option value="microsoft">Outlook / Microsoft 365</option><option value="other">Other or not sure</option></select>
+            <span class="help" id="h-mail">Lead Desk runs in Gmail and Google Sheets.</span></div>
+          <div class="field"><label for="f-tool">Website or form tool<span class="opt">optional</span></label><input id="f-tool" name="form_tool" maxlength="120" placeholder="e.g. Wix, WordPress, Squarespace"></div>
+        </div>
+        <div class="field"><label for="f-message">What happens to inquiries today, and what goes wrong?</label><textarea id="f-message" name="message" required minlength="20" maxlength="4000" aria-describedby="h-message e-message"></textarea><span class="help" id="h-message">Roughly how many a week, who answers, and what gets missed. Please don’t include customers’ personal details.</span><span class="field-error" id="e-message">Please write at least a couple of sentences (20+ characters).</span></div>
+        <div class="field"><label for="f-plan">Interested in<span class="opt">optional</span></label>
+          <select id="f-plan" name="plan"><option value="not-sure">Not sure yet</option><option value="founding">Lead Desk: founding place ($290)</option><option value="core">Lead Desk ($490)</option><option value="care">Care for an existing Lead Desk ($49/month)</option><option value="plus">Hearing about Lead Desk Plus</option><option value="custom">Custom automation (quote)</option></select></div>
+        <label class="check"><input type="checkbox" name="consent" id="f-consent" required aria-describedby="e-consent"><span>Banira may use these details to reply to me, as described in the <a href="privacy.html">privacy notice (draft)</a>.</span></label>
+        <span class="field-error" id="e-consent">Please confirm so we can reply.</span>
+        <div class="cluster"><button class="btn btn--primary btn--lg" type="submit" id="contact-submit">Send</button><span class="small muted" id="submit-note"></span></div>
+      </form>
+      <div class="form-status" id="contact-status" tabindex="-1" hidden></div>
+    </div>
+  </div>
+</section>

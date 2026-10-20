@@ -1,0 +1,14 @@
+{
+  "_note": "Site settings read by website/build.js. No secrets belong here: everything in this file is published.",
+  "url": "https://banira.example",
+  "status": "preview",
+  "contact_email": "",
+  "form": {
+    "mode": "preview",
+    "endpoint": ""
+  },
+  "analytics": {
+    "mode": "off",
+    "endpoint": ""
+  }
+}

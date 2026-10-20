@@ -1,0 +1,5 @@
+/* ── two-tone statement (homepage) ── */
+.statement-sec { padding-block: calc(var(--section) * .7); }
+.statement { font-size: clamp(1.625rem, 1.1rem + 2.2vw, 2.875rem); line-height: 1.16; letter-spacing: -0.028em; font-weight: 540; color: var(--fg); max-width: 26em; text-wrap: pretty; }
+.statement .line { display: block; }
+.statement .line--quiet { color: #8F919A; }

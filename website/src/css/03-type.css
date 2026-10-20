@@ -1,0 +1,17 @@
+/* ── type helpers ───────────────────────────────────────────────────────── */
+.lede { font-size: var(--t-lg); line-height: 1.55; color: var(--fg-2); max-width: 60ch; }
+.small { font-size: var(--t-sm); }
+.xs { font-size: var(--t-xs); }
+.muted { color: var(--muted); }
+.fg { color: var(--fg); }
+.eyebrow { display: inline-flex; align-items: center; gap: .5rem; font-size: var(--t-sm); color: var(--fg-2); font-weight: 500; letter-spacing: -0.005em; }
+.eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--lavender); }
+.fig { font-family: var(--mono); font-size: var(--t-xs); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.jp { font-family: var(--jp); letter-spacing: .2em; color: var(--muted); }
+.head { max-width: 760px; }
+.head > * + * { margin-top: 1rem; }
+.head--center { margin-inline: auto; text-align: center; }
+.head--center .lede { margin-inline: auto; }
+.h-quiet { color: var(--fg-2); }
+.num { font-variant-numeric: tabular-nums; }
+.h2 { font-size: var(--t-h2); } .h3 { font-size: var(--t-h3); } .h4 { font-size: var(--t-h4); }
