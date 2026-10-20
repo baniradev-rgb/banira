@@ -5,6 +5,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 
 const TYPES = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -27,7 +28,13 @@ function createServer(root) {
         res.writeHead(404, { 'Content-Type': TYPES['.html'] });
         return res.end(fs.existsSync(nf) ? fs.readFileSync(nf) : 'Not found');
       }
-      res.writeHead(200, { 'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-cache' });
+      const type = TYPES[path.extname(file)] || 'application/octet-stream';
+      // compress text like a production static host does (Netlify/Cloudflare serve gzip or brotli)
+      if (/text|javascript|json|svg|xml/.test(type) && /gzip/.test(req.headers['accept-encoding'] || '')) {
+        res.writeHead(200, { 'Content-Type': type, 'Content-Encoding': 'gzip', 'Cache-Control': 'no-cache', Vary: 'Accept-Encoding' });
+        return res.end(zlib.gzipSync(buf));
+      }
+      res.writeHead(200, { 'Content-Type': type, 'Cache-Control': 'no-cache' });
       res.end(buf);
     });
   });

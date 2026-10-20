@@ -1,0 +1,78 @@
+{
+  "preset": "mobile",
+  "measuredAt": "2026-10-20T13:42:51.675Z",
+  "rows": [
+    {
+      "page": "contact",
+      "perf": 98,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 1811,
+      "cls": 0.081,
+      "tbt_ms": 0,
+      "fcp_ms": 1511,
+      "bytes_kb": 145
+    },
+    {
+      "page": "demo",
+      "perf": 99,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 92,
+      "lcp_ms": 1963,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 1663,
+      "bytes_kb": 171
+    },
+    {
+      "page": "index",
+      "perf": 98,
+      "a11y": 97,
+      "bp": 96,
+      "seo": 82,
+      "lcp_ms": 2265,
+      "cls": 0,
+      "tbt_ms": 14,
+      "fcp_ms": 1515,
+      "bytes_kb": 195
+    },
+    {
+      "page": "lead-desk",
+      "perf": 99,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 1809,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 1509,
+      "bytes_kb": 149
+    },
+    {
+      "page": "pricing",
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 1509,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 909,
+      "bytes_kb": 86
+    },
+    {
+      "page": "workspace",
+      "perf": 99,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp_ms": 1961,
+      "cls": 0,
+      "tbt_ms": 0,
+      "fcp_ms": 1511,
+      "bytes_kb": 160
+    }
+  ]
+}

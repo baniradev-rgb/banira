@@ -34,8 +34,10 @@
   transition: color var(--dur-surface) var(--ease-standard), border-color var(--dur-surface) var(--ease-standard), background-color var(--dur-surface) var(--ease-standard); }
 .steps--rail > li.is-past::before { border-color: var(--fg-2); color: var(--fg); }
 .steps--rail > li.is-current::before { background: var(--fg); border-color: var(--fg); color: var(--on-fg); }
-.steps--rail > li > div { transition: opacity var(--dur-move) var(--ease-standard); }
-.js .steps--rail.is-tracking > li:not(.is-current):not(.is-past) > div { opacity: .55; }
+.steps--rail h3, .steps--rail p { transition: color var(--dur-move) var(--ease-standard); }
+/* upcoming steps recede by colour, not opacity, so text keeps ≥ 4.5:1 contrast */
+.js .steps--rail.is-tracking > li:not(.is-current):not(.is-past) h3 { color: var(--fg-2); }
+.js .steps--rail.is-tracking > li:not(.is-current):not(.is-past) p { color: var(--muted); }
 .steps--rail .steps-optional::before { border-style: dashed; }
 
 /* availability list (Solutions): one row per capability, status as text + colour */
