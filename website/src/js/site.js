@@ -72,6 +72,12 @@
     window.addEventListener('scroll', check, { passive: true }); check();
   })();
 
+  // ── ambient elements pause when off-screen ([data-ambient] gets .is-offscreen) ──
+  if ('IntersectionObserver' in window) {
+    var aio = new IntersectionObserver(function (en) { en.forEach(function (x) { x.target.classList.toggle('is-offscreen', !x.isIntersecting); }); });
+    $$('[data-ambient]').forEach(function (el) { aio.observe(el); });
+  }
+
   // ── navigation menus (disclosure pattern) ──
   var header = doc.querySelector('.site-header');
   var triggers = $$('.nav-trigger');
