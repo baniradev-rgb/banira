@@ -120,6 +120,33 @@ fs.readdirSync(path.join(SRC, 'pages')).filter((f) => f.endsWith('.html')).sort(
   pages.push({ file, fm, body: raw.slice(m[0].length) });
 });
 
+// Articles: reading time from the words inside <article>, related links from other pages' front matter.
+const textOf = (h) => h.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&[a-z#0-9]+;/g, ' ');
+pages.forEach(({ file, fm, body }) => {
+  if (!fm.article) return;
+  const art = (body.match(/<article[\s\S]*?<\/article>/) || [body])[0];
+  const words = textOf(art).split(/\s+/).filter(Boolean).length;
+  fm.article.words = words;
+  ctx['read.' + file.replace(/\.html$/, '')] = String(Math.max(1, Math.round(words / 220)));
+});
+const byFile = Object.fromEntries(pages.map((p) => [p.file, p]));
+function relatedBlock(fm, file) {
+  const rel = (fm.article && fm.article.related) || [];
+  if (!rel.length) return '';
+  const cards = rel.map((r) => {
+    const p = byFile[r];
+    if (!p) { errors.push(file + ': related page not found ' + r); return ''; }
+    const label = p.fm.article ? p.fm.article.kind + ' · ' + ctx['read.' + r.replace(/\.html$/, '')] + ' min' : 'Lead Desk';
+    return '<a class="card card--link res-card" href="' + r + '"><p class="fig">' + esc(label) + '</p><h3 class="h4">' + esc(p.fm.title.replace(/ · Banira$/, '')) + '</h3><p class="small">' + esc(p.fm.description) + '</p></a>';
+  }).join('');
+  return '<section class="section section--tight related" aria-labelledby="rel-h"><div class="wrap"><h2 id="rel-h" class="h3">Related</h2><div class="grid grid-2 mt-m">' + cards + '</div></div></section>';
+}
+function articleLd(fm, file) {
+  return { '@context': 'https://schema.org', '@type': 'Article', headline: fm.title.replace(/ · Banira$/, ''), description: fm.description, dateModified: fm.article.updated,
+    author: { '@type': 'Organization', name: 'Banira' }, publisher: { '@type': 'Organization', name: 'Banira', logo: { '@type': 'ImageObject', url: site.url + '/assets/img/icon-512.png' } },
+    mainEntityOfPage: urlFor(file), wordCount: fm.article.words };
+}
+
 const DEFAULT_SCRIPTS = ['site-config', 'site'];
 function urlFor(file) { return site.url + '/' + (file === 'index.html' ? '' : file); }
 function head(fm, file) {
@@ -172,7 +199,8 @@ const ids = {};
 pages.forEach(({ file, fm, body }) => {
   const scripts = DEFAULT_SCRIPTS.concat(fm.scripts || []);
   scripts.forEach((s) => { if (!generated[s]) errors.push(file + ': unknown script ' + s); });
-  const main = values(include(body, 0, file), file);
+  if (fm.article && !fm.jsonld) fm.jsonld = articleLd(fm, file);
+  const main = values(include(body, 0, file), file) + relatedBlock(fm, file);
   const html = [
     head(fm, file),
     '<body data-page="' + file.replace(/\.html$/, '') + '">',
