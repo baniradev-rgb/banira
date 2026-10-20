@@ -1,0 +1,45 @@
+/* ── pod pipeline (components/pipeline.html + js/pipeline.js) ───────────── */
+/* Five stages on one curved path. The seed (the R2 dot) travels along it to the chosen stage.
+   No JS: an ordered row of labels with every panel listed below it. */
+.pipe { --pipe-h: 120px; display: grid; gap: var(--s-8); }
+.pipe-track { position: relative; padding-bottom: 64px; }
+.pipe-path { display: block; width: 100%; height: var(--pipe-h); overflow: visible; }
+.pipe-line, .pipe-trail { fill: none; }
+.pipe:not(.is-live) .pipe-line { vector-effect: non-scaling-stroke; } /* no-JS: the stretched viewBox needs it */
+.pipe-line { stroke: var(--line-3); stroke-width: 1.5; stroke-dasharray: 2 6; stroke-linecap: round; }
+.pipe-trail { stroke: var(--fg); stroke-width: 1.5; stroke-linecap: round; stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset var(--dur-story) var(--ease-out); }
+.no-js .pipe-trail, .pipe:not(.is-live) .pipe-trail { stroke-dashoffset: 0; opacity: .25; }
+.pipe-seed { position: absolute; left: -7px; top: -7px; width: 14px; height: 14px; border-radius: 50%; background: var(--fg); box-shadow: 0 0 0 6px rgb(var(--tint-rgb) / .06), 0 0 24px rgb(var(--tint-rgb) / calc(.25 * var(--glow-a)));
+  transform: translate(0, 0); transition: transform var(--dur-story) var(--ease-spring); will-change: transform; }
+.pipe:not(.is-live) .pipe-seed { display: none; }
+.pipe-stages { list-style: none; position: absolute; inset: 0; display: grid; grid-template-columns: repeat(5, 1fr); }
+.pipe-stages li { position: relative; }
+.pipe-stages button { position: absolute; left: 50%; top: calc(var(--ny, 60px) - 22px); transform: translateX(-50%); display: grid; justify-items: center; gap: .35rem; padding: 0 .5rem; min-width: 64px; border-radius: var(--r-ctl); color: var(--muted); }
+.pipe-node { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; }
+.pipe-node::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--line-3); transition: border-color var(--dur-surface) var(--ease-standard), background-color var(--dur-surface) var(--ease-standard), transform var(--dur-move) var(--ease-spring); }
+.pipe-node.is-done::before { background: var(--fg-2); border-color: var(--fg-2); }
+.pipe-node.is-on::before { transform: scale(1.5); border-color: var(--fg); }
+.pipe-stages .fig { line-height: 1; }
+.pipe-name { font-size: var(--t-sm); font-weight: 520; color: inherit; white-space: nowrap; transition: color var(--dur-micro) var(--ease-standard); }
+.pipe-stages button:hover, .pipe-stages button[aria-selected="true"] { color: var(--fg); }
+.pipe-stages button:focus-visible { outline-offset: 0; }
+.pipe-panels { position: relative; border-top: 1px solid var(--line); padding-top: var(--s-8); }
+.pipe-panel { display: grid; gap: var(--s-6) var(--s-12); grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 860px) { .pipe-panel { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); } }
+.js .pipe.is-live .pipe-panel:not([hidden]) { animation: rise var(--dur-move) var(--ease-out); }
+.pipe-panel h3 { font-size: var(--t-h3); margin-bottom: var(--s-3); }
+.pipe-panel p { max-width: 58ch; }
+.pipe-out { margin: 0; display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
+.pipe-out > div { display: grid; grid-template-columns: 7.5rem 1fr; gap: var(--s-3); padding: .7rem .9rem; background: var(--panel); font-size: var(--t-sm); }
+.pipe-out dt { color: var(--muted); font-family: var(--mono); font-size: var(--t-2xs); text-transform: uppercase; letter-spacing: var(--ls-label); padding-top: .15em; }
+.pipe-out dd { margin: 0; color: var(--fg); overflow-wrap: anywhere; }
+.pipe-out dd.mono { font-size: .78rem; color: var(--fg-2); line-height: 1.55; }
+.pipe-cap { font-size: var(--t-xs); color: var(--muted); }
+.pipe:not(.is-live) .pipe-panels { display: grid; gap: var(--s-8); }
+@media (max-width: 640px) {
+  .pipe { --pipe-h: 92px; }
+  .pipe-stages button { min-width: 0; padding: 0; }
+  .pipe-name { font-size: .75rem; }
+  .pipe-stages .fig { display: none; }
+  .pipe-out > div { grid-template-columns: 1fr; gap: .2rem; }
+}

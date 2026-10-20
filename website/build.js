@@ -34,12 +34,32 @@ function testCounts() {
   return fs.existsSync(f) ? JSON.parse(read(f)) : null;
 }
 const tests = testCounts();
+// The sample inquiry shown in static copy (pipeline captions, Lead Desk page) is computed by the real engine,
+// so the words on the page can't drift from what the rules actually do.
+const SAMPLES = require(path.join(SRC, 'js/samples.js'));
+const MODEL = require(path.join(SRC, 'js/model.js'))(engine, demoConfig, SAMPLES);
+const sampleRec = MODEL.byId.furnace;
+const TEMPLATE_NAMES = { ack: 'office-hours acknowledgement', ack_after_hours: 'after-hours acknowledgement', ack_urgent: 'urgent acknowledgement' };
 const ctx = {
   'engine.version': engine.VERSION,
   'site.url': site.url,
   'year': String(new Date().getFullYear()),
   'tests.leaddesk': tests ? String(tests.leaddesk.pass) : '',
-  'tests.date': tests ? tests.date : ''
+  'tests.date': tests ? tests.date : '',
+  'sample.name': sampleRec.name,
+  'sample.first': sampleRec.name.split(' ')[0],
+  'sample.received': MODEL.stamp(sampleRec.receivedAt),
+  'sample.score': String(sampleRec.score),
+  'sample.tier': sampleRec.tier,
+  'sample.service': sampleRec.service.label,
+  'sample.urgent': sampleRec.urgent ? 'urgent' : 'not urgent',
+  'sample.template': TEMPLATE_NAMES[sampleRec.reply.template],
+  'sample.next': sampleRec.next.text,
+  'sample.alert': sampleRec.ownerAlert.subject,
+  'sample.followups': sampleRec.followUps.map((f) => MODEL.day(f.dueAt)).join(' · '),
+  'sample.reasons': sampleRec.reasons.join(' · '),
+  'config.followup.days': demoConfig.follow_up.days.slice(0, -1).join(', ') + ' and ' + demoConfig.follow_up.days.slice(-1),
+  'business.name': demoConfig.business.name
 };
 
 // ── partials ──

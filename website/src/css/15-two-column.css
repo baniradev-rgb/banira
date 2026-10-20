@@ -3,4 +3,4 @@
 @media (min-width: 900px) { .feature-head { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
 .feature-head h2 { font-size: clamp(2.25rem, 1.5rem + 3vw, 3.75rem); line-height: 1.02; }
 .feature-head h2 .line { display: block; }
-.feature-head .lede { color: var(--fg); opacity: .86; font-size: clamp(1.125rem, 1rem + .5vw, 1.375rem); }
+.feature-head .lede { color: var(--fg-2); font-size: clamp(1.125rem, 1rem + .5vw, 1.375rem); }

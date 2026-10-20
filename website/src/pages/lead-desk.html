@@ -4,7 +4,9 @@
   "description": "Lead Desk replies to new web inquiries with messages you approve, scores them, alerts you and follows up. It runs in your own Gmail and Google Sheets. Full scope, delivery and limits.",
   "path": "lead-desk.html",
   "nav": null,
-  "scripts": []
+  "scripts": [
+    "pipeline"
+  ]
 }
 -->
 <section class="cine" aria-labelledby="ld-h1">
@@ -36,14 +38,8 @@
 
 <section class="section section--tight" aria-labelledby="flow-h">
   <div class="wrap">
-    <h2 id="flow-h" class="visually-hidden">What happens to each inquiry</h2>
-    <div class="kv-grid" data-stagger>
-      <div class="reveal"><span class="fig">01 · Save</span><b>Recorded in your sheet</b><p>Each inquiry becomes a row in a Google Sheet you own, even if an email later fails.</p></div>
-      <div class="reveal"><span class="fig">02 · Check</span><b>Spam and duplicates filtered</b><p>Link spam, bots and accidental double submissions are caught before anything is sent.</p></div>
-      <div class="reveal"><span class="fig">03 · Reply</span><b>Your approved message</b><p>Office hours, after hours or urgent, sent from your Gmail.</p></div>
-      <div class="reveal"><span class="fig">04 · Score</span><b>Who to call first</b><p>A 0–100 score with readable reasons, and an alert to you.</p></div>
-      <div class="reveal"><span class="fig">05 · Follow up</span><b>Days 1, 3 and 7</b><p>In the same thread, stopping when the customer answers.</p></div>
-    </div>
+    <div class="head reveal"><p class="eyebrow"><span class="dot"></span>One inquiry, start to finish</p><h2 id="flow-h">What happens to each inquiry.</h2></div>
+    <div class="mt-l reveal"><!-- @include components/pipeline --></div>
   </div>
 </section>
 

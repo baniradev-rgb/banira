@@ -1,0 +1,39 @@
+<div class="pipe" data-pipeline aria-roledescription="interactive diagram">
+  <div class="pipe-track">
+    <svg class="pipe-path" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="pipe-line" d="M0 96 C 180 112, 330 104, 500 70 S 820 18, 1000 26"/>
+      <path class="pipe-trail" d="M0 96 C 180 112, 330 104, 500 70 S 820 18, 1000 26" pathLength="1000"/>
+    </svg>
+    <span class="pipe-seed" aria-hidden="true"></span>
+    <ol class="pipe-stages" role="tablist" aria-label="What Lead Desk does with one inquiry">
+      <li><button type="button" role="tab" id="pipe-t1" aria-controls="pipe-p1" aria-selected="true"><span class="pipe-node" aria-hidden="true"></span><span class="fig">01</span><span class="pipe-name">Receive</span></button></li>
+      <li><button type="button" role="tab" id="pipe-t2" aria-controls="pipe-p2" aria-selected="false" tabindex="-1"><span class="pipe-node" aria-hidden="true"></span><span class="fig">02</span><span class="pipe-name">Sort</span></button></li>
+      <li><button type="button" role="tab" id="pipe-t3" aria-controls="pipe-p3" aria-selected="false" tabindex="-1"><span class="pipe-node" aria-hidden="true"></span><span class="fig">03</span><span class="pipe-name">Reply</span></button></li>
+      <li><button type="button" role="tab" id="pipe-t4" aria-controls="pipe-p4" aria-selected="false" tabindex="-1"><span class="pipe-node" aria-hidden="true"></span><span class="fig">04</span><span class="pipe-name">Alert</span></button></li>
+      <li><button type="button" role="tab" id="pipe-t5" aria-controls="pipe-p5" aria-selected="false" tabindex="-1"><span class="pipe-node" aria-hidden="true"></span><span class="fig">05</span><span class="pipe-name">Follow up</span></button></li>
+    </ol>
+  </div>
+  <div class="pipe-panels">
+    <section class="pipe-panel" role="tabpanel" id="pipe-p1" aria-labelledby="pipe-t1">
+      <div><h3>Saved before anything else happens.</h3><p>A customer fills in your website form or Google Form. Lead Desk writes the inquiry to a new row in your Google Sheet first, so it is kept even if a later step fails.</p></div>
+      <dl class="pipe-out"><div><dt>From</dt><dd>{%sample.name%} · website form</dd></div><div><dt>Received</dt><dd>{%sample.received%}</dd></div><div><dt>Written to</dt><dd>Inquiries sheet, new row</dd></div></dl>
+    </section>
+    <section class="pipe-panel" role="tabpanel" id="pipe-p2" aria-labelledby="pipe-t2">
+      <div><h3>Sorted by rules you can read.</h3><p>Spam and accidental duplicates are filtered out. Your approved rules pick the service, look for urgent words, check your service area and give a 0–100 score, with the reason for every point.</p></div>
+      <dl class="pipe-out"><div><dt>Service</dt><dd>{%sample.service%}</dd></div><div><dt>Priority</dt><dd>{%sample.tier%} · {%sample.score%}/100 · {%sample.urgent%}</dd></div><div><dt>Reasons</dt><dd class="mono">{%sample.reasons%}</dd></div></dl>
+    </section>
+    <section class="pipe-panel" role="tabpanel" id="pipe-p3" aria-labelledby="pipe-t3">
+      <div><h3>The right first reply, in your words.</h3><p>Lead Desk sends the message you approved for the situation: office hours, after hours or urgent. It never repeats what the visitor typed, and uses their first name only after links and symbols are removed.</p></div>
+      <dl class="pipe-out"><div><dt>Template</dt><dd>{%sample.template%}</dd></div><div><dt>Sent from</dt><dd>Your Gmail</dd></div><div><dt>Limits</dt><dd>One automatic reply per address per day</dd></div></dl>
+    </section>
+    <section class="pipe-panel" role="tabpanel" id="pipe-p4" aria-labelledby="pipe-t4">
+      <div><h3>You know who to call first.</h3><p>You get an email for each new inquiry with the score, the reasons and the next action, and a 7:00 summary of anything that still needs a person.</p></div>
+      <dl class="pipe-out"><div><dt>Alert</dt><dd>{%sample.alert%}</dd></div><div><dt>Next action</dt><dd>{%sample.next%}</dd></div></dl>
+    </section>
+    <section class="pipe-panel" role="tabpanel" id="pipe-p5" aria-labelledby="pipe-t5">
+      <div><h3>Persistent, then quiet.</h3><p>If the customer doesn’t answer, follow-ups go out on days {%config.followup.days%} in the same email thread. A reply, a booking you mark, or “stop” ends them.</p></div>
+      <dl class="pipe-out"><div><dt>Scheduled</dt><dd>{%sample.followups%}</dd></div><div><dt>Stops on</dt><dd>Reply · booking · “stop”</dd></div></dl>
+    </section>
+  </div>
+  <p class="pipe-cap">Sample inquiry from {%business.name%}, a fictional business. Values are calculated by the Lead Desk rules engine v{%engine.version%}; nothing is sent.</p>
+</div>
