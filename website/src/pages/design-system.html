@@ -1,0 +1,100 @@
+<!--page
+{
+  "title": "Design system (internal) · Banira",
+  "description": "Internal reference for Banira's design tokens, components and motion, rendered from the same sources the website uses. Not part of the public site.",
+  "path": "design-system.html",
+  "nav": null,
+  "noindex": true,
+  "internal": true,
+  "scripts": ["pipeline", "showcase"]
+}
+-->
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow"><span class="dot"></span>Internal reference · not linked from the public site</p>
+    <h1>Banira design system.</h1>
+    <p class="lede">Every block on this page is the real component, built from the same partials and CSS as the site. Switch the theme with the header toggle to check both. Rules live in DESIGN_SYSTEM.md, DESIGN_TOKENS.md, MOTION_SYSTEM.md and COMPONENT_LIBRARY.md.</p>
+    <nav class="cluster mt-m" aria-label="On this page"><a class="btn btn--ghost btn--xs" href="#ds-brand">Brand</a><a class="btn btn--ghost btn--xs" href="#ds-colour">Colour</a><a class="btn btn--ghost btn--xs" href="#ds-type">Type</a><a class="btn btn--ghost btn--xs" href="#ds-controls">Controls</a><a class="btn btn--ghost btn--xs" href="#ds-surfaces">Surfaces</a><a class="btn btn--ghost btn--xs" href="#ds-product">Product</a><a class="btn btn--ghost btn--xs" href="#ds-motion">Motion</a></nav>
+  </div>
+</section>
+
+<section class="section section--tight" id="ds-brand" aria-labelledby="ds-brand-h">
+  <div class="wrap">
+    <h2 id="ds-brand-h" class="h3">Brand: the R2 mark</h2>
+    <div class="ds-grid mt-m">
+      <figure class="ds-tile ds-tile--dark"><img src="assets/brand/banira-r2-lockup-white.svg" alt="Banira lockup, white" width="220" height="64"><figcaption>Lockup · white on dark</figcaption></figure>
+      <figure class="ds-tile ds-tile--light"><img src="assets/brand/banira-r2-lockup-black.svg" alt="Banira lockup, black" width="220" height="64"><figcaption>Lockup · black on light</figcaption></figure>
+      <figure class="ds-tile"><span class="ds-marks"><span style="width:16px"><!-- @include components/mark --></span><span style="width:24px"><!-- @include components/mark --></span><span style="width:48px"><!-- @include components/mark --></span><span style="width:96px"><!-- @include components/mark --></span></span><figcaption>Mark at 16 / 24 / 48 / 96 px (currentColor)</figcaption></figure>
+      <figure class="ds-tile"><img src="assets/brand/banira-r2-app-dark.svg" alt="" width="64" height="64"> <img src="assets/brand/banira-r2-app-light.svg" alt="" width="64" height="64"><figcaption>App tiles · favicon follows system theme</figcaption></figure>
+    </div>
+    <p class="small muted mt-m">Clear space: the seed's diameter on every side. Minimum size: 16 px (use the small variant below 24 px). Pure black or white only; the seed may carry a status colour inside product UI, never in the logo.</p>
+  </div>
+</section>
+
+<section class="section section--tight" id="ds-colour" aria-labelledby="ds-colour-h">
+  <div class="wrap">
+    <h2 id="ds-colour-h" class="h3">Colour tokens <span class="muted small">(live values for the current theme)</span></h2>
+    <div class="ds-swatches mt-m" data-swatches="--bg --bg-2 --panel --panel-2 --panel-3 --surface-app --surface-raised --fg --fg-2 --muted --quiet --line --line-2 --line-3 --focus --lavender --blue --green --amber --red"></div>
+  </div>
+</section>
+
+<section class="section section--tight" id="ds-type" aria-labelledby="ds-type-h">
+  <div class="wrap stack-l">
+    <h2 id="ds-type-h" class="h3">Type</h2>
+    <p class="statement" style="font-size:var(--t-display);line-height:1;letter-spacing:var(--ls-display)">Display</p>
+    <p style="font-size:var(--t-h1);line-height:var(--lh-tight);letter-spacing:var(--ls-display);font-weight:var(--w-display);color:var(--fg)">Hero headline, 40 → 76 px</p>
+    <p class="h2" style="color:var(--fg);font-weight:var(--w-display);letter-spacing:var(--ls-h2)">Section headline, <span class="h-quiet">two-tone clarification.</span></p>
+    <p class="h3" style="color:var(--fg)">Subheading, 20 → 24 px</p>
+    <p class="lede">Lede, 18 → 21 px. Used once per section, under the headline, at most 60 characters wide on desktop.</p>
+    <p>Body, 16/26. Plain, specific sentences. Links are <a href="#ds-type">underlined at rest</a>.</p>
+    <p class="fig">Technical label · Geist Mono 12 px · caps</p>
+    <p class="small muted">Caption, 14 px, muted.</p>
+  </div>
+</section>
+
+<section class="section section--tight" id="ds-controls" aria-labelledby="ds-controls-h">
+  <div class="wrap stack-l">
+    <h2 id="ds-controls-h" class="h3">Controls</h2>
+    <div class="cluster"><a class="btn btn--primary btn--lg" href="#ds-controls">Primary large</a><a class="btn btn--primary" href="#ds-controls">Primary</a><a class="btn btn--secondary" href="#ds-controls">Secondary</a><a class="btn btn--ghost" href="#ds-controls">Ghost</a><a class="btn btn--primary btn--sm" href="#ds-controls">Small</a><button class="btn btn--secondary" type="button" disabled>Disabled</button><a class="link-arrow" href="#ds-controls">Text link <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <div class="cluster"><span class="badge badge--concept">Concept</span><span class="badge badge--sample">Sample</span><span class="badge badge--ok">Engine output</span><span class="badge badge--info">Info</span><span class="badge badge--warn">In development</span><span class="badge badge--bad">Failed</span><span class="badge badge--pending">pending</span><span class="badge badge--neutral">Optional</span></div>
+    <div class="cluster"><span class="pill pill--hot">hot · 90</span><span class="pill pill--warm">warm · 55</span><span class="pill pill--cold">cold · 10</span><span class="pill pill--urgent">Urgent</span><span class="pill pill--ok">In service area</span><span class="pill pill--attention">Outside service area</span><span class="pill pill--spam">Spam</span></div>
+    <div class="cluster"><button class="chip" type="button" aria-pressed="true">Selected chip</button><button class="chip" type="button" aria-pressed="false">Chip</button></div>
+    <form class="card form ds-form" onsubmit="return false" novalidate>
+      <div class="form-row"><div class="field"><label for="ds-a">Text input</label><input id="ds-a" placeholder="Placeholder"></div><div class="field is-invalid"><label for="ds-b">Invalid input</label><input id="ds-b" aria-invalid="true" aria-describedby="ds-b-e" value="not-an-email"><span class="field-error" id="ds-b-e" style="display:block">Please enter an email address like name@business.com.</span></div></div>
+      <div class="field"><label for="ds-c">Select</label><select id="ds-c"><option>Option one</option><option>Option two</option></select></div>
+      <label class="check"><input type="checkbox" checked><span>Checkbox with a long label that wraps onto a second line on small screens.</span></label>
+    </form>
+  </div>
+</section>
+
+<section class="section section--tight" id="ds-surfaces" aria-labelledby="ds-surfaces-h">
+  <div class="wrap stack-l">
+    <h2 id="ds-surfaces-h" class="h3">Surfaces and patterns</h2>
+    <div class="grid grid-3"><a class="card card--link res-card" href="#ds-surfaces"><p class="fig">Card link</p><h3 class="h4">Hover lifts 1 px</h3><p class="small">Border and surface brighten in 180 ms.</p></a><div class="card"><p class="fig">Card</p><h3 class="h4">Static card</h3><p class="small">Panel surface with a hairline.</p></div><div class="note note--pending"><b>Note.</b> Notes carry honest status: drafts, pending decisions, preview states.</div></div>
+    <!-- @include components/plans-compact -->
+    <div class="faq"><details><summary>Accordion question</summary><div class="answer"><p>Answers open with a height transition where the browser supports it and instantly elsewhere.</p></div></details><details><summary>Second question</summary><div class="answer"><p>Native details/summary: keyboard and screen-reader support built in.</p></div></details></div>
+    <ol class="steps steps--rail" data-progress><li><div><h3>Ordered step</h3><p>The process rail fills as steps pass the reading line.</p></div></li><li><div><h3>Second step</h3><p>Past steps keep a filled node.</p></div></li><li><div><h3>Third step</h3><p>Upcoming steps are dimmed only while tracking.</p></div></li></ol>
+  </div>
+</section>
+
+<section class="section section--tight" id="ds-product" aria-labelledby="ds-product-h">
+  <div class="wrap stack-l">
+    <h2 id="ds-product-h" class="h3">Product components</h2>
+    <!-- @include components/pipeline -->
+  </div>
+</section>
+
+<section class="section section--tight" id="ds-motion" aria-labelledby="ds-motion-h">
+  <div class="wrap stack-l">
+    <h2 id="ds-motion-h" class="h3">Motion tokens</h2>
+    <div class="ds-motion" data-motion-demo>
+      <div class="ds-motion-row"><span class="mono small">micro · 120 ms · standard</span><span class="ds-dot" style="--d:var(--dur-micro);--e:var(--ease-standard)"></span></div>
+      <div class="ds-motion-row"><span class="mono small">surface · 180 ms · standard</span><span class="ds-dot" style="--d:var(--dur-surface);--e:var(--ease-standard)"></span></div>
+      <div class="ds-motion-row"><span class="mono small">move · 260 ms · out</span><span class="ds-dot" style="--d:var(--dur-move);--e:var(--ease-out)"></span></div>
+      <div class="ds-motion-row"><span class="mono small">reveal · 560 ms · out</span><span class="ds-dot" style="--d:var(--dur-reveal);--e:var(--ease-out)"></span></div>
+      <div class="ds-motion-row"><span class="mono small">story · 900 ms · spring</span><span class="ds-dot" style="--d:var(--dur-story);--e:var(--ease-spring)"></span></div>
+    </div>
+    <button class="btn btn--secondary" type="button" data-motion-play>Play the tokens</button>
+    <p class="small muted">With reduced motion on, every token resolves instantly.</p>
+  </div>
+</section>

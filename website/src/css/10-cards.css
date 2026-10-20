@@ -163,7 +163,7 @@ td.num, th.num { text-align: right; }
 
 /* forms */
 .form { display: grid; gap: 1.1rem; }
-.form-row { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.form-row { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); align-items: start; }
 .field { display: grid; gap: .4rem; border: 0; margin: 0; padding: 0; min-width: 0; }
 .field label, .field legend { font-size: var(--t-sm); color: var(--fg); font-weight: 500; padding: 0; }
 .field .opt { color: var(--muted); font-weight: 400; margin-left: .35rem; }

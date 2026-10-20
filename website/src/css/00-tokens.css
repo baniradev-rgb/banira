@@ -24,6 +24,10 @@
   --surface-current: #131318;    /* current step card */
   --avatar-bg: #26303B;
 
+  /* ── brand grounds: the logo appears on pure black or pure white only (never theme-dependent) ── */
+  --brand-black: #000000;
+  --brand-white: #FFFFFF;
+
   /* ── text ── fg 17.0:1 · fg-2 8.1:1 · muted 5.6:1 (4.8:1 on --panel-2) */
   --fg: #EDEEF0;
   --fg-rgb: 237 238 240;
