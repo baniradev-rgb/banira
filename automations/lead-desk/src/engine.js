@@ -1,5 +1,5 @@
 /**
- * Banira Lead Desk — core engine (v1.1.1)
+ * Banira Lead Desk — core engine (v1.1.2)
  *
  * Pure functions, no I/O. The SAME file runs in:
  *   - Google Apps Script (copied in as Engine.gs)   → production
@@ -13,7 +13,7 @@
 var LeadEngine = (function () {
   'use strict';
 
-  var VERSION = '1.1.1';
+  var VERSION = '1.1.2';
   var LIMITS = { name: 120, email: 254, phone: 40, message: 5000, zip: 12, service: 120 };
   var DAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
   var EMAIL_RE = /^[^\s@<>()[\],;:"]+@[^\s@<>()[\],;:"]+\.[a-z]{2,}$/i;
@@ -130,7 +130,7 @@ var LeadEngine = (function () {
       service: clean(pick(['service', 'service needed', 'what do you need?', 'topic']), LIMITS.service),
       zip: clean(pick(['zip', 'zip code', 'postcode', 'postal code']), LIMITS.zip),
       source: clean(pick(['source', 'how did you hear about us?']), 80) || 'website form',
-      honeypot: pick(['website_url', 'company_website_hp']),
+      honeypot: pick(['website_url', 'company_website_hp', 'company_website']),
       receivedAt: receivedAt ? new Date(receivedAt) : new Date()
     };
     lead.phoneDigits = lead.phone.replace(/\D/g, '');

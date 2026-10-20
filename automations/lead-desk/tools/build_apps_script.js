@@ -38,7 +38,7 @@ function build(configPath, outDir) {
       'https://www.googleapis.com/auth/script.send_mail',
       'https://www.googleapis.com/auth/script.scriptapp',
       'https://www.googleapis.com/auth/forms'
-    ]
+    ].concat(config.bot_check === 'turnstile' ? ['https://www.googleapis.com/auth/script.external_request'] : [])
   }, null, 2));
   return ['Engine.gs', 'Config.gs', 'Code.gs', 'appsscript.json'].map(f => path.join(outDir, f));
 }

@@ -34,6 +34,9 @@ function testCounts() {
   return fs.existsSync(f) ? JSON.parse(read(f)) : null;
 }
 const tests = testCounts();
+// Test counts appear on the site only when docs/qa/data/test-summary.json exists (written by `npm test` after a
+// fully passing run). Without it, any page that uses them fails the build instead of printing a guess.
+const testCtx = tests && tests.leaddesk ? { 'tests.leaddesk': String(tests.leaddesk.pass), 'tests.date': tests.date } : {};
 // The sample inquiry shown in static copy (pipeline captions, Lead Desk page) is computed by the real engine,
 // so the words on the page can't drift from what the rules actually do.
 const SAMPLES = require(path.join(SRC, 'js/samples.js'));
@@ -44,8 +47,7 @@ const ctx = {
   'engine.version': engine.VERSION,
   'site.url': site.url,
   'year': String(new Date().getFullYear()),
-  'tests.leaddesk': tests ? String(tests.leaddesk.pass) : '',
-  'tests.date': tests ? tests.date : '',
+
   'sample.name': sampleRec.name,
   'sample.first': sampleRec.name.split(' ')[0],
   'sample.received': MODEL.stamp(sampleRec.receivedAt),
@@ -59,8 +61,10 @@ const ctx = {
   'sample.followups': sampleRec.followUps.map((f) => MODEL.day(f.dueAt)).join(' · '),
   'sample.reasons': sampleRec.reasons.join(' · '),
   'config.followup.days': demoConfig.follow_up.days.slice(0, -1).join(', ') + ' and ' + demoConfig.follow_up.days.slice(-1),
-  'business.name': demoConfig.business.name
+  'business.name': demoConfig.business.name,
+  'adapter.version': (read(path.join(ROOT, 'automations/lead-desk/apps-script/Code.gs')).match(/ADAPTER_VERSION = '([\d.]+)'/) || [])[1]
 };
+Object.assign(ctx, testCtx);
 
 // ── partials ──
 function include(html, depth, from) {
@@ -73,7 +77,7 @@ function include(html, depth, from) {
 }
 function values(html, from) {
   return html.replace(/\{%\s*([\w.-]+)\s*%\}/g, (m, k) => {
-    if (!(k in ctx)) { errors.push(from + ': unknown value {%' + k + '%}'); return ''; }
+    if (!(k in ctx)) { errors.push(from + ': unknown value {%' + k + '%}' + (/^tests\./.test(k) ? ' (run `npm test` first: test counts come from a real run)' : '')); return ''; }
     return esc(ctx[k]);
   });
 }

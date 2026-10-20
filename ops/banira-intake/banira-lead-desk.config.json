@@ -1,0 +1,147 @@
+{
+  "_note": "Banira's OWN Lead Desk: receives the website contact form (dogfooding). PLACEHOLDERS to replace before deploy: business.owner_email, business.phone, business.timezone, hours. See DEPLOYMENT.md §3.",
+  "business": {
+    "name": "Banira",
+    "owner_name": "Banira",
+    "owner_email": "owner@banira.example",
+    "phone": "",
+    "timezone": "America/New_York",
+    "hours": {
+      "mon": [
+        9,
+        17
+      ],
+      "tue": [
+        9,
+        17
+      ],
+      "wed": [
+        9,
+        17
+      ],
+      "thu": [
+        9,
+        17
+      ],
+      "fri": [
+        9,
+        17
+      ]
+    },
+    "response_window": "within one business day",
+    "service_area_zips": [],
+    "signature": "Banira\nSimple systems that run"
+  },
+  "services": [
+    {
+      "key": "lead-desk",
+      "label": "Lead Desk",
+      "value": "high",
+      "keywords": [
+        "lead desk",
+        "inquiries",
+        "inquiry",
+        "follow-up",
+        "follow up",
+        "web form",
+        "leads",
+        "founding",
+        "$490",
+        "$290"
+      ]
+    },
+    {
+      "key": "custom",
+      "label": "Custom automation",
+      "value": "medium",
+      "keywords": [
+        "custom",
+        "automate",
+        "automation",
+        "workflow",
+        "process",
+        "report",
+        "integration"
+      ]
+    },
+    {
+      "key": "care",
+      "label": "Care",
+      "value": "medium",
+      "keywords": [
+        "care",
+        "support",
+        "existing setup",
+        "broken",
+        "not working"
+      ]
+    },
+    {
+      "key": "security",
+      "label": "Security or privacy report",
+      "value": "high",
+      "keywords": [
+        "security",
+        "vulnerability",
+        "privacy",
+        "data breach",
+        "exposed"
+      ]
+    },
+    {
+      "key": "question",
+      "label": "General question",
+      "value": "low",
+      "keywords": [
+        "question",
+        "wondering",
+        "do you"
+      ]
+    }
+  ],
+  "urgency_keywords": [
+    "security",
+    "vulnerability",
+    "data breach",
+    "stopped working",
+    "not working",
+    "urgent"
+  ],
+  "scoring": {},
+  "tiers": {
+    "hot": 60,
+    "warm": 30
+  },
+  "follow_up": {
+    "days": [
+      3
+    ],
+    "max_by_tier": {
+      "hot": 0,
+      "warm": 0,
+      "cold": 0
+    }
+  },
+  "templates": {
+    "subject": "We got your note — Banira",
+    "ack": "Hi {{first_name}},\n\nThanks for writing to Banira. Your note is with us and a person will reply {{response_window}}.\n\n{{signature}}",
+    "ack_after_hours": "Hi {{first_name}},\n\nThanks for writing to Banira. We're outside working hours right now; a person will reply {{response_window}}.\n\n{{signature}}",
+    "ack_urgent": "Hi {{first_name}},\n\nThanks for writing to Banira. We've marked your note as a priority and a person will look at it first.\n\nIf this is about a Lead Desk setup that is sending email it shouldn't, you can stop all sending yourself right now: in the Apps Script project, set the script property DRY_RUN to true.\n\n{{signature}}",
+    "followup_1": "Hi {{first_name}},\n\nJust checking our reply reached you. If it's still useful, simply reply to this email.\n\n{{signature}}",
+    "followup_2": "Hi {{first_name}},\n\nFollowing up once more.\n\n{{signature}}",
+    "followup_3": "Hi {{first_name}},\n\nLast note from us.\n\n{{signature}}",
+    "footer": "Reply \"stop\" and we won't send further automatic emails."
+  },
+  "limits": {
+    "per_hour": 20,
+    "per_day": 60,
+    "quota_reserve": 10,
+    "alerts_per_hour": 30
+  },
+  "intake": {
+    "google_form": false,
+    "website_form": true
+  },
+  "bot_check": "none",
+  "min_form_seconds": 3
+}

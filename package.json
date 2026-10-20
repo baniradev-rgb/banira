@@ -6,10 +6,10 @@
   "scripts": {
     "build": "node website/build.js",
     "dev": "node website/build.js && node tools/qa/serve.js website/dist 8080",
-    "test": "npm run test:engine && npm run test:onboarding && npm run test:site",
+    "test": "node tools/test-summary.js",
     "test:engine": "node --test automations/lead-desk/tests/",
     "test:onboarding": "node --test ops/onboarding/tests/",
-    "test:site": "node website/build.js && node --test website/tests/",
+    "test:site": "node --test website/tests/",
     "qa:audit": "node tools/qa/audit.js website/dist docs/qa/screens/v4 --widths=360,390,768,1024,1440 --themes=dark,light",
     "qa:a11y": "node tools/qa/a11y.js website/dist",
     "qa:perf": "node tools/qa/perf.js website/dist",

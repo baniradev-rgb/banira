@@ -37,7 +37,7 @@
       <p class="lede">Google asks you to approve these when the script is first set up. You can review or remove them in your Google account at any time.</p></div>
     <div class="table-wrap mt-l reveal">
       <table>
-        <caption>Google permissions requested by Lead Desk v1.1</caption>
+        <caption>Google permissions requested by Lead Desk</caption>
         <thead><tr><th scope="col">Permission</th><th scope="col">Used for</th></tr></thead>
         <tbody>
           <tr><th scope="row">This spreadsheet only</th><td>Writing inquiries and the log to the sheet the script is attached to. It doesn’t request access to your other files.</td></tr>
@@ -85,8 +85,8 @@
   <div class="wrap wrap--narrow">
     <div class="note note--pending reveal">
       <h2 id="ver-h" class="h4">Verification status</h2>
-      <p class="mt-s">The safeguards above are covered by 53 automated tests run against simulated Google services (Lead Desk v1.1). <b>They have not yet been verified in a live client account.</b> Each installation is tested live in the client’s account, with addresses the client controls, before it goes live.</p>
-      <p class="mt-s"><b>Reporting a problem:</b> use the <a href="contact.html">contact form</a> and mark it “security”. A dedicated security address will be added once Banira’s mailbox exists.</p>
+      <p class="mt-s">Each safeguard above has its own automated test. In total, {%tests.leaddesk%} tests run the Lead Desk engine v{%engine.version%} and adapter v{%adapter.version%} against simulated Google services (last run {%tests.date%}); the test files are in the Lead Desk source. <b>They have not yet been verified in a live client account.</b> Each installation is tested live in the client’s account, with addresses the client controls, before it goes live.</p>
+      <p class="mt-s"><b>Reporting a problem:</b> use the <a href="contact.html#topic-security">contact form</a> and choose “Security or privacy report”. A dedicated security address will be added once Banira’s mailbox exists.</p>
     </div>
   </div>
 </section>
