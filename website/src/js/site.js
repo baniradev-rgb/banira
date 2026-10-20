@@ -331,6 +331,24 @@
     Object.keys(map).forEach(function (id) { tio.observe(doc.getElementById(id)); });
   }
 
+  // ── product sub-nav: highlight the section in view ──
+  $$('[data-subnav]').forEach(function (nav) {
+    if (!('IntersectionObserver' in window)) return;
+    var links = $$('a[href^="#"]', nav), map = {};
+    links.forEach(function (a) { var t = doc.getElementById(a.getAttribute('href').slice(1)); if (t) map[t.id] = a; });
+    var sio = new IntersectionObserver(function (en) {
+      en.forEach(function (x) {
+        if (!x.isIntersecting) return;
+        links.forEach(function (a) { a.removeAttribute('aria-current'); });
+        var a = map[x.target.id]; if (!a) return;
+        a.setAttribute('aria-current', 'true');
+        var box = a.parentElement; // keep the active link visible in the scrolling row (mobile)
+        if (a.offsetLeft < box.scrollLeft || a.offsetLeft + a.offsetWidth > box.scrollLeft + box.clientWidth) box.scrollTo({ left: a.offsetLeft - 16, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    Object.keys(map).forEach(function (id) { sio.observe(doc.getElementById(id)); });
+  });
+
   // ── copy buttons, plan memory ──
   doc.addEventListener('click', function (e) {
     var b = e.target.closest('[data-copy]');

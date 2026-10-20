@@ -29,14 +29,19 @@
     <p class="lede hero-in" data-after-split style="--delay:600ms">Lead Desk replies to each web inquiry with a message you approved, scores it so you know who to call first, alerts you, and follows up politely until the customer answers. It runs in your own Gmail and Google Sheets.</p>
     <div>
     <div class="cluster hero-in" data-after-split style="--delay:680ms"><a class="btn btn--primary btn--lg" href="contact.html#plan-core" data-plan="core">Discuss Lead Desk <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn--secondary btn--lg" href="demo.html">Try the demo</a></div>
-    <nav class="anchor-nav hero-in" data-after-split style="--delay:760ms" aria-label="On this page">
-      <a class="btn btn--ghost btn--xs" href="#replies">Replies</a><a class="btn btn--ghost btn--xs" href="#rules">Priority rules</a><a class="btn btn--ghost btn--xs" href="#followup">Follow-up</a><a class="btn btn--ghost btn--xs" href="#alerts">Alerts</a><a class="btn btn--ghost btn--xs" href="#receive">What you receive</a><a class="btn btn--ghost btn--xs" href="#limits">Limits</a>
-    </nav>
     </div>
   </div>
 </section>
 
-<section class="section section--tight" aria-labelledby="flow-h">
+<nav class="subnav" data-subnav aria-label="Lead Desk sections">
+  <div class="wrap subnav-inner">
+    <span class="subnav-title">Lead Desk</span>
+    <div class="subnav-links"><a href="#flow">How it works</a><a href="#replies">Replies</a><a href="#rules">Rules</a><a href="#followup">Follow-up</a><a href="#alerts">Alerts</a><a href="#receive">What you get</a><a href="#pricing">Pricing</a><a href="#limits">Limits</a></div>
+    <a class="btn btn--primary btn--xs subnav-cta" href="contact.html#plan-core" data-plan="core">Discuss Lead Desk</a>
+  </div>
+</nav>
+
+<section class="section section--tight" id="flow" aria-labelledby="flow-h">
   <div class="wrap">
     <div class="head reveal"><p class="eyebrow"><span class="dot"></span>One inquiry, start to finish</p><h2 id="flow-h">What happens to each inquiry.</h2></div>
     <div class="mt-l reveal"><!-- @include components/pipeline --></div>
@@ -146,6 +151,33 @@ Needing your attention: 1
 • [needs-attention] Chris Dunn — Heating or AC repair — chris.dunn@example.com</pre>
   <figcaption>Built from the fictional sample records in the format Lead Desk sends. The real email also shows your remaining daily email quota and a link to your sheet.</figcaption>
 </figure></div>
+  </div>
+</section>
+
+<section class="section" id="pricing" aria-labelledby="ld-price-h">
+  <div class="wrap">
+    <div class="feature-head reveal"><h2 id="ld-price-h">One setup fee. <span class="h-quiet">No platform fee.</span></h2><p class="lede">You pay once for the setup and own the result. Care is optional. Prices are provisional, in US dollars, and fixed in a written plan before any work starts.</p></div>
+    <div class="reveal"><!-- @include components/plans-compact --></div>
+    <p class="mt-m"><a class="link-arrow" href="pricing.html">Full pricing and comparison <svg class="arr" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+  </div>
+</section>
+
+<section class="section" id="start" aria-labelledby="start-h">
+  <div class="wrap split split--even" style="align-items:start">
+    <div class="head reveal"><p class="eyebrow"><span class="dot"></span>Requirements</p><h2 id="start-h">What you need, and how to start.</h2>
+      <ul class="ticks mt-m">
+        <li>A Google account you send customer email from. Free Gmail works; Google limits automated email to about 100 recipients a day, and Google Workspace allows more.</li>
+        <li>A website form that can send its submissions on, or a Google Form we set up for you. We check your form in the first conversation.</li>
+        <li>About an hour of your time across the setup week: the first call, approving messages and rules, and a live test with addresses you control.</li>
+        <li>No password sharing. Setup happens on a screen-share or with access you grant in your own account.</li>
+      </ul>
+    </div>
+    <ol class="steps-list reveal">
+      <li><span class="fig">01</span><div><b>Send a short note</b><p>How inquiries reach you today and what goes wrong. No account to create.</p></div></li>
+      <li><span class="fig">02</span><div><b>A fit check</b><p>A short call. If Lead Desk doesn’t fit your tools or volume, we’ll say so.</p></div></li>
+      <li><span class="fig">03</span><div><b>A written plan and fixed price</b><p>Messages, rules and the price in writing. Nothing starts until you approve.</p></div></li>
+      <li><span class="fig">04</span><div><b>Setup, test, handover</b><p>About a week in your account, a test that sends nothing, a live test, then handover.</p></div></li>
+    </ol>
   </div>
 </section>
 
