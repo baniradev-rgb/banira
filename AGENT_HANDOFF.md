@@ -21,7 +21,7 @@ Claude Cowork, Claude Code and Codex do **not** talk to each other. They share t
 ## Handoff entries
 ### 2026-10-20 · Claude Code → all (V4)
 - **Done:** V4 website (build system, R2 kit, design system with light theme, motion system, pipeline, scenario composer, Lead Desk sub-nav/pricing, process rail, availability matrix, analytics layer off), Lead Desk adapter v1.1 with a test per safeguard, Banira intake config, Netlify config and headers, full QA (docs/qa/). Commits on `main` from `v3-baseline` up to `v4.0.0-rc1`.
-- **Verified here:** 57 node tests, 21 e2e checks under the production CSP, axe 0 violations in 76 views, Lighthouse lab (mobile perf 99–100, desktop 100), responsive sweep at 6 widths in both themes. See docs/qa/QA_REPORT.md.
+- **Verified here:** 57 node tests, 22 e2e checks under the production CSP, axe 0 violations in 76 views, Lighthouse lab (mobile perf 99–100, desktop 100), responsive sweep at 6 widths in both themes. See docs/qa/QA_REPORT.md.
 - **Not verified:** anything in a real Google account (T-101/T-115), real-device Safari/iOS, field Core Web Vitals, deliverability.
 - **Next:** OWN T-102, T-112, T-113, T-114; CC T-115 after T-102; CX T-103 (the review prompt below still applies, now to adapter v1.1).
 

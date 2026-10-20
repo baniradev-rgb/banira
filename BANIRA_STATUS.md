@@ -5,7 +5,7 @@
 ## What exists and works (verified in this environment)
 - **Website V4:** 18 public pages (all V3 URLs) + 404 + an internal design-system page. Dark and light themes, R2 brand, design and motion systems. The demo runs the real engine, including a free-text scenario composer. Contact flow is honest in preview mode and ready for Banira's own Lead Desk.
 - **Lead Desk:** engine 1.1.2 + Apps Script adapter 1.1. Every safeguard on the Security page is implemented and has a test.
-- **Quality evidence:** 57 node tests · 22 e2e browser checks under the production CSP · axe 0 violations in 76 views · Lighthouse lab mobile perf 99–100 (LCP ≤ 2.1 s, CLS 0, TBT ≤ 13 ms), desktop 100 · responsive sweep at 360/390/768/1024/1440/1920 px in both themes. Reports: docs/qa/.
+- **Quality evidence:** 57 node tests · 22 e2e browser checks under the production CSP · axe 0 violations in 76 views · Lighthouse lab mobile perf 99–100 (LCP ≤ 2.1 s, CLS 0, TBT ≤ 45 ms), desktop 100 · responsive sweep at 360/390/768/1024/1440/1920 px in both themes. Reports: docs/qa/.
 
 ## What is not verified
 Lead Desk in a real Google account · real-device Safari/iOS/Firefox · field Core Web Vitals · email deliverability · legal text.
