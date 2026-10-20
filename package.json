@@ -1,0 +1,23 @@
+{
+  "name": "banira",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Banira website, Lead Desk automation and operating tools",
+  "scripts": {
+    "build": "node website/build.js",
+    "dev": "node website/build.js && node tools/qa/serve.js website/dist 8080",
+    "test": "npm run test:engine && npm run test:onboarding && npm run test:site",
+    "test:engine": "node --test automations/lead-desk/tests/",
+    "test:onboarding": "node --test ops/onboarding/tests/",
+    "test:site": "node website/build.js && node --test website/tests/",
+    "qa:audit": "node tools/qa/audit.js website/dist docs/qa/screens/v4 --widths=360,390,768,1024,1440 --themes=dark,light",
+    "qa:a11y": "node tools/qa/a11y.js website/dist",
+    "qa:perf": "node tools/qa/perf.js website/dist",
+    "qa:e2e": "node tools/qa/e2e.js website/dist"
+  },
+  "devDependencies": {
+    "axe-core": "^4.10.3",
+    "lighthouse": "^12.8.2"
+  },
+  "license": "UNLICENSED"
+}

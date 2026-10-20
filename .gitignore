@@ -3,3 +3,6 @@ __pycache__/
 .env
 *.pyc
 clients/
+node_modules/
+website/dist/
+docs/qa/screens/
