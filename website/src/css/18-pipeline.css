@@ -12,8 +12,8 @@
 .pipe-seed { position: absolute; left: -7px; top: -7px; width: 14px; height: 14px; border-radius: 50%; background: var(--fg); box-shadow: 0 0 0 6px rgb(var(--tint-rgb) / .06), 0 0 24px rgb(var(--tint-rgb) / calc(.25 * var(--glow-a)));
   transform: translate(0, 0); transition: transform var(--dur-story) var(--ease-spring); will-change: transform; }
 .pipe:not(.is-live) .pipe-seed { display: none; }
-.pipe-stages { list-style: none; position: absolute; inset: 0; display: grid; grid-template-columns: repeat(5, 1fr); }
-.pipe-stages li { position: relative; }
+.pipe-stages { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(5, 1fr); }
+.pipe-stage { position: relative; }
 .pipe-stages button { position: absolute; left: 50%; top: calc(var(--ny, 60px) - 22px); transform: translateX(-50%); display: grid; justify-items: center; gap: .35rem; padding: 0 .5rem; min-width: 64px; border-radius: var(--r-ctl); color: var(--muted); }
 .pipe-node { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; }
 .pipe-node::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--line-3); transition: border-color var(--dur-surface) var(--ease-standard), background-color var(--dur-surface) var(--ease-standard), transform var(--dur-move) var(--ease-spring); }

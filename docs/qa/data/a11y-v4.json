@@ -1,0 +1,465 @@
+{
+  "summary": {
+    "views": 76,
+    "viewsWithViolations": 0,
+    "rules": {}
+  },
+  "results": [
+    {
+      "page": "404.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "about.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "contact.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "demo.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "design-system.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "faq.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "how-it-works.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "index.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "lead-desk.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "pricing.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "privacy.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "resources-automation-readiness.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "resources-email-deliverability.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "resources-lead-response-time.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "resources.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "security.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "solutions.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "terms.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "workspace.html",
+      "theme": "dark",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "404.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "about.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "contact.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "demo.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "design-system.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "faq.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "how-it-works.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "index.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "lead-desk.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "pricing.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "privacy.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "resources-automation-readiness.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "resources-email-deliverability.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "resources-lead-response-time.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "resources.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "security.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "solutions.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "terms.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "workspace.html",
+      "theme": "dark",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "404.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "about.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "contact.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "demo.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "design-system.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "faq.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "how-it-works.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "index.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "lead-desk.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "pricing.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "privacy.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "resources-automation-readiness.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "resources-email-deliverability.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "resources-lead-response-time.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "resources.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "security.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "solutions.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "terms.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "workspace.html",
+      "theme": "light",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "404.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "about.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "contact.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "demo.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "design-system.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "faq.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "how-it-works.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "index.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "lead-desk.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "pricing.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "privacy.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "resources-automation-readiness.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "resources-email-deliverability.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "resources-lead-response-time.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "resources.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "security.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "solutions.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "terms.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "page": "workspace.html",
+      "theme": "light",
+      "width": 390,
+      "violations": []
+    }
+  ]
+}

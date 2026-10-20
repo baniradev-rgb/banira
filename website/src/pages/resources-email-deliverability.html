@@ -34,7 +34,7 @@
       <p>Mailbox providers decide whether a message goes to the inbox, the spam folder or nowhere. One of the first things they check is <strong>authentication</strong>: is this server allowed to send for this domain, and has the message been tampered with? Without it, your replies are more likely to be filtered, and anyone can send email that appears to come from you.</p>
 
       <h2 id="three">The three records, in plain English</h2>
-      <div class="table-wrap"><table>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)"><table>
         <thead><tr><th scope="col">Record</th><th scope="col">What it says</th><th scope="col">Where it lives</th></tr></thead>
         <tbody>
           <tr><td><strong>SPF</strong></td><td>"These services may send email for my domain."</td><td>A TXT record on your domain, e.g. <code>v=spf1 include:_spf.google.com ~all</code></td></tr>

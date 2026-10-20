@@ -32,7 +32,7 @@
       var total = path.getTotalLength();
       pts = []; lens = [];
       nodes.forEach(function (n) {
-        var li = n.closest('li'), cx = li.offsetLeft + li.offsetWidth / 2;
+        var li = n.closest('.pipe-stage'), cx = li.offsetLeft + li.offsetWidth / 2;
         var lo = 0, hi = total; // binary search along the path for the point at this column's centre
         for (var k = 0; k < 24; k++) { var mid = (lo + hi) / 2; if (path.getPointAtLength(mid).x < cx) lo = mid; else hi = mid; }
         var p = path.getPointAtLength(lo);

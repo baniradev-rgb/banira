@@ -1,87 +1,87 @@
 {
-  "ranAt": "2026-10-20T13:30:38.606Z",
+  "ranAt": "2026-10-20T13:37:41.420Z",
   "pass": 21,
   "total": 21,
   "results": [
     {
       "name": "every page loads without console errors (desktop + mobile)",
       "ok": true,
-      "ms": 20751
+      "ms": 21806
     },
     {
       "name": "mega-menu: hover opens, Escape closes and returns focus; ArrowDown moves into links",
       "ok": true,
-      "ms": 1469
+      "ms": 1472
     },
     {
       "name": "mobile drawer: opens, traps focus, Escape closes; accordion expands",
       "ok": true,
-      "ms": 1134
+      "ms": 1084
     },
     {
       "name": "theme: toggle switches and persists across pages; picker returns to system",
       "ok": true,
-      "ms": 1589
+      "ms": 1490
     },
     {
       "name": "system light preference renders the light theme without JS choice",
       "ok": true,
-      "ms": 573
+      "ms": 562
     },
     {
       "name": "pipeline: clicking a stage selects it and moves the seed; arrow keys work",
       "ok": true,
-      "ms": 1906
+      "ms": 1967
     },
     {
       "name": "pipeline without JS: all five stages and panels are readable",
       "ok": true,
-      "ms": 615
+      "ms": 562
     },
     {
       "name": "demo: sample workspace plays, steps and views switch",
       "ok": true,
-      "ms": 2022
+      "ms": 1984
     },
     {
       "name": "composer: presets run the real engine (spam, urgent, outside area, no email, free text)",
       "ok": true,
-      "ms": 1847
+      "ms": 1808
     },
     {
       "name": "composer makes no network requests",
       "ok": true,
-      "ms": 2103
+      "ms": 2109
     },
     {
       "name": "detail sheet: opens as modal, Escape closes and returns focus",
       "ok": true,
-      "ms": 1525
+      "ms": 1487
     },
     {
       "name": "FAQ accordion toggles",
       "ok": true,
-      "ms": 719
+      "ms": 680
     },
     {
       "name": "readiness check scores as boxes are ticked",
       "ok": true,
-      "ms": 1029
+      "ms": 980
     },
     {
       "name": "contact (preview mode): validation summary links to fields; preview says nothing was sent",
       "ok": true,
-      "ms": 782
+      "ms": 791
     },
     {
       "name": "contact (endpoint): success shown only after {ok:true,id}; double click sends once",
       "ok": true,
-      "ms": 1536
+      "ms": 1540
     },
     {
       "name": "contact (endpoint): {ok:false}, HTTP 500 and non-JSON replies never show success, entries kept",
       "ok": true,
-      "ms": 861
+      "ms": 866
     },
     {
       "name": "contact: #topic-security preselects the security topic",
@@ -91,22 +91,22 @@
     {
       "name": "reduced motion: content visible immediately, no autoplay movement",
       "ok": true,
-      "ms": 673
+      "ms": 694
     },
     {
       "name": "no-JS: headings and reveals are visible, theme toggle hidden",
       "ok": true,
-      "ms": 630
+      "ms": 576
     },
     {
       "name": "unknown URL serves the 404 page with recovery links",
       "ok": true,
-      "ms": 89
+      "ms": 76
     },
     {
       "name": "analytics is off: no beacons are sent while browsing",
       "ok": true,
-      "ms": 1145
+      "ms": 1159
     }
   ]
 }
