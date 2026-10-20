@@ -10,5 +10,10 @@
     "pass": 5,
     "fail": 0,
     "files": 1
+  },
+  "site": {
+    "pass": 13,
+    "fail": 0,
+    "files": 1
   }
 }

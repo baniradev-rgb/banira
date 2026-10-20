@@ -235,6 +235,11 @@ write(path.join(OUT, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<u
 write(path.join(OUT, 'robots.txt'), 'User-agent: *\nAllow: /\n' + pages.filter((p) => p.fm.internal).map((p) => 'Disallow: /' + p.file + '\n').join('') + 'Sitemap: ' + site.url + '/sitemap.xml\n');
 write(path.join(OUT, 'site.webmanifest'), JSON.stringify({ name: 'Banira', short_name: 'Banira', icons: [{ src: 'assets/img/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: 'assets/img/icon-512.png', sizes: '512x512', type: 'image/png' }], theme_color: '#08090A', background_color: '#08090A', display: 'browser' }, null, 2) + '\n');
 
+// validation: measurement can only be switched on after the privacy notice describes it
+if (site.analytics && site.analytics.mode !== 'off') {
+  const privacy = pages.find((p) => p.file === 'privacy.html');
+  if (!privacy || !privacy.fm.analyticsDisclosed) errors.push('analytics.mode is "' + site.analytics.mode + '" but privacy.html front matter has no "analyticsDisclosed": true. Update the notice first.');
+}
 // validation: internal links and anchors
 const exists = (rel) => fs.existsSync(path.join(OUT, rel));
 pages.forEach(({ file }) => {
@@ -245,7 +250,7 @@ pages.forEach(({ file }) => {
     const [p, h] = v.split('#');
     const target = (p || file).split('?')[0];
     if (target && !exists(target)) errors.push(file + ': broken link ' + v);
-    else if (h && /\.html$/.test(target) && !/^(plan-|sheet-)/.test(h) && ids[target] && !ids[target][h]) errors.push(file + ': missing anchor ' + v);
+    else if (h && /\.html$/.test(target) && !/^(plan-|sheet-|topic-)/.test(h) && ids[target] && !ids[target][h]) errors.push(file + ': missing anchor ' + v);
   });
 });
 

@@ -72,7 +72,7 @@ const pageFilter = opt('pages', '');
           const target = file || p + '.html';
           if (!(target in linkStatus)) linkStatus[target] = fs.existsSync(path.join(siteDir, target.split('?')[0]));
           if (!linkStatus[target]) report.brokenLinks.push(p + ' → ' + href);
-          if (hash && file && !/^plan-/.test(hash)) { // #plan-* is read by forms.js, not an element id
+          if (hash && file && !/^(plan|topic)-/.test(hash)) { // #plan-* is read by forms.js, not an element id
             const html = fs.existsSync(path.join(siteDir, file)) ? fs.readFileSync(path.join(siteDir, file), 'utf8') : '';
             if (html && !new RegExp('id=["\']?' + hash.replace(/[-]/g, '\\-') + '["\'\\s>]').test(html)) report.brokenLinks.push(p + ' → ' + href + ' (missing anchor)');
           }

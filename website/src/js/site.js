@@ -9,7 +9,30 @@
   // ── toast ──
   var toastEl = doc.getElementById('toast'), toastT;
   function toast(msg) { if (!toastEl) return; toastEl.textContent = msg; toastEl.classList.add('is-on'); clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove('is-on'); }, 2200); }
-  window.banira = { toast: toast, track: function () { } };
+  // ── measurement: privacy-first, OFF by default (site.config.json → analytics.mode) ──
+  // When on ("endpoint"): no cookies, no storage, no identifiers, no IP handling in the page. Sends an event name,
+  // a few coarse properties, the path and the referring host, with sendBeacon. Do Not Track / Global Privacy Control
+  // turn it off. Event list: ANALYTICS.md. Set window.BANIRA_DEBUG = true to see events in the console instead.
+  var A = (window.BANIRA_SITE || {}).analytics || {};
+  var optedOut = navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true;
+  var SAFE_PROP = /^[\w .:/#%$()+-]{0,80}$/;
+  function track(name, props) {
+    var p = {};
+    Object.keys(props || {}).forEach(function (k) { var v = String(props[k]); if (SAFE_PROP.test(v)) p[k] = v; }); // drop anything that could be free text
+    if (window.BANIRA_DEBUG && window.console) console.info('[banira.track]', name, p);
+    if (A.mode !== 'endpoint' || !A.endpoint || optedOut || !navigator.sendBeacon) return;
+    var ref = ''; try { ref = doc.referrer ? new URL(doc.referrer).host : ''; } catch (e) { }
+    if (ref === location.host) ref = '';
+    try { navigator.sendBeacon(A.endpoint, JSON.stringify({ e: name, p: p, path: location.pathname, ref: ref, w: window.innerWidth < 720 ? 's' : window.innerWidth < 1100 ? 'm' : 'l' })); } catch (e) { }
+  }
+  window.banira = { toast: toast, track: track };
+  track('page_view', { page: body.getAttribute('data-page') || '' });
+  doc.addEventListener('click', function (e) {
+    var a = e.target.closest('a.btn, a.link-arrow, [data-cta]');
+    if (!a) return;
+    var plan = a.getAttribute('data-plan');
+    track('cta_click', { label: (a.getAttribute('data-cta') || a.textContent).trim().slice(0, 60), to: (a.getAttribute('href') || '').split('#')[0], from: body.getAttribute('data-page') || '', plan: plan || '' });
+  });
 
   // ── theme: system (default) / light / dark; saved per browser; cross-fades where View Transitions exist ──
   (function () {
