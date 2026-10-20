@@ -11,5 +11,16 @@
 .footer-base { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: .75rem 2rem; justify-content: space-between; font-size: var(--t-xs); color: var(--muted); }
 .status-line { display: inline-flex; align-items: center; gap: .5rem; }
 .status-line i { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
-.toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); background: var(--panel-3); color: var(--fg); border: 1px solid var(--line-2); border-radius: 10px; padding: .6rem 1rem; font-size: var(--t-sm); opacity: 0; pointer-events: none; transition: opacity var(--d-med) var(--ease), transform var(--d-med) var(--ease); z-index: 300; }
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); background: var(--panel-3); color: var(--fg); border: 1px solid var(--line-2); border-radius: 10px; padding: .6rem 1rem; font-size: var(--t-sm); opacity: 0; pointer-events: none; transition: opacity var(--d-med) var(--ease), transform var(--d-med) var(--ease); z-index: var(--z-toast); }
 .toast.is-on { opacity: 1; transform: translate(-50%, 0); }
+
+/* theme picker (footer): a segmented radio group */
+.theme-picker { margin: 0; padding: 2px; border: 1px solid var(--line-2); border-radius: var(--r-ctl); display: inline-flex; gap: 2px; min-inline-size: 0; }
+.theme-picker label { position: relative; display: block; cursor: pointer; }
+.theme-picker input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.theme-picker span { display: block; padding: .3rem .65rem; border-radius: 7px; font-size: var(--t-xs); color: var(--muted); transition: color var(--dur-micro) var(--ease-standard), background-color var(--dur-surface) var(--ease-standard); }
+.theme-picker input:checked + span { background: var(--panel-3); color: var(--fg); box-shadow: var(--elev-1); }
+.theme-picker label:hover span { color: var(--fg); }
+.theme-picker input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: 1px; }
+.no-js .theme-picker { display: none; }
+.footer-base { align-items: center; }

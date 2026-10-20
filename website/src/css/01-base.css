@@ -10,21 +10,21 @@ body {
 img, svg, video { display: block; max-width: 100%; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; background: none; border: 0; padding: 0; }
-a { color: var(--fg); text-decoration-color: rgba(238, 239, 241, .35); text-underline-offset: .2em; text-decoration-thickness: 1px; transition: color var(--d-fast) var(--ease), text-decoration-color var(--d-fast) var(--ease); }
+a { color: var(--fg); text-decoration-color: rgb(var(--fg-rgb) / .32); text-underline-offset: .2em; text-decoration-thickness: 1px; transition: color var(--d-fast) var(--ease), text-decoration-color var(--d-fast) var(--ease); }
 a:hover { text-decoration-color: currentColor; }
-h1, h2, h3, h4 { color: var(--fg); font-weight: 560; margin: 0; letter-spacing: -0.022em; line-height: var(--lh-head); text-wrap: balance; }
-h1 { font-size: var(--t-h1); line-height: var(--lh-tight); letter-spacing: -0.035em; font-weight: 580; }
-h2 { font-size: var(--t-h2); letter-spacing: -0.03em; line-height: 1.08; }
-h3 { font-size: var(--t-h3); }
+h1, h2, h3, h4 { color: var(--fg); font-weight: var(--w-head); margin: 0; letter-spacing: var(--ls-head); line-height: var(--lh-head); text-wrap: balance; }
+h1 { font-size: var(--t-h1); line-height: var(--lh-tight); letter-spacing: var(--ls-display); font-weight: var(--w-display); }
+h2 { font-size: var(--t-h2); letter-spacing: var(--ls-h2); line-height: 1.06; font-weight: var(--w-display); }
+h3 { font-size: var(--t-h3); letter-spacing: -0.022em; }
 h4 { font-size: var(--t-h4); letter-spacing: -0.012em; }
 p { margin: 0; text-wrap: pretty; }
 ul, ol { margin: 0; padding: 0; }
 code, .mono { font-family: var(--mono); font-size: .9em; font-feature-settings: normal; }
 code { background: var(--panel-2); border: 1px solid var(--line); border-radius: 5px; padding: .05em .35em; color: var(--fg); }
 pre { margin: 0; font-family: var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; }
-strong, b { color: var(--fg); font-weight: 560; }
+strong, b { color: var(--fg); font-weight: var(--w-strong); }
 hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
-::selection { background: rgba(170, 163, 237, .35); color: #fff; }
+::selection { background: var(--selection); color: var(--fg); }
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
 main:focus { outline: none; }
 [hidden] { display: none !important; }

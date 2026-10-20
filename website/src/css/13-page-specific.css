@@ -1,5 +1,5 @@
 /* ── page-specific ──────────────────────────────────────────────────────── */
-.pcard--exception { border-color: rgba(227, 139, 131, .25); }
+.pcard--exception { border-color: rgb(var(--red-rgb) / .25); }
 .stage .ws-wf { background: var(--panel); }
 .stage .ws-seq { grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
 .demo-intro { display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; align-items: end; margin-bottom: 1.25rem; }

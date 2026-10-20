@@ -1,0 +1,54 @@
+/* Light theme: custom properties only. The build wraps this block twice:
+   @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { … } } and :root[data-theme="light"] { … }.
+   Designed, not inverted: white raised surfaces on a cool #FAFAFA ground, softer shadows doing the work hairlines do
+   in dark, meaning colours darkened to keep ≥ 4.5:1 as text, ambient glow off. Pure neutrals only (no beige).
+   Contrast (on --bg): fg 19.0:1 · fg-2 8.2:1 · muted 5.8:1 · on white panels slightly higher. */
+color-scheme: light;
+--bg: #FAFAFA;
+--bg-rgb: 250 250 250;
+--bg-2: #F4F4F5;
+--panel: #FFFFFF;
+--panel-2: #F4F4F5;
+--panel-3: #FFFFFF;
+--surface-app: #FFFFFF;
+--surface-app-2: #FAFAFA;
+--surface-side: #F7F7F8;
+--surface-raised: #F7F7F8;
+--surface-pop: #FFFFFF;
+--surface-hi: #FFFFFF;
+--surface-current: #F6F5FF;
+--avatar-bg: #E4EAF2;
+
+--fg: #0A0A0B;
+--fg-rgb: 10 10 11;
+--fg-2: #4B4D54;
+--muted: #5F6168;
+--quiet: #74767D;
+--placeholder: #74767D;
+--fg-strong: #000000;
+--on-fg: #FFFFFF;
+
+--tint-rgb: 10 10 11;
+--line: rgb(var(--tint-rgb) / .085);
+--line-2: rgb(var(--tint-rgb) / .12);
+--line-3: rgb(var(--tint-rgb) / .2);
+--control-line: rgb(var(--tint-rgb) / .16);
+--hover: rgb(var(--tint-rgb) / .045);
+--press: rgb(var(--tint-rgb) / .08);
+
+--lavender-rgb: 88 78 196;
+--blue-rgb: 36 92 156;
+--green-rgb: 28 112 74;
+--amber-rgb: 133 92 14;
+--red-rgb: 180 52 43;
+--accent-bg-a: .08;
+--amber-bg: rgb(var(--amber-rgb) / .09);
+--focus: #584EC4;
+--selection: rgb(var(--lavender-rgb) / .2);
+
+--shadow-k: .2;
+--shadow: 0 1px 2px rgb(0 0 0 / .05), 0 24px 64px -28px rgb(0 0 0 / .22);
+--elev-1: 0 1px 2px rgb(0 0 0 / .06);
+--elev-2: 0 1px 2px rgb(0 0 0 / .04), 0 10px 32px -16px rgb(0 0 0 / .16);
+--scrim: rgb(10 10 11 / .18);
+--glow-a: 0;

@@ -11,6 +11,44 @@
   function toast(msg) { if (!toastEl) return; toastEl.textContent = msg; toastEl.classList.add('is-on'); clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove('is-on'); }, 2200); }
   window.banira = { toast: toast, track: function () { } };
 
+  // ── theme: system (default) / light / dark; saved per browser; cross-fades where View Transitions exist ──
+  (function () {
+    var root = doc.documentElement, KEY = 'banira-theme';
+    var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: light)') : null;
+    function saved() { try { return localStorage.getItem(KEY) || 'system'; } catch (e) { return 'system'; } }
+    function resolved(choice) { return choice === 'system' ? (mq && mq.matches ? 'light' : 'dark') : choice; }
+    function sync() {
+      var choice = saved(), now = resolved(choice);
+      $$('[data-theme-toggle]').forEach(function (b) { b.setAttribute('aria-label', 'Switch to ' + (now === 'dark' ? 'light' : 'dark') + ' theme'); b.setAttribute('data-now', now); });
+      $$('[data-theme-picker] input').forEach(function (i) { i.checked = i.value === choice; });
+      root.setAttribute('data-resolved-theme', now);
+    }
+    function apply(choice) {
+      var run = function () {
+        try { if (choice === 'system') localStorage.removeItem(KEY); else localStorage.setItem(KEY, choice); } catch (e) { }
+        if (choice === 'system') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', choice);
+        sync();
+      };
+      if (doc.startViewTransition && !reduce) doc.startViewTransition(run); else run();
+      window.banira.track('theme_changed', { theme: choice });
+    }
+    doc.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-theme-toggle]');
+      if (b) apply(resolved(saved()) === 'dark' ? 'light' : 'dark');
+    });
+    doc.addEventListener('change', function (e) { if (e.target.closest && e.target.closest('[data-theme-picker]')) apply(e.target.value); });
+    if (mq && mq.addEventListener) mq.addEventListener('change', sync);
+    sync();
+  })();
+
+  // ── header: hairline and blur only after the page has scrolled ──
+  (function () {
+    var h = doc.querySelector('.site-header'); if (!h) return;
+    var on = null;
+    function check() { var s = window.scrollY > 8; if (s !== on) { on = s; h.classList.toggle('is-scrolled', s); } }
+    window.addEventListener('scroll', check, { passive: true }); check();
+  })();
+
   // ── navigation menus (disclosure pattern) ──
   var header = doc.querySelector('.site-header');
   var triggers = $$('.nav-trigger');

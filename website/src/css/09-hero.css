@@ -2,10 +2,10 @@
 .hero { padding-top: clamp(48px, 2rem + 4vw, 104px); padding-bottom: clamp(24px, 1rem + 2vw, 48px); position: relative; }
 .hero::before { /* single restrained surface, not a page-wide fade */
   content: ""; position: absolute; inset: 0 0 auto; height: 720px; pointer-events: none; z-index: -1;
-  background: radial-gradient(60% 50% at 70% 10%, rgba(170, 163, 237, .07), transparent 70%), radial-gradient(40% 40% at 15% 0%, rgba(138, 175, 218, .05), transparent 70%);
+  background: radial-gradient(60% 50% at 70% 10%, rgb(var(--lavender-rgb) / .07), transparent 70%), radial-gradient(40% 40% at 15% 0%, rgb(var(--blue-rgb) / .05), transparent 70%);
 }
-.announce { display: inline-flex; align-items: center; gap: .6rem; height: 34px; padding: 0 .35rem 0 .4rem; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(255, 255, 255, .03); color: var(--fg-2); font-size: .8125rem; text-decoration: none; transition: border-color var(--d-fast) var(--ease), background-color var(--d-fast) var(--ease); }
-.announce:hover { border-color: var(--line-3); background: rgba(255, 255, 255, .05); color: var(--fg); }
+.announce { display: inline-flex; align-items: center; gap: .6rem; height: 34px; padding: 0 .35rem 0 .4rem; border-radius: 999px; border: 1px solid var(--line-2); background: rgb(var(--tint-rgb) / .03); color: var(--fg-2); font-size: .8125rem; text-decoration: none; transition: border-color var(--d-fast) var(--ease), background-color var(--d-fast) var(--ease); }
+.announce:hover { border-color: var(--line-3); background: rgb(var(--tint-rgb) / .05); color: var(--fg); }
 .announce .badge { border-radius: 999px; }
 .announce .go { display: inline-flex; align-items: center; gap: .25rem; color: var(--fg); padding-right: .6rem; }
 .announce .arr { width: 12px; height: 12px; transition: transform var(--d-fast) var(--ease); }
@@ -31,7 +31,7 @@
 .switcher { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 1.5rem; margin-bottom: 1rem; }
 .switcher-tabs { display: inline-flex; padding: 3px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); }
 .switcher-tabs button { height: 34px; padding: 0 .9rem; border-radius: 9px; color: var(--fg-2); font-size: .8125rem; font-weight: 500; display: inline-flex; align-items: center; gap: .45rem; transition: background-color var(--d-fast) var(--ease), color var(--d-fast) var(--ease); }
-.switcher-tabs button[aria-selected="true"] { background: var(--panel-3); color: var(--fg); box-shadow: 0 1px 0 rgba(255, 255, 255, .05) inset, 0 1px 2px rgba(0, 0, 0, .4); }
+.switcher-tabs button[aria-selected="true"] { background: var(--panel-3); color: var(--fg); box-shadow: 0 1px 0 rgb(var(--tint-rgb) / .05) inset, 0 1px 2px rgb(var(--shadow-rgb) / calc(.4 * var(--shadow-k))); }
 .switcher-tabs button:hover { color: var(--fg); }
 .switcher-cap { font-size: var(--t-sm); color: var(--muted); max-width: 62ch; }
 .switcher-cap b { color: var(--fg-2); font-weight: 520; }

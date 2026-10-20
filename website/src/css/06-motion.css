@@ -1,0 +1,55 @@
+/* ── motion ─────────────────────────────────────────────────────────────── */
+/* One motion language for every page (MOTION_SYSTEM.md). Only opacity and transform animate, plus colour/border
+   on hover. Content is visible without JS: hidden states apply only under .js, and boot.js reveals everything
+   after 2.5 s if site.js never runs. Everything collapses to instant under prefers-reduced-motion. */
+
+/* entrances: scroll reveals (once), set by site.js through IntersectionObserver */
+.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out); transition-delay: var(--delay, 0ms); }
+.js .reveal--fade { transform: none; }
+.js .reveal--scale { transform: translateY(10px) scale(.985); transform-origin: 50% 0; }
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+/* hero items run on load, in sequence (--delay set inline or by site.js after the headline split) */
+.js .hero-in { opacity: 0; transform: translateY(14px); animation: rise var(--dur-enter) var(--ease-out) forwards; animation-delay: var(--delay, 0ms); }
+.js .hero-frame { opacity: 0; transform: translateY(22px) scale(.99); animation: rise 820ms var(--ease-out) forwards; animation-delay: var(--delay, 360ms); }
+@keyframes rise { to { opacity: 1; transform: none; } }
+
+/* headline lines rise from behind a mask (site.js splits [data-split-lines] into visual lines) */
+.js [data-split-lines]:not(.is-split) { opacity: 0; }
+.split-line { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
+.split-line > span { display: block; opacity: 0; transform: translateY(100%); animation: lineUp var(--dur-story) var(--ease-out) forwards; animation-delay: var(--d, 0ms); }
+@keyframes lineUp { 60% { opacity: 1; } to { opacity: 1; transform: none; } }
+
+/* hover and press: quick colour, subtle surface; links move their arrow, cards rise 1 px */
+.card--link, .control, .plan, .res-card { transition: border-color var(--dur-surface) var(--ease-standard), background-color var(--dur-surface) var(--ease-standard), transform var(--dur-move) var(--ease-out), box-shadow var(--dur-surface) var(--ease-standard); }
+@media (hover: hover) and (pointer: fine) {
+  .card--link:hover, .res-card:hover { transform: translateY(-1px); box-shadow: var(--elev-2); }
+}
+.btn:active, .control:active { transform: translateY(1px); transition-duration: 60ms; }
+
+/* accordions: animate height where the browser can (progressive; instant elsewhere) */
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+  .faq details::details-content, .tpl-list details::details-content { block-size: 0; overflow: clip; transition: block-size var(--dur-move) var(--ease-standard), content-visibility var(--dur-move) allow-discrete; }
+  .faq details[open]::details-content, .tpl-list details[open]::details-content { block-size: auto; }
+}
+
+/* status dot: a single soft pulse ring for "live" states inside product UI */
+.pulse { position: relative; }
+.pulse::after { content: ""; position: absolute; inset: -3px; border-radius: 50%; border: 1px solid currentColor; opacity: 0; animation: pulse 2.4s var(--ease-out) infinite; }
+@keyframes pulse { 0% { opacity: .55; transform: scale(.6); } 70%, 100% { opacity: 0; transform: scale(1.6); } }
+
+/* ambient seed light (hero): one slow breath, off in light theme (--glow-a: 0) and when off-screen */
+.seed-light { position: absolute; pointer-events: none; border-radius: 50%; opacity: calc(var(--glow-a) * .9);
+  background: radial-gradient(closest-side, rgb(var(--tint-rgb) / .09), rgb(var(--tint-rgb) / .03) 55%, transparent);
+  animation: breathe 14s var(--ease-in-out) infinite; }
+@keyframes breathe { 0%, 100% { transform: scale(.94); opacity: calc(var(--glow-a) * .7); } 50% { transform: scale(1.04); opacity: calc(var(--glow-a) * 1); } }
+.is-offscreen .seed-light, .is-offscreen .pulse::after { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; scroll-behavior: auto !important; }
+  .js .reveal, .js .hero-in, .js .hero-frame, .split-line > span { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .js [data-split-lines] { opacity: 1 !important; }
+  .seed-light, .pulse::after { animation: none !important; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
+}

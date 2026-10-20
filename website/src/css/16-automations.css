@@ -3,7 +3,7 @@
 .aw-track { display: flex; gap: 14px; overflow-x: auto; padding: 4px max(var(--gutter), calc((100vw - var(--container)) / 2)) 24px; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .aw-track::-webkit-scrollbar { display: none; }
 .aw-track:focus-visible { outline-offset: -4px; }
-.aw { flex: 0 0 min(380px, 84vw); scroll-snap-align: center; height: 440px; display: flex; flex-direction: column; border-radius: 14px; background: linear-gradient(180deg, #121316, #0E0F11); border: 1px solid var(--line-2); box-shadow: var(--shadow); overflow: hidden; }
+.aw { flex: 0 0 min(380px, 84vw); scroll-snap-align: center; height: 440px; display: flex; flex-direction: column; border-radius: 14px; background: linear-gradient(180deg, var(--surface-raised), var(--surface-pop)); border: 1px solid var(--line-2); box-shadow: var(--shadow); overflow: hidden; }
 .aw-h { display: flex; align-items: center; gap: .55rem; padding: .8rem 1rem; border-bottom: 1px solid var(--line); font-size: .8125rem; color: var(--fg); }
 .aw-h .ic { width: 15px; height: 15px; color: var(--fg-2); }
 .aw-h b { font-weight: 560; }
@@ -13,7 +13,7 @@
 .aw-ctl i:nth-child(3) { transform: rotate(45deg); box-shadow: 0 0 0 0 var(--muted); }
 .aw-b { padding: 1rem; display: flex; flex-direction: column; gap: .75rem; font-size: .8125rem; color: var(--fg-2); overflow: hidden; }
 .aw-msg { align-self: flex-end; max-width: 88%; background: var(--panel-3); border: 1px solid var(--line-2); border-radius: 10px; padding: .6rem .75rem; color: var(--fg); line-height: 1.45; display: grid; gap: .25rem; }
-.aw-msg--sys { background: #181a1f; }
+.aw-msg--sys { background: var(--panel-2); }
 .aw-from { font-size: .7rem; color: var(--muted); }
 .aw-ctx { align-self: flex-end; display: inline-flex; align-items: center; gap: .4rem; font-size: .72rem; color: var(--muted); }
 .aw-ctx .ic { width: 13px; height: 13px; }
@@ -23,7 +23,7 @@
 .aw-think { background: linear-gradient(90deg, var(--muted) 0%, var(--fg) 45%, var(--muted) 90%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 1.4s linear infinite; }
 @keyframes shimmer { from { background-position: 100% 0; } to { background-position: -100% 0; } }
 .aw-out { color: var(--fg); line-height: 1.5; }
-.aw-group { border: 1px solid var(--line-2); border-radius: 10px; padding: .6rem .7rem; display: grid; gap: .35rem; background: rgba(255, 255, 255, .015); }
+.aw-group { border: 1px solid var(--line-2); border-radius: 10px; padding: .6rem .7rem; display: grid; gap: .35rem; background: rgb(var(--tint-rgb) / .015); }
 .aw-gh { font-size: .72rem; color: var(--fg-2); font-weight: 560; }
 .aw-gh + .aw-row { margin-top: -.05rem; }
 .aw-row { display: flex; align-items: center; gap: .5rem; font-size: .78rem; color: var(--fg); min-width: 0; }

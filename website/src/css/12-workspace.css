@@ -1,6 +1,6 @@
 /* ── Workspace concept (.ws) ────────────────────────────────────────────── */
-.ws { border-radius: var(--r-xl); background: #0D0E10; border: 1px solid rgba(170, 163, 237, .22); box-shadow: var(--shadow); overflow: hidden; }
-.ws-chrome { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .75rem; padding: .7rem 1rem; border-bottom: 1px solid var(--line); background: #0F1012; }
+.ws { border-radius: var(--r-xl); background: var(--surface-app); border: 1px solid rgb(var(--lavender-rgb) / .22); box-shadow: var(--shadow); overflow: hidden; }
+.ws-chrome { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .75rem; padding: .7rem 1rem; border-bottom: 1px solid var(--line); background: var(--surface-app-2); }
 .ws-title { display: inline-flex; align-items: center; gap: .55rem; font-size: .8125rem; color: var(--fg); }
 .ws-title .mark { width: 18px; height: 18px; color: var(--lavender); }
 .ws-title b { font-weight: 560; }
@@ -46,7 +46,7 @@
 .switch { display: inline-flex; align-items: center; gap: .5rem; font-size: .75rem; color: var(--fg-2); }
 .switch button { width: 34px; height: 20px; border-radius: 999px; background: var(--panel-3); border: 1px solid var(--line-2); position: relative; transition: background-color var(--d-fast) var(--ease); }
 .switch button::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--fg-2); transition: transform var(--d-fast) var(--ease), background-color var(--d-fast) var(--ease); }
-.switch button[aria-checked="true"] { background: rgba(119, 182, 151, .35); border-color: rgba(119, 182, 151, .5); }
+.switch button[aria-checked="true"] { background: rgb(var(--green-rgb) / .35); border-color: rgb(var(--green-rgb) / .5); }
 .switch button[aria-checked="true"]::after { transform: translateX(14px); background: var(--fg); }
 .switch button:disabled { opacity: .5; cursor: not-allowed; }
 .ws-brief { display: grid; gap: .75rem; max-width: 70ch; }
@@ -56,5 +56,5 @@
 .ws-brief li::before { content: ""; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: var(--lavender); }
 .ws-integr { display: flex; flex-wrap: wrap; gap: .4rem; }
 .ws-integr span { font-size: .72rem; padding: .25rem .5rem; border-radius: 6px; border: 1px dashed var(--line-3); color: var(--fg-2); }
-.mini-btn { font-size: .72rem; height: 26px; padding: 0 .55rem; border-radius: 7px; border: 1px solid var(--line-2); color: var(--fg-2); background: rgba(255, 255, 255, .03); }
+.mini-btn { font-size: .72rem; height: 26px; padding: 0 .55rem; border-radius: 7px; border: 1px solid var(--line-2); color: var(--fg-2); background: rgb(var(--tint-rgb) / .03); }
 .mini-btn:hover { color: var(--fg); border-color: var(--line-3); }
