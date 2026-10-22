@@ -134,7 +134,7 @@
       return;
     }
     if (navigator.onLine === false) return failed(d, 'offline');
-    var url = mode === 'netlify' ? form.getAttribute('action') : cfg.form_endpoint;
+    var url = mode === 'netlify' ? '/' : cfg.form_endpoint; // Netlify Forms: AJAX posts go to the site root with form-name in the body
     var body = mode === 'netlify' ? new URLSearchParams(new FormData(form)).toString() : endpointBody(d);
     busy(true);
     var ctrl = window.AbortController ? new AbortController() : null;

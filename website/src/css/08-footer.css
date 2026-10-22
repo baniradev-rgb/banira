@@ -1,6 +1,6 @@
 /* ── footer ─────────────────────────────────────────────────────────────── */
 .site-footer { border-top: 1px solid var(--line); padding-block: 4rem 2rem; background: var(--bg); }
-.footer-grid { display: grid; gap: 2.5rem 2rem; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.footer-grid { display: grid; gap: 2.5rem 2rem; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); }
 .footer-brand { grid-column: span 2; max-width: 320px; display: grid; gap: .9rem; align-content: start; }
 .footer-brand p { font-size: var(--t-sm); }
 @media (max-width: 620px) { .footer-brand { grid-column: 1 / -1; } }

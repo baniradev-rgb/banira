@@ -5,8 +5,12 @@
    src/css/*.css         concatenated in file-name order into assets/css/site.css
    src/js/*.js           copied to assets/js/ (engine.js comes from automations/lead-desk/src/engine.js)
    src/static/**         copied as-is
-   site.config.json      published settings (no secrets)
+   site.config.json      published settings (no secrets); BANIRA_CONFIG=path overrides it (tests)
    Values in pages:      {%key%} from the build context (unknown keys fail the build)
+   Owner facts:          {%owner.key%} from site.config.json business/contact_email; empty → a visible
+                         "to be added" badge in preview, a build failure when status is "live"
+   Conditionals:         <!-- @if flag --> … <!-- @endif --> (and @if !flag); flags: preview, live, draft,
+                         in-force, form-preview, pay.<plan>, portal. Not nested.
    Output: website/dist/ — same URLs as V3. The build fails on broken internal links, duplicate ids or unknown keys. */
 'use strict';
 const fs = require('fs');
@@ -16,7 +20,11 @@ const crypto = require('crypto');
 const ROOT = path.resolve(__dirname, '..');
 const SRC = path.join(__dirname, 'src');
 const OUT = process.env.BANIRA_OUT ? path.resolve(process.env.BANIRA_OUT) : path.join(__dirname, 'dist');
-const site = JSON.parse(fs.readFileSync(path.join(__dirname, 'site.config.json'), 'utf8'));
+const site = JSON.parse(fs.readFileSync(process.env.BANIRA_CONFIG ? path.resolve(process.env.BANIRA_CONFIG) : path.join(__dirname, 'site.config.json'), 'utf8'));
+site.business = site.business || {};
+site.legal = site.legal || { status: 'draft' };
+site.payments = site.payments || {};
+const LIVE = site.status === 'live';
 const engine = require(path.join(ROOT, 'automations/lead-desk/src/engine.js'));
 const demoConfig = require(path.join(ROOT, 'automations/lead-desk/examples/config.example.json'));
 const errors = [];
@@ -65,6 +73,36 @@ const ctx = {
   'adapter.version': (read(path.join(ROOT, 'automations/lead-desk/apps-script/Code.gs')).match(/ADAPTER_VERSION = '([\d.]+)'/) || [])[1]
 };
 Object.assign(ctx, testCtx);
+const PLANS = ['founding', 'core', 'care'];
+PLANS.concat('portal').forEach((k) => { ctx['pay.' + k] = site.payments[k] || ''; });
+ctx['legal.updated'] = site.legal.updated || '';
+ctx['legal.effective'] = site.legal.effective || '';
+
+// ── owner facts and conditionals ──
+const OWNER = { legal_name: 'legal business name', address: 'business address', jurisdiction: 'governing state', phone: 'phone number', email: 'contact email' };
+const ownerMissing = new Set();
+function owner(html, from) {
+  return html.replace(/\{%\s*owner\.(\w+)\s*%\}/g, (m, k) => {
+    if (!(k in OWNER)) { errors.push(from + ': unknown owner value ' + k); return ''; }
+    const v = k === 'email' ? site.contact_email : site.business[k];
+    if (v) return k === 'email' ? '<a href="mailto:' + esc(v) + '">' + esc(v) + '</a>' : esc(v);
+    ownerMissing.add(k);
+    return '<span class="badge badge--pending" data-owner-missing="' + k + '">to be added: ' + OWNER[k] + '</span>';
+  });
+}
+const flags = {
+  preview: !LIVE, live: LIVE, draft: site.legal.status !== 'in-force', 'in-force': site.legal.status === 'in-force',
+  'form-preview': site.form.mode === 'preview', portal: !!site.payments.portal
+};
+PLANS.forEach((k) => { flags['pay.' + k] = !!site.payments[k]; });
+function cond(html, from) {
+  return html.replace(/<!-- @if (!?)([\w.-]+) -->([\s\S]*?)<!-- @endif -->/g, (m, not, f, body) => {
+    if (!(f in flags)) { errors.push(from + ': unknown @if flag ' + f); return ''; }
+    if (/<!-- @if /.test(body)) errors.push(from + ': nested @if ' + f);
+    return (!!flags[f] !== !!not) ? body : '';
+  });
+}
+const render = (html, from) => values(owner(cond(html, from), from), from);
 
 // ── partials ──
 function include(html, depth, from) {
@@ -211,7 +249,7 @@ pages.forEach(({ file, fm, body }) => {
   const scripts = DEFAULT_SCRIPTS.concat(fm.scripts || []);
   scripts.forEach((s) => { if (!generated[s]) errors.push(file + ': unknown script ' + s); });
   if (fm.article && !fm.jsonld) fm.jsonld = articleLd(fm, file);
-  let main = values(include(body, 0, file), file) + relatedBlock(fm, file);
+  let main = render(include(body, 0, file), file) + relatedBlock(fm, file);
   // preview-only notices are rendered visible at build time (no layout shift when JS runs)
   if (site.form.mode === 'preview') main = main.replace(/(<[^>]+data-preview-only[^>]*?) hidden>/g, '$1>');
   const html = [
@@ -223,7 +261,7 @@ pages.forEach(({ file, fm, body }) => {
     '<main id="main" tabindex="-1">',
     main.trim(),
     '</main>',
-    values(include(footer, 0, 'footer'), 'footer'),
+    render(include(footer, 0, 'footer'), 'footer'),
     '<div class="toast" role="status" aria-live="polite" id="toast"></div>',
     scripts.map((s) => '<script src="assets/js/' + s + '.js?v=' + assetHash['js/' + s] + '"' + (s === 'site-config' ? '' : ' defer') + '></script>').join('\n'),
     '</body>',
@@ -248,6 +286,23 @@ write(path.join(OUT, 'site.webmanifest'), JSON.stringify({ name: 'Banira', short
 if (site.analytics && site.analytics.mode !== 'off') {
   const privacy = pages.find((p) => p.file === 'privacy.html');
   if (!privacy || !privacy.fm.analyticsDisclosed) errors.push('analytics.mode is "' + site.analytics.mode + '" but privacy.html front matter has no "analyticsDisclosed": true. Update the notice first.');
+}
+// validation: payment links are public Stripe URLs (never keys), and a subscription always has an online way to cancel
+const STRIPE_LINK = /^https:\/\/buy\.stripe\.com\/[\w-]+$/, STRIPE_PORTAL = /^https:\/\/billing\.stripe\.com\/p\/login\/[\w-]+$/;
+PLANS.forEach((k) => { if (site.payments[k] && !STRIPE_LINK.test(site.payments[k])) errors.push('payments.' + k + ' must be a Stripe Payment Link (https://buy.stripe.com/…)'); });
+if (site.payments.portal && !STRIPE_PORTAL.test(site.payments.portal)) errors.push('payments.portal must be a Stripe customer portal login link (https://billing.stripe.com/p/login/…)');
+if (site.payments.care && !site.payments.portal) errors.push('payments.care is set but payments.portal is empty: Care renews monthly, so customers need an online way to cancel (California auto-renewal law, docs/launch/LAUNCH_RESEARCH.md §3)');
+Object.keys(site.payments).filter((k) => k[0] !== '_' && !PLANS.includes(k) && k !== 'portal').forEach((k) => errors.push('payments.' + k + ' is not a known plan'));
+// validation: going live needs every owner fact, a real domain, a connected form and terms in force
+if (LIVE) {
+  if (!/^https:\/\/[a-z0-9.-]+\.[a-z]{2,}$/.test(site.url) || /\.example$|localhost/.test(site.url)) errors.push('live: url must be the real https domain (no trailing slash), not ' + site.url);
+  if (site.form.mode === 'preview') errors.push('live: form.mode is still "preview"');
+  if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(site.contact_email || '')) errors.push('live: contact_email is required (Stripe asks for a contact method besides the form)');
+  ownerMissing.forEach((k) => { if (k !== 'email') errors.push('live: business.' + k + ' is empty but a page shows it'); });
+  ['legal_name', 'address', 'jurisdiction'].forEach((k) => { if (!site.business[k]) errors.push('live: business.' + k + ' is required'); });
+  if (site.legal.status !== 'in-force') errors.push('live: legal.status must be "in-force" (owner decision in DECISION_LOG.md after review of privacy, terms and refunds)');
+  if (!site.legal.effective) errors.push('live: legal.effective (the date the terms take effect) is required');
+  Object.entries(site.payments).filter(([k, v]) => k[0] !== '_' && /\/test_/.test(v)).forEach(([k]) => errors.push('live: payments.' + k + ' is a Stripe test-mode link'));
 }
 // validation: internal links and anchors
 const exists = (rel) => fs.existsSync(path.join(OUT, rel));

@@ -1,8 +1,28 @@
 {
-  "_note": "Site settings read by website/build.js. No secrets belong here: everything in this file is published.",
+  "_note": "Site settings read by website/build.js. No secrets belong here: everything in this file is published. Going live: DEPLOYMENT.md §0 and docs/launch/LAUNCH_CHECKLIST.md.",
   "url": "https://banira.example",
   "status": "preview",
   "contact_email": "",
+  "business": {
+    "_note": "Shown in the footer, legal pages and pay page. Every field marked required must be filled before status = live.",
+    "legal_name": "",
+    "address": "",
+    "jurisdiction": "",
+    "phone": ""
+  },
+  "legal": {
+    "_note": "status: draft | in-force. Changing it to in-force is an owner decision (DECISION_LOG.md) after review.",
+    "status": "draft",
+    "updated": "22 October 2026",
+    "effective": ""
+  },
+  "payments": {
+    "_note": "Stripe Payment Links (https://buy.stripe.com/...) and the customer portal login link (https://billing.stripe.com/p/login/...). Public URLs, not API keys. Empty = the page offers an invoice instead.",
+    "founding": "",
+    "core": "",
+    "care": "",
+    "portal": ""
+  },
   "form": {
     "mode": "preview",
     "endpoint": ""

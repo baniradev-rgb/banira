@@ -1,0 +1,47 @@
+<!--page
+{
+  "title": "Accessibility statement · Banira",
+  "description": "How Banira's website aims to meet WCAG 2.2 AA, what is tested on every build, known limitations, and how to report a problem.",
+  "path": "accessibility.html",
+  "nav": null,
+  "scripts": []
+}
+-->
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Accessibility</span></nav>
+    <p class="eyebrow mt-m">Last reviewed {%legal.updated%}</p>
+    <h1>Accessibility statement</h1>
+    <p class="lede">We want everyone to be able to use this site, including people who use a keyboard, a screen reader, zoom or reduced motion.</p>
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top:0">
+  <div class="wrap article">
+    <nav class="toc" aria-label="On this page"><p class="fig">On this page</p><a href="#target">Our target</a><a href="#tested">What we test</a><a href="#limits">Known limitations</a><a href="#report">Report a problem</a></nav>
+    <article class="prose">
+      <h2 id="target">Our target</h2>
+      <p>This site aims to conform to the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. We haven’t had an independent audit, so we describe this as a target rather than a certified result.</p>
+
+      <h2 id="tested">What we test on every release</h2>
+      <ul>
+        <li>An automated check (axe-core) of every page, in the light and dark themes, at phone and desktop widths. Automated checks find only some problems, so we also test by hand.</li>
+        <li>Keyboard paths: the menu, the theme picker, the demo, the scenario composer and the contact form, including a skip link and visible focus.</li>
+        <li>Reduced motion: with your system set to reduce motion, the background animation stops and content appears without movement.</li>
+        <li>Text contrast of at least 4.5:1 in both themes, layouts checked from 360 px to 1920 px wide, and text content that stays readable without JavaScript.</li>
+        <li>Form errors are announced, listed at the top of the form and linked to the field.</li>
+      </ul>
+
+      <h2 id="limits">Known limitations</h2>
+      <ul>
+        <li>We haven’t yet tested with screen readers on real iOS or Android devices.</li>
+        <li>The interactive demo and the sample product screens are dense. They work by keyboard, but they’re easier to follow visually; the same information is given in plain text on the Lead Desk and How it works pages.</li>
+        <li>The moving background on the Lead Desk page is decorative and hidden from screen readers.</li>
+        <li>Stripe’s checkout and billing portal are run by Stripe and covered by Stripe’s own accessibility work, not ours.</li>
+      </ul>
+
+      <h2 id="report">Report a problem</h2>
+      <p>If something on this site is hard to use, email {%owner.email%} or use the <a href="contact.html">contact form</a> and tell us the page and what happened. We’ll reply and, where we can, fix it or give you the information another way.</p>
+    </article>
+  </div>
+</section>

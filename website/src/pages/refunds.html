@@ -1,0 +1,57 @@
+<!--page
+{
+  "title": "Refund and cancellation policy · Banira",
+  "description": "When Banira refunds a Lead Desk setup fee, how to cancel Care online, and how long a refund takes to reach your card.",
+  "path": "refunds.html",
+  "nav": null,
+  "scripts": []
+}
+-->
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Refunds</span></nav>
+<!-- @include components/legal-status -->
+    <h1>Refund and cancellation policy</h1>
+    <p class="lede">Plain rules, decided before you pay. If you’re unsure whether something applies, ask us first: {%owner.email%}.</p>
+<!-- @include components/legal-draft-note -->
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top:0">
+  <div class="wrap article">
+    <nav class="toc" aria-label="On this page"><p class="fig">On this page</p><a href="#setup">Setup fees</a><a href="#care">Care</a><a href="#how">How to ask</a><a href="#timing">Timing</a><a href="#disputes">Disputes</a></nav>
+    <article class="prose">
+      <h2 id="setup">Setup fees (Lead Desk, founding place, custom projects)</h2>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Setup refunds (scrolls sideways on small screens)">
+        <table class="price-table">
+          <caption>Refund of a setup fee</caption>
+          <thead><tr><th scope="col">When</th><th scope="col">Refund</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">You cancel before we’ve started the build</th><td>100%</td></tr>
+            <tr><th scope="row">We can’t make the system work with your setup before go-live</th><td>100% if we haven’t started, otherwise 50%</td></tr>
+            <tr><th scope="row">You cancel after the build has started, before go-live</th><td>50%</td></tr>
+            <tr><th scope="row">After go-live</th><td>No refund; instead, 30 days of fixes for anything we built that doesn’t work as the plan describes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>“Started” means we’ve begun work in your accounts or delivered the first draft of your messages. Your plan states the build start date.</p>
+
+      <h2 id="care">Care ($49 USD a month)</h2>
+      <ul>
+        <li><strong>Cancel any time</strong>, online in the Stripe billing portal (link on the <a href="pay.html#manage">pay page</a>), or by email. No cancellation fee.</li>
+        <li>Cancellation takes effect at the end of the month you’ve paid for, and you keep Care until then. We don’t refund part of a month.</li>
+        <li>If we charged you after you cancelled, or charged you twice, we refund it in full.</li>
+        <li>If we end Care, we refund any month paid but not provided.</li>
+      </ul>
+
+      <h2 id="how">How to ask for a refund</h2>
+      <p>Email {%owner.email%} with your name and the date of the payment. We reply within 5 business days. Refunds go back to the card or method you paid with.</p>
+
+      <h2 id="timing">How long it takes</h2>
+      <p>Once we issue a refund, Stripe sends it straight away. It usually takes 5–10 business days to appear on your statement, depending on your bank.</p>
+
+      <h2 id="disputes">If you disagree</h2>
+      <p>Please contact us before disputing a charge with your bank; most problems are quicker to fix directly. This policy doesn’t limit any right you have under the law.</p>
+    </article>
+  </div>
+</section>

@@ -5,12 +5,13 @@
       <div><h2 class="footer-h">Product</h2><ul><li><a href="lead-desk.html">Lead Desk</a></li><li><a href="demo.html">Interactive demo</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="workspace.html">Workspace (concept)</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
       <div><h2 class="footer-h">Solutions</h2><ul><li><a href="solutions.html#fit">Home-service businesses</a></li><li><a href="solutions.html#examples">Example inquiries</a></li><li><a href="solutions.html#custom">Custom automation</a></li><li><a href="solutions.html#boundaries">What we don't offer</a></li></ul></div>
       <div><h2 class="footer-h">Resources</h2><ul><li><a href="resources.html">All resources</a></li><li><a href="resources-lead-response-time.html">Lead response time</a></li><li><a href="resources-email-deliverability.html">Email deliverability</a></li><li><a href="resources-automation-readiness.html">Readiness check</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
-      <div><h2 class="footer-h">Company</h2><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="security.html">Security</a></li><li><a href="privacy.html">Privacy (draft)</a></li><li><a href="terms.html">Terms (draft)</a></li></ul></div>
+      <div><h2 class="footer-h">Company</h2><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="security.html">Security</a></li><li><a href="pay.html">Pay</a></li></ul></div>
+      <div><h2 class="footer-h">Legal</h2><ul><li><a href="privacy.html">Privacy<!-- @if draft --> (draft)<!-- @endif --></a></li><li><a href="terms.html">Terms<!-- @if draft --> (draft)<!-- @endif --></a></li><li><a href="refunds.html">Refunds<!-- @if draft --> (draft)<!-- @endif --></a></li><li><a href="accessibility.html">Accessibility</a></li></ul></div>
     </div>
     <div class="footer-base">
-      <span>© {%year%} Banira. Prices in USD and provisional.</span>
+      <!-- @if preview --><span>© {%year%} Banira. Prices in USD and provisional.</span><!-- @endif --><!-- @if live --><span>© {%year%} {%owner.legal_name%}, trading as Banira · {%owner.email%} · Prices in USD.</span><!-- @endif -->
       <fieldset class="theme-picker" data-theme-picker><legend class="visually-hidden">Colour theme</legend><label><input type="radio" name="theme" value="system" checked><span>System</span></label><label><input type="radio" name="theme" value="light"><span>Light</span></label><label><input type="radio" name="theme" value="dark"><span>Dark</span></label></fieldset>
-      <span class="status-line"><i aria-hidden="true"></i>Preview site: forms are not connected and sample data is fictional</span>
+      <!-- @if preview --><span class="status-line"><i aria-hidden="true"></i>Preview site: forms and payments are not connected and sample data is fictional</span><!-- @endif -->
     </div>
   </div>
 </footer>

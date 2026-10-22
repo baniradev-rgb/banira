@@ -240,6 +240,37 @@ async function fillContact(page) {
     }
   }, { allowConsole: /status of 500/ });
 
+  await check('contact (netlify): urlencoded POST to "/" with form-name; success only on 2xx; failure keeps entries', async (page) => {
+    await page.route('**/assets/js/site-config.js*', (r) => r.fulfill({ contentType: 'text/javascript', body: 'window.BANIRA_SITE={"form_mode":"netlify","form_endpoint":"","contact_email":"hello@example.com","analytics":{"mode":"off"}};' }));
+    const posts = [];
+    let status = 500;
+    await page.route(base, async (r) => { if (r.request().method() !== 'POST') return r.continue(); posts.push({ type: r.request().headers()['content-type'], body: r.request().postData() }); await r.fulfill({ status, body: 'ok' }); });
+    await go(page, 'contact.html');
+    await fillContact(page);
+    await page.click('#contact-submit');
+    await page.waitForSelector('.form-status--bad');
+    expect(await page.inputValue('#f-name') === 'Pat Lee', 'entries lost after a failed send');
+    expect((await page.textContent('#contact-status')).includes('hello@example.com'), 'failure message offers the email address');
+    status = 200;
+    await page.click('#contact-submit');
+    await page.waitForSelector('.form-status--ok');
+    expect(posts.length === 2, 'expected 2 POSTs to "/", got ' + posts.length);
+    const p = new URLSearchParams(posts[1].body);
+    expect(/application\/x-www-form-urlencoded/.test(posts[1].type), 'not urlencoded: ' + posts[1].type);
+    expect(p.get('form-name') === 'contact' && p.get('email') === 'pat@example.com', 'form-name or fields missing: ' + posts[1].body.slice(0, 120));
+  }, { allowConsole: /status of 500/ });
+
+  await check('pay page: every pay button leads somewhere real (Stripe link or invoice request), Care terms sit beside its button', async (page) => {
+    await go(page, 'pay.html');
+    const hrefs = await page.$$eval('.plan .btn', (a) => a.map((x) => x.getAttribute('href')));
+    expect(hrefs.length === 3, 'expected 3 pay buttons, got ' + hrefs.length);
+    hrefs.forEach((h) => expect(/^https:\/\/buy\.stripe\.com\/|^contact\.html#plan-/.test(h), 'unexpected pay href ' + h));
+    const care = await page.textContent('#pay-care');
+    expect(/every month/.test(care) && /until you cancel/.test(care) && /Cancel any time online/.test(care), 'Care renewal terms missing');
+    await page.click('a[href="#manage"]');
+    expect(await page.evaluate(() => location.hash) === '#manage', 'manage link did not jump');
+  });
+
   await check('contact: #topic-security preselects the security topic', async (page) => {
     await go(page, 'contact.html#topic-security');
     expect(await page.inputValue('#f-topic') === 'security', 'topic not preselected');

@@ -1,0 +1,93 @@
+<!--page
+{
+  "title": "Pay · Banira",
+  "description": "Pay for an approved Lead Desk plan or start Care. Card payments run on Stripe's secure checkout. Prices in US dollars.",
+  "path": "pay.html",
+  "nav": null,
+  "scripts": []
+}
+-->
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="pricing.html">Pricing</a><span aria-hidden="true">/</span><span>Pay</span></nav>
+    <h1 class="hero-in">Pay for your plan.</h1>
+    <p class="lede hero-in" style="--delay:90ms">Use this page once you’ve approved your written plan. Payment runs on Stripe’s checkout, so your card details never touch Banira’s website. Prices are in US dollars (USD).</p>
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top:0" aria-labelledby="order-h">
+  <div class="wrap">
+    <h2 id="order-h" class="visually-hidden">The order of things</h2>
+    <ol class="next-steps">
+      <li><b>A short conversation</b><span>We check whether Lead Desk fits how inquiries reach you.</span></li>
+      <li><b>A written plan you approve</b><span>Messages, rules, timeline and the fixed price.</span></li>
+      <li><b>Payment here</b><span>Setup is paid after approval and before the build starts.</span></li>
+      <li><b>We build and test</b><span>About a week to go live, then 30 days of fixes.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--tight" aria-label="Payment options">
+  <div class="wrap">
+    <div class="plans plans--frame">
+      <article class="card plan" id="pay-founding"><span class="badge badge--neutral">First 3 clients only</span><h2 class="h3">Founding client</h2>
+        <div><div class="price">$290<small>USD, one-off</small></div><p class="recurring">Only if your plan confirms a founding place</p></div>
+        <ul><li>Lead Desk in full: setup, testing, handover, 30 days of fixes</li><li>In return, a 20-minute feedback call after launch</li><li>Three places in total, no deadline</li></ul>
+<!-- @if pay.founding -->
+        <a class="btn btn--secondary" href="{%pay.founding%}" rel="noopener">Pay $290 on Stripe</a>
+<!-- @endif -->
+<!-- @if !pay.founding -->
+        <a class="btn btn--secondary" href="contact.html#plan-founding" data-plan="founding">Ask for an invoice</a><p class="small muted">Online payment isn’t switched on for this option yet.</p>
+<!-- @endif -->
+      </article>
+      <article class="card plan plan--focus" id="pay-core"><span class="badge badge--neutral">Standard</span><h2 class="h3">Lead Desk</h2>
+        <div><div class="price">$490<small>USD, one-off</small></div><p class="recurring">No platform fee afterwards</p></div>
+        <ul><li>Setup in your Gmail and Google Sheets</li><li>Messages written with you, tested before launch</li><li>Handover documentation and 30 days of fixes</li></ul>
+<!-- @if pay.core -->
+        <a class="btn btn--primary" href="{%pay.core%}" rel="noopener">Pay $490 on Stripe</a>
+<!-- @endif -->
+<!-- @if !pay.core -->
+        <a class="btn btn--primary" href="contact.html#plan-core" data-plan="core">Ask for an invoice</a><p class="small muted">Online payment isn’t switched on for this option yet.</p>
+<!-- @endif -->
+      </article>
+      <article class="card plan" id="pay-care"><span class="badge badge--neutral">Optional, monthly</span><h2 class="h3">Care</h2>
+        <div><div class="price">$49<small>USD / month</small></div><p class="recurring">Renews monthly until you cancel</p></div>
+        <ul><li>A monthly log check, with fixes</li><li>Up to two message or rule changes a month</li><li>A monthly results email</li></ul>
+        <p class="small" id="care-terms"><strong>Automatic renewal:</strong> Care is charged $49 USD now and again every month on the same date until you cancel. Cancel any time online in the <a href="#manage">billing portal</a> or by email. Cancellation takes effect at the end of the month you’ve paid for, and there are no cancellation fees. Stripe emails a receipt for each charge.</p>
+<!-- @if pay.care -->
+        <a class="btn btn--secondary" href="{%pay.care%}" rel="noopener" aria-describedby="care-terms">Start Care on Stripe</a>
+<!-- @endif -->
+<!-- @if !pay.care -->
+        <a class="btn btn--secondary" href="contact.html#plan-care" data-plan="care">Ask about Care</a><p class="small muted">Online sign-up isn’t switched on yet.</p>
+<!-- @endif -->
+      </article>
+    </div>
+    <p class="small muted mt-m">By paying you agree to the <a href="terms.html">terms of service</a> and the <a href="refunds.html">refund and cancellation policy</a>. Prices exclude any sales tax that applies; if tax applies, it’s shown at checkout before you pay. Prices are provisional until your written plan confirms them.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="safe-h">
+  <div class="wrap split">
+    <div class="head"><p class="eyebrow"><span class="dot"></span>Payment security</p><h2 id="safe-h">Your card stays with Stripe.</h2></div>
+    <div class="stack">
+      <ul class="ticks">
+        <li>The pay buttons open Stripe’s own checkout page on <span class="mono">buy.stripe.com</span>, over HTTPS. Banira’s site has no card fields and never receives card numbers.</li>
+        <li>Stripe is a PCI DSS Level 1 certified payment processor. Banira sees the payment, your name and email, and the last four digits of the card.</li>
+        <li>We never ask for card details, passwords or payment by email or phone.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="manage">
+  <div class="wrap wrap--narrow">
+    <h2 id="manage" class="h3">Manage or cancel Care</h2>
+<!-- @if portal -->
+    <p>Open the <a href="{%pay.portal%}" rel="noopener">Stripe billing portal</a> and enter the email you subscribed with. Stripe emails you a sign-in link. There you can cancel Care, update your card and download invoices. You can also email {%owner.email%} and we’ll cancel it for you.</p>
+<!-- @endif -->
+<!-- @if !portal -->
+    <p>Care isn’t sold online yet. When it is, a Stripe billing portal link here will let you cancel, update your card and download invoices yourself. Until then, existing arrangements are cancelled by email: {%owner.email%}.</p>
+<!-- @endif -->
+    <p class="small muted mt-m">Questions about a payment or a refund: {%owner.email%}<!-- @if live --> · {%owner.legal_name%}, {%owner.address%}<!-- @endif -->. See the <a href="refunds.html">refund and cancellation policy</a>.</p>
+  </div>
+</section>

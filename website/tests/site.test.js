@@ -15,7 +15,7 @@ const pages = fs.readdirSync(OUT).filter((f) => f.endsWith('.html'));
 const html = Object.fromEntries(pages.map((f) => [f, fs.readFileSync(path.join(OUT, f), 'utf8')]));
 const text = (h) => h.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
 const V3_URLS = ['index', 'solutions', 'lead-desk', 'demo', 'how-it-works', 'pricing', 'about', 'contact', 'resources', 'workspace', 'faq', 'security', 'privacy', 'terms',
-  'resources-automation-readiness', 'resources-email-deliverability', 'resources-lead-response-time', '404'].map((p) => p + '.html');
+  'resources-automation-readiness', 'resources-email-deliverability', 'resources-lead-response-time', '404', 'pay', 'refunds', 'accessibility', 'thanks'].map((p) => p + '.html');
 
 test('every V3 URL still exists', () => {
   V3_URLS.forEach((u) => assert.ok(pages.includes(u), u + ' missing'));
@@ -90,8 +90,8 @@ test('labels: sample and concept surfaces say so', () => {
   assert.match(text(html['workspace.html']), /concept/i);
   assert.match(text(html['demo.html']), /fictional/i);
   assert.match(text(html['demo.html']), /Nothing is sent/i);
-  assert.match(text(html['privacy.html']), /draft/i);
-  assert.match(text(html['terms.html']), /draft/i);
+  const legal = JSON.parse(fs.readFileSync(path.join(ROOT, 'website/site.config.json'), 'utf8')).legal || {};
+  if (legal.status !== 'in-force') ['privacy.html', 'terms.html', 'refunds.html'].forEach((f) => assert.match(text(html[f]), /draft/i, f));
   assert.match(text(html['pricing.html']), /provisional/i);
 });
 
@@ -99,7 +99,7 @@ test('preview mode is the default and the contact form says nothing will be sent
   const cfg = fs.readFileSync(path.join(OUT, 'assets/js/site-config.js'), 'utf8');
   const site = JSON.parse(fs.readFileSync(path.join(ROOT, 'website/site.config.json'), 'utf8'));
   if (site.form.mode === 'preview') assert.match(cfg, /"form_mode":"preview"/);
-  assert.match(html['contact.html'], /isn’t connected to a mailbox yet/);
+  if (site.form.mode === 'preview') assert.match(html['contact.html'], /isn’t connected to a mailbox yet/);
   assert.doesNotMatch(fs.readFileSync(path.join(OUT, 'assets/js/site-config.js'), 'utf8'), /secret|token|password/i, 'no secrets in published config');
 });
 

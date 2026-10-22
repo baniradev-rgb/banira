@@ -1,7 +1,7 @@
 <!--page
 {
-  "title": "Privacy notice (draft) · Banira",
-  "description": "Draft privacy notice for Banira: what this website collects, how Lead Desk handles client and customer data, and your choices.",
+  "title": "Privacy notice · Banira",
+  "description": "What Banira's website collects, how payments and the contact form are handled, how Lead Desk treats your customers' data, and your rights.",
   "path": "privacy.html",
   "nav": null,
   "scripts": []
@@ -10,59 +10,91 @@
 <section class="page-hero">
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Privacy</span></nav>
-    <p class="eyebrow mt-m">Draft · last updated 20 October 2026</p>
+<!-- @include components/legal-status -->
     <h1>Privacy notice</h1>
-    <div class="note note--legal"><strong>Draft. Requires legal review before launch.</strong> This notice describes what the site and our services actually do today. Items marked <span class="badge badge--pending">pending</span> depend on decisions or accounts not yet in place: the legal entity, address, contact email and form provider. It is not legal advice.</div>
+<!-- @include components/legal-draft-note -->
   </div>
 </section>
 
 <section class="section section--tight" style="padding-top:0">
   <div class="wrap article">
-    <nav class="toc" aria-label="On this page"><p class="fig">On this page</p><a href="#who">Who we are</a><a href="#site">This website</a><a href="#forms">Contact form</a><a href="#clients">Client projects</a><a href="#customers">Your customers' data</a><a href="#share">Sharing</a><a href="#keep">Retention</a><a href="#rights">Your choices</a><a href="#changes">Changes</a></nav>
+    <nav class="toc" aria-label="On this page"><p class="fig">On this page</p><a href="#who">Who we are</a><a href="#collect">What we collect</a><a href="#site">This website</a><a href="#forms">Contact form</a><a href="#pay">Payments</a><a href="#clients">Client projects</a><a href="#customers">Your customers’ data</a><a href="#use">How we use it</a><a href="#share">Sharing</a><a href="#keep">Retention</a><a href="#rights">Your rights</a><a href="#dnt">Do Not Track</a><a href="#kids">Children</a><a href="#changes">Changes</a></nav>
     <article class="prose">
       <h2 id="who">Who we are</h2>
-      <p>"Banira" is a new automation business. <span class="badge badge--pending">pending</span> Legal entity name, registered address and privacy contact email will be added here before launch.</p>
+      <p>Banira is operated by {%owner.legal_name%}, {%owner.address%} (“Banira”, “we”). For anything about privacy, email {%owner.email%}.</p>
 
-      <h2 id="site">What this website collects</h2>
+      <h2 id="collect">What we collect, in short</h2>
       <ul>
-        <li><strong>No tracking cookies and no third-party analytics.</strong> The site loads its fonts and scripts from its own server and makes no requests to advertising or analytics services.</li>
-        <li><strong>Settings stored in your browser:</strong> for the current visit only, which pricing option you chose, so the contact form can preselect it (<code>sessionStorage</code>); and, only if you pick one, your colour theme (<code>localStorage</code>, until you choose “System” again). Neither leaves your device.</li>
-        <li><strong>Hosting logs:</strong> <span class="badge badge--pending">pending</span> the hosting provider (planned: Netlify) may keep standard server logs (such as IP address and pages requested) for security. Details will be linked once hosting is confirmed.</li>
-        <li><strong>Analytics:</strong> none at present. If we add privacy-friendly, cookie-free analytics in future, this notice will be updated first.</li>
+        <li><strong>Identifiers and contact details</strong> you give us: name, email, phone (optional), business name.</li>
+        <li><strong>What you tell us</strong> in the contact form or during a project: how your business handles inquiries, your tools, hours and message wording.</li>
+        <li><strong>Payment records</strong> from Stripe: amount, date, your name and email, billing address if Stripe asks for it, and the card brand and last four digits. Never the full card number.</li>
+        <li><strong>Technical data</strong> our host records for security: IP address, browser type, pages requested and time.</li>
+      </ul>
+      <p>We don’t collect sensitive information such as health, financial account or government ID numbers, and we ask you not to send it.</p>
+
+      <h2 id="site">This website</h2>
+      <ul>
+        <li><strong>No tracking cookies, no advertising and no third-party analytics.</strong> Fonts and scripts are served from our own site.</li>
+        <li><strong>Settings in your browser:</strong> the pricing option you chose, for the current visit only, so the contact form can preselect it (<code>sessionStorage</code>); and your colour theme if you pick one (<code>localStorage</code>). Neither leaves your device.</li>
+        <li><strong>Hosting:</strong> the site is hosted by Netlify, which keeps standard request logs (such as IP address and pages requested) to run and protect the service. See <a href="https://www.netlify.com/privacy/" rel="noopener">Netlify’s privacy policy</a>.</li>
+        <li><strong>Analytics:</strong> none. If we ever add privacy-friendly, cookie-free measurement, we’ll update this notice first.</li>
       </ul>
 
       <h2 id="forms">The contact form</h2>
-      <p>When the form is live, it collects what you type: your name and email, and optionally your business name, phone number, the email system and website tool you use, the option you’re interested in, and your message. We use this only to reply to you and to prepare a proposal if you ask for one.</p>
-      <p><span class="badge badge--pending">pending</span> The form is not connected yet; in this preview nothing is sent. When it goes live, submissions will be processed by our form provider (planned: Netlify Forms) and delivered to Banira's business mailbox.</p>
-      <p>Legal basis (for visitors in the UK/EU): taking steps at your request before entering into a contract, and our legitimate interest in replying to inquiries. <span class="badge badge--pending">review</span></p>
+      <p>The form collects what you type: your name and email, and optionally your business name, phone, the email system and website tool you use, the option you’re interested in, and your message. Submissions are received by Netlify Forms, which filters spam (using Akismet), and are delivered to Banira’s business mailbox. We use them only to reply and, if you ask, to prepare a proposal.</p>
+
+      <h2 id="pay">Payments</h2>
+      <p>Payments are made on Stripe’s checkout and billing portal. Stripe collects your card details directly and processes them under its own <a href="https://stripe.com/privacy" rel="noopener">privacy policy</a>; it may use them to prevent fraud. Banira receives the payment record described above, which we keep for accounting and tax.</p>
 
       <h2 id="clients">Client projects</h2>
-      <p>When we build for you, we work inside your own accounts (for Lead Desk: your Google Sheet, Gmail and Apps Script) by screen-share or with access you grant. We keep your intake answers and the configuration we generate, such as business name, hours, services and message templates, to deliver and support the project.</p>
+      <p>When we build for you, we work inside your own accounts (for Lead Desk: your Google Sheet, Gmail and Apps Script) by screen-share or with access you grant. We keep your intake answers and the configuration we generate (business name, hours, services, message templates) to deliver and support the project.</p>
 
-      <h2 id="customers">Your customers' data (Lead Desk)</h2>
+      <h2 id="customers">Your customers’ data (Lead Desk)</h2>
       <ul>
-        <li>Inquiries from your customers are stored in <strong>your</strong> Google Sheet and emails are sent from <strong>your</strong> mailbox. Banira does not copy them to its own systems.</li>
-        <li>For these records <strong>you are the controller</strong>. During setup and Care, Banira acts on your instructions. <span class="badge badge--pending">review</span> A short data-processing agreement will be offered where required.</li>
-        <li>The Lead Desk log records events and IDs, not the content of customers' messages.</li>
-        <li>Customer data is not used to train AI models.</li>
+        <li>Inquiries from your customers are stored in <strong>your</strong> Google Sheet, and emails are sent from <strong>your</strong> mailbox. Banira does not copy them to its own systems.</li>
+        <li>For these records <strong>you are the business responsible for them</strong> (the “controller”). During setup and Care, Banira acts only on your instructions, and we can sign a short data-processing agreement if you need one.</li>
+        <li>The Lead Desk log records events and IDs, not the content of customers’ messages.</li>
+        <li>Your customers’ data is not used to train AI models.</li>
       </ul>
 
-      <h2 id="share">Who we share data with</h2>
-      <p>We don't sell personal data. We share it only with service providers needed to run the business: <span class="badge badge--pending">pending</span> website hosting and forms (planned: Netlify), our email provider (planned: Google Workspace), and a payment provider once chosen. We also share it where the law requires.</p>
-      <p>We use AI tools (such as Claude by Anthropic) to help prepare research, configurations and documents. We don't put clients' customers' personal data into these tools. Information you send us about your business may be used with them to prepare your proposal. <span class="badge badge--pending">review</span></p>
-
-      <h2 id="keep">How long we keep data</h2>
+      <h2 id="use">How we use personal information</h2>
       <ul>
-        <li>Inquiries that don't become projects: deleted within 12 months of our last contact. <span class="badge badge--pending">review</span></li>
+        <li>To reply to you and to plan, build and support what you buy.</li>
+        <li>To take payment, send receipts and keep business and tax records.</li>
+        <li>To keep the site and our accounts secure and to prevent spam and fraud.</li>
+        <li>To meet legal obligations.</li>
+      </ul>
+      <p>For visitors in the UK or EU, our legal bases are: steps you ask for before a contract, performing the contract, our legitimate interest in replying to inquiries and running a secure business, and legal obligations.</p>
+
+      <h2 id="share">Who we share it with</h2>
+      <p>We don’t sell personal information, and we don’t share it for cross-site advertising. We share it only with the service providers that run the business, under their terms:</p>
+      <ul>
+        <li>Netlify: website hosting and the contact form.</li>
+        <li>Stripe: payments, receipts and the billing portal.</li>
+        <li>Google (Gmail and Google Workspace): Banira’s business email and documents.</li>
+        <li>Anthropic (Claude): we use AI tools to help prepare research, configurations and documents. Information about your business may be used with them to prepare your proposal. We don’t put your customers’ personal data into these tools.</li>
+      </ul>
+      <p>We may also disclose information where the law requires it, or to protect our rights in a dispute.</p>
+
+      <h2 id="keep">How long we keep it</h2>
+      <ul>
+        <li>Inquiries that don’t become projects: deleted within 12 months of our last contact.</li>
         <li>Project intake files: deleted 30 days after handover, unless you take Care.</li>
-        <li>Invoices and business records: kept as long as tax law requires.</li>
+        <li>Payment records, invoices and business records: kept as long as tax law requires.</li>
       </ul>
 
-      <h2 id="rights">Your choices and rights</h2>
-      <p>You can ask us what we hold about you, ask us to correct or delete it, or object to how we use it. Depending on where you live (for example the UK, EU or California), you may have additional rights. <span class="badge badge--pending">pending</span> Contact details for these requests will be added before launch. Until then, please use the contact form.</p>
+      <h2 id="rights">Your rights and choices</h2>
+      <p>Anyone can ask us to see what we hold about them, correct it, delete it, or stop using it for a purpose. Email {%owner.email%}. We’ll reply within 30 days and may need to confirm it’s you. Depending on where you live (for example California, other US states, the UK or the EU) you may have further rights, including to appeal our answer or complain to a regulator. We won’t treat you differently for using them.</p>
+      <p>We’re not required to keep some records forever, but we must keep payment and tax records for the period the law sets, even if you ask us to delete them.</p>
+
+      <h2 id="dnt">Do Not Track and Global Privacy Control</h2>
+      <p>This site doesn’t track visitors across other websites and doesn’t allow third parties to do so, so there is nothing for a Do Not Track or Global Privacy Control signal to switch off. Every visitor gets the same no-tracking experience.</p>
+
+      <h2 id="kids">Children</h2>
+      <p>Banira’s services are for businesses. The site isn’t directed at children under 13 and we don’t knowingly collect their information.</p>
 
       <h2 id="changes">Changes to this notice</h2>
-      <p>We'll update the date at the top whenever this notice changes, and we'll describe significant changes on this page.</p>
+      <p>When this notice changes, we update the date at the top and describe significant changes on this page. If you’re a client, we’ll also email you about any change that affects you.</p>
     </article>
   </div>
 </section>
