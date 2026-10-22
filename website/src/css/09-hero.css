@@ -44,5 +44,6 @@
 }
 /* the seed light: one faint breathing glow behind the hero, where the R2 seed would sit (dark theme only) */
 .hero { isolation: isolate; overflow-x: clip; } /* the seed light extends past the edge; body clip alone does not stop the root scrolling */
-.seed-light--hero { z-index: -1; width: min(820px, 110vw); aspect-ratio: 1; right: -8%; top: -18%; }
-@media (max-width: 720px) { .seed-light--hero { right: -45%; top: -8%; } }
+/* a compact cluster to the right of the headline; on narrow screens a small strip beside the announcement pill */
+.hero-dots { position: absolute; z-index: -1; pointer-events: none; right: max(var(--gutter), 6%); top: clamp(110px, 4rem + 4vw, 170px); width: min(26%, 340px); height: 300px; } /* px, not %: the hero also contains the tall sample frame */
+@media (max-width: 960px) { .hero-dots { right: var(--gutter); top: clamp(40px, 6vw, 72px); width: 22%; height: 36px; } }
