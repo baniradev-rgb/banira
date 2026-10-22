@@ -44,11 +44,13 @@
 .pulse::after { content: ""; position: absolute; inset: -3px; border-radius: 50%; border: 1px solid currentColor; opacity: 0; animation: pulse 2.4s var(--ease-out) infinite; }
 @keyframes pulse { 0% { opacity: .55; transform: scale(.6); } 70%, 100% { opacity: 0; transform: scale(1.6); } }
 
-/* ambient seed light (hero): one slow breath, off in light theme (--glow-a: 0) and when off-screen */
-.seed-light { position: absolute; pointer-events: none; border-radius: 50%; opacity: calc(var(--glow-a) * .9);
-  background: radial-gradient(closest-side, rgb(var(--tint-rgb) / .09), rgb(var(--tint-rgb) / .03) 55%, transparent);
-  animation: breathe 14s var(--ease-in-out) infinite; }
-@keyframes breathe { 0%, 100% { transform: scale(.94); opacity: calc(var(--glow-a) * .7); } 50% { transform: scale(1.04); opacity: calc(var(--glow-a) * 1); } }
+/* ambient seed light (hero): a soft light that brightens and dims (9 s) while drifting slowly (23 s), in both themes.
+   Transform and opacity only; paused off-screen; still under reduced motion. */
+.seed-light { position: absolute; pointer-events: none; border-radius: 50%;
+  background: radial-gradient(closest-side, var(--hero-light), transparent 72%);
+  animation: breathe 9s var(--ease-in-out) infinite, wander 23s var(--ease-in-out) infinite alternate; }
+@keyframes breathe { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+@keyframes wander { from { transform: translate(0, 0) scale(.92); } to { transform: translate(-14%, 10%) scale(1.06); } }
 .is-offscreen .seed-light, .is-offscreen .pulse::after { animation-play-state: paused; }
 
 @media (prefers-reduced-motion: reduce) {

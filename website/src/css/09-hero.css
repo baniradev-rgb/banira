@@ -44,5 +44,5 @@
 }
 /* the seed light: one faint breathing glow behind the hero, where the R2 seed would sit (dark theme only) */
 .hero { isolation: isolate; overflow-x: clip; } /* the seed light extends past the edge; body clip alone does not stop the root scrolling */
-.seed-light--hero { z-index: -1; width: min(900px, 120vw); aspect-ratio: 1; right: -18%; top: -32%; }
-@media (max-width: 720px) { .seed-light--hero { right: -60%; top: -20%; } }
+.seed-light--hero { z-index: -1; width: min(820px, 110vw); aspect-ratio: 1; right: -8%; top: -18%; }
+@media (max-width: 720px) { .seed-light--hero { right: -45%; top: -8%; } }

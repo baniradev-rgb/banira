@@ -71,6 +71,7 @@
   --elev-3: var(--shadow);
   --scrim: rgb(var(--shadow-rgb) / calc(.5 * var(--shadow-k)));
   --glow-a: 1;                   /* ambient light strength; 0 in light theme */
+  --hero-light: rgb(var(--tint-rgb) / .15);   /* home hero light: a soft white glow on dark */
 
   /* ── type ── Geist display: light weight, tight tracking (see VISUAL_BENCHMARKS.md) */
   --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
