@@ -42,8 +42,11 @@
   content: ""; position: absolute; left: -1px; right: -1px; bottom: -1px; height: 64px; pointer-events: none;
   background: linear-gradient(to bottom, transparent, var(--bg)); border-radius: 0 0 var(--r-xl) var(--r-xl);
 }
-/* the seed light: one faint breathing glow behind the hero, where the R2 seed would sit (dark theme only) */
-.hero { isolation: isolate; overflow-x: clip; } /* the seed light extends past the edge; body clip alone does not stop the root scrolling */
-/* a compact cluster to the right of the headline; on narrow screens a small strip beside the announcement pill */
-.hero-dots { position: absolute; z-index: -1; pointer-events: none; right: max(var(--gutter), 6%); top: clamp(110px, 4rem + 4vw, 170px); width: min(26%, 340px); height: 300px; } /* px, not %: the hero also contains the tall sample frame */
-@media (max-width: 960px) { .hero-dots { right: var(--gutter); top: clamp(40px, 6vw, 72px); width: 22%; height: 36px; } }
+.hero { isolation: isolate; overflow-x: clip; } /* the drifting stage extends past the edge; body clip alone does not stop the root scrolling */
+/* the Lead Desk drifting screen, quieter: faded out toward the headline (left) and toward the sample frame (bottom) */
+.hero-cine { position: absolute; z-index: -1; inset: 0 0 auto 0; height: clamp(460px, 68vh, 660px); overflow: hidden; pointer-events: none; opacity: .55;
+  -webkit-mask-image: linear-gradient(to right, transparent 32%, #000 82%), linear-gradient(to bottom, #000 35%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 32%, #000 82%), linear-gradient(to bottom, #000 35%, transparent 100%);
+  -webkit-mask-composite: source-in; mask-composite: intersect; }
+.hero-cine .cine-stage { inset: 0; }
+@media (max-width: 760px) { .hero-cine { opacity: .4; height: 420px; } }
