@@ -96,3 +96,15 @@ Found in QA. An urgent gas-smell inquiry from outside the service area scores 25
 
 ### D-027 · Reading times computed from article text — Accepted
 V3 labels said 8 and 6 minutes for articles of about 700 words. V4 computes the time at 220 words per minute (3 min). This is more accurate and keeps us from overstating depth.
+
+### D-028 · Launch contact form on Netlify Forms; Banira's Lead Desk later — Proposed (owner)
+Netlify Forms needs only the Netlify account the site needs anyway, so the form can go live on day one. D-023 (Banira's own Lead Desk) stays the target once a Banira Google account exists. `forms.js` posts URL-encoded to `/` with `form-name`, per Netlify docs (e2e-tested).
+
+### D-029 · Payments by Stripe Payment Links, no server — Accepted (engineering); account is 🔒 owner
+Payment Links are public URLs, so no keys or server code are needed. The build accepts only `https://buy.stripe.com/…` links and a `https://billing.stripe.com/p/login/…` portal, rejects test-mode links in live mode, and refuses a Care link without a portal link, because Care renews monthly and must be cancellable online (California ARL as amended by AB 2863). Founding: Stripe's payment limit set to 3.
+
+### D-030 · Live mode is a build switch with guards — Accepted
+`site.config.json → status: "live"` removes every preview notice and fails the build unless the real domain, contact email, legal name, address, governing state, a connected form and `legal.status: "in-force"` with an effective date are set. Missing owner facts render as visible "to be added" badges in preview, never as invented values.
+
+### D-031 · Legal text: privacy, terms, refunds and accessibility statement rewritten for launch — Proposed (owner and legal review)
+Based on docs/launch/LAUNCH_RESEARCH.md (Stripe's website checklist, CalOPPA, the California auto-renewal law, CAN-SPAM). Refund rules (proposed): 100% before the build starts, 50% after it starts and before go-live, none after go-live (30 days of fixes instead); Care cancels at the end of the paid month. They stay labelled *draft* until the owner records acceptance here and sets `legal.status: "in-force"`.

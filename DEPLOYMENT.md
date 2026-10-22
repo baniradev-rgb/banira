@@ -2,6 +2,9 @@
 
 **Nothing is deployed.** Every step marked 🔒 needs the owner's approval: an account, money, a domain, publishing or sending email. The plan of record is Netlify's free tier (TASK_QUEUE T-104, DEVELOPMENT_PLAN D1), with the contact form going to Banira's own Lead Desk in a Banira Google account (T-102).
 
+## 0. Going live
+The whole preview → live path, with every 🔒 owner step, is in [docs/launch/LAUNCH_CHECKLIST.md](docs/launch/LAUNCH_CHECKLIST.md). The build enforces it: `status: "live"` fails until the business facts, real domain, connected form, terms in force and valid Stripe links are in `website/site.config.json`.
+
 ## 1. Build and verify (no accounts needed)
 ```bash
 npm ci                     # dev tools only (axe-core, lighthouse); the site itself has no dependencies

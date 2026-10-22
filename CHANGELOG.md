@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 4.1.0 — 2026-10-22 (launch-ready, not deployed)
+- **Live mode** (`status: "live"`): preview notices disappear, the footer names the legal entity and email, and the build fails with a list of what's missing (domain, contact email, legal name, address, governing state, connected form, terms in force). D-030.
+- **Payments:** new `pay.html` with Stripe Payment Links from `site.config.json` (Founding $290, Lead Desk $490, Care $49/month), Care auto-renewal terms beside its button, a billing-portal section for cancelling online, and an invoice fallback while links are empty. New `thanks.html` (noindex) for Stripe's redirect, which never claims to verify a payment. Build guards for link format, test-mode links and Care without a portal link. D-029.
+- **Legal:** privacy notice rewritten (CalOPPA items, Do Not Track/GPC, Stripe, Netlify, children), terms rewritten (who you contract with, payment, Care renewal, licence, liability, governing law), new refund and cancellation policy and accessibility statement. Owner facts are `{%owner.*%}` values. Still drafts pending owner/legal review. D-031.
+- **Contact form:** Netlify mode posts to `/` per Netlify's AJAX docs; the preview note is no longer shipped outside preview mode. D-028.
+- Build: `<!-- @if flag -->` conditionals, `{%owner.*%}` values, `BANIRA_CONFIG` override. Footer gains a Legal column; pricing and FAQ payment copy updated.
+- Tests: `website/tests/launch.test.js` (7 tests); e2e adds the Netlify submission and pay-page checks (24 checks).
+- Docs: docs/launch/LAUNCH_RESEARCH.md (sourced), docs/launch/LAUNCH_CHECKLIST.md (owner steps).
+
 ## 4.0.0-rc1 — 2026-10-20 (not deployed)
 Banira V4: refines V3. The V3 baseline is tagged `v3-baseline`; build parity is tagged `v4-build-parity`.
 
